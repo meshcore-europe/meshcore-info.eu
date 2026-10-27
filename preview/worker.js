@@ -1,6 +1,7 @@
-// The Astro build, on next.meshcore-info.eu and, from the launch, on meshcore-info.eu. Only
-// meshcore-info.eu itself is indexed. On any other host (next, a workers.dev or preview URL) every response
-// says noindex and robots.txt disallows everything, so a test copy never shows up in search.
+// The Astro build, on meshcore-info.eu and on staging.meshcore-info.eu. Only meshcore-info.eu itself is
+// indexed. On any other host (staging, a workers.dev or preview URL) every response says noindex and
+// robots.txt disallows everything, so a test copy never shows up in search. next.meshcore-info.eu, the old
+// address of staging, redirects there, so the links to it in issues keep working.
 
 import { cacheFor } from './cache.js';
 import { fwProxy } from './fw-proxy.js';
@@ -8,10 +9,16 @@ import { cardPath, onOrigin } from './og.js';
 
 const NOINDEX = 'noindex, nofollow, noarchive';
 const INDEXED_HOST = 'meshcore-info.eu';
+const OLD_STAGING_HOST = 'next.meshcore-info.eu';
+const STAGING_HOST = 'staging.meshcore-info.eu';
 
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (url.hostname === OLD_STAGING_HOST) {
+      url.hostname = STAGING_HOST;
+      return Response.redirect(url.toString(), 301);
+    }
     const indexed = url.hostname === INDEXED_HOST;
     if (url.pathname === '/robots.txt' && !indexed) {
       return new Response('User-agent: *\nDisallow: /\n', {

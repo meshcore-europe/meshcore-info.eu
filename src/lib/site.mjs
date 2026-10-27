@@ -33,6 +33,12 @@ export function t(lang, key) {
   return en;
 }
 export const hasString = (key) => typeof strings.en[key] === 'string';
+// A string in a language's own file only, else null: for a caller with a fallback of its own.
+export function ownString(lang, key) {
+  if (lang === 'en') return t('en', key);
+  const own = strings[lang]?.[key];
+  return (typeof own === 'object' && own !== null ? own.value : own) || null;
+}
 
 // The page at a site path (/repeater-guide/) in a language: its content file, or null.
 export function contentFile(lang, sitePath) {

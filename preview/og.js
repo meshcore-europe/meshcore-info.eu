@@ -16,8 +16,8 @@ export function cardPath(path, date) {
   return `/media/og/${m[1]}-night.jpg`;
 }
 
-// The pages name their card on meshcore-info.eu; on next the card has to come from next itself, or a link
-// shared from next shows the production site's card (which does not exist before the launch).
+// The pages name their card on meshcore-info.eu; on staging the card has to come from staging itself, or a
+// link shared from staging shows the production site's card (which does not exist before the launch).
 export function onOrigin(content, origin) {
   return content.replace(/^https:\/\/meshcore-info\.eu(?=\/)/, origin);
 }

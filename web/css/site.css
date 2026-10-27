@@ -68,7 +68,7 @@ main.page { container-type: inline-size; }
 .prose li > label:has(> input:checked) { color: var(--text-muted); }
 /* A text link that leaves the site carries an arrow, so you know before you click. Cards, buttons
    and image links are left alone: the arrow would sit after a whole block. */
-main a[href^="http"]:not([href^="https://meshcore-info.eu"]):not([href^="https://next.meshcore-info.eu"]):not(.card):not(.btn):not(:has(img, h2, h3))::after {
+main a[href^="http"]:not([href^="https://meshcore-info.eu"]):not([href^="https://staging.meshcore-info.eu"]):not(.card):not(.btn):not(:has(img, h2, h3))::after {
   content: "\2197"; content: "\2197" / ""; display: inline-block; margin-left: .15em; font-size: .85em; text-decoration: none; }
 /* The site name never breaks at its hyphen. */
 .nobr { white-space: nowrap; }

@@ -13,7 +13,7 @@ import Home from '../../components/Home.astro';
 import PlannedSections from '../../components/PlannedSections.astro';
 import PageStrip from '../../components/PageStrip.astro';
 import { stripFor } from '../../lib/strips.mjs';
-import { localize, sectionLabel, siblingsOf } from '../../lib/shell.mjs';
+import { localize, sectionLabel, siblingsOf, menuText } from '../../lib/shell.mjs';
 
 export async function getStaticPaths() {
   const pages = await allPages();
@@ -44,7 +44,7 @@ const UNIT = /\b(mW|[kMG]Hz|dB[mid]?)\b/;
 if (planned) {
   lang = Astro.props.lang;
   slug = planned.path;
-  title = `${planned.label[lang] || planned.label.en} | meshcore-info.eu`;
+  title = `${menuText(planned.label, lang)} | meshcore-info.eu`;
   // A planned page opens on its image too, once the image is made.
   hero = HEROES[slug] || null;
 } else {
@@ -78,7 +78,7 @@ if (planned) {
       <img class="for-light" src={`/media/${hero}-pastel.webp`} alt="" width="1600" height="1100" decoding="async" />
       <div class="xhero-inner">
         {sectionLabel(slug, lang) && <div class="eyebrow">{sectionLabel(slug, lang)}</div>}
-        <h1 id="page-title">{planned.label[lang] || planned.label.en}</h1>
+        <h1 id="page-title">{menuText(planned.label, lang)}</h1>
         <p class="lead">{t(lang, `planned.${slug.replace(/\//g, '-')}.lead`)}</p>
       </div>
       <PageStrip lang={lang} slug={slug} />
@@ -89,7 +89,7 @@ if (planned) {
     {!hero && (
     <header class="page-head">
       {sectionLabel(slug, lang) && <div class="eyebrow">{sectionLabel(slug, lang)}</div>}
-      <h1>{planned.label[lang] || planned.label.en}</h1>
+      <h1>{menuText(planned.label, lang)}</h1>
       <p class="lead">{t(lang, `planned.${slug.replace(/\//g, '-')}.lead`)}</p>
     </header>
     )}
