@@ -572,6 +572,20 @@
   added: 2026-10-23
   last_checked: 2026-10-23
 
+- id: de-ffnw
+  country: DE
+  region: Weser-Ems (Lower Saxony)
+  name: Freifunk Nordwest
+  links:
+  - type: website
+    url: "https://ffnw.de/"
+  channels:
+  - "#ffnw"
+  languages: [de]
+  desc_key: community.de-ffnw.desc
+  added: 2026-10-27
+  last_checked: 2026-10-27
+
 - id: de-meshcore-dresden
   country: DE
   region: Dresden (Saxony)
