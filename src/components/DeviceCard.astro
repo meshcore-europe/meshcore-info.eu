@@ -1,0 +1,28 @@
+---
+// One device from data/devices.yaml, as device-card.html. data-* attributes drive web/js/filters.js.
+import { t } from '../lib/site.mjs';
+const { lang, d } = Astro.props;
+const host = (u) => new URL(u).host;
+const battery = d.battery && d.battery.builtin ? (d.battery.mah ? `${d.battery.mah} mAh` : t(lang, 'yes')) : t(lang, 'none');
+const dateOf = (iso) => new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : lang, { dateStyle: 'long' }).format(new Date(`${iso}T00:00:00Z`));
+const conn = d.connectivity && d.connectivity.length ? d.connectivity.map((c) => t(lang, `conn_${c}`)).join(', ') : t(lang, 'none');
+---
+<li class="card device-card" id={`device-${d.id}`} data-roles={d.roles.join(' ')} data-price={String(d.price_band)} data-power={d.battery && d.battery.builtin ? 'battery' : 'external'}>
+  <h3>{d.name}</h3>
+  <p class="muted">{d.maker}</p>
+  <ul class="tags">{d.roles.map((r) => <li class="badge">{t(lang, `role_${r}`)}</li>)}</ul>
+  <dl class="specs">
+    <div><dt>{t(lang, 'spec_mcu')}</dt><dd class="mono">{d.mcu}</dd></div>
+    <div><dt>{t(lang, 'spec_radio')}</dt><dd class="mono">{d.radio_chip}</dd></div>
+    <div><dt>{t(lang, 'spec_battery')}</dt><dd>{battery}</dd></div>
+    <div><dt>{t(lang, 'spec_gps')}</dt><dd>{t(lang, d.gps ? 'yes' : 'no')}</dd></div>
+    <div><dt>{t(lang, 'spec_screen')}</dt><dd>{d.screen || t(lang, 'none')}</dd></div>
+    <div><dt>{t(lang, 'spec_connectivity')}</dt><dd>{conn}</dd></div>
+    <div><dt>{t(lang, 'spec_form')}</dt><dd>{t(lang, `form_${d.form_factor}`)}</dd></div>
+    <div><dt>{t(lang, 'spec_price')}</dt><dd>{'€'.repeat(Number(d.price_band))}</dd></div>
+    <div><dt>{t(lang, 'spec_power')}</dt><dd>{t(lang, `power_profile_${d.power_profile}`)}</dd></div>
+  </dl>
+  {d.notes_key && <p>{t(lang, d.notes_key)}</p>}
+  <p class="meta">{t(lang, 'last_verified')}: <time datetime={String(d.last_verified)}>{dateOf(String(d.last_verified))}</time>
+    {d.sources && d.sources.length > 0 && <Fragment> · {t(lang, 'sources')}: {d.sources.map((s, i) => <Fragment>{i > 0 && ', '}<a href={s}>{host(s)}</a></Fragment>)}</Fragment>}</p>
+</li>

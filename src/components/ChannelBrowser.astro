@@ -1,0 +1,38 @@
+---
+// The channels guide (/guides/channels/). web/js/channels.js fills the list from the MeshCore
+// Analyzer for the chosen country and computes the key of any #name; without JavaScript the page explains how
+// to join and links to the Analyzer.
+import { t, hasString } from '../lib/site.mjs';
+import map from '../data/europe-map.json';
+const { lang } = Astro.props;
+const countries = Object.keys(map.countries).filter((cc) => hasString(`country_${cc.toLowerCase()}`))
+  .map((cc) => ({ cc, name: t(lang, `country_${cc.toLowerCase()}`) })).sort((a, b) => a.name.localeCompare(b.name));
+---
+<div class="prose channels" data-channels
+  data-loading={t(lang, 'ch_loading')} data-error={t(lang, 'ch_error')} data-count={t(lang, 'ch_count')} data-count-one={t(lang, 'ch_count_one')}
+  data-messages={t(lang, 'ch_messages')} data-key={t(lang, 'ch_key')} data-show-all={t(lang, 'ch_show_all')}>
+  <p class="muted" data-needs-js>{t(lang, 'ch_needs_js')} <a href="https://meshcore-analyzer.eu/#channels">{t(lang, 'ch_source')}</a></p>
+  <h2 id="list">{t(lang, 'ch_list_title')}</h2>
+  <form class="filters" data-list-form hidden>
+    <div class="filters-row">
+      <label>{t(lang, 'ch_country_label')}
+        <select name="country">
+          <option value="">{t(lang, 'ch_country_pick')}</option>
+          {countries.map((c) => <option value={c.cc}>{c.name}</option>)}
+        </select>
+      </label>
+      <label class="filter-search">{t(lang, 'ch_search')}<input type="search" name="q" autocomplete="off" spellcheck="false" /></label>
+    </div>
+  </form>
+  <p class="filter-count" data-status aria-live="polite"></p>
+  <ul class="ch-list" data-list></ul>
+  <p class="ch-more" data-more hidden><button type="button" class="btn"></button></p>
+  <p class="meta">{t(lang, 'ch_source_note')} <a href="https://meshcore-analyzer.eu/">{t(lang, 'ch_source')}</a></p>
+  <h2 id="key">{t(lang, 'ch_calc_title')}</h2>
+  <p>{t(lang, 'ch_calc_body')}</p>
+  <form class="ch-calc" data-calc hidden>
+    <label>{t(lang, 'ch_calc_label')}<input name="name" class="mono" autocomplete="off" spellcheck="false" placeholder="#" /></label>
+    <p class="ch-key" data-calc-out aria-live="polite"></p>
+  </form>
+</div>
+<script is:inline type="module" src="/js/channels.js"></script>

@@ -1,0 +1,18 @@
+---
+// The changelog (/firmware/changelog/): MeshCore releases from data/releases.yaml, newest first, each
+// with its date, its roles, our own summary and a link to the official notes. Built at build time, no JavaScript.
+import { t, loadData } from '../lib/site.mjs';
+import { localize } from '../lib/shell.mjs';
+const { lang } = Astro.props;
+const releases = loadData('releases');
+const dateOf = (d) => new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : lang, { dateStyle: 'long' }).format(new Date(`${String(d).slice(0, 10)}T00:00:00Z`));
+---
+<ol class="releases">{releases.map((r) => (
+  <li class="section release" id={r.id}>
+    <h2>MeshCore {r.version}</h2>
+    <p class="meta"><time datetime={String(r.date).slice(0, 10)}>{dateOf(r.date)}</time></p>
+    <ul class="tags">{r.roles.map((role) => <li class="badge">{t(lang, `release_role_${role}`)}</li>)}</ul>
+    <ul>{Array.from({ length: r.points }, (_, i) => <li>{t(lang, `release.${r.id}.${i + 1}`)}</li>)}</ul>
+    <p><a href={r.notes}>{t(lang, 'release_notes_link')}</a>{r === releases[0] && <Fragment> · <a href={localize('/firmware/flasher/', lang)}>{t(lang, 'release_flash_link')}</a></Fragment>}</p>
+  </li>
+))}</ol>

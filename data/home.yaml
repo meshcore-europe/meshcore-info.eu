@@ -1,0 +1,9 @@
+# Home page building blocks. Text comes from data/i18n via
+# path_<id>_title / path_<id>_desc and why_<id>_title / why_<id>_desc.
+paths:
+  - { id: new, path: /about }
+  - { id: offgrid, path: /devices }
+  - { id: build, path: /projects }
+  - { id: grow, path: /repeater-guide }
+  - { id: local, path: /community }
+why: [costs, infra, open, privacy, routing, community]

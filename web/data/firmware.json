@@ -1,0 +1,2148 @@
+{
+ "version": "1.18.0",
+ "date": "2026-10-15",
+ "source": "https://github.com/meshcore-dev/MeshCore/releases",
+ "boards": [
+  {
+   "id": "Ebyte_EoRa-S3",
+   "name": "Ebyte EoRa-S3",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Ebyte_EoRa-S3_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Ebyte_EoRa-S3_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Ebyte_EoRa-S3_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Ebyte_EoRa-S3_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Ebyte_EoRa-S3_Repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Ebyte_EoRa-S3_Repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Ebyte_EoRa-S3_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Ebyte_EoRa-S3_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "GAT562_30S_Mesh_Kit",
+   "name": "GAT562 30S Mesh Kit",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/GAT562_30S_Mesh_Kit_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/GAT562_30S_Mesh_Kit_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/GAT562_30S_Mesh_Kit_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/GAT562_30S_Mesh_Kit_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "GAT562_Mesh_EVB_Pro",
+   "name": "GAT562 Mesh EVB Pro",
+   "roles": {
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/GAT562_Mesh_EVB_Pro_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/GAT562_Mesh_EVB_Pro_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "GAT562_Mesh_Tracker_Pro",
+   "name": "GAT562 Mesh Tracker Pro",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/GAT562_Mesh_Tracker_Pro_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/GAT562_Mesh_Tracker_Pro_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/GAT562_Mesh_Tracker_Pro_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/GAT562_Mesh_Tracker_Pro_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "GAT562_Mesh_Watch13",
+   "name": "GAT562 Mesh Watch13",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/GAT562_Mesh_Watch13_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "Generic_E22_sx1262",
+   "name": "Generic E22 sx1262",
+   "roles": {
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Generic_E22_sx1262_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Generic_E22_sx1262_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Generic_E22_sx1268",
+   "name": "Generic E22 sx1268",
+   "roles": {
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Generic_E22_sx1268_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Generic_E22_sx1268_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Heltec_ct62",
+   "name": "Heltec ct62",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_ct62_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_ct62_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_ct62_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_ct62_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_ct62_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_ct62_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Heltec_E213",
+   "name": "Heltec E213",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_E213_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_E213_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_E213_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_E213_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_E213_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_E213_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Heltec_E213_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Heltec_E213_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Heltec_E290",
+   "name": "Heltec E290",
+   "roles": {
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_E290_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_E290_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Heltec_E290_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Heltec_E290_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Heltec_mesh_solar",
+   "name": "Heltec mesh solar",
+   "roles": {
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_mesh_solar_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Heltec_mesh_solar_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "heltec_rc32",
+   "name": "heltec rc32",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_rc32_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_rc32_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_rc32_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_rc32_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/heltec_rc32_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/heltec_rc32_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/heltec_rc32_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/heltec_rc32_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "heltec_rc32_without_display",
+   "name": "heltec rc32 without display",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_rc32_without_display_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_rc32_without_display_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_rc32_without_display_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_rc32_without_display_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/heltec_rc32_without_display_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/heltec_rc32_without_display_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/heltec_rc32_without_display_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/heltec_rc32_without_display_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Heltec_t096",
+   "name": "Heltec t096",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_t096_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_t096_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_t096_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Heltec_t096_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "Heltec_t1",
+   "name": "Heltec t1",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_t1_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_t1_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_t1_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Heltec_t1_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "Heltec_t114",
+   "name": "Heltec t114",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_t114_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_t114_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_t114_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Heltec_t114_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "Heltec_t114_without_display",
+   "name": "Heltec t114 without display",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_t114_without_display_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_t114_without_display_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_t114_without_display_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Heltec_t114_without_display_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "Heltec_tower_v2",
+   "name": "Heltec tower v2",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_tower_v2_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_tower_v2_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_tower_v2_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Heltec_tower_v2_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "heltec_tracker_v2",
+   "name": "heltec tracker v2",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_tracker_v2_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_tracker_v2_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_tracker_v2_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_tracker_v2_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/heltec_tracker_v2_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/heltec_tracker_v2_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/heltec_tracker_v2_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/heltec_tracker_v2_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Heltec_v2",
+   "name": "Heltec v2",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_v2_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_v2_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_v2_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_v2_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_v2_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_v2_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Heltec_v2_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Heltec_v2_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Heltec_v3",
+   "name": "Heltec v3",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_v3_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_v3_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_v3_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_v3_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_v3_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_v3_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Heltec_v3_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Heltec_v3_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "heltec_v4",
+   "name": "heltec v4",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_v4_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_v4_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_v4_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_v4_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/heltec_v4_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/heltec_v4_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/heltec_v4_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/heltec_v4_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "heltec_v4_expansionkit",
+   "name": "heltec v4 expansionkit",
+   "roles": {
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/heltec_v4_expansionkit_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/heltec_v4_expansionkit_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "heltec_v4_r8",
+   "name": "heltec v4 r8",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_v4_r8_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_v4_r8_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_v4_r8_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_v4_r8_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/heltec_v4_r8_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/heltec_v4_r8_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/heltec_v4_r8_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/heltec_v4_r8_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "heltec_v4_r8_tft",
+   "name": "heltec v4 r8 tft",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_v4_r8_tft_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_v4_r8_tft_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_v4_r8_tft_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_v4_r8_tft_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/heltec_v4_r8_tft_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/heltec_v4_r8_tft_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/heltec_v4_r8_tft_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/heltec_v4_r8_tft_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "heltec_v4_tft",
+   "name": "heltec v4 tft",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_v4_tft_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_v4_tft_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_v4_tft_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/heltec_v4_tft_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/heltec_v4_tft_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/heltec_v4_tft_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/heltec_v4_tft_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/heltec_v4_tft_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Heltec_Wireless_Paper",
+   "name": "Heltec Wireless Paper",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_Wireless_Paper_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_Wireless_Paper_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_Wireless_Paper_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_Wireless_Paper_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_Wireless_Paper_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_Wireless_Paper_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Heltec_Wireless_Paper_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Heltec_Wireless_Paper_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Heltec_Wireless_Tracker",
+   "name": "Heltec Wireless Tracker",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_Wireless_Tracker_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_Wireless_Tracker_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_Wireless_Tracker_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_Wireless_Tracker_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_Wireless_Tracker_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_Wireless_Tracker_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Heltec_Wireless_Tracker_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Heltec_Wireless_Tracker_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Heltec_WSL3",
+   "name": "Heltec WSL3",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_WSL3_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_WSL3_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_WSL3_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Heltec_WSL3_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_WSL3_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Heltec_WSL3_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Heltec_WSL3_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Heltec_WSL3_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "ikoka_handheld_nrf_e22_30dbm",
+   "name": "ikoka handheld nrf e22 30dbm",
+   "roles": {
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/ikoka_handheld_nrf_e22_30dbm_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/ikoka_handheld_nrf_e22_30dbm_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "ikoka_handheld_nrf_e22_30dbm_096",
+   "name": "ikoka handheld nrf e22 30dbm 096",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ikoka_handheld_nrf_e22_30dbm_096_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ikoka_handheld_nrf_e22_30dbm_096_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "ikoka_handheld_nrf_e22_30dbm_096_rotated",
+   "name": "ikoka handheld nrf e22 30dbm 096 rotated",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ikoka_handheld_nrf_e22_30dbm_096_rotated_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ikoka_handheld_nrf_e22_30dbm_096_rotated_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "ikoka_nano_nrf_22dbm",
+   "name": "ikoka nano nrf 22dbm",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ikoka_nano_nrf_22dbm_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ikoka_nano_nrf_22dbm_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/ikoka_nano_nrf_22dbm_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/ikoka_nano_nrf_22dbm_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "ikoka_nano_nrf_30dbm",
+   "name": "ikoka nano nrf 30dbm",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ikoka_nano_nrf_30dbm_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ikoka_nano_nrf_30dbm_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/ikoka_nano_nrf_30dbm_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/ikoka_nano_nrf_30dbm_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "ikoka_nano_nrf_33dbm",
+   "name": "ikoka nano nrf 33dbm",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ikoka_nano_nrf_33dbm_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ikoka_nano_nrf_33dbm_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/ikoka_nano_nrf_33dbm_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/ikoka_nano_nrf_33dbm_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "ikoka_stick_nrf_22dbm",
+   "name": "ikoka stick nrf 22dbm",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ikoka_stick_nrf_22dbm_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ikoka_stick_nrf_22dbm_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/ikoka_stick_nrf_22dbm_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/ikoka_stick_nrf_22dbm_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "ikoka_stick_nrf_30dbm",
+   "name": "ikoka stick nrf 30dbm",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ikoka_stick_nrf_30dbm_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ikoka_stick_nrf_30dbm_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/ikoka_stick_nrf_30dbm_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/ikoka_stick_nrf_30dbm_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "ikoka_stick_nrf_33dbm",
+   "name": "ikoka stick nrf 33dbm",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ikoka_stick_nrf_33dbm_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ikoka_stick_nrf_33dbm_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/ikoka_stick_nrf_33dbm_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/ikoka_stick_nrf_33dbm_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "KeepteenLT1",
+   "name": "KeepteenLT1",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/KeepteenLT1_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/KeepteenLT1_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/KeepteenLT1_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/KeepteenLT1_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "LilyGo_T_Impulse_Plus",
+   "name": "LilyGo T Impulse Plus",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_T_Impulse_Plus_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/LilyGo_T_Impulse_Plus_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "LilyGo_T-Echo",
+   "name": "LilyGo T-Echo",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_T-Echo_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_T-Echo_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/LilyGo_T-Echo_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/LilyGo_T-Echo_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "LilyGo_T-Echo_Card",
+   "name": "LilyGo T-Echo Card",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_T-Echo_Card_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_T-Echo_Card_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/LilyGo_T-Echo_Card_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/LilyGo_T-Echo_Card_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "LilyGo_T-Echo-Lite",
+   "name": "LilyGo T-Echo-Lite",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_T-Echo-Lite_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_T-Echo-Lite_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/LilyGo_T-Echo-Lite_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/LilyGo_T-Echo-Lite_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "LilyGo_T-Echo-Lite_non_shell",
+   "name": "LilyGo T-Echo-Lite non shell",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_T-Echo-Lite_non_shell_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_T-Echo-Lite_non_shell_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "LilyGo_T3S3_sx1262",
+   "name": "LilyGo T3S3 sx1262",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_T3S3_sx1262_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_T3S3_sx1262_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_T3S3_sx1262_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_T3S3_sx1262_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/LilyGo_T3S3_sx1262_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/LilyGo_T3S3_sx1262_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/LilyGo_T3S3_sx1262_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/LilyGo_T3S3_sx1262_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "LilyGo_T3S3_sx1276",
+   "name": "LilyGo T3S3 sx1276",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_T3S3_sx1276_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_T3S3_sx1276_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_T3S3_sx1276_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_T3S3_sx1276_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/LilyGo_T3S3_sx1276_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/LilyGo_T3S3_sx1276_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/LilyGo_T3S3_sx1276_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/LilyGo_T3S3_sx1276_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "LilyGo_TBeam_1W",
+   "name": "LilyGo TBeam 1W",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_TBeam_1W_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_TBeam_1W_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_TBeam_1W_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_TBeam_1W_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/LilyGo_TBeam_1W_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/LilyGo_TBeam_1W_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/LilyGo_TBeam_1W_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/LilyGo_TBeam_1W_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "LilyGo_TDeck",
+   "name": "LilyGo TDeck",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_TDeck_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_TDeck_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_TDeck_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_TDeck_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/LilyGo_TDeck_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/LilyGo_TDeck_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "LilyGo_TETH_Elite_sx1262",
+   "name": "LilyGo TETH Elite sx1262",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_TETH_Elite_sx1262_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_TETH_Elite_sx1262_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_TETH_Elite_sx1262_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_TETH_Elite_sx1262_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/LilyGo_TETH_Elite_sx1262_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/LilyGo_TETH_Elite_sx1262_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/LilyGo_TETH_Elite_sx1262_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/LilyGo_TETH_Elite_sx1262_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "LilyGo_TLora_V2_1_1_6",
+   "name": "LilyGo TLora V2 1 1 6",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_TLora_V2_1_1_6_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_TLora_V2_1_1_6_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_TLora_V2_1_1_6_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/LilyGo_TLora_V2_1_1_6_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/LilyGo_TLora_V2_1_1_6_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/LilyGo_TLora_V2_1_1_6_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/LilyGo_TLora_V2_1_1_6_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/LilyGo_TLora_V2_1_1_6_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "M5Stack_Unit_C6L",
+   "name": "M5Stack Unit C6L",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/M5Stack_Unit_C6L_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/M5Stack_Unit_C6L_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/M5Stack_Unit_C6L_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/M5Stack_Unit_C6L_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/M5Stack_Unit_C6L_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/M5Stack_Unit_C6L_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/M5Stack_Unit_C6L_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/M5Stack_Unit_C6L_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Mesh_pocket",
+   "name": "Mesh pocket",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Mesh_pocket_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Mesh_pocket_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Mesh_pocket_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Mesh_pocket_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "Meshadventurer_sx1262",
+   "name": "Meshadventurer sx1262",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Meshadventurer_sx1262_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Meshadventurer_sx1262_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Meshadventurer_sx1262_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Meshadventurer_sx1262_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Meshadventurer_sx1262_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Meshadventurer_sx1262_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Meshadventurer_sx1262_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Meshadventurer_sx1262_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Meshadventurer_sx1268",
+   "name": "Meshadventurer sx1268",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Meshadventurer_sx1268_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Meshadventurer_sx1268_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Meshadventurer_sx1268_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Meshadventurer_sx1268_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Meshadventurer_sx1268_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Meshadventurer_sx1268_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Meshadventurer_sx1268_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Meshadventurer_sx1268_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "meshnology_w12",
+   "name": "meshnology w12",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/meshnology_w12_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/meshnology_w12_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/meshnology_w12_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/meshnology_w12_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/meshnology_w12_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/meshnology_w12_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/meshnology_w12_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/meshnology_w12_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Meshtiny",
+   "name": "Meshtiny",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Meshtiny_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Meshtiny_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "MeshTracker_X1",
+   "name": "MeshTracker X1",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/MeshTracker_X1_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/MeshTracker_X1_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/MeshTracker_X1_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/MeshTracker_X1_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "Minewsemi_me25ls01",
+   "name": "Minewsemi me25ls01",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Minewsemi_me25ls01_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Minewsemi_me25ls01_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Minewsemi_me25ls01_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Minewsemi_me25ls01_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "muzi_base_duo",
+   "name": "muzi base duo",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/muzi_base_duo_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/muzi_base_duo_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/muzi_base_duo_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/muzi_base_duo_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "muzi_base_duo_superIO",
+   "name": "muzi base duo superIO",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/muzi_base_duo_superIO_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "muzi_base_uno",
+   "name": "muzi base uno",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/muzi_base_uno_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/muzi_base_uno_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/muzi_base_uno_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/muzi_base_uno_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "muzi_base_uno_superIO",
+   "name": "muzi base uno superIO",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/muzi_base_uno_superIO_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "Nano_G2_Ultra",
+   "name": "Nano G2 Ultra",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Nano_G2_Ultra_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Nano_G2_Ultra_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Nano_G2_Ultra_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Nano_G2_Ultra_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "PicoW",
+   "name": "PicoW",
+   "roles": {
+    "companion_radio_ble": {
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/PicoW_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/PicoW_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/PicoW_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/PicoW_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/PicoW_repeater-v1.18.0-81dbae5.bin",
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/PicoW_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/PicoW_room_server-v1.18.0-81dbae5.bin",
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/PicoW_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "ProMicro",
+   "name": "ProMicro",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ProMicro_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ProMicro_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/ProMicro_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/ProMicro_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "R1Neo",
+   "name": "R1Neo",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/R1Neo_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/R1Neo_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/R1Neo_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/R1Neo_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "RAK_11310",
+   "name": "RAK 11310",
+   "roles": {
+    "companion_radio_usb": {
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/RAK_11310_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/RAK_11310_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/RAK_11310_repeater-v1.18.0-81dbae5.bin",
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/RAK_11310_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/RAK_11310_room_server-v1.18.0-81dbae5.bin",
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/RAK_11310_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "RAK_3112",
+   "name": "RAK 3112",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/RAK_3112_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/RAK_3112_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/RAK_3112_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/RAK_3112_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/RAK_3112_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/RAK_3112_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/RAK_3112_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/RAK_3112_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "RAK_3401",
+   "name": "RAK 3401",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/RAK_3401_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/RAK_3401_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/RAK_3401_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/RAK_3401_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "RAK_4631",
+   "name": "RAK 4631",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/RAK_4631_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/RAK_4631_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/RAK_4631_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/RAK_4631_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "RAK_WisMesh_Tag",
+   "name": "RAK WisMesh Tag",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/RAK_WisMesh_Tag_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/RAK_WisMesh_Tag_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/RAK_WisMesh_Tag_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/RAK_WisMesh_Tag_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "SenseCap_Solar",
+   "name": "SenseCap Solar",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/SenseCap_Solar_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/SenseCap_Solar_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/SenseCap_Solar_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/SenseCap_Solar_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "Station_G2",
+   "name": "Station G2",
+   "roles": {
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Station_G2_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Station_G2_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Station_G2_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Station_G2_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Station_G2_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Station_G2_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Station_G2_logging",
+   "name": "Station G2 logging",
+   "roles": {
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Station_G2_logging_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Station_G2_logging_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Station_G3_ESP32",
+   "name": "Station G3 ESP32",
+   "roles": {
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Station_G3_ESP32_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Station_G3_ESP32_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Station_G3_ESP32_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Station_G3_ESP32_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Station_G3_ESP32_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Station_G3_ESP32_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Station_G3_ESP32_logging",
+   "name": "Station G3 ESP32 logging",
+   "roles": {
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Station_G3_ESP32_logging_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Station_G3_ESP32_logging_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "T_Beam_S3_Supreme_SX1262",
+   "name": "T Beam S3 Supreme SX1262",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/T_Beam_S3_Supreme_SX1262_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/T_Beam_S3_Supreme_SX1262_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/T_Beam_S3_Supreme_SX1262_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/T_Beam_S3_Supreme_SX1262_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/T_Beam_S3_Supreme_SX1262_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/T_Beam_S3_Supreme_SX1262_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "t1000e",
+   "name": "t1000e",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/t1000e_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/t1000e_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/t1000e_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/t1000e_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "Tbeam_SX1262",
+   "name": "Tbeam SX1262",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Tbeam_SX1262_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Tbeam_SX1262_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Tbeam_SX1262_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Tbeam_SX1262_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Tbeam_SX1262_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Tbeam_SX1262_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Tbeam_SX1276",
+   "name": "Tbeam SX1276",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Tbeam_SX1276_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Tbeam_SX1276_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Tbeam_SX1276_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Tbeam_SX1276_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Tbeam_SX1276_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Tbeam_SX1276_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Tenstar_C3_sx1262",
+   "name": "Tenstar C3 sx1262",
+   "roles": {
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Tenstar_C3_sx1262_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Tenstar_C3_sx1262_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Tenstar_C3_sx1268",
+   "name": "Tenstar C3 sx1268",
+   "roles": {
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Tenstar_C3_sx1268_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Tenstar_C3_sx1268_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "ThinkNode_M1",
+   "name": "ThinkNode M1",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M1_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M1_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/ThinkNode_M1_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/ThinkNode_M1_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "ThinkNode_M2",
+   "name": "ThinkNode M2",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M2_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M2_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M2_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M2_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/ThinkNode_M2_Repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/ThinkNode_M2_Repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/ThinkNode_M2_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/ThinkNode_M2_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "ThinkNode_M3",
+   "name": "ThinkNode M3",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M3_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M3_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/ThinkNode_M3_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/ThinkNode_M3_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "ThinkNode_M4",
+   "name": "ThinkNode M4",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M4_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M4_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/ThinkNode_M4_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/ThinkNode_M4_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "ThinkNode_M5",
+   "name": "ThinkNode M5",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M5_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M5_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M5_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M5_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/ThinkNode_M5_Repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/ThinkNode_M5_Repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/ThinkNode_M5_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/ThinkNode_M5_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "ThinkNode_M6",
+   "name": "ThinkNode M6",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M6_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M6_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/ThinkNode_M6_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/ThinkNode_M6_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "ThinkNode_M7",
+   "name": "ThinkNode M7",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M7_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M7_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M7_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M7_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/ThinkNode_M7_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/ThinkNode_M7_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/ThinkNode_M7_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/ThinkNode_M7_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "ThinkNode_M8",
+   "name": "ThinkNode M8",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M8_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/ThinkNode_M8_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/ThinkNode_M8_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/ThinkNode_M8_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "waveshare_rp2040_lora",
+   "name": "waveshare rp2040 lora",
+   "roles": {
+    "companion_radio_usb": {
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/waveshare_rp2040_lora_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/waveshare_rp2040_lora_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/waveshare_rp2040_lora_repeater-v1.18.0-81dbae5.bin",
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/waveshare_rp2040_lora_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/waveshare_rp2040_lora_room_server-v1.18.0-81dbae5.bin",
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/waveshare_rp2040_lora_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "Waveshare_S3_LR1121",
+   "name": "Waveshare S3 LR1121",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Waveshare_S3_LR1121_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Waveshare_S3_LR1121_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Waveshare_S3_LR1121_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Waveshare_S3_LR1121_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Waveshare_S3_LR1121_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Waveshare_S3_LR1121_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Waveshare_S3_LR1121_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Waveshare_S3_LR1121_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "wio_wm1110",
+   "name": "wio wm1110",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/wio_wm1110_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/wio_wm1110_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/wio_wm1110_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "WioTrackerL1",
+   "name": "WioTrackerL1",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/WioTrackerL1_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/WioTrackerL1_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/WioTrackerL1_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/WioTrackerL1_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "WioTrackerL1-1W",
+   "name": "WioTrackerL1-1W",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/WioTrackerL1-1W_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/WioTrackerL1-1W_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/WioTrackerL1-1W_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/WioTrackerL1-1W_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "WioTrackerL1Eink",
+   "name": "WioTrackerL1Eink",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/WioTrackerL1Eink_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "Xiao_C3",
+   "name": "Xiao C3",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Xiao_C3_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Xiao_C3_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Xiao_C3_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Xiao_C3_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Xiao_C3_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Xiao_C3_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Xiao_C3_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Xiao_C3_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Xiao_nrf52",
+   "name": "Xiao nrf52",
+   "roles": {
+    "companion_radio_ble": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Xiao_nrf52_companion_radio_ble-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "companion_radio_usb": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Xiao_nrf52_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Xiao_nrf52_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Xiao_nrf52_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "Xiao_rp2040",
+   "name": "Xiao rp2040",
+   "roles": {
+    "companion_radio_usb": {
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Xiao_rp2040_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Xiao_rp2040_companion_radio_usb-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "repeater": {
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Xiao_rp2040_repeater-v1.18.0-81dbae5.bin",
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Xiao_rp2040_repeater-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    },
+    "room_server": {
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Xiao_rp2040_room_server-v1.18.0-81dbae5.bin",
+     "uf2": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Xiao_rp2040_room_server-v1.18.0-81dbae5.uf2",
+     "kind": "uf2"
+    }
+   }
+  },
+  {
+   "id": "Xiao_S3",
+   "name": "Xiao S3",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Xiao_S3_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Xiao_S3_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Xiao_S3_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Xiao_S3_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Xiao_S3_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Xiao_S3_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Xiao_S3_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Xiao_S3_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  },
+  {
+   "id": "Xiao_S3_WIO",
+   "name": "Xiao S3 WIO",
+   "roles": {
+    "companion_radio_ble": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Xiao_S3_WIO_companion_radio_ble-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Xiao_S3_WIO_companion_radio_ble-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "companion_radio_usb": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Xiao_S3_WIO_companion_radio_usb-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/companion-v1.18.0/Xiao_S3_WIO_companion_radio_usb-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "repeater": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Xiao_S3_WIO_repeater-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/repeater-v1.18.0/Xiao_S3_WIO_repeater-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    },
+    "room_server": {
+     "merged": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Xiao_S3_WIO_room_server-v1.18.0-81dbae5-merged.bin",
+     "bin": "https://github.com/meshcore-dev/MeshCore/releases/download/room-server-v1.18.0/Xiao_S3_WIO_room_server-v1.18.0-81dbae5.bin",
+     "kind": "esp32"
+    }
+   }
+  }
+ ]
+}

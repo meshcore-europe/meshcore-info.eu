@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "data/home.yaml: home page entry paths and the why grid",
+  "type": "object",
+  "required": ["paths", "why"],
+  "properties": {
+    "paths": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "path"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+          "path": { "type": "string", "pattern": "^/[a-z0-9/-]*$" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "why": { "type": "array", "items": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" }, "uniqueItems": true }
+  },
+  "additionalProperties": false
+}

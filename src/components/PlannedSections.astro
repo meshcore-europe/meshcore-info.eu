@@ -1,0 +1,19 @@
+---
+// The sections a planned page or section will hold (data/planned.yaml): a heading and one sentence each,
+// muted, with a Planned label, so the structure shows before the page is built.
+import { loadData, t } from '../lib/site.mjs';
+const { lang, path, level = 2 } = Astro.props;
+const entry = loadData('planned').find((p) => p.path === path);
+const id = path.replace(/\//g, '-');
+const H = `h${level}`;
+---
+{entry && (
+<div class="planned-sections">
+  {entry.sections.map((s) => (
+    <section class="section planned-section" aria-labelledby={`planned-${id}-${s}`}>
+      <H id={`planned-${id}-${s}`}>{t(lang, `planned.${id}.${s}.title`)} <span class="badge">{t(lang, 'planned_label')}</span></H>
+      <p class="muted">{t(lang, `planned.${id}.${s}.desc`)}</p>
+    </section>
+  ))}
+</div>
+)}

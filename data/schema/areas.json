@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "data/areas.yaml: the areas with their own radio preset or settings changed from MeshCore's defaults",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "country", "name", "preset", "source", "last_checked"],
+    "properties": {
+      "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+      "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
+      "name": { "type": "string", "minLength": 1 },
+      "preset": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+      "group": { "type": "string", "minLength": 1 },
+      "source": { "type": "string", "pattern": "^https://" },
+      "last_checked": { "type": "string", "format": "date" },
+      "firmware": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+$" },
+      "changes": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["device", "key"],
+          "properties": {
+            "device": { "enum": ["repeater", "companion"] },
+            "key": { "type": "string", "pattern": "^area_change_[a-z0-9_]+$" },
+            "commands": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 }
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "additionalProperties": false
+  }
+}

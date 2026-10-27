@@ -1,0 +1,62 @@
+name: Add a project
+description: List a community tool, app, bridge, firmware, hardware design or library.
+title: "Add project: "
+labels: [project, needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Projects are listed with a short description and a link to their source code or their site. Shops, shop links and affiliate links are not listed.
+  - type: input
+    id: name
+    attributes:
+      label: Project name
+    validations:
+      required: true
+  - type: input
+    id: repo
+    attributes:
+      label: Source code URL
+      description: The public repository, for example https://github.com/owner/project. Leave empty when the code is not public.
+  - type: input
+    id: url
+    attributes:
+      label: Website
+      description: Where people use or download it, when there is no public repository or it has its own site.
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - app
+        - tool
+        - bridge
+        - firmware
+        - hardware
+        - library
+    validations:
+      required: true
+  - type: input
+    id: licence
+    attributes:
+      label: Licence
+      description: SPDX identifier, for example MIT or GPL-3.0-only. Only for open-source projects.
+  - type: input
+    id: maintainer
+    attributes:
+      label: Maintainer
+      description: Public handle to credit. Optional.
+  - type: textarea
+    id: description
+    attributes:
+      label: Short description, in English
+      description: One or two sentences about what it does. It is translated into every site language.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: The source code is public, and the links contain no affiliate or tracking parameters.
+          required: true

@@ -1,0 +1,33 @@
+---
+// The key generator (/guides/keygen/). The form shows once web/js/keygen.js runs and the browser can
+// make Ed25519 keys; the key is made in the browser and never sent anywhere. Inside .prose, so web/js/copy.js
+// gives the command a copy button.
+import { t } from '../lib/site.mjs';
+const { lang } = Astro.props;
+const ANALYZER = 'https://meshcore-analyzer.eu/#analytics?tab=prefixtool';
+---
+<div class="prose keygen" data-keygen
+  data-working={t(lang, 'keygen_working')} data-done={t(lang, 'keygen_done')} data-stopped={t(lang, 'keygen_stopped')}
+  data-bad={t(lang, 'keygen_bad')} data-unsupported={t(lang, 'keygen_unsupported')}>
+  <h2 id="find">{t(lang, 'keygen_find_title')}</h2>
+  <p>{t(lang, 'keygen_find_body')} <a href={ANALYZER}>{t(lang, 'keygen_find_link')}</a></p>
+  <h2 id="make">{t(lang, 'keygen_make_title')}</h2>
+  <p class="muted" data-needs-js>{t(lang, 'keygen_needs_js')}</p>
+  <form class="keygen-form" hidden>
+    <label>{t(lang, 'keygen_prefix_label')}
+      <input name="prefix" class="mono" maxlength="4" autocomplete="off" spellcheck="false" inputmode="text" aria-describedby="keygen-hint" />
+    </label>
+    <p class="hint" id="keygen-hint">{t(lang, 'keygen_prefix_hint')}</p>
+    <p class="row"><button type="submit" class="btn btn-primary" data-make>{t(lang, 'keygen_make')}</button>
+      <button type="button" class="btn" data-stop hidden>{t(lang, 'keygen_stop')}</button></p>
+  </form>
+  <p class="keygen-status" data-status aria-live="polite"></p>
+  <div class="keygen-result" data-result hidden>
+    <h2 id="set">{t(lang, 'keygen_set_title')}</h2>
+    <p>{t(lang, 'keygen_set_body')}</p>
+    <pre data-command></pre>
+    <dl class="cmd-meta"><dt>{t(lang, 'keygen_public')}</dt><dd><code data-public></code></dd></dl>
+    <p class="note">{t(lang, 'keygen_secret')}</p>
+  </div>
+</div>
+<script is:inline type="module" src="/js/keygen.js"></script>

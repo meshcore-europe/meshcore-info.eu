@@ -1,0 +1,806 @@
+# Community directory. Public groups only, each link checked
+# live on the last_checked date. Group websites are linked only when their
+# home page carries no affiliate, referral or shop links. Descriptions live in
+# data/i18n/en.json as community.<id>.desc.
+
+- id: nl-dutch-meshcore
+  country: NL
+  name: Dutch MeshCore (DMC)
+  links:
+  - type: website
+    url: "https://dutchmeshcore.nl/"
+  - type: discord
+    url: "https://discord.gg/Crr6zfxJTv"
+  languages: [nl, en]
+  desc_key: community.nl-dutch-meshcore.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: nl-meshcore-net
+  country: NL
+  name: MeshCore Nederland (MeshCore-Net)
+  links:
+  - type: telegram
+    url: "https://t.me/meshcorenet"
+  - type: forum
+    url: "https://forum.meshcore-net.nl/"
+  languages: [nl]
+  desc_key: community.nl-meshcore-net.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: be-radio-actief
+  country: BE
+  name: MeshCore België (Radio-Actief)
+  links:
+  - type: website
+    url: "https://meshcore.radio-actief.be/"
+  - type: discord
+    url: "https://discord.gg/NbD95KfFsd"
+  languages: [nl]
+  desc_key: community.be-radio-actief.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: lu-meshcore-luxembourg
+  country: LU
+  name: MeshCore Luxembourg
+  links:
+  - type: website
+    url: "https://www.meshcore.lu/"
+  languages: [en]
+  desc_key: community.lu-meshcore-luxembourg.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: de-meshcore-de
+  country: DE
+  name: MeshCore DE
+  links:
+  - type: telegram
+    url: "https://t.me/meshcorede"
+  - type: matrix
+    url: "https://matrix.to/#/#meshcore-netzwerk-de:matrix.org"
+  languages: [de]
+  desc_key: community.de-meshcore-de.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: de-berlin-chaos-mesh
+  country: DE
+  region: Berlin and Brandenburg
+  name: Berlin Chaos Mesh
+  links:
+  - type: forum
+    url: "https://forum.chaosmesh.net/"
+  - type: matrix
+    url: "https://matrix.to/#/#berlinmesh:c-base.org"
+  - type: map
+    url: "https://potatomesh.net/"
+  channels:
+  - "#berlin"
+  - "#brandenburg"
+  - "#berlinbrandenburg"
+  - "#mc-treffen"
+  languages: [de, en]
+  desc_key: community.de-berlin-chaos-mesh.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: de-isarmesh
+  country: DE
+  region: Munich and the Isar area (Bavaria)
+  name: isarmesh.de
+  links:
+  - type: forum
+    url: "https://isarmesh.de/"
+  languages: [de]
+  desc_key: community.de-isarmesh.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: de-mesh-dresden
+  country: DE
+  region: Dresden (Saxony)
+  name: Mesh Dresden
+  links:
+  - type: website
+    url: "https://meshdresden.eu/"
+  - type: telegram
+    url: "https://t.me/mesh_dresden"
+  languages: [de]
+  desc_key: community.de-mesh-dresden.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: at-meshcore-austria
+  country: AT
+  name: MeshCore Österreich
+  links:
+  - type: website
+    url: "https://meshcore.at/"
+  - type: telegram
+    url: "https://t.me/+JJ6FJAX8qVU3YTg0"
+  channels:
+  - "#austria"
+  - "#vienna"
+  - "#noe"
+  - "#ooe"
+  - "#inn-salzach"
+  - "#english"
+  languages: [de, en]
+  desc_key: community.at-meshcore-austria.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: ch-meshcore-switzerland
+  country: CH
+  name: MeshCore Switzerland
+  links:
+  - type: website
+    url: "https://www.meshcore.ch/"
+  - type: forum
+    url: "https://community.meshcore.ch/"
+  channels:
+  - "#switzerland"
+  - "#suisse"
+  - "#svizzera"
+  - "#bern"
+  - "#basel"
+  - "#zuerich"
+  - "#wallis"
+  languages: [de, fr, it, en]
+  desc_key: community.ch-meshcore-switzerland.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: cz-meshcore-cr
+  country: CZ
+  name: MeshCore ČR
+  links:
+  - type: website
+    url: "https://meshcore.cz/"
+  - type: telegram
+    url: "https://t.me/meshcore_cz"
+  - type: map
+    url: "https://analyzer.meshcore.cz/"
+  channels:
+  - "#praha"
+  - "#brno"
+  - "#ostrava"
+  - "#plzen"
+  languages: [cs]
+  desc_key: community.cz-meshcore-cr.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: sk-meshcore-slovensko
+  country: SK
+  name: MeshCore Slovensko
+  links:
+  - type: website
+    url: "https://mesh.om3kff.sk/"
+  - type: discord
+    url: "https://discord.gg/Zx5JuhszUb"
+  languages: [sk]
+  desc_key: community.sk-meshcore-slovensko.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: pl-meshcore-polska
+  country: PL
+  name: MeshCore Polska
+  links:
+  - type: website
+    url: "https://meshcorepolska.org/"
+  - type: discord
+    url: "https://discord.com/invite/evq32hatT3"
+  channels:
+  - "#polska"
+  languages: [pl]
+  desc_key: community.pl-meshcore-polska.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: fr-meshcore-france
+  country: FR
+  name: MeshCore France
+  links:
+  - type: website
+    url: "https://www.meshcore.fr/"
+  languages: [fr]
+  desc_key: community.fr-meshcore-france.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: fr-mesh-idf
+  country: FR
+  region: Île-de-France
+  name: Les Mesh en Île-de-France
+  links:
+  - type: website
+    url: "https://wiki.mesh-idf.fr/"
+  - type: telegram
+    url: "https://t.me/Meshcore_FR"
+  languages: [fr]
+  desc_key: community.fr-mesh-idf.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: it-meshcore-italia
+  country: IT
+  name: MeshCore Italia
+  links:
+  - type: website
+    url: "https://www.meshcoreitalia.it/"
+  - type: telegram
+    url: "https://t.me/meshcoreitalia"
+  languages: [it]
+  desc_key: community.it-meshcore-italia.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: pt-meshcore-portugal
+  country: PT
+  name: MeshCore Portugal
+  links:
+  - type: telegram
+    url: "https://t.me/addlist/UJOTC1fHFUxlZTY0"
+  languages: [pt]
+  desc_key: community.pt-meshcore-portugal.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: dk-meshcore-dk
+  country: DK
+  name: MeshCore.dk
+  links:
+  - type: website
+    url: "https://meshcore.dk/"
+  languages: [da]
+  desc_key: community.dk-meshcore-dk.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: se-meshat
+  country: SE
+  name: Meshat.se (Sweden Mesh)
+  links:
+  - type: website
+    url: "https://meshat.se/"
+  - type: discord
+    url: "https://discord.com/invite/gchSzHkPGG"
+  - type: matrix
+    url: "https://matrix.to/#/#sweden-mesh:swecyb.com"
+  - type: forum
+    url: "https://forum.meshat.se/"
+  languages: [sv]
+  desc_key: community.se-meshat.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: fi-mesh-finland
+  country: FI
+  name: MeshCore Finland
+  links:
+  - type: website
+    url: "https://meshcore.fi/"
+  - type: discord
+    url: "https://discord.com/invite/GHnaVAjqed"
+  languages: [fi, en]
+  desc_key: community.fi-mesh-finland.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: no-meshwiki
+  country: "NO"
+  name: MeshWiki.no
+  links:
+  - type: website
+    url: "https://meshwiki.no/"
+  languages: [nb]
+  desc_key: community.no-meshwiki.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: ee-estmesh
+  country: EE
+  name: MeshCore Estonia / ESTMesh
+  links:
+  - type: website
+    url: "https://meshcore.ee/"
+  - type: wiki
+    url: "https://wiki.estmesh.ee/en/home"
+  - type: discord
+    url: "https://discord.gg/Z9u5QcDTfZ"
+  channels:
+  - "#estonia"
+  - "#tallinn"
+  - "#tartu"
+  - "#kriis"
+  languages: [et, en]
+  desc_key: community.ee-estmesh.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: lv-apraide
+  country: LV
+  name: Apraide.lv
+  links:
+  - type: website
+    url: "https://apraide.lv/"
+  - type: matrix
+    url: "https://matrix.to/#/#open:m.dodies.lv"
+  languages: [lv]
+  desc_key: community.lv-apraide.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: lt-atviras-tinklas
+  country: LT
+  name: Atviras Tinklas
+  links:
+  - type: website
+    url: "https://atvirastinklas.lt/"
+  - type: map
+    url: "https://meshcore.atvirastinklas.lt/"
+  languages: [lt]
+  desc_key: community.lt-atviras-tinklas.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: si-meshcore-slovenija
+  country: SI
+  name: MeshCore Slovenija
+  links:
+  - type: website
+    url: "https://meshcore.si/"
+  channels:
+  - "#slovenija"
+  languages: [sl]
+  desc_key: community.si-meshcore-slovenija.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: bg-meshcore-bulgaria
+  country: BG
+  name: Meshcore България
+  links:
+  - type: website
+    url: "https://www.meshcore.bg/"
+  - type: telegram
+    url: "https://t.me/+ChZhHwrFwE05YWNk"
+  channels:
+  - "#bulgaria"
+  - "#sofia"
+  - "#plovdiv"
+  - "#emergency"
+  languages: [bg]
+  desc_key: community.bg-meshcore-bulgaria.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: rs-meshcore-srbija
+  country: RS
+  name: MeshCore Srbija
+  links:
+  - type: website
+    url: "https://meshcore.rs/"
+  languages: [sr]
+  desc_key: community.rs-meshcore-srbija.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: gr-meshcore-greece
+  country: GR
+  name: MeshCore Greece
+  links:
+  - type: discord
+    url: "https://discord.gg/6KSQBqaTmw"
+  languages: [el]
+  desc_key: community.gr-meshcore-greece.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: gb-meshhub-uk
+  country: GB
+  name: Mesh Hub UK
+  links:
+  - type: website
+    url: "https://meshhub.uk/"
+  - type: discord
+    url: "https://discord.gg/98b377tCBC"
+  languages: [en]
+  desc_key: community.gb-meshhub-uk.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: gb-scotmesh
+  country: GB
+  region: Scotland
+  name: ScotMesh
+  links:
+  - type: website
+    url: "https://scotmesh.net/"
+  - type: discord
+    url: "https://discord.gg/ytxfyuDmSt"
+  - type: forum
+    url: "https://scotmesh.uk/"
+  languages: [en]
+  desc_key: community.gb-scotmesh.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: ie-lora-project
+  country: IE
+  name: LoRa Project Ireland
+  links:
+  - type: website
+    url: "https://loraproject.ie/"
+  - type: discord
+    url: "https://discord.gg/qvhjgyjybs"
+  languages: [en]
+  desc_key: community.ie-lora-project.desc
+  added: 2026-10-02
+  last_checked: 2026-10-02
+
+- id: at-carinthiamesh
+  country: AT
+  region: Carinthia
+  name: CarinthiaMesh
+  links:
+  - type: website
+    url: "https://wiki.carinthiamesh.com/"
+  languages: [de]
+  desc_key: community.at-carinthiamesh.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: at-meshcore-austria-at
+  country: AT
+  name: MeshCore-Austria.at
+  links:
+  - type: website
+    url: "https://www.meshcore-austria.at/doku.php?id=start"
+  languages: [de]
+  desc_key: community.at-meshcore-austria-at.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: be-loramesh
+  country: BE
+  name: LoraMesh België
+  links:
+  - type: website
+    url: "https://www.loramesh.be/"
+  languages: [nl]
+  desc_key: community.be-loramesh.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: be-meshpot
+  country: BE
+  region: Brussels and Wallonia
+  name: Meshpot
+  links:
+  - type: website
+    url: "https://meshpot.be/"
+  languages: [fr]
+  desc_key: community.be-meshpot.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: fr-loramesh
+  country: FR
+  name: LoraMesh France
+  links:
+  - type: website
+    url: "https://loramesh.fr/"
+  languages: [fr]
+  desc_key: community.fr-loramesh.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: de-bsmesh
+  country: DE
+  region: Braunschweig
+  name: BSmesh
+  links:
+  - type: website
+    url: "https://bsmesh.de/"
+  languages: [de]
+  desc_key: community.de-bsmesh.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: de-bremesh
+  country: DE
+  region: Bremen and Bremerhaven
+  name: BreMesh
+  links:
+  - type: website
+    url: "https://hbme.sh/"
+  languages: [de]
+  desc_key: community.de-bremesh.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: de-pemesh
+  country: DE
+  region: Peine
+  name: PEmesh
+  links:
+  - type: website
+    url: "https://www.pemesh.de/"
+  languages: [de]
+  desc_key: community.de-pemesh.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: de-muensterland
+  country: DE
+  region: Münsterland
+  name: MeshCore Münsterland
+  links:
+  - type: website
+    url: "https://mcml.info/"
+  languages: [de]
+  desc_key: community.de-muensterland.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: de-mesh-rheinland
+  country: DE
+  region: Rhineland
+  name: Mesh Rheinland
+  links:
+  - type: website
+    url: "https://www.meshrheinland.de/"
+  languages: [de]
+  desc_key: community.de-mesh-rheinland.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: de-meshcore-de-wiki
+  country: DE
+  name: MeshCore Wiki DE
+  links:
+  - type: website
+    url: "https://meshcore-de.fyi/"
+  languages: [de]
+  desc_key: community.de-meshcore-de-wiki.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: de-meshcore-dresden
+  country: DE
+  region: Dresden (Saxony)
+  name: MeshCore Dresden
+  links:
+  - type: website
+    url: "https://loramesh-dresden.de/"
+  languages: [de]
+  desc_key: community.de-meshcore-dresden.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: de-meshmitte
+  country: DE
+  region: Uslar (Lower Saxony)
+  name: MeshMitte
+  links:
+  - type: website
+    url: "https://msh3.de/wordpress/"
+  languages: [de]
+  desc_key: community.de-meshmitte.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: de-saarmesh
+  country: DE
+  region: Saarland
+  name: SaarMesh
+  links:
+  - type: website
+    url: "https://saarmesh.de/"
+  languages: [de]
+  desc_key: community.de-saarmesh.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: ie-mayo-mesh
+  country: IE
+  region: County Mayo
+  name: Mayo Mesh
+  links:
+  - type: website
+    url: "https://mayomesh.net/"
+  languages: [en]
+  desc_key: community.ie-mayo-mesh.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: it-lora-brescia
+  country: IT
+  region: Brescia
+  name: LoRa Brescia
+  links:
+  - type: website
+    url: "https://www.lorabrescia.it/"
+  languages: [it]
+  desc_key: community.it-lora-brescia.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: it-meshcore-ita
+  country: IT
+  name: MeshCore ITA
+  links:
+  - type: website
+    url: "https://meshcore-ita.github.io/"
+  languages: [it]
+  desc_key: community.it-meshcore-ita.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: nl-meshwiki
+  country: NL
+  name: MeshWiki NL
+  links:
+  - type: website
+    url: "https://meshwiki.nl/"
+  languages: [nl]
+  desc_key: community.nl-meshwiki.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: pl-lora-meshcore-polska
+  country: PL
+  name: LoRa MeshCore Polska
+  links:
+  - type: website
+    url: "https://lorameshcore.pl/"
+  languages: [pl]
+  desc_key: community.pl-lora-meshcore-polska.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: pl-meshcore-podlasie
+  country: PL
+  region: Podlasie
+  name: MeshCore Podlasie
+  links:
+  - type: website
+    url: "https://meshcore.podlasie.pl/"
+  languages: [pl]
+  desc_key: community.pl-meshcore-podlasie.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: pl-meshgo
+  country: PL
+  region: Pomerania (Tricity)
+  name: MeshGo (MeshCore Pomorze)
+  links:
+  - type: website
+    url: "https://meshgo.pl/"
+  languages: [pl]
+  desc_key: community.pl-meshgo.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: ro-brasov-mesh
+  country: RO
+  region: Brașov
+  name: Brașov Mesh
+  links:
+  - type: website
+    url: "https://brasovmesh.com/"
+  languages: [ro]
+  desc_key: community.ro-brasov-mesh.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: ro-meshcore-iasi
+  country: RO
+  region: Iași
+  name: MeshCore Iași
+  links:
+  - type: website
+    url: "https://meshcore-iasi.ro/"
+  languages: [ro]
+  desc_key: community.ro-meshcore-iasi.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: es-meshcore-catalunya
+  country: ES
+  region: Catalonia
+  name: MeshCore Catalunya
+  links:
+  - type: website
+    url: "https://docs.livemap-meshcorecat.com/"
+  languages: [ca, es]
+  desc_key: community.es-meshcore-catalunya.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: es-nomadmesh
+  country: ES
+  region: Alpujarras (Andalusia)
+  name: NomadMesh
+  links:
+  - type: website
+    url: "https://nomadmesh.org/"
+  languages: [es, en]
+  desc_key: community.es-nomadmesh.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: ua-meshcore-ua
+  country: UA
+  name: MeshCore UA
+  links:
+  - type: website
+    url: "https://meshcore-ua.net/"
+  languages: [uk]
+  desc_key: community.ua-meshcore-ua.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: gb-ipnet
+  country: GB
+  region: Suffolk, Essex, Norfolk and Cambridgeshire
+  name: IPNet
+  links:
+  - type: website
+    url: "https://ipnt.uk/"
+  languages: [en]
+  desc_key: community.gb-ipnet.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: gb-meshcore-wales
+  country: GB
+  region: Wales
+  name: MeshCore.Wales
+  links:
+  - type: website
+    url: "https://meshcore.wales/"
+  languages: [en]
+  desc_key: community.gb-meshcore-wales.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: gb-northmesh
+  country: GB
+  region: Northern England
+  name: NorthMesh
+  links:
+  - type: website
+    url: "https://northmesh.co.uk/"
+  languages: [en]
+  desc_key: community.gb-northmesh.desc
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: nl-signal
+  country: NL
+  name: MeshCore NL on Signal
+  links:
+  - type: signal
+    ask_at: nl-meshcore-net
+  languages: [nl]
+  added: 2026-10-23
+  last_checked: 2026-10-23
+
+- id: nl-limburg-whatsapp
+  country: NL
+  region: Limburg
+  name: MeshCore Limburg on WhatsApp
+  links:
+  - type: whatsapp
+    ask_at: nl-meshcore-net
+  languages: [nl]
+  added: 2026-10-23
+  last_checked: 2026-10-23

@@ -1,0 +1,940 @@
+# Device catalog: specifications only, never shop links.
+# Each device has an official MeshCore build (upstream variants/, firmware
+# v1.18.0). Specs come from the manufacturer pages under `sources`.
+# price_band is rough, from the manufacturer's own list price:
+# 1 = under about 25 EUR, 2 = about 25 to 60 EUR, 3 = above. bands lists
+# the bands of the European (868 MHz) version. power_profile follows the
+# processor: nRF52840 = low, ESP32-S3 = high.
+# Notes live in data/i18n/en.json as device.<id>.notes.
+
+- id: heltec-wifi-lora-32-v3
+  name: WiFi LoRa 32 (V3)
+  maker: Heltec Automation
+  mcu: ESP32-S3
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion, repeater, room_server]
+  battery: { builtin: false }
+  gps: false
+  screen: "0.96in OLED"
+  connectivity: [ble, wifi, usb]
+  form_factor: board
+  price_band: 1
+  power_profile: high
+  firmware_support: official
+  notes_key: device.heltec-wifi-lora-32-v3.notes
+  last_verified: 2026-10-02
+  sources: ["https://heltec.org/project/wifi-lora-32-v3/"]
+
+- id: heltec-wifi-lora-32-v4
+  name: WiFi LoRa 32 (V4)
+  maker: Heltec Automation
+  mcu: ESP32-S3
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion, repeater, room_server]
+  battery: { builtin: false }
+  gps: false
+  screen: "OLED"
+  connectivity: [ble, wifi, usb]
+  form_factor: board
+  price_band: 1
+  power_profile: high
+  firmware_support: official
+  notes_key: device.heltec-wifi-lora-32-v4.notes
+  last_verified: 2026-10-02
+  sources: ["https://heltec.org/project/wifi-lora-32-v4/"]
+
+- id: heltec-mesh-node-t114
+  name: Mesh Node T114
+  maker: Heltec Automation
+  mcu: nRF52840
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion, repeater, room_server]
+  battery: { builtin: false }
+  gps: false
+  screen: "1.14in TFT (optional)"
+  connectivity: [ble, usb]
+  form_factor: board
+  price_band: 1
+  power_profile: low
+  firmware_support: official
+  notes_key: device.heltec-mesh-node-t114.notes
+  last_verified: 2026-10-02
+  sources: ["https://heltec.org/project/mesh-node-t114/"]
+
+- id: heltec-wireless-tracker
+  name: Wireless Tracker
+  maker: Heltec Automation
+  mcu: ESP32-S3
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion, repeater, room_server]
+  battery: { builtin: false }
+  gps: true
+  screen: "0.96in TFT"
+  connectivity: [ble, wifi, usb]
+  form_factor: board
+  price_band: 1
+  power_profile: high
+  firmware_support: official
+  notes_key: device.heltec-wireless-tracker.notes
+  last_verified: 2026-10-02
+  sources: ["https://heltec.org/project/wireless-tracker/"]
+
+- id: heltec-wireless-paper
+  name: Wireless Paper
+  maker: Heltec Automation
+  mcu: ESP32-S3
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion, repeater, room_server]
+  battery: { builtin: false }
+  gps: false
+  screen: "2.13in e-paper"
+  connectivity: [ble, wifi, usb]
+  form_factor: board
+  price_band: 1
+  power_profile: high
+  firmware_support: official
+  notes_key: device.heltec-wireless-paper.notes
+  last_verified: 2026-10-02
+  sources: ["https://heltec.org/project/wireless-paper/"]
+
+- id: heltec-wifi-lora-32-v4-expansion-kit
+  name: WiFi LoRa 32 V4 Expansion Kit
+  maker: Heltec Automation
+  mcu: ESP32-S3
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion]
+  battery: { builtin: false }
+  gps: false
+  screen: "Touch screen"
+  connectivity: [ble, wifi, usb]
+  form_factor: handheld
+  price_band: 2
+  power_profile: high
+  firmware_support: official
+  notes_key: device.heltec-wifi-lora-32-v4-expansion-kit.notes
+  last_verified: 2026-10-23
+  sources: ["https://heltec.org/project/wifi-lora-32-v4-expansion-housing/"]
+
+- id: heltec-wireless-stick-lite-v3
+  name: Wireless Stick Lite (V3)
+  maker: Heltec Automation
+  mcu: ESP32-S3
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion, repeater, room_server]
+  battery: { builtin: false }
+  gps: false
+  screen: ""
+  connectivity: [ble, wifi, usb]
+  form_factor: board
+  price_band: 1
+  power_profile: high
+  firmware_support: official
+  notes_key: device.heltec-wireless-stick-lite-v3.notes
+  last_verified: 2026-10-23
+  sources: ["https://heltec.org/project/wireless-stick-lite/"]
+
+- id: heltec-wireless-tracker-v2
+  name: Wireless Tracker V2
+  maker: Heltec Automation
+  mcu: ESP32-S3
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion, repeater, room_server]
+  battery: { builtin: false }
+  gps: true
+  screen: "TFT"
+  connectivity: [ble, wifi, usb]
+  form_factor: board
+  price_band: 2
+  power_profile: high
+  firmware_support: official
+  notes_key: device.heltec-wireless-tracker-v2.notes
+  last_verified: 2026-10-23
+  sources: ["https://heltec.org/project/wireless-tracker-v2/"]
+
+- id: heltec-vision-master-e213
+  name: Vision Master E213
+  maker: Heltec Automation
+  mcu: ESP32-S3
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion, repeater, room_server]
+  battery: { builtin: false }
+  gps: false
+  screen: "2.13in e-paper"
+  connectivity: [ble, wifi, usb]
+  form_factor: board
+  price_band: 1
+  power_profile: high
+  firmware_support: official
+  notes_key: device.heltec-vision-master-e213.notes
+  last_verified: 2026-10-23
+  sources: ["https://heltec.org/project/vision-master-e213/"]
+
+- id: heltec-vision-master-e290
+  name: Vision Master E290
+  maker: Heltec Automation
+  mcu: ESP32-S3
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion, repeater, room_server]
+  battery: { builtin: false }
+  gps: false
+  screen: "2.9in e-paper"
+  connectivity: [ble, wifi, usb]
+  form_factor: board
+  price_band: 1
+  power_profile: high
+  firmware_support: official
+  notes_key: device.heltec-vision-master-e290.notes
+  last_verified: 2026-10-23
+  sources: ["https://heltec.org/project/vision-master-e290/"]
+
+- id: heltec-vision-master-t190
+  name: Vision Master T190
+  maker: Heltec Automation
+  mcu: ESP32-S3
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion, repeater, room_server]
+  battery: { builtin: false }
+  gps: false
+  screen: "1.9in TFT"
+  connectivity: [ble, wifi, usb]
+  form_factor: board
+  price_band: 1
+  power_profile: high
+  firmware_support: official
+  notes_key: device.heltec-vision-master-t190.notes
+  last_verified: 2026-10-23
+  sources: ["https://heltec.org/project/vision-master-t190/"]
+
+- id: heltec-mesh-node-t1
+  name: Mesh Node T1
+  maker: Heltec Automation
+  mcu: nRF52840
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion]
+  battery: { builtin: true, mah: 1850 }
+  gps: true
+  screen: "0.96in TFT"
+  connectivity: [ble, usb]
+  form_factor: handheld
+  price_band: 2
+  power_profile: low
+  firmware_support: official
+  notes_key: device.heltec-mesh-node-t1.notes
+  last_verified: 2026-10-23
+  sources: ["https://heltec.org/project/mesh-node-t1/"]
+
+- id: heltec-meshpocket
+  name: MeshPocket
+  maker: Heltec Automation
+  mcu: nRF52840
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion]
+  battery: { builtin: true, mah: 5000 }
+  gps: false
+  screen: "2.13in e-paper"
+  connectivity: [ble, usb]
+  form_factor: handheld
+  price_band: 2
+  power_profile: low
+  firmware_support: official
+  notes_key: device.heltec-meshpocket.notes
+  last_verified: 2026-10-23
+  sources: ["https://heltec.org/project/meshpocket/"]
+
+- id: heltec-meshsolar
+  name: MeshSolar
+  maker: Heltec Automation
+  mcu: nRF52840
+  radio_chip: SX1262
+  bands: [868]
+  roles: [repeater, room_server]
+  battery: { builtin: false }
+  gps: false
+  screen: ""
+  connectivity: [ble, usb]
+  form_factor: board
+  price_band: 2
+  power_profile: low
+  firmware_support: official
+  notes_key: device.heltec-meshsolar.notes
+  last_verified: 2026-10-23
+  sources: ["https://heltec.org/project/meshsolar/"]
+
+- id: heltec-meshtower-v2
+  name: MeshTower V2
+  maker: Heltec Automation
+  mcu: nRF52840
+  radio_chip: SX1262
+  bands: [868]
+  roles: [repeater, room_server]
+  battery: { builtin: true, mah: 8400 }
+  gps: false
+  screen: ""
+  connectivity: [ble, usb]
+  form_factor: enclosed
+  price_band: 3
+  power_profile: low
+  firmware_support: official
+  notes_key: device.heltec-meshtower-v2.notes
+  last_verified: 2026-10-23
+  sources: ["https://heltec.org/project/meshtower/"]
+
+- id: lilygo-t-echo
+  name: T-Echo
+  maker: LILYGO
+  mcu: nRF52840
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion]
+  battery: { builtin: true, mah: 850 }
+  gps: true
+  screen: "1.54in e-paper"
+  connectivity: [ble, usb]
+  form_factor: handheld
+  price_band: 2
+  power_profile: low
+  firmware_support: official
+  notes_key: device.lilygo-t-echo.notes
+  last_verified: 2026-10-02
+  sources: ["https://wiki.lilygo.cc/products/t-echo-series/t-echo/"]
+
+- id: lilygo-t-deck-plus
+  name: T-Deck Plus
+  maker: LILYGO
+  mcu: ESP32-S3
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion]
+  battery: { builtin: true, mah: 2000 }
+  gps: true
+  screen: "2.8in touch LCD"
+  connectivity: [ble, wifi, usb]
+  form_factor: handheld
+  price_band: 3
+  power_profile: high
+  firmware_support: official
+  notes_key: device.lilygo-t-deck-plus.notes
+  last_verified: 2026-10-02
+  sources: ["https://wiki.lilygo.cc/products/t-deck-series/t-deck-plus/"]
+
+- id: lilygo-t-beam-supreme
+  name: T-Beam Supreme (SX1262)
+  maker: LILYGO
+  mcu: ESP32-S3
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion, repeater, room_server]
+  battery: { builtin: false }
+  gps: true
+  screen: "1.3in OLED"
+  connectivity: [ble, wifi, usb]
+  form_factor: board
+  price_band: 2
+  power_profile: high
+  firmware_support: official
+  notes_key: device.lilygo-t-beam-supreme.notes
+  last_verified: 2026-10-02
+  sources:
+    - "https://wiki.lilygo.cc/products/t-beam-series/t-beam-supreme/"
+    - "https://github.com/Xinyuan-LilyGO/LilyGo-LoRa-Series/blob/master/docs/en/t_beam_supreme/t_beam_supreme_hw.md"
+
+- id: lilygo-t-echo-lite
+  name: T-Echo Lite
+  maker: LILYGO
+  mcu: nRF52840
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion]
+  battery: { builtin: false }
+  gps: true
+  screen: "1.22in e-paper"
+  connectivity: [ble, usb]
+  form_factor: handheld
+  price_band: 2
+  power_profile: low
+  firmware_support: official
+  notes_key: device.lilygo-t-echo-lite.notes
+  last_verified: 2026-10-23
+  sources: ["https://wiki.lilygo.cc/products/t-echo-series/t-echo-lite/"]
+
+- id: lilygo-t-echo-card
+  name: T-Echo Card
+  maker: LILYGO
+  mcu: nRF52840
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion]
+  battery: { builtin: true }
+  gps: true
+  screen: "0.42in OLED"
+  connectivity: [ble, usb]
+  form_factor: handheld
+  price_band: 2
+  power_profile: low
+  firmware_support: official
+  notes_key: device.lilygo-t-echo-card.notes
+  last_verified: 2026-10-23
+  sources: ["https://wiki.lilygo.cc/products/t-echo-series/t-echo-card/"]
+
+- id: lilygo-t-impulse-plus
+  name: T-Impulse Plus
+  maker: LILYGO
+  mcu: nRF52840
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion]
+  battery: { builtin: true }
+  gps: true
+  screen: "0.49in OLED"
+  connectivity: [ble, usb]
+  form_factor: wearable
+  price_band: 2
+  power_profile: low
+  firmware_support: official
+  notes_key: device.lilygo-t-impulse-plus.notes
+  last_verified: 2026-10-23
+  sources: ["https://wiki.lilygo.cc/products/t-impulse-series/t-impulse-plus/"]
+
+- id: lilygo-t-deck
+  name: T-Deck
+  maker: LILYGO
+  mcu: ESP32-S3
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion]
+  battery: { builtin: false }
+  gps: false
+  screen: "2.8in LCD"
+  connectivity: [ble, wifi, usb]
+  form_factor: handheld
+  price_band: 2
+  power_profile: high
+  firmware_support: official
+  notes_key: device.lilygo-t-deck.notes
+  last_verified: 2026-10-23
+  sources: ["https://wiki.lilygo.cc/products/t-deck-series/t-deck/"]
+
+- id: lilygo-t-beam
+  name: T-Beam (SX1276)
+  maker: LILYGO
+  mcu: ESP32
+  radio_chip: SX1276
+  bands: [868]
+  roles: [companion, repeater, room_server]
+  battery: { builtin: false }
+  gps: true
+  screen: "0.96in OLED"
+  connectivity: [ble, wifi, usb]
+  form_factor: board
+  price_band: 2
+  power_profile: high
+  firmware_support: official
+  notes_key: device.lilygo-t-beam.notes
+  last_verified: 2026-10-23
+  sources: ["https://wiki.lilygo.cc/products/t-beam-series/t-beam/"]
+
+- id: lilygo-t-beam-1w
+  name: T-Beam 1W
+  maker: LILYGO
+  mcu: ESP32-S3
+  radio_chip: SX1262
+  bands: [868]
+  roles: [repeater, room_server]
+  battery: { builtin: false }
+  gps: true
+  screen: "1.3in OLED"
+  connectivity: [ble, wifi, usb]
+  form_factor: board
+  price_band: 2
+  power_profile: high
+  firmware_support: official
+  notes_key: device.lilygo-t-beam-1w.notes
+  last_verified: 2026-10-23
+  sources: ["https://wiki.lilygo.cc/products/t-beam-series/t-beam-1w/"]
+
+- id: rak-wisblock-rak4631
+  name: WisBlock RAK4631 + RAK19007
+  maker: RAKwireless
+  mcu: nRF52840
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion, repeater, room_server]
+  battery: { builtin: false }
+  gps: false
+  screen: ""
+  connectivity: [ble, usb]
+  form_factor: board
+  price_band: 2
+  power_profile: low
+  firmware_support: official
+  notes_key: device.rak-wisblock-rak4631.notes
+  last_verified: 2026-10-02
+  sources:
+    - "https://docs.rakwireless.com/product-categories/wisblock/rak4631/overview/"
+    - "https://docs.rakwireless.com/product-categories/wisblock/rak19007/overview/"
+
+- id: rak-wismesh-tag
+  name: WisMesh Tag
+  maker: RAKwireless
+  mcu: nRF52840
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion]
+  battery: { builtin: true, mah: 1000 }
+  gps: true
+  screen: ""
+  connectivity: [ble, usb]
+  form_factor: wearable
+  price_band: 2
+  power_profile: low
+  firmware_support: official
+  notes_key: device.rak-wismesh-tag.notes
+  last_verified: 2026-10-02
+  sources:
+    - "https://github.com/meshcore-dev/MeshCore/tree/main/variants/rak_wismesh_tag"
+    - "https://news.rakwireless.com/iot-deployments-wisgateos-2-extensions-tutorials-and-guides/"
+
+- id: rak-wismesh-1w-booster
+  name: WisMesh 1W Booster (RAK3401 + RAK13302)
+  maker: RAKwireless
+  mcu: nRF52840
+  radio_chip: SX1262
+  bands: [868]
+  roles: [repeater, room_server]
+  battery: { builtin: false }
+  gps: false
+  screen: ""
+  connectivity: [ble, usb]
+  form_factor: board
+  price_band: 2
+  power_profile: low
+  firmware_support: official
+  notes_key: device.rak-wismesh-1w-booster.notes
+  last_verified: 2026-10-23
+  sources:
+    - "https://docs.rakwireless.com/product-categories/meshtastic/wismesh-starter-kit-rak3401/overview/"
+    - "https://docs.rakwireless.com/product-categories/wisblock/rak13302/overview/"
+
+- id: seeed-sensecap-t1000-e
+  name: SenseCAP Card Tracker T1000-E
+  maker: Seeed Studio
+  mcu: nRF52840
+  radio_chip: LR1110
+  bands: [868, 915]
+  roles: [companion]
+  battery: { builtin: true, mah: 700 }
+  gps: true
+  screen: ""
+  connectivity: [ble, usb]
+  form_factor: wearable
+  price_band: 2
+  power_profile: low
+  firmware_support: official
+  notes_key: device.seeed-sensecap-t1000-e.notes
+  last_verified: 2026-10-02
+  sources: ["https://wiki.seeedstudio.com/t1000_e_intro/"]
+
+- id: seeed-xiao-nrf52840-wio-sx1262
+  name: XIAO nRF52840 + Wio-SX1262 kit
+  maker: Seeed Studio
+  mcu: nRF52840
+  radio_chip: SX1262
+  bands: [868, 915]
+  roles: [companion, repeater, room_server]
+  battery: { builtin: false }
+  gps: false
+  screen: ""
+  connectivity: [ble, usb]
+  form_factor: board
+  price_band: 1
+  power_profile: low
+  firmware_support: official
+  notes_key: device.seeed-xiao-nrf52840-wio-sx1262.notes
+  last_verified: 2026-10-02
+  sources:
+    - "https://wiki.seeedstudio.com/XIAO_BLE/"
+    - "https://wiki.seeedstudio.com/wio_sx1262/"
+
+- id: seeed-wio-tracker-l1-pro
+  name: Wio Tracker L1 Pro
+  maker: Seeed Studio
+  mcu: nRF52840
+  radio_chip: SX1262
+  bands: [868, 915]
+  roles: [companion]
+  battery: { builtin: true, mah: 2000 }
+  gps: true
+  screen: "1.3in OLED"
+  connectivity: [ble, usb]
+  form_factor: handheld
+  price_band: 2
+  power_profile: low
+  firmware_support: official
+  notes_key: device.seeed-wio-tracker-l1-pro.notes
+  last_verified: 2026-10-02
+  sources: ["https://wiki.seeedstudio.com/wio_tracker_l1_node/"]
+
+- id: seeed-sensecap-solar-node-p1
+  name: SenseCAP Solar Node P1-Pro
+  maker: Seeed Studio
+  mcu: nRF52840
+  radio_chip: SX1262
+  bands: [868, 915]
+  roles: [repeater, room_server]
+  battery: { builtin: true, mah: 13400 }
+  gps: true
+  screen: ""
+  connectivity: [ble, usb]
+  form_factor: enclosed
+  price_band: 3
+  power_profile: low
+  firmware_support: official
+  notes_key: device.seeed-sensecap-solar-node-p1.notes
+  last_verified: 2026-10-02
+  sources:
+    - "https://wiki.seeedstudio.com/get_started_with_meshcore_solar_node/"
+    - "https://files.seeedstudio.com/Bazaar/product_pdf/100023690.pdf"
+
+- id: seeed-wio-tracker-l1
+  name: Wio Tracker L1
+  maker: Seeed Studio
+  mcu: nRF52840
+  radio_chip: SX1262
+  bands: [868, 915]
+  roles: [companion, repeater, room_server]
+  battery: { builtin: false }
+  gps: true
+  screen: "1.3in OLED"
+  connectivity: [ble, usb]
+  form_factor: board
+  price_band: 2
+  power_profile: low
+  firmware_support: official
+  notes_key: device.seeed-wio-tracker-l1.notes
+  last_verified: 2026-10-23
+  sources: ["https://wiki.seeedstudio.com/wio_tracker_l1_node/"]
+
+- id: seeed-wio-tracker-l1-eink
+  name: Wio Tracker L1 E-Ink
+  maker: Seeed Studio
+  mcu: nRF52840
+  radio_chip: SX1262
+  bands: [868, 915]
+  roles: [companion, repeater, room_server]
+  battery: { builtin: false }
+  gps: true
+  screen: "2.13in e-paper"
+  connectivity: [ble, usb]
+  form_factor: board
+  price_band: 2
+  power_profile: low
+  firmware_support: official
+  notes_key: device.seeed-wio-tracker-l1-eink.notes
+  last_verified: 2026-10-23
+  sources: ["https://wiki.seeedstudio.com/wio_tracker_l1_node/"]
+
+- id: seeed-sensecap-solar-node-p1-basic
+  name: SenseCAP Solar Node P1
+  maker: Seeed Studio
+  mcu: nRF52840
+  radio_chip: SX1262
+  bands: [868, 915]
+  roles: [repeater, room_server]
+  battery: { builtin: false }
+  gps: false
+  screen: ""
+  connectivity: [ble, usb]
+  form_factor: enclosed
+  price_band: 3
+  power_profile: low
+  firmware_support: official
+  notes_key: device.seeed-sensecap-solar-node-p1-basic.notes
+  last_verified: 2026-10-23
+  sources:
+    - "https://wiki.seeedstudio.com/get_started_with_meshcore_solar_node/"
+    - "https://files.seeedstudio.com/Bazaar/product_pdf/100023690.pdf"
+
+- id: seeed-sensecap-meshtracker-x1
+  name: SenseCAP MeshTracker X1
+  maker: Seeed Studio
+  mcu: nRF52840
+  radio_chip: LR2021
+  bands: [868, 915]
+  roles: [companion]
+  battery: { builtin: true, mah: 1100 }
+  gps: true
+  screen: ""
+  connectivity: [ble, usb]
+  form_factor: handheld
+  price_band: 2
+  power_profile: low
+  firmware_support: official
+  notes_key: device.seeed-sensecap-meshtracker-x1.notes
+  last_verified: 2026-10-23
+  sources:
+    - "https://wiki.seeedstudio.com/meshtracker_x1_intro/"
+    - "https://wiki.seeedstudio.com/sensecap_meshtracker_x1_meshcore/"
+
+- id: seeed-xiao-esp32s3-wio-sx1262
+  name: XIAO ESP32S3 + Wio-SX1262 kit
+  maker: Seeed Studio
+  mcu: ESP32-S3
+  radio_chip: SX1262
+  bands: [868, 915]
+  roles: [companion, repeater, room_server]
+  battery: { builtin: false }
+  gps: false
+  screen: ""
+  connectivity: [ble, wifi, usb]
+  form_factor: board
+  price_band: 1
+  power_profile: high
+  firmware_support: official
+  notes_key: device.seeed-xiao-esp32s3-wio-sx1262.notes
+  last_verified: 2026-10-23
+  sources: ["https://wiki.seeedstudio.com/wio_sx1262_with_xiao_esp32s3_kit/"]
+
+- id: elecrow-thinknode-m1
+  name: ThinkNode M1
+  maker: Elecrow
+  mcu: nRF52840
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion]
+  battery: { builtin: true, mah: 1200 }
+  gps: true
+  screen: "1.54in e-paper"
+  connectivity: [ble, usb]
+  form_factor: handheld
+  price_band: 2
+  power_profile: low
+  firmware_support: official
+  notes_key: device.elecrow-thinknode-m1.notes
+  last_verified: 2026-10-23
+  sources: ["https://www.elecrow.com/wiki/ThinkNode-M1_Transceiver_Device%28Meshtastic%29_Power_By_nRF52840.html"]
+
+- id: elecrow-thinknode-m2
+  name: ThinkNode M2
+  maker: Elecrow
+  mcu: ESP32-S3
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion]
+  battery: { builtin: true, mah: 1000 }
+  gps: false
+  screen: "1.3in OLED"
+  connectivity: [ble, wifi, usb]
+  form_factor: handheld
+  price_band: 2
+  power_profile: high
+  firmware_support: official
+  notes_key: device.elecrow-thinknode-m2.notes
+  last_verified: 2026-10-23
+  sources: ["https://www.elecrow.com/wiki/ThinkNode-M2_Transceiver_Device%28Meshtastic%29_Power_By_NRF52840.html"]
+
+- id: elecrow-thinknode-m3
+  name: ThinkNode M3
+  maker: Elecrow
+  mcu: nRF52840
+  radio_chip: LR1110
+  bands: [868]
+  roles: [companion]
+  battery: { builtin: true, mah: 760 }
+  gps: true
+  screen: ""
+  connectivity: [ble, usb]
+  form_factor: handheld
+  price_band: 2
+  power_profile: low
+  firmware_support: official
+  notes_key: device.elecrow-thinknode-m3.notes
+  last_verified: 2026-10-23
+  sources: ["https://www.elecrow.com/wiki/ThinkNode_M3_Meshtastic_Tracker_With_GPSWiFiBLE_function_For_Indoor_and_Outdoor_Positioning.html"]
+
+- id: elecrow-thinknode-m4
+  name: ThinkNode M4
+  maker: Elecrow
+  mcu: nRF52840
+  radio_chip: LR1110
+  bands: [868]
+  roles: [companion]
+  battery: { builtin: true, mah: 7000 }
+  gps: true
+  screen: ""
+  connectivity: [ble, usb]
+  form_factor: handheld
+  price_band: 2
+  power_profile: low
+  firmware_support: official
+  notes_key: device.elecrow-thinknode-m4.notes
+  last_verified: 2026-10-23
+  sources: ["https://www.elecrow.com/wiki/ThinkNode-M4_Power_Bank_LoRa_Device_with_Meshtastic_Function_Powered_By_nRF52840.html"]
+
+- id: elecrow-thinknode-m5
+  name: ThinkNode M5
+  maker: Elecrow
+  mcu: ESP32-S3
+  radio_chip: SX1262
+  bands: [868]
+  roles: [companion]
+  battery: { builtin: true, mah: 1200 }
+  gps: true
+  screen: "1.54in e-paper"
+  connectivity: [ble, wifi, usb]
+  form_factor: handheld
+  price_band: 2
+  power_profile: high
+  firmware_support: official
+  notes_key: device.elecrow-thinknode-m5.notes
+  last_verified: 2026-10-23
+  sources:
+    - "https://www.elecrow.com/wiki/ThinkNode_M5_Meshtastic_LoRa_Signal_Transceiver_ESP32-S3.html"
+    - "https://www.elecrow.com/download/product/ILM13205D/ThinkNode_M5_User_Manual.pdf"
+
+- id: elecrow-thinknode-m6
+  name: ThinkNode M6
+  maker: Elecrow
+  mcu: nRF52840
+  radio_chip: SX1262
+  bands: [868]
+  roles: [repeater, room_server]
+  battery: { builtin: true, mah: 7000 }
+  gps: true
+  screen: ""
+  connectivity: [ble, usb]
+  form_factor: enclosed
+  price_band: 3
+  power_profile: low
+  firmware_support: official
+  notes_key: device.elecrow-thinknode-m6.notes
+  last_verified: 2026-10-23
+  sources: ["https://www.elecrow.com/download/product/LMM14106D/ThinkNode_M6_Outdoor_Solar_Power_for_LoRa_User_Manual.pdf"]
+
+- id: elecrow-thinknode-m7
+  name: ThinkNode M7
+  maker: Elecrow
+  mcu: ESP32-S3
+  radio_chip: LR1110
+  bands: [868]
+  roles: [repeater, room_server]
+  battery: { builtin: false }
+  gps: false
+  screen: ""
+  connectivity: [ble, wifi, usb]
+  form_factor: enclosed
+  price_band: 2
+  power_profile: high
+  firmware_support: official
+  notes_key: device.elecrow-thinknode-m7.notes
+  last_verified: 2026-10-23
+  sources: ["https://www.elecrow.com/wiki/ThinkNode_M7_Meshtastic_Wireless_Communication_Gateway.html"]
+
+- id: elecrow-thinknode-m9
+  name: ThinkNode M9
+  maker: Elecrow
+  mcu: ESP32-S3
+  radio_chip: LR1110
+  bands: [868]
+  roles: [companion]
+  battery: { builtin: true, mah: 2300 }
+  gps: true
+  screen: "2.4in LCD"
+  connectivity: [ble, wifi, usb]
+  form_factor: handheld
+  price_band: 3
+  power_profile: high
+  firmware_support: official
+  notes_key: device.elecrow-thinknode-m9.notes
+  last_verified: 2026-10-23
+  sources:
+    - "https://www.elecrow.com/wiki/ThinkNode_M9_MeshCore_Communication_Terminal_with_Full_Keyboard.html"
+    - "https://www.elecrow.com/download/product/LMM16509D/ThinkNode_M9_for_Meshcore_User_Manual.pdf"
+
+- id: bq-station-g3
+  name: Station G3
+  maker: BQ Voyage
+  mcu: ESP32-S3
+  radio_chip: SX1262
+  bands: [868]
+  roles: [repeater, room_server]
+  battery: { builtin: false }
+  gps: false
+  screen: "1.3in OLED"
+  connectivity: [ble, wifi, usb]
+  form_factor: board
+  price_band: 3
+  power_profile: high
+  firmware_support: official
+  notes_key: device.bq-station-g3.notes
+  last_verified: 2026-10-23
+  sources: ["https://wiki.bqvoy.com/en/devkits/station-g3"]
+
+- id: bq-nano-g2-ultra
+  name: Nano G2 Ultra
+  maker: BQ Voyage
+  mcu: nRF52840
+  radio_chip: SX1262
+  bands: [868, 915]
+  roles: [companion]
+  battery: { builtin: false }
+  gps: true
+  screen: "1.3in OLED"
+  connectivity: [ble, usb]
+  form_factor: handheld
+  price_band: 3
+  power_profile: low
+  firmware_support: official
+  notes_key: device.bq-nano-g2-ultra.notes
+  last_verified: 2026-10-23
+  sources: ["https://wiki.bqvoy.com/en/meshtastic/nano-g2-ultra"]
+
+- id: m5stack-unit-c6l
+  name: Unit C6L
+  maker: M5Stack
+  mcu: ESP32-C6
+  radio_chip: SX1262
+  bands: [868, 915]
+  roles: [companion, repeater, room_server]
+  battery: { builtin: false }
+  gps: false
+  screen: "0.66in OLED"
+  connectivity: [ble, wifi, usb]
+  form_factor: board
+  price_band: 1
+  power_profile: high
+  firmware_support: official
+  notes_key: device.m5stack-unit-c6l.notes
+  last_verified: 2026-10-23
+  sources: ["https://docs.m5stack.com/en/unit/Unit_C6L"]
+
+- id: meshnology-w12
+  name: W12
+  maker: Meshnology
+  mcu: ESP32-S3
+  radio_chip: LR2021
+  bands: [868, 915]
+  roles: [companion, repeater, room_server]
+  battery: { builtin: false }
+  gps: false
+  screen: "0.96in OLED"
+  connectivity: [ble, wifi, usb]
+  form_factor: board
+  price_band: 3
+  power_profile: high
+  firmware_support: official
+  notes_key: device.meshnology-w12.notes
+  last_verified: 2026-10-23
+  sources: ["https://wiki.meshnology.com/W12/W12_LR2021_Ultra_Long_Range_LoRa_Device"]

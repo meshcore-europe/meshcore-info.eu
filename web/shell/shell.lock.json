@@ -1,0 +1,18 @@
+{
+  "source": "EU-Meshcore-Analyzer/Branding/shell",
+  "commit": "3c87923284fdcc780e0ab2bda161f041b1b8e31f",
+  "written": "2026-10-26",
+  "files": {
+    "base.css": "f4a2be75dfc1905686f2e6458c9a70ac915d327873ccb3158178b4f5ee989e4a",
+    "map.js": "ef4363b3100ed7f4d95e0ac42712d16e2b8bc1ff3842b140dec53af0ff691fde",
+    "nav.json": "7abb17f2d53d913ffa8a0cae6dc6fae837c7b9431b411a7e00cdae77da4d7ef1",
+    "nav.meshcore-info.json": "a0113f9f86019d8d25a40de036996cdcdeb387516f817443eeacbbb9707e9537",
+    "navmodel.js": "0f608d79c1e111f45b3dec9c1f1d8ca19b164161ecaceda551d2033d1f334f08",
+    "prefs.js": "44bb7d8550bc7e0d0dbf7bc833e779a8ff9f2f3163a72e07280fa02bccd4e166",
+    "shell.css": "66f46f8d1e1705db4f66d792f5c50dd84e408b476d48422158866141b726768b",
+    "shell.js": "e942bbcc1bc3cac4a447dc8fe5b8cffaf5b38d4bf3c7de1aec215ef479f1ae4a",
+    "tokens.css": "7cbc81e13a658f4b7306128166d2c82238e2632e2404e751ae7ed78bf75d0ffe",
+    "vendor/maplibre-gl.css": "576b085fdd9487a65a19215328c1e086c07ce5bf6da09b666b3806d3d008dae9",
+    "vendor/maplibre-gl.js": "be9633c4d870e26fb37f1cfe5c5a77181667114003ea16207ac7850d8da8add1"
+  }
+}

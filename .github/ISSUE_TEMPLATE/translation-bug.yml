@@ -1,0 +1,49 @@
+name: Translation problem
+description: Report wrong, unclear or missing text in a translated page or menu.
+title: "Translation: "
+labels: [translation, needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        You can also fix it yourself: every machine-translated page has a "Help improve this translation" link that opens the file on GitHub.
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language
+      options:
+        - Nederlands (nl)
+        - Deutsch (de)
+        - Français (fr)
+        - Español (es)
+        - Italiano (it)
+        - Polski (pl)
+        - Português (pt)
+        - Čeština (cs)
+        - Svenska (sv)
+        - Dansk (da)
+        - Norsk bokmål (nb)
+        - Suomi (fi)
+        - Magyar (hu)
+        - Română (ro)
+        - Ελληνικά (el)
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Page URL
+      description: For example https://meshcore-info.eu/de/get-started/
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong?
+      description: Quote the text and say what is wrong with it.
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested wording

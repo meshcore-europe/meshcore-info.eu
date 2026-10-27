@@ -1,0 +1,70 @@
+---
+// Every page: the head, the shell around the page, hreflang alternates. Props:
+//   lang, title, description, path (the page's path without language, '' for the home),
+//   overlay (a page that opens with a full-width hero under the floating header, as the home does),
+//   live (the page's hero strip takes live numbers, so web/js/live-strip.js is loaded),
+//   langs (the languages the page exists in, for hreflang and the language menu),
+//   enSource (whether an English page exists; it is the x-default), noAlternates (404 pages).
+import { existsSync } from 'node:fs';
+import { BASE_URL, ROOT, languageOf, t } from '../lib/site.mjs';
+import { shellTop, shellBottom } from '../lib/shell.mjs';
+
+const { lang, title, description, path = '', langs = [lang], enSource = true, noAlternates = false, home = false, overlay = false, live = false } = Astro.props;
+const locale = languageOf(lang).locale;
+const href = (l) => `/${l}/${path ? path + '/' : ''}`;
+const abs = (p) => new URL(p, BASE_URL).href;
+const alternates = langs.map((l) => ({ lang: l, href: href(l) }));
+const opts = { lang, alternates, path: noAlternates ? null : path };
+// The page's social card, one for all languages; a page without one takes the home's.
+const cardName = path ? path.replace(/\//g, '-') : 'home';
+const card = abs(`/media/og/${existsSync(`${ROOT}web/media/og/${cardName}.jpg`) ? cardName : 'home'}.jpg`);
+const pageDescription = description || t(lang, 'site_description');
+---
+<!doctype html>
+<html lang={locale} data-lang="fixed" data-theme="industrial">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{title}</title>
+  <meta name="description" content={pageDescription}>
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="meshcore-info.eu">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={pageDescription}>
+  <meta property="og:url" content={abs(href(lang))}>
+  <meta property="og:locale" content={locale.replace('-', '_')}>
+  <meta property="og:image" content={card}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content={card}>
+  <script is:inline src="/shell/prefs.js"></script>
+  <!-- The two faces every page draws with, fetched before the stylesheet asks for them, so text does not
+       first show in a system font and then jump (web/shell/fonts.css uses font-display: swap). -->
+  <link rel="preload" href="/fonts/ibm-plex-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/ibm-plex-mono-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/shell/fonts.css">
+  <link rel="stylesheet" href="/shell/tokens.css">
+  <link rel="stylesheet" href="/shell/base.css">
+  <link rel="stylesheet" href="/shell/shell.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <script is:inline src="/shell/navmodel.js" defer></script>
+  <script is:inline src="/shell/shell.js" defer></script>
+  <script is:inline src="/js/copy.js" defer></script>
+  <script is:inline src="/js/checklist.js" defer></script>
+  <script is:inline src="/js/placeholders.js" defer></script>
+  <script is:inline src="/js/filters.js" defer></script>
+  {(home || live) && <script is:inline src="/js/live-strip.js" defer></script>}
+  {home && <script is:inline src="/js/hero-film.js" defer></script>}
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  {!noAlternates && alternates.map((a) => <link rel="alternate" hreflang={languageOf(a.lang).locale} href={abs(a.href)}>)}
+  {!noAlternates && enSource && <link rel="alternate" hreflang="x-default" href={abs(href('en'))}>}
+</head>
+<body data-shell="static" data-brand="meshcore-info" data-mode="live" data-header={home || overlay ? 'overlay' : undefined} data-copy-label={t(lang, 'copy')} data-copied-label={t(lang, 'copied')}>
+  <a class="skip-link" href="#main">{t(lang, 'skip_to_content')}</a>
+  <Fragment set:html={shellTop(opts)} />
+  {home || overlay ? <main id="main" class="home"><slot /></main> : <main id="main" class="page container"><slot /></main>}
+  <Fragment set:html={shellBottom(opts)} />
+</body>
+</html>

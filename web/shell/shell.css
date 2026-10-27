@@ -1,0 +1,249 @@
+/* The shared DMC shell: header, dropdowns, app row, drawer, footer. Tokens only.
+   No tricolour stripe since 2026-10-02: the #dmc wordmark carries the brand. */
+
+.navbar { position: sticky; top: 0; z-index: 50; border-bottom: 1px solid var(--border); box-shadow: var(--navbar-shadow); }
+/* The bar's fill and blur sit on a ::before: a backdrop-filter on .navbar itself would stop the menus inside it from
+   blurring the page under them. */
+.navbar::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: var(--navbar-bg); backdrop-filter: var(--navbar-filter); -webkit-backdrop-filter: var(--navbar-filter); }
+.navbar-inner { display: flex; align-items: center; gap: 16px; min-height: var(--header-h); padding-inline: var(--gutter); max-width: 1600px; margin-inline: auto; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; flex: 0 0 auto; min-width: 0; }
+.brand:hover { color: var(--text); }
+/* Wordmark (decided 2026-10-02): #dmc in Plex Mono, written like a MeshCore channel; the hash is quieter. */
+.brand-mark { font-family: var(--font-mono); font-size: 20px; font-weight: 600; letter-spacing: -.02em; line-height: 1; color: var(--text); flex: 0 0 auto; }
+.brand-mark .bk { color: var(--text-faint); font-weight: 400; }
+.brand-mark .tld { color: var(--accent); }
+.brand { gap: 8px; }
+.brand-sep { color: var(--text-faint); margin-right: 8px; }
+.footer-mark { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+.footer-mark .brand-mark { font-size: 18px; }
+.brand-text { display: flex; flex-direction: column; min-width: 0; }
+.brand-name { font-family: var(--font-display); text-transform: var(--display-transform); letter-spacing: var(--display-spacing); font-size: var(--fs-lg); font-weight: var(--fw-semibold); line-height: 1.1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.brand-sub { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted); }
+
+.primary-nav { flex: 1 1 auto; }
+.primary { display: flex; align-items: center; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.primary > li { position: relative; }
+.nav-link {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 6px 10px; border: 1px solid var(--border);
+  border-radius: var(--control-radius); background: var(--chip-bg); color: var(--text-muted); font: inherit; font-weight: var(--fw-medium);
+  font-family: var(--label-font); font-size: var(--label-size); letter-spacing: var(--label-spacing); text-transform: var(--label-transform);
+  text-decoration: none; cursor: pointer; white-space: nowrap;
+}
+.nav-link:hover, .nav-link[aria-current], .nav-link[aria-expanded="true"], .dd.is-active > .nav-link { color: var(--text); background: var(--surface-hover); }
+.caret { font-size: 10px; opacity: .7; }
+
+.controls { display: flex; align-items: center; gap: 8px; margin-left: auto; flex: 0 0 auto; }
+.chip-trig {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 6px 10px; font-family: var(--label-font); font-size: var(--label-size); font-weight: var(--fw-medium);
+  letter-spacing: var(--label-spacing); text-transform: var(--label-transform);
+  color: var(--text-muted); background: var(--chip-bg); border: 1px solid var(--border); border-radius: var(--control-radius); cursor: pointer; text-decoration: none; white-space: nowrap;
+}
+.chip-trig:hover { color: var(--text); border-color: var(--accent); }
+.flag { font-family: var(--font-flag); }
+/* The theme control: an icon button, a moon in dark and a sun in light; the label is for screen readers. */
+.icon-trig { padding-inline: 8px; }
+.theme-ico, .mode-ico, .burger-ico { width: 18px; height: 18px; flex: 0 0 auto; }
+.theme-light { display: none; }
+:root[data-theme="industrial-light"] .theme-light { display: block; }
+:root[data-theme="industrial-light"] .theme-dark { display: none; }
+.dd-menu .mode-ico { color: var(--text-muted); }
+
+.dd { position: relative; }
+.dd-menu { position: absolute; right: 0; top: calc(100% + 6px); min-width: 210px; padding: 6px; background: var(--menu-bg); border: 1px solid var(--border); border-radius: 10px; box-shadow: var(--menu-shadow); display: none; z-index: 60; }
+.dd.left .dd-menu { left: 0; right: auto; }
+.dd.open .dd-menu { display: block; }
+/* The language menu as links (a site with the language in its URLs): up to 16 names in two columns. */
+.dd.open .dd-menu.lang-menu { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); min-width: 300px; }
+.lang-code { font-family: var(--font-mono); font-weight: 600; }
+.dd-menu a, .dd-menu button {
+  display: flex; align-items: center; gap: 10px; width: 100%; min-height: 36px; padding: 8px 10px; border: 0; border-radius: 6px;
+  background: none; color: var(--text); font: inherit; text-align: left; text-decoration: none; cursor: pointer;
+}
+.dd-menu a:hover, .dd-menu button:hover, .dd-menu a:focus-visible, .dd-menu button:focus-visible, .dd-menu a[aria-current] { background: var(--surface-hover); }
+.dd-menu .chk { margin-left: auto; color: var(--accent); visibility: hidden; }
+.dd-menu [aria-checked="true"] .chk { visibility: visible; }
+.dd-menu .ext::after { content: "\2197"; margin-left: auto; color: var(--text-faint); }
+.dd.mega-dd { position: static; }
+.dd-menu.mega { left: 0; right: 0; top: 100%; min-width: 0; padding: 0; border-radius: 0; border-width: 1px 0; box-shadow: var(--menu-shadow); }
+.mega-inner[data-cols="1"] { --mega-cols: 1; }
+.mega-inner[data-cols="3"] { --mega-cols: 3; }
+.mega-inner[data-cols="4"] { --mega-cols: 4; }
+.mega-inner { display: grid; grid-template-columns: repeat(var(--mega-cols, 2), minmax(0, 1fr)) minmax(260px, 300px); grid-template-rows: auto 1fr; gap: 32px; max-width: var(--max); margin-inline: auto; padding: 28px var(--gutter) 32px; }
+.mega-head { font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); margin: 0 0 12px 10px; }
+.mega-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.dd-menu .mega-item { display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 12px; align-items: center; padding: 8px 10px; min-height: 0; }
+.mega-ico { width: 36px; height: 36px; display: grid; place-items: center; border-radius: var(--radius); background: var(--surface-2); border: 1px solid var(--border); color: var(--text-muted); }
+.mega-ico svg { width: 18px; height: 18px; }
+.mega-item b { display: block; font-weight: var(--fw-semibold); line-height: 1.3; }
+.mega-item small { display: block; color: var(--text-muted); font-size: var(--fs-sm); line-height: 1.4; }
+.dd-menu .mega-item.ext::after { content: none; }
+.mega-item.ext b::after { content: " \2197"; color: var(--text-faint); font-weight: 400; }
+.mega-item[aria-current] .mega-ico { border-color: var(--accent); color: var(--accent-light); }
+.dd-menu a.mega-all { grid-column: 1 / -2; grid-row: 2; justify-self: start; align-self: start; display: inline-flex; width: auto; margin: -12px 0 0 10px; color: var(--link); font-size: var(--fs-sm); font-weight: var(--fw-medium); }
+.mega-card { grid-row: 1 / span 2; }
+.mega-card { border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface); padding: 20px; display: flex; flex-direction: column; gap: 10px; align-self: start; }
+.mega-eyebrow { font-family: var(--label-font); font-size: 11px; letter-spacing: calc(var(--label-spacing) * 1.5); text-transform: var(--label-transform); color: var(--text-muted); }
+.mega-title { font-weight: var(--fw-semibold); font-size: var(--fs-lg); color: var(--heading); }
+.mega-card p { margin: 0; color: var(--text-muted); font-size: var(--fs-sm); line-height: 1.5; }
+.mega-card.is-live .mega-eyebrow { display: flex; align-items: center; gap: 8px; }
+.mega-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.mega-kpis > div { border: 1px solid var(--border); border-radius: var(--control-radius); padding: 8px 10px; background: var(--surface-2); }
+.mega-kpis span { display: block; font-family: var(--label-font); font-size: 10.5px; letter-spacing: var(--label-spacing); text-transform: var(--label-transform); color: var(--text-muted); }
+.mega-kpis b { display: block; margin-top: 2px; font-family: var(--font-mono); font-size: 18px; font-weight: var(--fw-medium); color: var(--text); font-variant-numeric: tabular-nums; }
+.mega-rows { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+.mega-rows li { display: flex; align-items: center; gap: 8px; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: var(--fs-sm); }
+.mega-rows .mono { font-family: var(--font-mono); color: var(--text); }
+.mega-rows b { margin-left: auto; font-family: var(--font-mono); font-weight: var(--fw-medium); color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.mega-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.dd-menu .mega-actions .btn { width: auto; display: inline-flex; min-height: 32px; padding: 4px 14px; border: 1px solid var(--border-strong); border-radius: var(--control-radius); font-size: var(--label-size); font-weight: var(--fw-medium); }
+.dd-menu .mega-actions .btn-quiet { border-color: transparent; color: var(--link); }
+.dd-menu .mega-actions .btn-primary { border-color: var(--primary); }
+.dd-menu .mega-actions .btn-primary, .dd-menu .mega-actions .btn-primary:hover { background: var(--primary); color: var(--primary-ink); }
+.dd-sep { height: 1px; margin: 6px 4px; background: var(--border); }
+.dd-label { padding: 6px 10px 2px; font-family: var(--font-mono); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-faint); }
+/* The theme menu scrolls when it is taller than the space under the header. */
+#dmc-dd-theme { max-height: calc(100dvh - 80px); overflow-y: auto; overscroll-behavior: contain; }
+
+.burger { display: none; }
+
+/* Visually hidden, still read by screen readers: localized names for icon-only triggers. */
+.vh { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+.approw { position: sticky; top: calc(var(--header-h) + 1px); z-index: 40; background: var(--navbar-bg); backdrop-filter: var(--navbar-filter); -webkit-backdrop-filter: var(--navbar-filter); border-bottom: 1px solid var(--border); }
+.approw-inner { display: flex; gap: 4px; align-items: center; min-height: var(--approw-h); padding-inline: var(--gutter); max-width: 1600px; margin-inline: auto; overflow-x: auto; scrollbar-width: none; }
+.approw-name { font-family: var(--font-mono); text-transform: uppercase; color: var(--text-muted); margin-right: 12px; font-size: 12px; letter-spacing: .12em; white-space: nowrap; }
+.approw a { display: inline-flex; align-items: center; min-height: 32px; padding: 6px 12px; border: 1px solid transparent; border-radius: var(--radius-pill); color: var(--text-muted); font-size: var(--fs-sm); font-weight: var(--fw-semibold); text-decoration: none; white-space: nowrap; }
+.approw a:hover, .approw a[aria-current] { color: var(--text); background: var(--surface-hover); }
+
+.drawer { display: none; }
+.drawer-link { display: flex; align-items: center; min-height: 44px; padding: 8px 12px; border-radius: var(--radius); color: var(--text); text-decoration: none; cursor: pointer; }
+/* The drawer's sections are labels, as the triggers of the desktop menu; the pages under them stay readable type. */
+.drawer-top { font-family: var(--label-font); font-size: var(--label-size); font-weight: var(--fw-medium); letter-spacing: var(--label-spacing); text-transform: var(--label-transform); }
+.drawer-group { border-bottom: 1px solid var(--border); padding-block: 6px; }
+.drawer-group .drawer-link:not(.drawer-top) { padding-left: 24px; color: var(--text-muted); }
+.drawer .drawer-link[aria-current] { background: var(--surface-hover); color: var(--text); }
+.drawer summary { list-style: none; }
+/* The section name in a summary is a link to its main page; the row around it toggles the group. */
+.drawer summary .drawer-sec { align-self: stretch; display: flex; align-items: center; margin: -8px 0 -8px -12px; padding: 8px 12px; color: inherit; text-decoration: none; }
+.drawer summary .drawer-sec:hover { text-decoration: underline; text-underline-offset: 3px; }
+.drawer summary:has(> .drawer-sec[aria-current="page"]) { background: var(--surface-hover); color: var(--text); }
+.drawer summary::-webkit-details-marker { display: none; }
+/* A drawn chevron, not a text glyph, so it sits in one column open and closed. */
+.drawer summary::after { content: ""; width: 7px; height: 7px; margin: 0 8px 4px auto; border-right: 1.5px solid var(--text-muted); border-bottom: 1.5px solid var(--text-muted); transform: rotate(45deg); transition: transform .15s; }
+.drawer details[open] > summary::after { margin-bottom: -4px; transform: rotate(-135deg); }
+
+/* A link in the shell that leaves the site (an absolute http(s) address; the shell's own links are relative) ends in
+   an arrow, as text links in the pages do (Meshcore-Info-EU#164). */
+:is(.navbar, .drawer, .site-footer) a[href^="http"]:not(:has(img))::after {
+  content: "\2197"; content: "\2197" / ""; display: inline-block; margin-left: .25em; font-size: .85em; text-decoration: none; }
+.site-footer { margin-top: auto; border-top: 1px solid var(--border); background: var(--navbar-bg); color: var(--text-muted); }
+.footer-inner { display: grid; grid-template-columns: 1.4fr; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 24px; width: min(var(--max), calc(100% - 2 * var(--gutter))); margin-inline: auto; padding-block: 32px; }
+.footer-brand p { color: var(--text-muted); font-size: var(--fs-sm); }
+.footer-umbrella { margin-top: 12px; }
+/* A line about the site and its licence under the mark (meshcore-info.eu, 2026-10-21). */
+.footer-brand .footer-note { margin-top: 12px; max-width: 32ch; }
+.footer-brand .footer-fine { margin-top: 4px; font-size: var(--fs-xs, 12px); }
+.footer-title { font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; text-shadow: none; color: var(--text-muted); }
+.footer-col ul { list-style: none; margin: 0; padding: 0; }
+.footer-col li { margin: 6px 0; }
+.footer-col a { color: var(--text); text-decoration: none; font-size: var(--fs-sm); }
+.footer-col a:hover { color: var(--accent-strong); }
+.footer-col .ext::after { content: " \2197"; color: var(--text-faint); }
+
+/* Narrow: the trigger text stays readable for screen readers (visually hidden, not display:none). */
+@media (max-width: 1100px) {
+  .dd-trig .dd-text { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+}
+/* The full header (brand, six nav items, up to three chips) needs about 1060px,
+   so below 1024px the primary nav moves into the drawer. The app row stays until 768px. */
+@media (max-width: 1023px) {
+  .primary-nav { display: none; }
+  .burger { display: inline-flex; }
+  /* shell.js sets --drawer-top to the navbar bottom. */
+  body.drawer-open .drawer {
+    display: block; position: fixed; inset: var(--drawer-top, calc(var(--header-h) + 1px)) 0 0 0; z-index: 45;
+    overflow-y: auto; overscroll-behavior: contain; background: var(--drawer-bg); padding: 8px var(--gutter) 32px;
+  }
+}
+@media (max-width: 767px) {
+  .approw { display: none; }
+  .navbar-inner { gap: 8px; }
+  .controls { gap: 6px; }
+  .brand { flex: 0 1 auto; }
+  .brand-name { font-size: var(--fs-md); }
+  .footer-inner { grid-template-columns: 1fr 1fr; grid-auto-flow: row; }
+  .footer-brand { grid-column: 1 / -1; }
+  /* Two columns on a phone: a long column title ("Network and community") stays on one line. */
+  .footer-title { font-size: 11px; letter-spacing: .04em; }
+}
+/* Phones: keep the brand name whole next to four controls (account or sign-in, theme, language, burger). */
+.signin-ico { display: none; }
+@media (max-width: 479px) {
+  /* The section breadcrumb next to the brand does not fit beside the controls; the page head names the section. */
+  .brand-sub { display: none; }
+  .navbar-inner { gap: 6px; }
+  .brand { gap: 6px; }
+  .controls { gap: 4px; }
+  .controls .chip-trig { padding-inline: 7px; }
+  .signin-ico { display: inline; }
+  .signin-text { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; border: 0; }
+}
+
+/* Overlay header (decided 2026-10-01; fixed with a scroll state since 2026-10-02): on a page with body[data-header="overlay"] the header floats over the
+   first section (a film or a photo) as glass chips, no bar.
+   :root:root keeps the specificity these rules had while they excluded win95 (removed 2026-10-08). */
+:root:root body[data-header="overlay"] .navbar {
+  position: fixed; left: 0; right: 0; top: 0; background: transparent; border-bottom: 0; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none;
+}
+:root:root body[data-header="overlay"] .navbar :is(.brand-mark, .brand-sub) { color: var(--overlay-ink); }
+:root:root body[data-header="overlay"] .navbar .brand-mark .bk { color: var(--overlay-ink); opacity: .55; }
+:root:root body[data-header="overlay"] .navbar :is(.nav-link, .chip-trig) {
+  color: var(--overlay-ink); background: var(--overlay-chip-bg); border-color: var(--overlay-chip-border); backdrop-filter: var(--overlay-filter); -webkit-backdrop-filter: var(--overlay-filter);
+}
+:root:root body[data-header="overlay"] .navbar :is(.nav-link:hover, .nav-link[aria-expanded="true"], .dd.is-active > .nav-link, .chip-trig:hover) {
+  color: var(--overlay-ink); background: var(--overlay-chip-hover);
+}
+/* With a menu or the drawer open, the overlay header and the menu become one frosted glass sheet over the film,
+   so the menu hangs from the header instead of floating under a see-through bar. The blur sits on a ::before:
+   a backdrop-filter on .navbar itself would stop the menu inside it from blurring the page. */
+body[data-header="overlay"] .navbar::before { content: ""; position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity .15s ease; pointer-events: none; }
+:root:root body[data-header="overlay"]:is(.drawer-open, .header-solid) .navbar::before,
+:root:root body[data-header="overlay"] .navbar:has(.dd.open)::before {
+  opacity: 1; background: var(--overlay-panel-bg); backdrop-filter: var(--overlay-panel-filter); -webkit-backdrop-filter: var(--overlay-panel-filter); border-bottom: 1px solid var(--overlay-panel-border);
+}
+:root:root body[data-header="overlay"] .navbar .dd-menu,
+:root:root body[data-header="overlay"] .drawer {
+  background: var(--overlay-panel-bg); backdrop-filter: var(--overlay-panel-filter); -webkit-backdrop-filter: var(--overlay-panel-filter); border-color: var(--overlay-panel-border);
+}
+:root:root body[data-header="overlay"] .navbar .dd-menu.mega { border-top: 0; }
+:root:root body[data-header="overlay"]:is(.drawer-open, .header-solid) .navbar :is(.brand-mark, .brand-sub),
+:root:root body[data-header="overlay"] .navbar:has(.dd.open) :is(.brand-mark, .brand-sub) { color: var(--text); }
+:root:root body[data-header="overlay"]:is(.drawer-open, .header-solid) .navbar .brand-mark .bk,
+:root:root body[data-header="overlay"] .navbar:has(.dd.open) .brand-mark .bk { color: var(--text-muted); opacity: 1; }
+:root:root body[data-header="overlay"]:is(.drawer-open, .header-solid) .navbar :is(.nav-link, .chip-trig),
+:root:root body[data-header="overlay"] .navbar:has(.dd.open) :is(.nav-link, .chip-trig) {
+  color: var(--text-muted); background: var(--chip-bg); border-color: var(--border); backdrop-filter: none; -webkit-backdrop-filter: none;
+}
+/* The active section's chip is in this list too: without it, the overlay rule above keeps its white ink on the
+   light sheet. */
+:root:root body[data-header="overlay"]:is(.drawer-open, .header-solid) .navbar :is(.nav-link:hover, .nav-link[aria-expanded="true"], .dd.is-active > .nav-link, .chip-trig:hover, .chip-trig[aria-expanded="true"]),
+:root:root body[data-header="overlay"] .navbar:has(.dd.open) :is(.nav-link:hover, .nav-link[aria-expanded="true"], .dd.is-active > .nav-link, .chip-trig:hover, .chip-trig[aria-expanded="true"]) {
+  color: var(--text); background: var(--surface-hover);
+}
+/* Once the page scrolls, shell.js sets body.header-solid: the overlay header becomes the same frosted sheet as with a
+   menu open, so it stays readable over content (the transparent-then-solid header pattern). */
+.mega-feed { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+.mega-feed li { display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.mega-date { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); }
+.mega-ft b { display: block; font-size: var(--fs-sm); font-weight: var(--fw-medium); color: var(--text); }
+.mega-ft small { display: block; font-family: var(--font-mono); font-size: 11px; color: var(--text-faint); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* Glass menus on every page, not only over a film (decided 2026-10-02): the mega menu and the dropdowns use the same
+   frosted sheet. */
+:root:root .dd-menu { background: var(--overlay-panel-bg); backdrop-filter: var(--overlay-panel-filter); -webkit-backdrop-filter: var(--overlay-panel-filter); }
+:root:root .mega-item.ext b::after { color: var(--text-muted); }
+
+/* A page with its header rendered at build time (body[data-shell="static"]) and no JavaScript: the dropdown
+   triggers and the burger do nothing, so the drawer's list of links stands in for them, under the header, at
+   every width. Its groups are <details>, which open without a script. */
+:root:not([data-js]) body[data-shell="static"] :is(.primary-nav, .controls .dd, .burger) { display: none; }
+:root:not([data-js]) body[data-shell="static"] .drawer { display: block; padding: 4px var(--gutter) 12px; border-bottom: 1px solid var(--border); }

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "data/devices.yaml: device catalog, specs only",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "maker", "mcu", "radio_chip", "bands", "roles", "battery", "gps",
+                 "connectivity", "form_factor", "price_band", "power_profile", "firmware_support",
+                 "last_verified", "sources"],
+    "properties": {
+      "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+      "name": { "type": "string", "minLength": 1 },
+      "maker": { "type": "string", "minLength": 1 },
+      "mcu": { "type": "string", "minLength": 1 },
+      "radio_chip": { "type": "string", "minLength": 1 },
+      "bands": {
+        "type": "array",
+        "items": { "type": "integer" },
+        "contains": { "const": 868 },
+        "uniqueItems": true
+      },
+      "roles": {
+        "type": "array",
+        "items": { "enum": ["companion", "repeater", "room_server"] },
+        "minItems": 1,
+        "uniqueItems": true
+      },
+      "battery": {
+        "type": "object",
+        "required": ["builtin"],
+        "properties": {
+          "builtin": { "type": "boolean" },
+          "mah": { "type": "integer", "minimum": 1 }
+        },
+        "additionalProperties": false
+      },
+      "gps": { "type": "boolean" },
+      "screen": { "type": "string" },
+      "connectivity": {
+        "type": "array",
+        "items": { "enum": ["ble", "wifi", "usb"] },
+        "uniqueItems": true
+      },
+      "form_factor": { "enum": ["handheld", "board", "enclosed", "wearable", "usb"] },
+      "price_band": { "enum": [1, 2, 3] },
+      "power_profile": { "enum": ["low", "medium", "high"] },
+      "firmware_support": { "enum": ["official", "community"] },
+      "notes_key": { "type": "string", "minLength": 1 },
+      "last_verified": { "type": "string", "format": "date" },
+      "sources": {
+        "type": "array",
+        "items": { "type": "string", "pattern": "^https://" },
+        "minItems": 1
+      }
+    },
+    "additionalProperties": false
+  }
+}

@@ -1,0 +1,158 @@
+---
+// The recommended settings per area (/guides/settings/): per country its areas, each with its radio
+// preset and the settings its local group changed from MeshCore's defaults. Inside .prose, so web/js/copy.js
+// gives every command block a copy button.
+import { t, PARAMS, loadData } from '../lib/site.mjs';
+import map from '../data/europe-map.json';
+import UsbBlock from './UsbBlock.astro';
+import RegionTree from './RegionTree.astro';
+
+const { lang } = Astro.props;
+const presets = Object.fromEntries(loadData('presets').map((p) => [p.id, p]));
+const areas = loadData('areas');
+const country = (cc) => t(lang, `country_${cc.toLowerCase()}`);
+const countries = [...new Set(areas.map((a) => a.country))].sort((a, b) => country(a).localeCompare(country(b)));
+const fallback = presets['eu-uk-narrow'];
+const otherPresets = Object.values(presets).filter((p) => p.other);
+// The countries MeshCore's own list names for EU/UK (Narrow): the EU and the UK. Those without an area of
+// their own use it.
+const COVERED = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU',
+  'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'GB'];
+const others = COVERED.filter((cc) => !countries.includes(cc)).sort((a, b) => country(a).localeCompare(country(b)));
+// The country picker: every country above, each by its own name.
+const picks = [...countries, ...others].sort((a, b) => country(a).localeCompare(country(b)));
+// Where a country on the map links to: its one area, its country heading, or its line in the EU/UK list.
+const target = (cc) => {
+  const own = areas.filter((a) => a.country === cc && !map.provinces[a.id]);
+  if (own.length) return { href: `#area-${own[0].id}`, preset: presets[own[0].preset].name, kind: 'own' };
+  if (others.includes(cc)) return { href: `#area-${cc.toLowerCase()}`, preset: fallback.name, kind: 'eu' };
+  return null;
+};
+const DEVICES = ['repeater', 'companion'];
+// The commands the USB block sends for an area: the preset, then the repeater's changes.
+const usbCommands = (p, a) => [`set radio ${p.frequency},${p.bandwidth},${p.spreading_factor},${p.coding_rate}`,
+  ...((a && a.changes) || []).filter((c) => c.device === 'repeater' && c.commands).flatMap((c) => c.commands)];
+const u = (k) => t(lang, `usb_${k}`);
+// A command split into text and the values to fill in (YOUR_PROVINCE), each editable in place.
+const parts = (line) => line.split(/(YOUR_[A-Z]+)/).filter(Boolean);
+// Dates written in full.
+const dateOf = (iso) => new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : lang, { dateStyle: 'long' }).format(new Date(`${iso}T00:00:00Z`));
+---
+<div class="prose area-settings" data-usb-text
+  data-idle={u('status_idle')} data-connected={u('status_connected')} data-busy={u('status_busy')} data-fill={u('status_fill')}
+  data-reading={u('status_reading')} data-review={u('status_review')} data-sent={u('status_sent')} data-sent_errors={u('status_sent_errors')}
+  data-rebooted={u('status_rebooted')} data-no_answer={u('no_answer')}>
+  <form class="filters" data-area-pick hidden>
+    <div class="filters-row">
+      <label>{t(lang, 'area_country_label')}
+        <select name="country">
+          <option value="">{t(lang, 'area_country_pick')}</option>
+          {picks.map((cc) => <option value={cc}>{country(cc)}</option>)}
+        </select>
+      </label>
+    </div>
+    <p class="meta">{t(lang, 'area_country_missing').split('{link}')[0]}<a href="#add-area">{t(lang, 'area_country_missing_link')}</a>{t(lang, 'area_country_missing').split('{link}')[1]}</p>
+  </form>
+  <figure class="area-map">
+    <svg viewBox={`0 0 ${map.width} ${map.height}`} role="group" aria-label={t(lang, 'area_map_label')}>
+      <path class="land" d={map.land} />
+      {Object.entries(map.countries).map(([cc, d]) => {
+        const to = target(cc);
+        return to ? <a href={to.href} aria-label={`${country(cc)}: ${to.preset}`}><title>{`${country(cc)}: ${to.preset}`}</title><path class={to.kind} d={d} /></a> : <path class="other" d={d} />;
+      })}
+      {Object.entries(map.provinces).map(([id, d]) => {
+        const a = areas.find((x) => x.id === id);
+        return <a href={`#area-${id}`} aria-label={`${a.name}: ${presets[a.preset].name}`}><title>{`${a.name}: ${presets[a.preset].name}`}</title><path class="own" d={d} /></a>;
+      })}
+    </svg>
+    <figcaption><span class="key own"></span>{t(lang, 'area_map_own')} <span class="key eu"></span>{fallback.name}</figcaption>
+  </figure>
+  {countries.map((cc) => (
+    <section class="country" id={`country-${cc.toLowerCase()}`}>
+      {(() => {
+        // A country with one area of its own name: the country heading links to that area.
+        const own = areas.filter((a) => a.country === cc);
+        const single = own.length === 1 && own[0].name === country(cc);
+        return <h2><span class="cc mono" aria-hidden="true">{cc}</span> {country(cc)} <a class="anchor" href={single ? `#area-${own[0].id}` : `#country-${cc.toLowerCase()}`} aria-label={`${t(lang, 'area_link')}: ${country(cc)}`}>#</a></h2>;
+      })()}
+      {areas.filter((a) => a.country === cc).map((a) => {
+        const p = presets[a.preset];
+        return (
+          <section class="area" id={`area-${a.id}`}>
+            {a.name !== country(cc) ? <h3>{a.name} <a class="anchor" href={`#area-${a.id}`} aria-label={`${t(lang, 'area_link')}: ${a.name}`}>#</a></h3>
+              : areas.filter((x) => x.country === cc).length > 1 && <h3>{a.name} <a class="anchor" href={`#area-${a.id}`} aria-label={`${t(lang, 'area_link')}: ${a.name}`}>#</a></h3>}
+            <dl class="area-preset">
+              <dt>{t(lang, 'area_preset')}</dt><dd><strong>{p.name}</strong></dd>
+              <dt>{t(lang, 'presets_frequency')}</dt><dd class="mono">{p.frequency}</dd>
+              <dt>{t(lang, 'presets_bandwidth')}</dt><dd class="mono">{p.bandwidth}</dd>
+              <dt>{t(lang, 'presets_sf')}</dt><dd class="mono">{p.spreading_factor}</dd>
+              <dt>{t(lang, 'presets_cr')}</dt><dd class="mono">{p.coding_rate}</dd>
+              {p.path_hash_size && <Fragment><dt>{t(lang, 'area_path_hash')}</dt><dd class="mono">{p.path_hash_size} {t(lang, 'area_bytes')}</dd></Fragment>}
+              {a.firmware && <Fragment><dt>{t(lang, 'area_firmware')}</dt><dd class="mono">{a.firmware} {t(lang, 'area_or_newer')}</dd></Fragment>}
+            </dl>
+            <RegionTree lang={lang} area={a} />
+            {a.changes && (
+              <Fragment>
+                <h4>{t(lang, 'area_changes')}</h4>
+                {DEVICES.filter((dev) => a.changes.some((c) => c.device === dev)).map((dev) => (
+                  <Fragment>
+                    <h5>{t(lang, `area_device_${dev}`)}</h5>
+                    <ul class="area-changes">{a.changes.filter((c) => c.device === dev).map((c) => (
+                      <li><p>{t(lang, c.key)}</p>{c.commands && <Fragment>
+                        {c.commands.some((l) => /YOUR_/.test(l)) && <p class="ph-hint">{t(lang, 'area_ph_hint')}</p>}
+                        <pre>{c.commands.map((line, i) => <Fragment>{i > 0 && '\n'}{parts(line).map((x) => /^YOUR_/.test(x)
+                          ? <span class="ph" data-ph={x} contenteditable="plaintext-only" spellcheck="false" role="textbox" aria-label={t(lang, `area_ph_${x.slice(5).toLowerCase()}`)}>{x}</span>
+                          : x)}</Fragment>)}</pre>
+                      </Fragment>}</li>
+                    ))}</ul>
+                  </Fragment>
+                ))}
+              </Fragment>
+            )}
+            <UsbBlock lang={lang} commands={usbCommands(p, a)} />
+            <p class="meta">{a.group
+              ? <Fragment>{`${t(lang, 'area_source_group')} `}<a href={a.source}>{a.group}</a></Fragment>
+              : <a href={a.source}>{t(lang, 'area_source_preset')}</a>}, {t(lang, 'area_checked')} <time datetime={a.last_checked}>{dateOf(a.last_checked)}</time></p>
+          </section>
+        );
+      })}
+    </section>
+  ))}
+  <section class="country" id="eu-uk" data-one={t(lang, 'area_country_eu').replace('{preset}', fallback.name)}>
+    <h2>{t(lang, 'area_others_title')} <a class="anchor" href="#eu-uk" aria-label={`${t(lang, 'area_link')}: ${t(lang, 'area_others_title')}`}>#</a></h2>
+    <p>{t(lang, 'area_others_body')}</p>
+    <dl class="area-preset">
+      <dt>{t(lang, 'area_preset')}</dt><dd><strong>{fallback.name}</strong></dd>
+      <dt>{t(lang, 'presets_frequency')}</dt><dd class="mono">{fallback.frequency}</dd>
+      <dt>{t(lang, 'presets_bandwidth')}</dt><dd class="mono">{fallback.bandwidth}</dd>
+      <dt>{t(lang, 'presets_sf')}</dt><dd class="mono">{fallback.spreading_factor}</dd>
+      <dt>{t(lang, 'presets_cr')}</dt><dd class="mono">{fallback.coding_rate}</dd>
+    </dl>
+    <UsbBlock lang={lang} commands={usbCommands(fallback, null)} />
+    <ul class="area-others">{others.map((cc) => (
+      <li id={`area-${cc.toLowerCase()}`}><span class="cc mono" aria-hidden="true">{cc}</span> {country(cc)} <a class="anchor" href={`#area-${cc.toLowerCase()}`} aria-label={`${t(lang, 'area_link')}: ${country(cc)}`}>#</a></li>
+    ))}</ul>
+    <p class="meta"><a href={fallback.source}>{t(lang, 'area_source_preset')}</a>, {t(lang, 'area_checked')} <time datetime={fallback.last_checked}>{dateOf(fallback.last_checked)}</time></p>
+  </section>
+  <section class="country" id="other-presets">
+    <h2>{t(lang, 'area_other_presets_title')} <a class="anchor" href="#other-presets" aria-label={`${t(lang, 'area_link')}: ${t(lang, 'area_other_presets_title')}`}>#</a></h2>
+    <p>{t(lang, 'area_other_presets_body')}</p>
+    <div class="table-wrap" tabindex="0" role="region" aria-label={t(lang, 'area_other_presets_title')}>
+      <table class="presets">
+        <thead><tr><th scope="col">{t(lang, 'presets_name')}</th><th scope="col">{t(lang, 'presets_frequency')}</th><th scope="col">{t(lang, 'presets_bandwidth')}</th><th scope="col">{t(lang, 'presets_sf')}</th><th scope="col">{t(lang, 'presets_cr')}</th></tr></thead>
+        <tbody>{otherPresets.map((p) => (
+          <tr id={`preset-${p.id}`}><th scope="row">{p.name}</th><td class="num mono">{p.frequency}</td><td class="num mono">{p.bandwidth}</td><td class="num mono">{p.spreading_factor}</td><td class="num mono">{p.coding_rate}</td></tr>
+        ))}</tbody>
+      </table>
+    </div>
+    <p class="meta"><a href={otherPresets[0].source}>{t(lang, 'area_source_preset')}</a>, {t(lang, 'area_checked')} <time datetime={otherPresets[0].last_checked}>{dateOf(otherPresets[0].last_checked)}</time></p>
+  </section>
+  <section class="note cta-box" id="add-area">
+    <h2>{t(lang, 'area_add_title')}</h2>
+    <p>{t(lang, 'area_add_body')}</p>
+    <p><a class="btn btn-primary" href={`${PARAMS.repo}/issues/new?template=add-area.yml`}>{t(lang, 'area_add_cta')}</a></p>
+  </section>
+</div>
+<script is:inline type="module" src="/js/usb-settings.js"></script>
+<script is:inline src="/js/regions.js" defer></script>
+<script is:inline src="/js/area-pick.js" defer></script>

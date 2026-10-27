@@ -1,0 +1,39 @@
+---
+// The network page (/network/): the live numbers from the MeshCore Analyzer (web/js/live-strip.js, which
+// the layout loads for the page's live hero strip; hidden until they load), the 3 ways to add an observer, each
+// linking to the Analyzer's onboarding, and how
+// data gets in (facts from the Analyzer's code on 21 October 2026).
+import { t } from '../lib/site.mjs';
+const { lang } = Astro.props;
+const ONBOARDING = 'https://meshcore-analyzer.eu/#onboarding';
+const LIVE = ['packets', 'countries', 'repeaters', 'observers'];
+const WAYS = ['app', 'browser', 'board'];
+const DATA = ['from', 'way', 'node'];
+---
+<section class="section net-live" aria-labelledby="net-live-title" data-live-strip hidden>
+  <h2 id="net-live-title">{t(lang, 'net_live_title')}</h2>
+  <ul class="net-tiles">{LIVE.map((k) => (
+    <li class="card"><span class="n mono" data-live={k}></span><span class="lbl">{t(lang, `net_live_${k}`)}</span></li>
+  ))}</ul>
+  <p class="meta">{t(lang, 'net_live_source')} <a href="https://meshcore-analyzer.eu/">MeshCore Analyzer</a></p>
+</section>
+<section class="section net-join" aria-labelledby="net-join-title">
+  <h2 id="net-join-title">{t(lang, 'net_join_title')}</h2>
+  <p>{t(lang, 'net_join_body')}</p>
+  <ul class="paths">{WAYS.map((w) => (
+    <li><a class="card path-card" href={ONBOARDING}><h3>{t(lang, `net_way_${w}_title`)}</h3><p>{t(lang, `net_way_${w}_desc`)}</p></a></li>
+  ))}</ul>
+</section>
+<section class="section net-data" id="data" aria-labelledby="net-data-title">
+  <h2 id="net-data-title">{t(lang, 'net_data_title')}</h2>
+  <p>{t(lang, 'net_data_lead')}</p>
+  <ul class="paths">{DATA.map((k) => (
+    <li><div class="card data-card"><h3>{t(lang, `net_data_${k}_title`)}</h3><p>{t(lang, `net_data_${k}_body`)}</p></div></li>
+  ))}</ul>
+  <h3>{t(lang, 'net_data_q_title')}</h3>
+  <dl class="net-faq">{[1, 2, 3, 4].map((n) => {
+    const [before, after] = t(lang, `net_data_a${n}`).split('{link}');
+    const link = n === 3 ? <a href={ONBOARDING}>{t(lang, 'net_data_analyzer_link')}</a> : <a href="https://discord.meshcore-info.eu/">Discord</a>;
+    return <Fragment><dt>{t(lang, `net_data_q${n}`)}</dt><dd>{before}{after !== undefined && <Fragment>{link}{after}</Fragment>}</dd></Fragment>;
+  })}</dl>
+</section>

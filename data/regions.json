@@ -1,0 +1,1336 @@
+{
+ "source": "https://raw.githubusercontent.com/marcelverdult/meshcore-regions/main/index.json",
+ "generated_at": "2026-10-21T08:10:14Z",
+ "europe": "eu",
+ "countries": {
+  "ad": {
+   "name": "Andorra",
+   "regions": []
+  },
+  "al": {
+   "name": "Albania",
+   "regions": []
+  },
+  "at": {
+   "name": "Austria",
+   "regions": []
+  },
+  "ax": {
+   "name": "Åland Islands",
+   "regions": []
+  },
+  "ba": {
+   "name": "Bosnia & Herzegovina",
+   "regions": []
+  },
+  "be": {
+   "name": "Belgium",
+   "regions": [
+    {
+     "code": "be-van",
+     "name": "Antwerpen"
+    },
+    {
+     "code": "be-wbr",
+     "name": "Brabant wallon"
+    },
+    {
+     "code": "be-bru",
+     "name": "Brussel"
+    },
+    {
+     "code": "be-wht",
+     "name": "Hainaut"
+    },
+    {
+     "code": "be-vli",
+     "name": "Limburg"
+    },
+    {
+     "code": "be-wlg",
+     "name": "Liège"
+    },
+    {
+     "code": "be-wlx",
+     "name": "Luxembourg"
+    },
+    {
+     "code": "be-wna",
+     "name": "Namur"
+    },
+    {
+     "code": "be-vov",
+     "name": "Oost-Vlaanderen"
+    },
+    {
+     "code": "be-vbr",
+     "name": "Vlaams-Brabant"
+    },
+    {
+     "code": "be-vwv",
+     "name": "West-Vlaanderen"
+    }
+   ]
+  },
+  "bg": {
+   "name": "Bulgaria",
+   "regions": []
+  },
+  "by": {
+   "name": "Belarus",
+   "regions": []
+  },
+  "ch": {
+   "name": "Switzerland",
+   "regions": []
+  },
+  "cz": {
+   "name": "Czechia",
+   "regions": [
+    {
+     "code": "cz-jmk",
+     "name": "Jihomoravský kraj"
+    },
+    {
+     "code": "cz-jhc",
+     "name": "Jihočeský kraj"
+    },
+    {
+     "code": "cz-kvk",
+     "name": "Karlovarský kraj"
+    },
+    {
+     "code": "cz-hkk",
+     "name": "Královéhradecký kraj"
+    },
+    {
+     "code": "cz-lbk",
+     "name": "Liberecký kraj"
+    },
+    {
+     "code": "cz-msk",
+     "name": "Moravskoslezský kraj"
+    },
+    {
+     "code": "cz-olk",
+     "name": "Olomoucký kraj"
+    },
+    {
+     "code": "cz-pak",
+     "name": "Pardubický kraj"
+    },
+    {
+     "code": "cz-plz",
+     "name": "Plzeňský kraj"
+    },
+    {
+     "code": "cz-pha",
+     "name": "Praha"
+    },
+    {
+     "code": "cz-stc",
+     "name": "Středočeský kraj"
+    },
+    {
+     "code": "cz-vys",
+     "name": "Vysočina"
+    },
+    {
+     "code": "cz-zlk",
+     "name": "Zlínský kraj"
+    },
+    {
+     "code": "cz-ulk",
+     "name": "Ústecký kraj"
+    }
+   ]
+  },
+  "de": {
+   "name": "Germany",
+   "regions": [
+    {
+     "code": "de-abo",
+     "name": "Allgäu-Bodensee-Oberschwaben"
+    },
+    {
+     "code": "altes-land",
+     "name": "Altes Land"
+    },
+    {
+     "code": "de-bw",
+     "name": "Baden-Württemberg"
+    },
+    {
+     "code": "de-by",
+     "name": "Bayern"
+    },
+    {
+     "code": "de-be",
+     "name": "Berlin"
+    },
+    {
+     "code": "de-bb",
+     "name": "Brandenburg"
+    },
+    {
+     "code": "bremesh",
+     "name": "BreMesh (Bremen, Bremerhaven und Umland)"
+    },
+    {
+     "code": "de-hb",
+     "name": "Bremen"
+    },
+    {
+     "code": "dach",
+     "name": "DACH-Region (DE/AT/CH)"
+    },
+    {
+     "code": "drielande",
+     "name": "Dreiländereck NL/BE/DE"
+    },
+    {
+     "code": "de-dk",
+     "name": "Dänemark"
+    },
+    {
+     "code": "pamina",
+     "name": "Eurodistrikt PAMINA (DE/FR)"
+    },
+    {
+     "code": "de-ffnw",
+     "name": "Freifunk Nordwest"
+    },
+    {
+     "code": "saarlorlux",
+     "name": "Großregion (Saar-Lor-Lux)"
+    },
+    {
+     "code": "de-hh",
+     "name": "Hamburg"
+    },
+    {
+     "code": "hansemesh",
+     "name": "Hansemesh (Großraum Hamburg)"
+    },
+    {
+     "code": "de-harz",
+     "name": "Harzregion"
+    },
+    {
+     "code": "de-bebb",
+     "name": "Hauptstadtregion Berlin-Brandenburg"
+    },
+    {
+     "code": "de-he",
+     "name": "Hessen"
+    },
+    {
+     "code": "landkreis-harburg",
+     "name": "Landkreis Harburg"
+    },
+    {
+     "code": "de-mv",
+     "name": "Mecklenburg-Vorpommern"
+    },
+    {
+     "code": "rhein-neckar",
+     "name": "Metropolregion Rhein-Neckar"
+    },
+    {
+     "code": "de-mitte",
+     "name": "Mitteldeutschland"
+    },
+    {
+     "code": "de-msl",
+     "name": "Münsterland"
+    },
+    {
+     "code": "de-ni",
+     "name": "Niedersachsen"
+    },
+    {
+     "code": "de-nord",
+     "name": "Norddeutschland"
+    },
+    {
+     "code": "de-nw",
+     "name": "Nordrhein-Westfalen"
+    },
+    {
+     "code": "de-ost",
+     "name": "Ostdeutschland"
+    },
+    {
+     "code": "rennsteigmesh",
+     "name": "Rennsteigmesh (Region um den Rennsteig)"
+    },
+    {
+     "code": "rhein-main",
+     "name": "Rhein-Main"
+    },
+    {
+     "code": "de-rp",
+     "name": "Rheinland-Pfalz"
+    },
+    {
+     "code": "de-sl",
+     "name": "Saarland"
+    },
+    {
+     "code": "de-sn",
+     "name": "Sachsen"
+    },
+    {
+     "code": "de-st",
+     "name": "Sachsen-Anhalt"
+    },
+    {
+     "code": "samtgemeinde-tostedt",
+     "name": "Samtgemeinde Tostedt"
+    },
+    {
+     "code": "de-sh",
+     "name": "Schleswig-Holstein"
+    },
+    {
+     "code": "de-sued",
+     "name": "Süddeutschland"
+    },
+    {
+     "code": "de-th",
+     "name": "Thüringen"
+    },
+    {
+     "code": "upper-rhine",
+     "name": "Upper Rhine"
+    },
+    {
+     "code": "de-west",
+     "name": "Westdeutschland"
+    }
+   ]
+  },
+  "dk": {
+   "name": "Denmark",
+   "regions": [
+    {
+     "code": "dk-mdj",
+     "name": "Region Midtjylland"
+    }
+   ]
+  },
+  "ee": {
+   "name": "Estonia",
+   "regions": []
+  },
+  "es": {
+   "name": "Spain",
+   "regions": [
+    {
+     "code": "es-ab",
+     "name": "Albacete"
+    },
+    {
+     "code": "es-a",
+     "name": "Alicante"
+    },
+    {
+     "code": "es-al",
+     "name": "Almería"
+    },
+    {
+     "code": "es-an",
+     "name": "Andalucía"
+    },
+    {
+     "code": "es-ar",
+     "name": "Aragón"
+    },
+    {
+     "code": "es-o",
+     "name": "Asturias"
+    },
+    {
+     "code": "es-ba",
+     "name": "Badajoz"
+    },
+    {
+     "code": "es-pm",
+     "name": "Baleares"
+    },
+    {
+     "code": "es-b",
+     "name": "Barcelona"
+    },
+    {
+     "code": "es-cn",
+     "name": "Canarias"
+    },
+    {
+     "code": "es-cb",
+     "name": "Cantabria"
+    },
+    {
+     "code": "es-s",
+     "name": "Cantabria"
+    },
+    {
+     "code": "es-cs",
+     "name": "Castellón"
+    },
+    {
+     "code": "es-cl",
+     "name": "Castilla y León"
+    },
+    {
+     "code": "es-cm",
+     "name": "Castilla-La Mancha"
+    },
+    {
+     "code": "es-ct",
+     "name": "Cataluña"
+    },
+    {
+     "code": "es-ce",
+     "name": "Ceuta"
+    },
+    {
+     "code": "es-cr",
+     "name": "Ciudad Real"
+    },
+    {
+     "code": "es-vc",
+     "name": "Comunidad Valenciana"
+    },
+    {
+     "code": "es-md",
+     "name": "Comunidad de Madrid"
+    },
+    {
+     "code": "es-cu",
+     "name": "Cuenca"
+    },
+    {
+     "code": "es-cc",
+     "name": "Cáceres"
+    },
+    {
+     "code": "es-ca",
+     "name": "Cádiz"
+    },
+    {
+     "code": "es-co",
+     "name": "Córdoba"
+    },
+    {
+     "code": "es-ex",
+     "name": "Extremadura"
+    },
+    {
+     "code": "es-ga",
+     "name": "Galicia"
+    },
+    {
+     "code": "es-gi",
+     "name": "Gerona"
+    },
+    {
+     "code": "es-gr",
+     "name": "Granada"
+    },
+    {
+     "code": "es-gu",
+     "name": "Guadalajara"
+    },
+    {
+     "code": "es-ss",
+     "name": "Guipúzcoa"
+    },
+    {
+     "code": "es-h",
+     "name": "Huelva"
+    },
+    {
+     "code": "es-hu",
+     "name": "Huesca"
+    },
+    {
+     "code": "es-ib",
+     "name": "Islas Baleares"
+    },
+    {
+     "code": "es-j",
+     "name": "Jaén"
+    },
+    {
+     "code": "es-c",
+     "name": "La Coruña"
+    },
+    {
+     "code": "es-lo",
+     "name": "La Rioja"
+    },
+    {
+     "code": "es-ri",
+     "name": "La Rioja"
+    },
+    {
+     "code": "es-gc",
+     "name": "Las Palmas"
+    },
+    {
+     "code": "es-le",
+     "name": "León"
+    },
+    {
+     "code": "es-lu",
+     "name": "Lugo"
+    },
+    {
+     "code": "es-l",
+     "name": "Lérida"
+    },
+    {
+     "code": "es-m",
+     "name": "Madrid"
+    },
+    {
+     "code": "es-ml",
+     "name": "Melilla"
+    },
+    {
+     "code": "es-mu",
+     "name": "Murcia"
+    },
+    {
+     "code": "es-ma",
+     "name": "Málaga"
+    },
+    {
+     "code": "es-na",
+     "name": "Navarra"
+    },
+    {
+     "code": "es-nc",
+     "name": "Navarra"
+    },
+    {
+     "code": "es-or",
+     "name": "Orense"
+    },
+    {
+     "code": "es-p",
+     "name": "Palencia"
+    },
+    {
+     "code": "es-pv",
+     "name": "País Vasco"
+    },
+    {
+     "code": "es-po",
+     "name": "Pontevedra"
+    },
+    {
+     "code": "es-mc",
+     "name": "Región de Murcia"
+    },
+    {
+     "code": "es-sa",
+     "name": "Salamanca"
+    },
+    {
+     "code": "es-tf",
+     "name": "Santa Cruz de Tenerife"
+    },
+    {
+     "code": "es-sg",
+     "name": "Segovia"
+    },
+    {
+     "code": "es-se",
+     "name": "Sevilla"
+    },
+    {
+     "code": "es-so",
+     "name": "Soria"
+    },
+    {
+     "code": "es-t",
+     "name": "Tarragona"
+    },
+    {
+     "code": "es-tr",
+     "name": "Teruel"
+    },
+    {
+     "code": "es-to",
+     "name": "Toledo"
+    },
+    {
+     "code": "es-v",
+     "name": "Valencia"
+    },
+    {
+     "code": "es-va",
+     "name": "Valladolid"
+    },
+    {
+     "code": "es-bi",
+     "name": "Vizcaya"
+    },
+    {
+     "code": "es-za",
+     "name": "Zamora"
+    },
+    {
+     "code": "es-z",
+     "name": "Zaragoza"
+    },
+    {
+     "code": "es-vi",
+     "name": "Álava"
+    },
+    {
+     "code": "es-av",
+     "name": "Ávila"
+    }
+   ]
+  },
+  "fi": {
+   "name": "Finland",
+   "regions": []
+  },
+  "fo": {
+   "name": "Faroe Islands",
+   "regions": []
+  },
+  "fr": {
+   "name": "France",
+   "regions": [
+    {
+     "code": "fr-20r",
+     "name": "Corse"
+    },
+    {
+     "code": "fr-cor",
+     "name": "Corse"
+    },
+    {
+     "code": "fr-gua",
+     "name": "Guadeloupe"
+    },
+    {
+     "code": "fr-guf",
+     "name": "Guyane"
+    },
+    {
+     "code": "fr-reu",
+     "name": "La Réunion"
+    },
+    {
+     "code": "fr-mtq",
+     "name": "Martinique"
+    },
+    {
+     "code": "fr-may",
+     "name": "Mayotte"
+    }
+   ]
+  },
+  "gb": {
+   "name": "United Kingdom",
+   "regions": [
+    {
+     "code": "eng",
+     "name": "England"
+    },
+    {
+     "code": "gb-mid",
+     "name": "Midlands"
+    },
+    {
+     "code": "gb-nth",
+     "name": "North East"
+    },
+    {
+     "code": "gb-sth",
+     "name": "South East"
+    },
+    {
+     "code": "gb-swt",
+     "name": "South West"
+    },
+    {
+     "code": "swsw",
+     "name": "South West & South Wales"
+    },
+    {
+     "code": "wls",
+     "name": "Wales"
+    },
+    {
+     "code": "gb-eb-nw",
+     "name": "nw"
+    }
+   ]
+  },
+  "gr": {
+   "name": "Greece",
+   "regions": []
+  },
+  "hr": {
+   "name": "Croatia",
+   "regions": []
+  },
+  "hu": {
+   "name": "Hungary",
+   "regions": []
+  },
+  "ie": {
+   "name": "Ireland",
+   "regions": []
+  },
+  "im": {
+   "name": "Isle of Man",
+   "regions": [
+    {
+     "code": "iom",
+     "name": "Isle of Man"
+    }
+   ]
+  },
+  "is": {
+   "name": "Iceland",
+   "regions": []
+  },
+  "it": {
+   "name": "Italy",
+   "regions": [
+    {
+     "code": "it-abr",
+     "name": "Abruzzo"
+    },
+    {
+     "code": "it-bas",
+     "name": "Basilicata"
+    },
+    {
+     "code": "it-cal",
+     "name": "Calabria"
+    },
+    {
+     "code": "it-cam",
+     "name": "Campania"
+    },
+    {
+     "code": "it-emr",
+     "name": "Emilia Romagna"
+    },
+    {
+     "code": "it-fvg",
+     "name": "Friuli Venezia Giulia"
+    },
+    {
+     "code": "it-laz",
+     "name": "Lazio"
+    },
+    {
+     "code": "it-lig",
+     "name": "Liguria"
+    },
+    {
+     "code": "it-lom",
+     "name": "Lombardia"
+    },
+    {
+     "code": "it-mar",
+     "name": "Marche"
+    },
+    {
+     "code": "it-mol",
+     "name": "Molise"
+    },
+    {
+     "code": "it-pie",
+     "name": "Piemonte"
+    },
+    {
+     "code": "it-pug",
+     "name": "Puglia"
+    },
+    {
+     "code": "it-sar",
+     "name": "Sardegna"
+    },
+    {
+     "code": "it-sic",
+     "name": "Sicilia"
+    },
+    {
+     "code": "it-tos",
+     "name": "Toscana"
+    },
+    {
+     "code": "it-taa",
+     "name": "Trentino-Alto Adige"
+    },
+    {
+     "code": "it-umb",
+     "name": "Umbria"
+    },
+    {
+     "code": "it-vda",
+     "name": "Valle d'Aosta"
+    },
+    {
+     "code": "it-ven",
+     "name": "Veneto"
+    }
+   ]
+  },
+  "je": {
+   "name": "Jersey",
+   "regions": []
+  },
+  "li": {
+   "name": "Liechtenstein",
+   "regions": []
+  },
+  "lt": {
+   "name": "Lithuania",
+   "regions": [
+    {
+     "code": "kun",
+     "name": "Pietų Lietuva"
+    },
+    {
+     "code": "vno",
+     "name": "Rytų Lietuva"
+    },
+    {
+     "code": "plq",
+     "name": "Vakarų Lietuva"
+    },
+    {
+     "code": "sqq",
+     "name": "Šiaurės Lietuva"
+    }
+   ]
+  },
+  "lu": {
+   "name": "Luxembourg",
+   "regions": []
+  },
+  "lv": {
+   "name": "Latvia",
+   "regions": []
+  },
+  "md": {
+   "name": "Moldova",
+   "regions": []
+  },
+  "me": {
+   "name": "Montenegro",
+   "regions": []
+  },
+  "mk": {
+   "name": "North Macedonia",
+   "regions": []
+  },
+  "mt": {
+   "name": "Malta",
+   "regions": []
+  },
+  "nl": {
+   "name": "Netherlands",
+   "regions": [
+    {
+     "code": "nl-dr",
+     "name": "Drenthe"
+    },
+    {
+     "code": "nl-fl",
+     "name": "Flevoland"
+    },
+    {
+     "code": "nl-fr",
+     "name": "Friesland"
+    },
+    {
+     "code": "nl-ge",
+     "name": "Gelderland"
+    },
+    {
+     "code": "nl-gr",
+     "name": "Groningen"
+    },
+    {
+     "code": "nl-li",
+     "name": "Limburg"
+    },
+    {
+     "code": "nl-nb",
+     "name": "Noord-Brabant"
+    },
+    {
+     "code": "nl-nh",
+     "name": "Noord-Holland"
+    },
+    {
+     "code": "nl-ov",
+     "name": "Overijssel"
+    },
+    {
+     "code": "nl-ut",
+     "name": "Utrecht"
+    },
+    {
+     "code": "nl-ze",
+     "name": "Zeeland"
+    },
+    {
+     "code": "nl-zh",
+     "name": "Zuid-Holland"
+    }
+   ]
+  },
+  "no": {
+   "name": "Norway",
+   "regions": [
+    {
+     "code": "no-32",
+     "name": "Akershus"
+    },
+    {
+     "code": "alf",
+     "name": "Alta"
+    },
+    {
+     "code": "anx",
+     "name": "Andenes"
+    },
+    {
+     "code": "bdu",
+     "name": "Bardufoss"
+    },
+    {
+     "code": "bvg",
+     "name": "Berlevåg"
+    },
+    {
+     "code": "boo",
+     "name": "Bodø"
+    },
+    {
+     "code": "no-bodo",
+     "name": "Bodø"
+    },
+    {
+     "code": "bnn",
+     "name": "Brønnøysund"
+    },
+    {
+     "code": "no-33",
+     "name": "Buskerud"
+    },
+    {
+     "code": "bjf",
+     "name": "Båtsfjord"
+    },
+    {
+     "code": "eve",
+     "name": "Evenes"
+    },
+    {
+     "code": "bgo",
+     "name": "Flesland/Bergen"
+    },
+    {
+     "code": "fro",
+     "name": "Florø"
+    },
+    {
+     "code": "fde",
+     "name": "Førde"
+    },
+    {
+     "code": "osl",
+     "name": "Gardermoen/Oslo"
+    },
+    {
+     "code": "hft",
+     "name": "Hammerfest"
+    },
+    {
+     "code": "haa",
+     "name": "Hasvik"
+    },
+    {
+     "code": "hau",
+     "name": "Haugesund"
+    },
+    {
+     "code": "hvg",
+     "name": "Honningsvåg"
+    },
+    {
+     "code": "kkn",
+     "name": "Kirkenes"
+    },
+    {
+     "code": "krs",
+     "name": "Kjevik/Kristiansand"
+    },
+    {
+     "code": "ksu",
+     "name": "Kristiansund"
+    },
+    {
+     "code": "lkl",
+     "name": "Lakselv"
+    },
+    {
+     "code": "lkn",
+     "name": "Leknes"
+    },
+    {
+     "code": "meh",
+     "name": "Mehamn"
+    },
+    {
+     "code": "mqn",
+     "name": "Mo i Rana"
+    },
+    {
+     "code": "mol",
+     "name": "Molde"
+    },
+    {
+     "code": "mjf",
+     "name": "Mosjøen"
+    },
+    {
+     "code": "osy",
+     "name": "Namsos"
+    },
+    {
+     "code": "no-nord",
+     "name": "Nord-Norge"
+    },
+    {
+     "code": "no-18",
+     "name": "Nordland"
+    },
+    {
+     "code": "no-03",
+     "name": "Oslo"
+    },
+    {
+     "code": "rrs",
+     "name": "Røros"
+    },
+    {
+     "code": "rvk",
+     "name": "Rørvik"
+    },
+    {
+     "code": "ret",
+     "name": "Røst"
+    },
+    {
+     "code": "sdn",
+     "name": "Sandane"
+    },
+    {
+     "code": "ssj",
+     "name": "Sandnessjøen"
+    },
+    {
+     "code": "sog",
+     "name": "Sogndal"
+    },
+    {
+     "code": "svg",
+     "name": "Sola/Stavanger"
+    },
+    {
+     "code": "skn",
+     "name": "Stokmarknes"
+    },
+    {
+     "code": "srp",
+     "name": "Stord"
+    },
+    {
+     "code": "svj",
+     "name": "Svolvær"
+    },
+    {
+     "code": "soj",
+     "name": "Sørkjosen"
+    },
+    {
+     "code": "trf",
+     "name": "Torp/Sandefjord"
+    },
+    {
+     "code": "no-tromso",
+     "name": "Tromsø"
+    },
+    {
+     "code": "tos",
+     "name": "Tromsø"
+    },
+    {
+     "code": "no-tonsberg",
+     "name": "Tønsberg"
+    },
+    {
+     "code": "vds",
+     "name": "Vadsø"
+    },
+    {
+     "code": "vaw",
+     "name": "Vardø"
+    },
+    {
+     "code": "aes",
+     "name": "Vigra/Ålesund"
+    },
+    {
+     "code": "trd",
+     "name": "Værnes/Trondheim"
+    },
+    {
+     "code": "ola",
+     "name": "Ørland"
+    },
+    {
+     "code": "hov",
+     "name": "Ørsta-Volda"
+    },
+    {
+     "code": "no-ost",
+     "name": "Østlandet"
+    }
+   ]
+  },
+  "pl": {
+   "name": "Poland",
+   "regions": [
+    {
+     "code": "bzg",
+     "name": "Bydgoszcz / Kujawy i Pomorze"
+    },
+    {
+     "code": "ktw",
+     "name": "Górny Śląsk"
+    },
+    {
+     "code": "krk",
+     "name": "Kraków / Małopolska"
+    },
+    {
+     "code": "luz",
+     "name": "Lublin"
+    },
+    {
+     "code": "poz",
+     "name": "Poznań / Wielkopolska"
+    },
+    {
+     "code": "rze",
+     "name": "Rzeszów / Podkarpacie"
+    },
+    {
+     "code": "szz",
+     "name": "Szczecin / Pomorze Zachodnie"
+    },
+    {
+     "code": "gdn",
+     "name": "Trójmiasto / Pomorze"
+    },
+    {
+     "code": "waw",
+     "name": "Warszawa / Mazowsze"
+    },
+    {
+     "code": "wro",
+     "name": "Wrocław / Dolny Śląsk"
+    }
+   ]
+  },
+  "pt": {
+   "name": "Portugal",
+   "regions": [
+    {
+     "code": "pt-acores",
+     "name": "Açores"
+    },
+    {
+     "code": "pt-lisboa-vale-do-tejo",
+     "name": "Lisboa e Vale do Tejo"
+    }
+   ]
+  },
+  "ro": {
+   "name": "Romania",
+   "regions": [
+    {
+     "code": "ro-b",
+     "name": "Bucuresti"
+    }
+   ]
+  },
+  "rs": {
+   "name": "Serbia",
+   "regions": []
+  },
+  "ru": {
+   "name": "Russia",
+   "regions": []
+  },
+  "se": {
+   "name": "Sweden",
+   "regions": [
+    {
+     "code": "se10",
+     "name": "Blekinge län"
+    },
+    {
+     "code": "se20",
+     "name": "Dalarnas län"
+    },
+    {
+     "code": "se09",
+     "name": "Gotlands län"
+    },
+    {
+     "code": "se21",
+     "name": "Gävleborgs län"
+    },
+    {
+     "code": "se13",
+     "name": "Hallands län"
+    },
+    {
+     "code": "se23",
+     "name": "Jämtlands län"
+    },
+    {
+     "code": "se06",
+     "name": "Jönköpings län"
+    },
+    {
+     "code": "se08",
+     "name": "Kalmar län"
+    },
+    {
+     "code": "se07",
+     "name": "Kronobergs län"
+    },
+    {
+     "code": "se25",
+     "name": "Norrbottens län"
+    },
+    {
+     "code": "se12",
+     "name": "Skåne län"
+    },
+    {
+     "code": "se01",
+     "name": "Stockholms län"
+    },
+    {
+     "code": "se04",
+     "name": "Södermanlands län"
+    },
+    {
+     "code": "se03",
+     "name": "Uppsala län"
+    },
+    {
+     "code": "se17",
+     "name": "Värmlands län"
+    },
+    {
+     "code": "se24",
+     "name": "Västerbottens län"
+    },
+    {
+     "code": "se22",
+     "name": "Västernorrlands län"
+    },
+    {
+     "code": "se19",
+     "name": "Västmanlands län"
+    },
+    {
+     "code": "se14",
+     "name": "Västra Götalands län"
+    },
+    {
+     "code": "se18",
+     "name": "Örebro län"
+    },
+    {
+     "code": "se05",
+     "name": "Östergötlands län"
+    }
+   ]
+  },
+  "si": {
+   "name": "Slovenia",
+   "regions": []
+  },
+  "sk": {
+   "name": "Slovakia",
+   "regions": [
+    {
+     "code": "sk-ba",
+     "name": "Bratislava"
+    },
+    {
+     "code": "sk-ke",
+     "name": "Kosice"
+    },
+    {
+     "code": "sk-nr",
+     "name": "Nitra"
+    },
+    {
+     "code": "sk-pp",
+     "name": "Poprad"
+    },
+    {
+     "code": "sk-po",
+     "name": "Presov"
+    },
+    {
+     "code": "sk-pd",
+     "name": "Prievidza"
+    },
+    {
+     "code": "sk-mt",
+     "name": "Turiec"
+    },
+    {
+     "code": "sk-vychod",
+     "name": "Vychodne Slovensko"
+    },
+    {
+     "code": "sk-za",
+     "name": "Zilina"
+    },
+    {
+     "code": "sk-zv",
+     "name": "Zvolen"
+    }
+   ]
+  },
+  "ua": {
+   "name": "Ukraine",
+   "regions": []
+  }
+ }
+}

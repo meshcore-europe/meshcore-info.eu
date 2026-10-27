@@ -1,0 +1,28 @@
+---
+// A filter form for a card list, as themes/fieldmap/layouts/_partials/filter-form.html. Hidden until
+// web/js/filters.js runs, so without JavaScript the full list shows.
+// Props: lang, list (the id of the <ul>), filters: [{ name, label, options: [{ value, label }] }] (labels are string keys),
+// search: optional string key of a search field's label.
+import { t } from '../lib/site.mjs';
+const { lang, list, filters, search } = Astro.props;
+---
+<form class="filters" data-filter-for={list} aria-labelledby={`filters-title-${list}`} hidden>
+  <p class="filters-title" id={`filters-title-${list}`}>{t(lang, 'filter_title')}</p>
+  <div class="filters-row">
+    {search && <label class="filter-search">{t(lang, search)}<input type="search" name="q" autocomplete="off" spellcheck="false" /></label>}
+    {filters.map((f) => (
+      <label>{t(lang, f.label)}
+        <select name={f.name}>
+          <option value="">{t(lang, 'filter_any')}</option>
+          {f.options.map((o) => <option value={o.value}>{t(lang, o.label)}</option>)}
+        </select>
+      </label>
+    ))}
+    <button type="reset" class="btn btn-sm" hidden>{t(lang, 'filter_reset')}</button>
+  </div>
+  <p class="filter-count" aria-live="polite" data-count-template={t(lang, 'filter_count')}></p>
+</form>
+<div class="note filter-empty" data-filter-empty={list} hidden>
+  <p>{t(lang, 'filter_empty')}</p>
+  <button type="button" class="btn btn-sm" data-filter-clear>{t(lang, 'filter_reset')}</button>
+</div>

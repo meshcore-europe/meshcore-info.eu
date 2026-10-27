@@ -1,0 +1,77 @@
+/* DMC design tokens. One style, industrial after pio.com (2026-10-02), in dark and light; slate and win95 were
+   removed on 2026-10-08. :root holds what both modes share, and industrial dark is also the plain :root, so a
+   page without data-theme (no JavaScript yet) is industrial dark. The #dmc wordmark replaces the logo and the
+   tricolour stripe (2026-10-02). Raw hex lives only in the two theme blocks. */
+:root {
+  --red: #df2020; --blue: #1976e8; --green: #3ecf8e; --yellow: #f5c542;
+  --font-sans: 'IBM Plex Sans', 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+  --font-display: var(--font-sans);
+  --font-mono: 'IBM Plex Mono', ui-monospace, Consolas, 'Fira Mono', monospace;
+  --font-flag: 'Twemoji Country Flags', 'Noto Color Emoji', 'Segoe UI Emoji', var(--font-sans);
+  --fs-sm: 13px; --fs-md: 15px; --fs-lg: 16px; --fs-xl: 18px;
+  --fw-normal: 400; --fw-medium: 500; --fw-semibold: 600; --fw-bold: 700;
+  --display-transform: none; --display-spacing: -.015em;
+  --radius-pill: 999px; --max: 1180px; --gutter: clamp(16px, 3vw, 32px);
+  --header-h: 60px; --approw-h: 44px;
+  /* Industrial labels (decided 2026-10-01, after pio.com): nav items, menu triggers, buttons and eyebrows
+     in mono uppercase, controls with a 4px radius. */
+  --label-font: var(--font-mono); --label-size: 12px; --label-spacing: .08em; --label-transform: uppercase;
+  --control-radius: 4px; --h1-weight: 400;
+  /* Glass chips for the overlay header over a film or photo (industrial only). */
+  --overlay-chip-bg: rgba(255,255,255,.12); --overlay-chip-hover: rgba(255,255,255,.22); --overlay-chip-border: rgba(255,255,255,.16);
+  --overlay-ink: #f4f6f6; --overlay-filter: blur(14px) saturate(1.2);
+  /* With a menu open, the overlay header and the menu become one frosted sheet over the film. */
+  --overlay-panel-border: rgba(255,255,255,.08); --overlay-panel-filter: blur(22px) saturate(1.4);
+
+  --status-online: var(--success); --status-stale: var(--warning); --status-offline: var(--danger);
+}
+
+:root, :root[data-theme="industrial"] {
+  /* Industrial (decided 2026-10-02, replaces minimalistic): graphite and pale grey-green after pio.com, a pale
+     lime accent, a frosted glass navbar, tighter corners. The hero film and the overlay header belong to it. */
+  color-scheme: dark;
+  --radius: 4px; --radius-lg: 8px;
+  --bg: #0b0f11; --text: #eef1ef; --text-muted: #9aa5a0; --text-faint: #7a8580; --body-text: #c8d0cc;
+  --heading: #f4f6f6; --heading-shadow: none;
+  --link: #cfe6a3; --accent: #b9d98a; --accent-light: #cfe6a3; --accent-strong: #e2f2c4; --accent-ink: #0b0f11;
+  --primary: #f4f6f6; --primary-ink: #0b0f11;
+  --border: #222a2e; --border-strong: #323c41;
+  --surface: #11171a; --surface-2: #151c1f; --surface-hover: #1c2427;
+  --code-bg: #0e1316; --input-bg: #0e1316; --chip-bg: #11171a;
+  --menu-bg: #11171a; --menu-shadow: 0 12px 32px rgba(0,0,0,.55);
+  --drawer-bg: #11171a;
+  --navbar-bg: rgba(11,15,17,.72); --navbar-filter: blur(14px) saturate(1.2); --navbar-shadow: none;
+  --panel-shadow: none; --logo-glow: none;
+  --bevel-out: none; --bevel-in: none;
+  --body-bg: #0b0f11;
+  --grid-opacity: 0; --scan-opacity: 0; --sheen-opacity: 0;
+  --ring: rgba(207,230,163,.45);
+  --success: #9fd49a; --warning: #e6c86e; --danger: #f08c80; --danger-text: #f5a99f;
+  --chart-1: #cfe6a3; --chart-2: #7fc7b8; --chart-3: #e6c86e; --chart-4: #f08c80;
+  --overlay-panel-bg: rgba(11,15,17,.74);
+}
+
+:root[data-theme="industrial-light"] {
+  /* Industrial, light mode: off-white with a grey-green cast, ink near-black, a deep olive accent that reads on
+     white, the pale lime of pio.com kept for fills. */
+  color-scheme: light;
+  --radius: 4px; --radius-lg: 8px;
+  --bg: #f3f5f1; --text: #12171a; --text-muted: #5c6863; --text-faint: #64706b; --body-text: #2c3633;
+  --heading: #0b0f11; --heading-shadow: none;
+  --link: #3e6b1c; --accent: #4f8424; --accent-light: #3e6b1c; --accent-strong: #2f5313; --accent-ink: #ffffff;
+  --primary: #0b0f11; --primary-ink: #f4f6f6;
+  --border: #dde3dc; --border-strong: #c6cfc6;
+  --surface: #ffffff; --surface-2: #eef2ec; --surface-hover: #e7ece5;
+  --code-bg: #eaefe7; --input-bg: #ffffff; --chip-bg: #ffffff;
+  --menu-bg: #ffffff; --menu-shadow: 0 12px 32px rgba(11,15,17,.10);
+  --drawer-bg: #ffffff;
+  --navbar-bg: rgba(243,245,241,.78); --navbar-filter: blur(14px) saturate(1.2); --navbar-shadow: none;
+  --panel-shadow: none; --logo-glow: none;
+  --bevel-out: none; --bevel-in: none;
+  --body-bg: #f3f5f1;
+  --grid-opacity: 0; --scan-opacity: 0; --sheen-opacity: 0;
+  --ring: rgba(79,132,36,.40);
+  --success: #2f7d3a; --warning: #8a6a12; --danger: #b8402f; --danger-text: #a8382a;
+  --chart-1: #4f8424; --chart-2: #2b7f73; --chart-3: #8a6a12; --chart-4: #b8402f;
+  --overlay-panel-bg: rgba(243,245,241,.74); --overlay-panel-border: rgba(255,255,255,.5); --overlay-panel-filter: blur(28px) saturate(1.8);
+}

@@ -1,0 +1,36 @@
+name: Suggest content
+description: Propose a new guide or a correction to an English page.
+title: "Content: "
+labels: [content, needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        English pages are the source for every translation. Facts about MeshCore come from the firmware source and docs; regulatory facts from ERC Recommendation 70-03, ETSI EN 300 220 or a national regulator.
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: URL of the page to change, or "new" for a new guide.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What should change?
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Primary sources for the facts (MeshCore repository or docs, regulator, manufacturer). Note the firmware version if it matters.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: Any text I propose is my own wording, not copied from another site.
+          required: true

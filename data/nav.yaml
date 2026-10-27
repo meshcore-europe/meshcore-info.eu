@@ -1,0 +1,15 @@
+# Site navigation. `key` is an i18n key in data/i18n/en.json, `path` a
+# content path. Items whose page is missing in a language link to the
+# English page and are marked "EN".
+main:
+  - { key: nav_about, path: /about }
+  - { key: nav_get_started, path: /get-started }
+  - { key: nav_devices, path: /devices }
+  - { key: nav_community, path: /community }
+  - { key: nav_map, path: /map }
+  - { key: nav_repeater_guide, path: /repeater-guide }
+  - { key: nav_news, path: /blog }
+  - { key: nav_projects, path: /projects }
+footer:
+  - { key: nav_contribute, path: /contribute }
+  - { key: nav_privacy, path: /privacy }

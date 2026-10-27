@@ -1,0 +1,28 @@
+---
+// The street on the home: the town still (pastel in light mode,
+// sepia in dark) with its links and labels drawn by web/js/home-town.js from the still's .json, and a message that
+// hops from the phone to the companion, the repeater and the roofs around it. Below it, what each part does.
+// Without JavaScript the still and the three columns show; the labels need the script (the CSP allows no inline
+// style to place them). On a phone the frame shows the still at twice the width, around our house, so the labels fit.
+import { t } from '../lib/site.mjs';
+const { lang, localize } = Astro.props;
+// mast1 carries the "other repeaters" label on a phone, where mast2's would sit on top of the repeater's.
+const TAGS = [['phone', 'left'], ['companion', ''], ['repeater', ''], ['mast2', 'wide'], ['mast1', 'narrow']];
+const COLS = [['companion', '/devices/'], ['repeater', '/repeater-guide/'], ['mesh', '/network/']];
+---
+<section class="section town" aria-labelledby="town-title">
+  <h2 id="town-title">{t(lang, 'home_town_title')}</h2>
+  <p class="lead">{t(lang, 'home_town_lead')}</p>
+  <div class="town-stage" data-src="/media/home-town-pastel.json">
+    <div class="town-frame">
+      <img class="town-img town-light" src="/media/home-town-pastel.webp" alt="" width="2400" height="1400" loading="lazy" decoding="async">
+      <img class="town-img town-dark" src="/media/home-town-sepia.webp" alt="" width="2400" height="1400" loading="lazy" decoding="async">
+      <svg viewBox="0 0 2400 1400" preserveAspectRatio="none" aria-hidden="true"></svg>
+      {TAGS.map(([p, side]) => <span class={`tag ${side}`} data-p={p} hidden>{t(lang, `home_town_tag_${p === 'mast1' ? 'mast2' : p}`)}</span>)}
+    </div>
+  </div>
+  <div class="town-cols">{COLS.map(([k, href]) => (
+    <div><h3>{t(lang, `home_town_${k}_title`)}</h3><p>{t(lang, `home_town_${k}_desc`)}</p><p><a href={localize(href)}>{t(lang, `home_town_${k}_link`)}</a></p></div>
+  ))}</div>
+</section>
+<script is:inline src="/js/home-town.js" defer></script>

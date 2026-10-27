@@ -1,0 +1,56 @@
+name: Add a community
+description: List a local MeshCore group in the community directory.
+title: "Add community: "
+labels: [community, needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A maintainer checks the links and adds the group to `data/communities.yaml`. It then appears on the Community page in every language. Only public groups that anyone can join are listed.
+  - type: input
+    id: name
+    attributes:
+      label: Group name
+    validations:
+      required: true
+  - type: input
+    id: country
+    attributes:
+      label: Country
+      description: Two-letter ISO code, for example NL, DE or GB.
+    validations:
+      required: true
+  - type: input
+    id: region
+    attributes:
+      label: Region or city
+      description: Leave empty for a country-wide group.
+  - type: textarea
+    id: links
+    attributes:
+      label: Links
+      description: One per line. Discord, Telegram, Signal, Matrix, WhatsApp, forum, website or map. Public invite links only, without tracking parameters.
+    validations:
+      required: true
+  - type: input
+    id: channels
+    attributes:
+      label: Recommended MeshCore channels
+      description: For example "#utrecht". Optional.
+  - type: input
+    id: languages
+    attributes:
+      label: Languages spoken in the group
+      description: For example "nl, en".
+  - type: textarea
+    id: description
+    attributes:
+      label: Short description, in English
+      description: One or two sentences about the group. It is translated into every site language.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: The group is public, and I may list it here.
+          required: true

@@ -1,0 +1,48 @@
+---
+// The serial console (/firmware/console/). The console shows once web/js/console.js runs in a
+// browser with Web Serial (Chrome, Edge, Opera on a computer); everywhere else the page says what it needs.
+// The command line suggests the commands of data/commands.yaml for the role the node names, each
+// with the first sentence of its description.
+import { t, loadData } from '../lib/site.mjs';
+import { localize } from '../lib/shell.mjs';
+const { lang } = Astro.props;
+const s = (k) => t(lang, `console_${k}`);
+const commands = loadData('commands').map((c) => ({
+  id: c.id, forms: c.syntax, nodes: c.nodes, desc: t(lang, c.desc_key).split(/(?<=\.)\s/)[0],
+}));
+---
+<div class="console" data-console
+  data-idle={s('status_idle')} data-asking={s('status_asking')} data-connected={s('status_connected')} data-lost={s('status_lost')} data-busy={s('status_busy')}
+  data-unsupported={s('status_unsupported')} data-copied={s('status_copied')} data-copy_failed={s('status_copy_failed')}
+  data-more_link={s('more_link')} data-commands={JSON.stringify(commands)} data-guide={localize('/guides/cli/', lang)}
+  data-role-repeater={t(lang, 'cli_node_repeater')} data-role-room_server={t(lang, 'cli_node_room_server')} data-role-sensor={t(lang, 'cli_node_sensor')}>
+  <p class="muted" data-needs-js>{s('needs_js')}</p>
+  <div data-ui hidden>
+    <p class="row">
+      <button type="button" class="btn btn-primary" data-connect>{s('connect')}</button>
+      <button type="button" class="btn" data-disconnect hidden>{s('disconnect')}</button>
+      <button type="button" class="btn" data-copy>{s('copy')}</button>
+    </p>
+    <p class="console-node" data-node hidden>
+      <span class="console-role" data-role></span> <span class="mono" data-version></span>
+      <span data-node-known>{s('node_known')}</span><span data-node-unknown>{s('node_unknown')}</span>
+    </p>
+    <p class="console-node" data-dmc hidden>{s('dmc_before')} <a href="https://toolbox.dutchmeshcore.nl/#/cli-wiki">{s('dmc_link')}</a>{s('dmc_after')}</p>
+    <div class="console-log mono" data-log role="log" aria-live="polite" aria-label={s('log_label')} tabindex="0"></div>
+    <form class="console-form">
+      <div class="console-suggest" data-suggest hidden>
+        <ul id="console-suggestions" role="listbox" aria-label={s('suggestions_label')}></ul>
+        <p class="console-keys"><span><kbd>Tab</kbd> {s('key_fill')}</span><span><kbd>↑</kbd> <kbd>↓</kbd> {s('key_choose')}</span><span><kbd>Esc</kbd> {s('key_close')}</span><span><kbd>Shift</kbd> <kbd>Enter</kbd> {s('key_guide')}</span><a data-more>{s('commands_link')}</a></p>
+      </div>
+      <label class="visually-hidden" for="console-command">{s('command_label')}</label>
+      <input id="console-command" name="command" class="mono" autocomplete="off" spellcheck="false" placeholder="get name"
+        role="combobox" aria-autocomplete="list" aria-controls="console-suggestions" aria-expanded="false" disabled />
+      <button type="submit" class="btn" disabled>{s('send')}</button>
+    </form>
+  </div>
+  <p class="console-status" data-status aria-live="polite"></p>
+  <h2 id="trouble">{s('trouble_title')}</h2>
+  <ul>{[1, 2, 3, 4].map((n) => <li>{s(`trouble_${n}`)}</li>)}</ul>
+  <p>{s('commands_before')} <a href={localize('/guides/cli/', lang)}>{s('commands_link')}</a>{s('commands_after')}</p>
+</div>
+<script is:inline type="module" src="/js/console.js"></script>

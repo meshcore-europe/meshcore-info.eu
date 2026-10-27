@@ -1,0 +1,29 @@
+---
+// The guides hub (/guides/): every guide in 3 groups, each card a link to its page. Its hero (our roof
+// with the repeater) is the page's title block, in src/pages/[lang]/[...slug].astro.
+// The firmware hub (/firmware/) is the same, with one group and no group title.
+import { t } from '../lib/site.mjs';
+import { localize } from '../lib/shell.mjs';
+
+const { lang, hub = 'guides' } = Astro.props;
+const HUBS = {
+  guides: [
+    { id: 'start', cards: [['get-started', '/get-started/'], ['devices', '/devices/'], ['channels', '/guides/channels/']] },
+    { id: 'setup', cards: [['settings', '/guides/settings/'], ['antenna', '/guides/antenna/'], ['repeater', '/repeater-guide/'], ['keygen', '/guides/keygen/']] },
+    { id: 'deeper', cards: [['filter', '/guides/filter/'], ['mqtt', '/guides/mqtt/'], ['mctomqtt', '/guides/mctomqtt/'], ['cli', '/guides/cli/']] },
+  ],
+  firmware: [
+    { id: 'tools', cards: [['flasher', '/firmware/flasher/'], ['console', '/firmware/console/'], ['changelog', '/firmware/changelog/']] },
+  ],
+};
+const GROUPS = HUBS[hub];
+const key = (id) => id.replace(/-/g, '_');
+---
+{GROUPS.map((g) => (
+  <section class="section guide-group" id={`${hub}-${g.id}`} aria-labelledby={GROUPS.length > 1 ? `${hub}-${g.id}-title` : undefined}>
+    {GROUPS.length > 1 && <h2 id={`${hub}-${g.id}-title`}>{t(lang, `${hub}_group_${g.id}`)}</h2>}
+    <ul class="paths">{g.cards.map(([id, href]) => (
+      <li><a class="card path-card" href={localize(href, lang)}><h3>{t(lang, `${hub}_card_${key(id)}_title`)}</h3><p>{t(lang, `${hub}_card_${key(id)}_desc`)}</p></a></li>
+    ))}</ul>
+  </section>
+))}

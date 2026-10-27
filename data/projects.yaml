@@ -1,0 +1,567 @@
+# Community projects, open source or not. An open-source
+# project has its repo and licence, read from the repository on last_checked;
+# a project without public code has its url instead. status is active when the
+# repository or site was updated in the last 12 months.
+# Descriptions live in data/i18n/en.json as project.<id>.desc.
+
+- id: meshcore-firmware
+  name: MeshCore
+  category: firmware
+  repo: "https://github.com/meshcore-dev/MeshCore"
+  licence: MIT
+  maintainer: ripplebiz
+  desc_key: project.meshcore-firmware.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: meshcore-js
+  name: meshcore.js
+  category: library
+  repo: "https://github.com/meshcore-dev/meshcore.js"
+  licence: MIT
+  maintainer: liamcottle
+  desc_key: project.meshcore-js.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: meshcore-py
+  name: meshcore_py
+  category: library
+  repo: "https://github.com/meshcore-dev/meshcore_py"
+  licence: MIT
+  maintainer: fdlamotte
+  desc_key: project.meshcore-py.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: meshcore-cli
+  name: meshcore-cli
+  category: tool
+  repo: "https://github.com/meshcore-dev/meshcore-cli"
+  licence: MIT
+  maintainer: fdlamotte
+  desc_key: project.meshcore-cli.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: meshcore-ha
+  name: MeshCore Home Assistant integration
+  category: bridge
+  repo: "https://github.com/meshcore-dev/meshcore-ha"
+  licence: MIT
+  maintainer: awolden
+  desc_key: project.meshcore-ha.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: meshcore-flasher
+  name: MeshCore web flasher
+  category: tool
+  repo: "https://github.com/meshcore-dev/flasher.meshcore.io"
+  licence: MIT
+  maintainer: recrof
+  desc_key: project.meshcore-flasher.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: meshcore-map
+  name: MeshCore Map
+  category: tool
+  repo: "https://github.com/meshcore-dev/map.meshcore.io"
+  licence: MIT
+  desc_key: project.meshcore-map.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: openhop-repeater
+  name: openHop Repeater (formerly pyMC Repeater)
+  category: firmware
+  repo: "https://github.com/openhop-dev/openhop_repeater"
+  licence: MIT
+  maintainer: rightup
+  desc_key: project.openhop-repeater.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: openhop-core
+  name: openHop Core (formerly pyMC Core)
+  category: library
+  repo: "https://github.com/openhop-dev/openhop_core"
+  licence: MIT
+  maintainer: rightup
+  desc_key: project.openhop-core.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: meshcore-open
+  name: MeshCore Open
+  category: app
+  repo: "https://github.com/zjs81/meshcore-open"
+  licence: MIT
+  maintainer: zjs81
+  desc_key: project.meshcore-open.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: meshcoretomqtt
+  name: meshcoretomqtt
+  category: bridge
+  repo: "https://github.com/Cisien/meshcoretomqtt"
+  licence: MIT
+  maintainer: Cisien
+  desc_key: project.meshcoretomqtt.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: meshcore-mqtt-broker
+  name: meshcore-mqtt-broker
+  category: bridge
+  repo: "https://github.com/michaelhart/meshcore-mqtt-broker"
+  licence: MIT
+  maintainer: michaelhart
+  desc_key: project.meshcore-mqtt-broker.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: corescope
+  name: CoreScope
+  category: tool
+  repo: "https://github.com/Kpa-clawbot/CoreScope"
+  licence: GPL-3.0
+  maintainer: Kpa-clawbot
+  desc_key: project.corescope.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: litescope
+  name: liteScope
+  category: tool
+  repo: "https://github.com/RikoDEV/litescope"
+  licence: MIT
+  maintainer: RikoDEV
+  desc_key: project.litescope.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: meshcore-hub
+  name: MeshCore Hub
+  category: tool
+  repo: "https://github.com/ipnet-mesh/meshcore-hub"
+  licence: GPL-3.0
+  maintainer: jinglemansweep
+  desc_key: project.meshcore-hub.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: potato-mesh
+  name: PotatoMesh
+  category: tool
+  repo: "https://github.com/l5yth/potato-mesh"
+  licence: Apache-2.0
+  maintainer: l5yth
+  desc_key: project.potato-mesh.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: meshcore-mqtt-live-map
+  name: MeshCore MQTT live map
+  category: tool
+  repo: "https://github.com/yellowcooln/meshcore-mqtt-live-map"
+  licence: GPL-3.0
+  maintainer: yellowcooln
+  desc_key: project.meshcore-mqtt-live-map.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: meshcore-bot
+  name: meshcore-bot
+  category: bridge
+  repo: "https://github.com/agessaman/meshcore-bot"
+  licence: MIT
+  maintainer: agessaman
+  desc_key: project.meshcore-bot.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: meshcore-channels
+  name: MeshCore channels catalog
+  category: tool
+  repo: "https://github.com/marcelverdult/meshcore-channels"
+  licence: CC0-1.0
+  maintainer: marcelverdult
+  desc_key: project.meshcore-channels.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: meshcore-regions
+  name: MeshCore regions catalog
+  category: tool
+  repo: "https://github.com/marcelverdult/meshcore-regions"
+  licence: CC0-1.0
+  maintainer: marcelverdult
+  desc_key: project.meshcore-regions.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: zephcore
+  name: ZephCore
+  category: firmware
+  repo: "https://github.com/liquidraver/ZephCore"
+  licence: MIT
+  maintainer: liquidraver
+  desc_key: project.zephcore.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: meshcore-ng
+  name: MeshCoreNG
+  category: firmware
+  repo: "https://github.com/MichTronics/MeshCoreNG"
+  licence: MIT
+  maintainer: MichTronics
+  desc_key: project.meshcore-ng.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: meshcore-solo
+  name: MeshCore-Solo
+  category: firmware
+  repo: "https://github.com/MarekZegare4/MeshCore-Solo"
+  licence: MIT
+  maintainer: MarekZegare4
+  desc_key: project.meshcore-solo.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: meshcore-c
+  name: meshcore-c
+  category: library
+  repo: "https://github.com/Nicolai-Electronics/meshcore-c"
+  licence: MIT
+  maintainer: renzenicolai
+  desc_key: project.meshcore-c.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: lora-mesh-nodes
+  name: LoRaMeshNodes
+  category: hardware
+  repo: "https://github.com/hotwolf/LoRaMeshNodes"
+  licence: GPL-3.0
+  maintainer: hotwolf
+  desc_key: project.lora-mesh-nodes.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: lora-harvester-box
+  name: LoRaHarvesterBox
+  category: hardware
+  repo: "https://github.com/h0lad/LoRaHarvesterBox"
+  licence: CERN-OHL-S-2.0
+  maintainer: h0lad
+  desc_key: project.lora-harvester-box.desc
+  status: active
+  last_checked: 2026-10-02
+
+- id: mesh-hunter
+  name: Mesh-Hunter
+  category: app
+  repo: "https://github.com/efiten/core-hunter"
+  url: "https://mesh-hunter.eu/"
+  maintainer: efiten
+  desc_key: project.mesh-hunter.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: eu-meshcore-analyzer
+  name: MeshCore Analyzer
+  category: tool
+  url: "https://meshcore-analyzer.eu/"
+  desc_key: project.eu-meshcore-analyzer.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: dmc-triangulator
+  name: DMC Triangulator
+  category: tool
+  repo: "https://github.com/Dutch-MeshCore/meshcore-triangulator"
+  url: "https://triangulator.dutchmeshcore.nl/"
+  maintainer: Dutch-MeshCore
+  desc_key: project.dmc-triangulator.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: kiekr
+  name: KiekR
+  category: app
+  url: "https://kiekr.app/"
+  desc_key: project.kiekr.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: meshmapper
+  name: MeshMapper
+  category: tool
+  url: "https://meshmapper.net/"
+  desc_key: project.meshmapper.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: trail-mate
+  name: Trail Mate
+  category: firmware
+  repo: "https://github.com/vicliu624/trail-mate"
+  licence: AGPL-3.0
+  maintainer: vicliu624
+  desc_key: project.trail-mate.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: remote-terminal
+  name: Remote Terminal for MeshCore
+  category: tool
+  repo: "https://github.com/jkingsman/Remote-Terminal-for-MeshCore"
+  licence: MIT
+  maintainer: jkingsman
+  desc_key: project.remote-terminal.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: meshpoint
+  name: Meshpoint
+  category: bridge
+  repo: "https://github.com/KMX415/meshpoint"
+  licence: AGPL-3.0
+  maintainer: KMX415
+  desc_key: project.meshpoint.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: easyskymesh
+  name: EasySkyMesh
+  category: firmware
+  repo: "https://github.com/IoTThinks/EasySkyMesh"
+  maintainer: IoTThinks
+  desc_key: project.easyskymesh.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: solar-os
+  name: SolarOS
+  category: firmware
+  repo: "https://github.com/nilseuropa/solar_os"
+  maintainer: nilseuropa
+  desc_key: project.solar-os.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: wio-tracker-l1-pro
+  name: MeshCore for Wio Tracker L1 Pro
+  category: firmware
+  repo: "https://github.com/sosprz/Meshcore-Wio-Tracker-L1-Pro"
+  maintainer: sosprz
+  desc_key: project.wio-tracker-l1-pro.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: meshcore-one
+  name: MeshCore One
+  category: app
+  repo: "https://github.com/Avi0n/MeshCoreOne"
+  licence: GPL-3.0
+  maintainer: Avi0n
+  desc_key: project.meshcore-one.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: lunarcore
+  name: LunarCore
+  category: firmware
+  repo: "https://github.com/STCisGOOD/lunarcore"
+  licence: MIT
+  maintainer: STCisGOOD
+  desc_key: project.lunarcore.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: meshcore-sar
+  name: MeshCore SAR
+  category: app
+  repo: "https://github.com/dz0ny/meshcore-sar"
+  maintainer: dz0ny
+  desc_key: project.meshcore-sar.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: cardputer-adv-stachugit
+  name: MeshCore Cardputer ADV (Stachugit)
+  category: firmware
+  repo: "https://github.com/Stachugit/MeshCore-Cardputer-ADV"
+  licence: MIT
+  maintainer: Stachugit
+  desc_key: project.cardputer-adv-stachugit.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: meshcoreterm
+  name: MeshCoreTerm
+  category: firmware
+  repo: "https://github.com/dabeani/meshcoreterm"
+  maintainer: dabeani
+  desc_key: project.meshcoreterm.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: mesh-client
+  name: mesh-client
+  category: app
+  repo: "https://github.com/Colorado-Mesh/mesh-client"
+  licence: GPL-3.0
+  maintainer: Colorado-Mesh
+  desc_key: project.mesh-client.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: mishmesh
+  name: MeshCore mishmesh
+  category: firmware
+  repo: "https://github.com/burakcan/MeshCore-mishmesh"
+  licence: MIT
+  maintainer: burakcan
+  desc_key: project.mishmesh.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: overmesh
+  name: OverMesh
+  category: tool
+  repo: "https://github.com/Slofi/overmesh"
+  licence: MIT
+  maintainer: Slofi
+  desc_key: project.overmesh.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: meshcore-wardrive-android
+  name: MeshCore Wardrive (Android)
+  category: app
+  repo: "https://github.com/mintylinux/Meshcore-Wardrive-Android"
+  maintainer: mintylinux
+  desc_key: project.meshcore-wardrive-android.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: akita-bridge
+  name: Akita Meshtastic MeshCore Bridge
+  category: bridge
+  repo: "https://github.com/AkitaEngineering/Akita-Meshtastic-Meshcore-Bridge"
+  licence: GPL-3.0
+  maintainer: AkitaEngineering
+  desc_key: project.akita-bridge.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: meshcore-packet-capture
+  name: meshcore-packet-capture
+  category: bridge
+  repo: "https://github.com/agessaman/meshcore-packet-capture"
+  licence: MIT
+  maintainer: agessaman
+  desc_key: project.meshcore-packet-capture.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: cardputer-adv-sosprz
+  name: MeshCore Cardputer ADV (sosprz)
+  category: firmware
+  repo: "https://github.com/sosprz/meshcore-cardputer-adv"
+  maintainer: sosprz
+  desc_key: project.cardputer-adv-sosprz.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: lora-wideband-decoder
+  name: LoRa Wideband Decoder
+  category: tool
+  repo: "https://github.com/persistentcache/Lora-Wideband-Decoder"
+  maintainer: persistentcache
+  desc_key: project.lora-wideband-decoder.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: mc-webui
+  name: mc-webui
+  category: app
+  repo: "https://github.com/MarekWo/mc-webui"
+  licence: MIT
+  maintainer: MarekWo
+  desc_key: project.mc-webui.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: meshfirmware
+  name: meshfirmware
+  category: tool
+  repo: "https://github.com/mikecarper/meshfirmware"
+  licence: LGPL-2.1
+  maintainer: mikecarper
+  desc_key: project.meshfirmware.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: repeater-mqtt-gateway
+  name: MeshCore Repeater MQTT Gateway
+  category: firmware
+  repo: "https://github.com/jmead/Meshcore-Repeater-MQTT-Gateway"
+  licence: MIT
+  maintainer: jmead
+  desc_key: project.repeater-mqtt-gateway.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: tak-meshcore
+  name: MeshCore ATAK plugin
+  category: bridge
+  repo: "https://github.com/atakmaps/TAK-MESHCORE"
+  maintainer: atakmaps
+  desc_key: project.tak-meshcore.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: meshcore-decoder
+  name: meshcore-decoder
+  category: library
+  repo: "https://github.com/michaelhart/meshcore-decoder"
+  licence: MIT
+  maintainer: michaelhart
+  desc_key: project.meshcore-decoder.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: mesh-loader
+  name: Mesh Loader
+  category: tool
+  repo: "https://github.com/eliahreeves/mesh-loader"
+  maintainer: eliahreeves
+  desc_key: project.mesh-loader.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: meshcore-proxy
+  name: MeshCore Proxy
+  category: tool
+  repo: "https://github.com/rgregg/meshcore-proxy"
+  maintainer: rgregg
+  desc_key: project.meshcore-proxy.desc
+  status: active
+  last_checked: 2026-10-23
+
+- id: roadstr
+  name: Roadstr
+  category: app
+  repo: "https://github.com/jooray/roadstr"
+  licence: Unlicense
+  maintainer: jooray
+  desc_key: project.roadstr.desc
+  status: active
+  last_checked: 2026-10-23

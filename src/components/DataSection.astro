@@ -1,0 +1,118 @@
+---
+// The data part of a page whose front matter names a layout (devices, community, map, projects), under
+// its Markdown intro, as the Hugo layouts of the same names. The guides hub and the
+// settings guide have no Hugo layout.
+import { t, PARAMS, loadData } from '../lib/site.mjs';
+import FilterForm from './FilterForm.astro';
+import DeviceCard from './DeviceCard.astro';
+import CommunityCard from './CommunityCard.astro';
+import MapCard from './MapCard.astro';
+import ProjectCard from './ProjectCard.astro';
+import GuideHub from './GuideHub.astro';
+import AreaSettings from './AreaSettings.astro';
+import CliCommands from './CliCommands.astro';
+import KeyGen from './KeyGen.astro';
+import ChannelBrowser from './ChannelBrowser.astro';
+import NetworkPage from './NetworkPage.astro';
+import Changelog from './Changelog.astro';
+import SerialConsole from './SerialConsole.astro';
+import FlashTool from './FlashTool.astro';
+
+const { lang, layout } = Astro.props;
+const byName = (a, b) => a.name.localeCompare(b.name);
+const opts = (values, key) => values.map((v) => ({ value: String(v), label: `${key}${v}` }));
+const SCOPES = ['europe', 'country', 'region'];
+
+let devices = [], countries = [], communities = [], scopes = [], projects = [], leads = [];
+if (layout === 'devices') devices = [...loadData('devices')].sort(byName);
+if (layout === 'community') {
+  communities = [...loadData('communities')].sort(byName);
+  countries = [...new Set(communities.map((c) => c.country.toUpperCase()))].sort();
+}
+if (layout === 'map') {
+  const maps = loadData('maps');
+  for (const m of maps) if (!SCOPES.includes(m.scope)) throw new Error(`data/maps.yaml: "${m.id}" has unknown scope "${m.scope}" (europe, country or region)`);
+  // A map with tenants (entries whose runs_on names it) leads the page, followed by those tenants.
+  leads = maps.filter((m) => maps.some((t) => t.runs_on === m.id))
+    .map((m) => [m, maps.filter((t) => t.runs_on === m.id).sort(byName)]);
+  const shown = new Set(leads.flat(2).map((m) => m.id));
+  scopes = SCOPES.map((s) => [s, maps.filter((m) => m.scope === s && !shown.has(m.id)).sort(byName)]).filter(([, l]) => l.length);
+}
+if (layout === 'projects') projects = [...loadData('projects')].sort(byName);
+---
+{layout === 'devices' && (devices.length ? (
+  <Fragment>
+    <FilterForm lang={lang} list="device-list" filters={[
+      { name: 'roles', label: 'filter_role_q', options: [{ value: 'companion', label: 'role_companion' }, { value: 'repeater', label: 'role_repeater' }, { value: 'room_server', label: 'role_room_server' }] },
+      { name: 'price', label: 'filter_price_q', options: opts([1, 2, 3], 'price_') },
+      { name: 'power', label: 'filter_power_q', options: [{ value: 'battery', label: 'power_battery' }, { value: 'external', label: 'power_external' }] },
+    ]} />
+    <h2 class="vh">{t(lang, 'devices_list_title')}</h2>
+    <ul class="card-grid" id="device-list">{devices.map((d) => <DeviceCard lang={lang} d={d} />)}</ul>
+  </Fragment>
+) : <p class="empty">{t(lang, 'devices_empty')}</p>)}
+
+{layout === 'community' && (
+  <Fragment>
+    {communities.length ? (
+      <Fragment>
+        <nav class="country-jump" aria-label={t(lang, 'community_jump')}>
+          <ul class="tags">{countries.map((cc) => <li><a class="badge" href={`#country-${cc.toLowerCase()}`} title={t(lang, `country_${cc.toLowerCase()}`)}>{cc}</a></li>)}</ul>
+        </nav>
+        <div class="countries">{countries.map((cc) => (
+          <section class="country" id={`country-${cc.toLowerCase()}`}>
+            <h2><span class="cc mono" aria-hidden="true">{cc}</span> {t(lang, `country_${cc.toLowerCase()}`)}</h2>
+            <ul class="card-grid">{communities.filter((c) => c.country.toUpperCase() === cc).map((c) => <CommunityCard lang={lang} c={c} />)}</ul>
+          </section>
+        ))}</div>
+      </Fragment>
+    ) : <p class="empty">{t(lang, 'community_empty')}</p>}
+    <section class="note cta-box">
+      <h2>{t(lang, 'community_missing_title')}</h2>
+      <p>{t(lang, 'community_missing_body')}</p>
+      <p><a class="btn btn-primary" href={`${PARAMS.repo}/issues/new?template=add-community.yml`}>{t(lang, 'community_missing_cta')}</a></p>
+    </section>
+  </Fragment>
+)}
+
+{layout === 'map' && (leads.length || scopes.length ? (
+  <Fragment>
+    {leads.map(([lead, tenants]) => (
+      <section class="map-group" id={`maps-${lead.id}`}>
+        <h2>{lead.name}</h2>
+        <p>{t(lang, 'map_tenants_intro')}</p>
+        <ul class="card-grid">{[lead, ...tenants].map((m) => <MapCard lang={lang} m={m} />)}</ul>
+      </section>
+    ))}
+    {scopes.map(([scope, list]) => (
+      <section class="map-group" id={`maps-${scope}`}>
+        <h2>{t(lang, `map_scope_${scope}`)}</h2>
+        <ul class="card-grid">{list.map((m) => <MapCard lang={lang} m={m} />)}</ul>
+      </section>
+    ))}
+  </Fragment>
+) : <p class="empty">{t(lang, 'maps_empty')}</p>)}
+
+{layout === 'projects' && (
+  <Fragment>
+    {projects.length ? (
+      <Fragment>
+        <FilterForm lang={lang} list="project-list" filters={[{ name: 'category', label: 'filter_category_q', options: opts(['app', 'tool', 'bridge', 'firmware', 'hardware', 'library'], 'project_cat_') }]} />
+        <h2 class="vh">{t(lang, 'projects_list_title')}</h2>
+        <ul class="card-grid" id="project-list">{projects.map((p) => <ProjectCard lang={lang} p={p} />)}</ul>
+      </Fragment>
+    ) : <p class="empty">{t(lang, 'projects_empty')}</p>}
+    <p><a class="btn" href={`${PARAMS.repo}/issues/new?template=add-project.yml`}>{t(lang, 'projects_add_cta')}</a></p>
+  </Fragment>
+)}
+
+{layout === 'guides' && <GuideHub lang={lang} />}
+{layout === 'firmware' && <GuideHub lang={lang} hub="firmware" />}
+{layout === 'settings' && <AreaSettings lang={lang} />}
+{layout === 'cli' && <CliCommands lang={lang} />}
+{layout === 'keygen' && <KeyGen lang={lang} />}
+{layout === 'channels' && <ChannelBrowser lang={lang} />}
+{layout === 'network' && <NetworkPage lang={lang} />}
+{layout === 'changelog' && <Changelog lang={lang} />}
+{layout === 'console' && <SerialConsole lang={lang} />}
+{layout === 'flasher' && <FlashTool lang={lang} />}

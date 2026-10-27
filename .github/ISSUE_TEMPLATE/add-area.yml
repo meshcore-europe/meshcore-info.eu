@@ -1,0 +1,48 @@
+name: Add your area
+description: Add the radio preset your area uses, or the settings your local group changed from MeshCore's defaults.
+title: "Add area: "
+labels: [needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A maintainer checks the source and adds the area to `data/areas.yaml`. It then appears on Recommended settings in every language. List only what differs from MeshCore's defaults.
+  - type: input
+    id: area
+    attributes:
+      label: Area
+      description: The country, or the part of it that uses these settings.
+    validations:
+      required: true
+  - type: input
+    id: country
+    attributes:
+      label: Country
+      description: Two-letter ISO code, for example NL, DE or GB.
+    validations:
+      required: true
+  - type: input
+    id: preset
+    attributes:
+      label: Radio preset
+      description: The name as the MeshCore app shows it, for example "EU/UK (Narrow)".
+    validations:
+      required: true
+  - type: textarea
+    id: changes
+    attributes:
+      label: Changed settings
+      description: One per line, as the repeater command or the setting in the app, with a short reason. Leave empty if your area only uses its own preset.
+      render: text
+  - type: input
+    id: source
+    attributes:
+      label: Where your group decided them
+      description: A public link, for example your group's settings page or announcement.
+    validations:
+      required: true
+  - type: input
+    id: group
+    attributes:
+      label: Local group
+      description: The name of the group that uses these settings.

@@ -1,0 +1,227 @@
+# Live maps and analyzers, checked live on last_checked.
+# scope europe also covers worldwide maps that include Europe.
+# Descriptions live in data/i18n/en.json as map.<id>.desc.
+# runs_on names the map an entry is a tenant of: the same app and database under a
+# community's own name and design. The page shows that map and its tenants first.
+
+- id: meshcore-official-map
+  name: MeshCore Node Map
+  url: "https://map.meshcore.io/"
+  scope: europe
+  shows: [nodes]
+  desc_key: map.meshcore-official-map.desc
+  last_checked: 2026-10-02
+
+- id: meshmapper
+  name: MeshMapper
+  url: "https://meshmapper.net/"
+  scope: europe
+  shows: [coverage]
+  desc_key: map.meshmapper.desc
+  last_checked: 2026-10-02
+
+- id: eu-meshcore-analyzer
+  name: MeshCore Analyzer
+  url: "https://meshcore-analyzer.eu/"
+  scope: europe
+  shows: [nodes, traffic, analyzer]
+  desc_key: map.eu-meshcore-analyzer.desc
+  last_checked: 2026-10-02
+
+- id: nl-dmc-observers
+  name: Dutch MeshCore observer dashboard
+  url: "https://observers.dutchmeshcore.nl/"
+  scope: country
+  country: NL
+  shows: [traffic, analyzer]
+  desc_key: map.nl-dmc-observers.desc
+  last_checked: 2026-10-02
+
+- id: nl-mc-radar
+  name: MC Radar
+  url: "https://mc-radar.woodwar.com/"
+  scope: country
+  country: NL
+  shows: [statistics]
+  desc_key: map.nl-mc-radar.desc
+  last_checked: 2026-10-02
+
+- id: cz-analyzer
+  name: MeshCore ČR analyzer
+  url: "https://analyzer.meshcore.cz/"
+  scope: country
+  country: CZ
+  shows: [nodes, traffic, analyzer]
+  desc_key: map.cz-analyzer.desc
+  last_checked: 2026-10-02
+
+- id: fi-corescope
+  name: CoreScope Finland
+  url: "https://corescope.meshcore.fi/"
+  scope: country
+  country: FI
+  shows: [nodes, traffic, analyzer]
+  desc_key: map.fi-corescope.desc
+  last_checked: 2026-10-02
+
+- id: se-meshat-corescope
+  name: Meshat.se MeshCore analyzer
+  url: "https://meshcore.meshat.se/"
+  scope: country
+  country: SE
+  shows: [nodes, traffic, analyzer]
+  desc_key: map.se-meshat-corescope.desc
+  last_checked: 2026-10-02
+
+- id: fr-cartolite
+  name: CartoLite
+  url: "https://meshmap.serveurperso.in/"
+  scope: europe
+  shows: [nodes, traffic]
+  desc_key: map.fr-cartolite.desc
+  last_checked: 2026-10-02
+
+- id: ee-litescope
+  name: liteScope Estonia
+  url: "https://litescope.kvlt.ee/"
+  scope: country
+  country: EE
+  shows: [nodes, traffic, analyzer]
+  desc_key: map.ee-litescope.desc
+  last_checked: 2026-10-02
+
+- id: ie-mayomesh-live
+  name: MayoMesh live map
+  url: "https://meshcore.mayomesh.net/"
+  scope: country
+  country: IE
+  shows: [nodes, traffic, coverage]
+  desc_key: map.ie-mayomesh-live.desc
+  last_checked: 2026-10-02
+
+- id: de-meshcorenetz-analyzer
+  name: MeshCoreNetz.de analyzer
+  url: "https://analyzer.meshcorenetz.de/"
+  scope: country
+  country: DE
+  shows: [nodes, traffic, analyzer]
+  runs_on: eu-meshcore-analyzer
+  desc_key: map.de-meshcorenetz-analyzer.desc
+  last_checked: 2026-10-23
+
+- id: de-meshdresden-analyzer
+  name: MeshDresden.eu analyzer
+  url: "https://analyzer.meshdresden.eu/"
+  scope: region
+  country: DE
+  shows: [nodes, traffic, analyzer]
+  runs_on: eu-meshcore-analyzer
+  desc_key: map.de-meshdresden-analyzer.desc
+  last_checked: 2026-10-23
+
+- id: nl-cornmeister
+  name: Cornmeister.nl
+  url: "https://cornmeister.nl/"
+  scope: country
+  country: NL
+  shows: [nodes, traffic, analyzer]
+  runs_on: eu-meshcore-analyzer
+  desc_key: map.nl-cornmeister.desc
+  last_checked: 2026-10-23
+
+- id: be-bemesh-map
+  name: "#BEmesh map"
+  url: "https://meshmap.radio-actief.be/"
+  scope: country
+  country: BE
+  shows: [nodes]
+  desc_key: map.be-bemesh-map.desc
+  last_checked: 2026-10-23
+
+- id: be-on8ar-corescope
+  name: Belgian CoreScope
+  url: "https://analyzer.on8ar.eu/"
+  scope: country
+  country: BE
+  shows: [nodes, traffic, analyzer]
+  desc_key: map.be-on8ar-corescope.desc
+  last_checked: 2026-10-23
+
+- id: is-corescope
+  name: CoreScope Iceland
+  url: "https://mc.flatuslifir.is/"
+  scope: country
+  country: IS
+  shows: [nodes, traffic, analyzer]
+  desc_key: map.is-corescope.desc
+  last_checked: 2026-10-23
+
+- id: pl-meshcore-polska-map
+  name: MeshCore Polska map
+  url: "https://mapa.meshcorepolska.org/"
+  scope: country
+  country: PL
+  shows: [nodes]
+  desc_key: map.pl-meshcore-polska-map.desc
+  last_checked: 2026-10-23
+
+- id: fr-loramesh-map
+  name: LoraMesh France map
+  url: "https://loramesh.fr/carte/"
+  scope: country
+  country: FR
+  shows: [coverage]
+  desc_key: map.fr-loramesh-map.desc
+  last_checked: 2026-10-23
+
+- id: de-meshcore-de-regions
+  name: MeshCore Wiki DE region map
+  url: "https://umap.openstreetmap.de/en/map/meshcore-defyi_130650"
+  scope: country
+  country: DE
+  shows: [coverage]
+  desc_key: map.de-meshcore-de-regions.desc
+  last_checked: 2026-10-23
+
+- id: gb-ukmesh
+  name: UK Mesh Network
+  url: "https://app.ukmesh.com/"
+  scope: country
+  country: GB
+  shows: [nodes, traffic, analyzer]
+  desc_key: map.gb-ukmesh.desc
+  last_checked: 2026-10-23
+
+- id: gb-meshrank
+  name: MeshRank
+  url: "https://meshrank.net/"
+  scope: country
+  country: GB
+  shows: [statistics]
+  desc_key: map.gb-meshrank.desc
+  last_checked: 2026-10-23
+
+- id: gb-m3sh-contacts
+  name: m3sh.uk contacts
+  url: "https://m3sh.uk/contacts/"
+  scope: region
+  country: GB
+  shows: [nodes]
+  desc_key: map.gb-m3sh-contacts.desc
+  last_checked: 2026-10-23
+
+- id: kiekr-map
+  name: KiekR region map
+  url: "https://map.kiekr.app/"
+  scope: europe
+  shows: [coverage]
+  desc_key: map.kiekr-map.desc
+  last_checked: 2026-10-23
+
+- id: hopradar
+  name: HopRadar
+  url: "https://hopradar.net/"
+  scope: europe
+  shows: [traffic, analyzer]
+  desc_key: map.hopradar.desc
+  last_checked: 2026-10-23

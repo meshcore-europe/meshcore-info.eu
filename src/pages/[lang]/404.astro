@@ -1,0 +1,18 @@
+---
+// The 404 page per language; the build hook moves it to /<lang>/404.html.
+import Base from '../../layouts/Base.astro';
+import { LANG_KEYS, t } from '../../lib/site.mjs';
+
+export function getStaticPaths() {
+  return LANG_KEYS.map((lang) => ({ params: { lang } }));
+}
+const { lang } = Astro.params;
+---
+<Base lang={lang} title={`${t(lang, 'not_found_title')} | meshcore-info.eu`} noAlternates>
+  <header class="page-head">
+    <div class="eyebrow">404</div>
+    <h1>{t(lang, 'not_found_title')}</h1>
+    <p class="lead">{t(lang, 'not_found_body')}</p>
+  </header>
+  <p><a class="btn btn-primary" href={`/${lang}/`}>{t(lang, 'not_found_home')}</a></p>
+</Base>

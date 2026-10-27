@@ -1,0 +1,941 @@
+{
+  "brand": {
+    "id": "brand",
+    "name": "DutchMeshCore",
+    "mark": { "prefix": "#", "text": "dmc" },
+    "page": "home",
+    "href": "https://dutchmeshcore.nl/"
+  },
+  "disclaimer": {
+    "id": "disclaimer",
+    "page": "home",
+    "hash": "#disclaimer",
+    "href": "https://dutchmeshcore.nl/#disclaimer",
+    "label": {
+      "nl": "Disclaimer observerdata",
+      "en": "Observer data disclaimer",
+      "de": "Haftungsausschluss Observerdaten"
+    }
+  },
+  "umbrella": {
+    "id": "umbrella",
+    "external": true,
+    "href": "https://meshcore-info.eu/",
+    "name": "meshcore-info.eu",
+    "label": {
+      "nl": "Onderdeel van het Europese off-grid mesh-netwerk",
+      "en": "Part of the European off-grid mesh network",
+      "de": "Teil des europäischen Off-Grid-Mesh-Netzwerks"
+    }
+  },
+  "primary": [
+    {
+      "id": "start",
+      "page": "start",
+      "href": "https://dutchmeshcore.nl/start",
+      "label": {
+        "nl": "Start",
+        "en": "Start",
+        "de": "Start"
+      }
+    },
+    {
+      "id": "firmware",
+      "page": "firmware",
+      "href": "https://dutchmeshcore.nl/firmware",
+      "label": {
+        "nl": "Firmware",
+        "en": "Firmware",
+        "de": "Firmware"
+      },
+      "children": [
+        {
+          "id": "fw-build",
+          "page": "firmware",
+          "hash": "#samenstellen",
+          "href": "https://dutchmeshcore.nl/firmware#samenstellen",
+          "label": {
+            "nl": "Firmware samenstellen",
+            "en": "Build your firmware",
+            "de": "Firmware zusammenstellen"
+          },
+          "sub": {
+            "nl": "Kies je board en rol",
+            "en": "Pick your board and role",
+            "de": "Wähle Board und Rolle"
+          },
+          "icon": "sliders"
+        },
+        {
+          "id": "fw-flasher",
+          "page": "firmware-flasher",
+          "href": "https://dutchmeshcore.nl/firmware/flasher",
+          "label": {
+            "nl": "Flashen",
+            "en": "Flash",
+            "de": "Flashen"
+          },
+          "sub": {
+            "nl": "Vanuit je browser, via USB",
+            "en": "From your browser, over USB",
+            "de": "Aus dem Browser, per USB"
+          },
+          "icon": "chip"
+        },
+        {
+          "id": "fw-console",
+          "page": "firmware-flasher-console",
+          "href": "https://dutchmeshcore.nl/firmware/flasher?console=1",
+          "label": {
+            "nl": "Seriële console",
+            "en": "Serial console",
+            "de": "Serielle Konsole"
+          },
+          "sub": {
+            "nl": "Commando's typen via USB",
+            "en": "Type commands over USB",
+            "de": "Befehle per USB tippen"
+          },
+          "icon": "terminal"
+        },
+        {
+          "id": "fw-ota",
+          "page": "firmware",
+          "hash": "#ota-served",
+          "href": "https://dutchmeshcore.nl/firmware#ota-served",
+          "label": {
+            "nl": "Updates via OTA",
+            "en": "Updates over the air",
+            "de": "Updates per OTA"
+          },
+          "sub": {
+            "nl": "Wat je repeater nu krijgt",
+            "en": "What your repeater gets now",
+            "de": "Was dein Repeater jetzt bekommt"
+          },
+          "icon": "antenna"
+        },
+        {
+          "id": "fw-changelog",
+          "page": "firmware-changelog",
+          "href": "https://dutchmeshcore.nl/firmware/changelog",
+          "label": {
+            "nl": "Changelog",
+            "en": "Changelog",
+            "de": "Changelog"
+          },
+          "sub": {
+            "nl": "Wat er veranderde",
+            "en": "What changed",
+            "de": "Was sich geändert hat"
+          },
+          "icon": "file"
+        }
+      ],
+      "groups": [
+        {
+          "title": {
+            "nl": "Op je radio",
+            "en": "On your radio",
+            "de": "Auf dein Funkgerät"
+          },
+          "items": [
+            "fw-build",
+            "fw-flasher",
+            "fw-console"
+          ],
+          "all": {
+            "nl": "Firmware-overzicht",
+            "en": "Firmware overview",
+            "de": "Firmware-Übersicht"
+          }
+        },
+        {
+          "title": {
+            "nl": "Bijhouden",
+            "en": "Keep up to date",
+            "de": "Auf dem Laufenden"
+          },
+          "items": [
+            "fw-ota",
+            "fw-changelog"
+          ]
+        }
+      ],
+      "card": {
+        "eyebrow": {
+          "nl": "Changelog",
+          "en": "Changelog",
+          "de": "Changelog"
+        },
+        "title": {
+          "nl": "Wat is er nieuw",
+          "en": "What's new",
+          "de": "Was ist neu"
+        },
+        "feed": {
+          "products": [
+            "guides",
+            "firmware"
+          ],
+          "limit": 3
+        },
+        "primary": "fw-changelog",
+        "primaryLabel": {
+          "nl": "Hele changelog",
+          "en": "Full changelog",
+          "de": "Ganzes Changelog"
+        }
+      }
+    },
+    {
+      "id": "guides",
+      "page": "guides",
+      "href": "https://dutchmeshcore.nl/guides",
+      "label": {
+        "nl": "Handleidingen",
+        "en": "Guides",
+        "de": "Anleitungen"
+      },
+      "children": [
+        {
+          "id": "guide-start",
+          "page": "start",
+          "href": "https://dutchmeshcore.nl/start",
+          "label": {
+            "nl": "Aan de slag",
+            "en": "Get started",
+            "de": "Loslegen"
+          },
+          "sub": {
+            "nl": "Van niets naar je eerste bericht",
+            "en": "From nothing to your first message",
+            "de": "Von null zur ersten Nachricht"
+          },
+          "icon": "play"
+        },
+        {
+          "id": "guide-devices",
+          "page": "start",
+          "hash": "#apparaat",
+          "href": "https://dutchmeshcore.nl/start#apparaat",
+          "label": {
+            "nl": "Apparaten en rollen",
+            "en": "Devices and roles",
+            "de": "Geräte und Rollen"
+          },
+          "sub": {
+            "nl": "Companion, repeater of observer",
+            "en": "Companion, repeater or observer",
+            "de": "Companion, Repeater oder Observer"
+          },
+          "icon": "device"
+        },
+        {
+          "id": "guide-settings",
+          "page": "guides-settings",
+          "href": "https://dutchmeshcore.nl/guides/settings",
+          "label": {
+            "nl": "Aanbevolen NL-instellingen",
+            "en": "Recommended NL settings",
+            "de": "Empfohlene NL-Einstellungen"
+          },
+          "sub": {
+            "nl": "869.618 MHz, SF7, stap voor stap",
+            "en": "869.618 MHz, SF7, step by step",
+            "de": "869.618 MHz, SF7, Schritt für Schritt"
+          },
+          "icon": "sliders"
+        },
+        {
+          "id": "guide-repeater",
+          "page": "guides-repeater-setup",
+          "href": "https://dutchmeshcore.nl/guides/repeater-setup",
+          "label": {
+            "nl": "Repeater instellen",
+            "en": "Set up a repeater",
+            "de": "Repeater einrichten"
+          },
+          "sub": {
+            "nl": "Naam, radio, regio en MQTT",
+            "en": "Name, radio, region and MQTT",
+            "de": "Name, Funk, Region und MQTT"
+          },
+          "icon": "antenna"
+        },
+        {
+          "id": "guide-keygen",
+          "page": "guides-keygen",
+          "href": "https://dutchmeshcore.nl/guides/keygen",
+          "label": {
+            "nl": "Sleutel genereren",
+            "en": "Generate a key",
+            "de": "Schlüssel erzeugen"
+          },
+          "sub": {
+            "nl": "Met een prefix die jij kiest",
+            "en": "With a prefix you choose",
+            "de": "Mit einem Präfix deiner Wahl"
+          },
+          "icon": "key"
+        },
+        {
+          "id": "guide-channels",
+          "page": "guides-channels",
+          "href": "https://dutchmeshcore.nl/guides/channels",
+          "label": {
+            "nl": "Kanalen vinden",
+            "en": "Find channels",
+            "de": "Kanäle finden"
+          },
+          "sub": {
+            "nl": "Sleutels kopiëren en exporteren",
+            "en": "Copy and export keys",
+            "de": "Schlüssel kopieren und exportieren"
+          },
+          "icon": "hash"
+        },
+        {
+          "id": "guide-filter",
+          "page": "guides-filter",
+          "href": "https://dutchmeshcore.nl/guides/filter",
+          "label": {
+            "nl": "Pakketfilter",
+            "en": "Packet filter",
+            "de": "Paketfilter"
+          },
+          "sub": {
+            "nl": "Uitleg en commando's",
+            "en": "Explained, with commands",
+            "de": "Erklärt, mit Befehlen"
+          },
+          "icon": "filter"
+        },
+        {
+          "id": "guide-mqtt",
+          "page": "guides-mqtt",
+          "href": "https://dutchmeshcore.nl/guides/mqtt",
+          "label": {
+            "nl": "MQTT op je observer",
+            "en": "MQTT on your observer",
+            "de": "MQTT auf deinem Observer"
+          },
+          "sub": {
+            "nl": "Commando's voor de collectors",
+            "en": "Commands for the collectors",
+            "de": "Befehle für die Collector"
+          },
+          "icon": "terminal"
+        },
+        {
+          "id": "guide-bridge",
+          "page": "guides-mctomqtt",
+          "href": "https://dutchmeshcore.nl/guides/mctomqtt",
+          "label": {
+            "nl": "Bridge-config",
+            "en": "Bridge config",
+            "de": "Bridge-Konfiguration"
+          },
+          "sub": {
+            "nl": "MCtoMQTT op je computer",
+            "en": "MCtoMQTT on your computer",
+            "de": "MCtoMQTT auf deinem Computer"
+          },
+          "icon": "file"
+        },
+        {
+          "id": "guide-connect",
+          "page": "guides-connect",
+          "href": "https://dutchmeshcore.nl/guides/connect",
+          "label": {
+            "nl": "Eigen bron aansluiten",
+            "en": "Connect your own source",
+            "de": "Eigene Quelle anschließen"
+          },
+          "sub": {
+            "nl": "Data insturen vanuit je tool of broker",
+            "en": "Send data from your tool or broker",
+            "de": "Daten aus deinem Tool oder Broker liefern"
+          },
+          "icon": "plug"
+        },
+        {
+          "id": "guide-cli",
+          "page": "guides-cli",
+          "href": "https://dutchmeshcore.nl/guides/cli",
+          "label": {
+            "nl": "CLI-commando's",
+            "en": "CLI commands",
+            "de": "CLI-Befehle"
+          },
+          "sub": {
+            "nl": "Elk commando met uitleg",
+            "en": "Every command explained",
+            "de": "Jeder Befehl erklärt"
+          },
+          "icon": "terminal"
+        }
+      ],
+      "groups": [
+        {
+          "title": {
+            "nl": "Beginnen",
+            "en": "Getting started",
+            "de": "Einstieg"
+          },
+          "items": [
+            "guide-start",
+            "guide-devices"
+          ],
+          "all": {
+            "nl": "Alle handleidingen",
+            "en": "All guides",
+            "de": "Alle Anleitungen"
+          }
+        },
+        {
+          "title": {
+            "nl": "Je node instellen",
+            "en": "Set up your node",
+            "de": "Deinen Node einrichten"
+          },
+          "items": [
+            "guide-settings",
+            "guide-repeater",
+            "guide-keygen",
+            "guide-channels"
+          ]
+        },
+        {
+          "title": {
+            "nl": "Verdieping",
+            "en": "Going deeper",
+            "de": "Vertiefung"
+          },
+          "items": [
+            "guide-filter",
+            "guide-mqtt",
+            "guide-bridge",
+            "guide-connect",
+            "guide-cli"
+          ]
+        }
+      ],
+      "card": {
+        "eyebrow": {
+          "nl": "Kennisbank",
+          "en": "Knowledge base",
+          "de": "Wissensbasis"
+        },
+        "title": {
+          "nl": "MeshWiki.nl",
+          "en": "MeshWiki.nl",
+          "de": "MeshWiki.nl"
+        },
+        "body": {
+          "nl": "De Nederlandse wiki over MeshCore, door de community bijgehouden. Voor alles wat hier niet staat.",
+          "en": "The Dutch wiki on MeshCore, kept by the community. For everything not covered here.",
+          "de": "Das niederländische Wiki zu MeshCore, von der Community gepflegt. Für alles, was hier nicht steht."
+        },
+        "link": {
+          "href": "https://meshwiki.nl",
+          "label": {
+            "nl": "Naar MeshWiki",
+            "en": "Go to MeshWiki",
+            "de": "Zu MeshWiki"
+          }
+        }
+      }
+    },
+    {
+      "id": "network",
+      "label": {
+        "nl": "Netwerk",
+        "en": "Network",
+        "de": "Netzwerk"
+      },
+      "page": "network",
+      "href": "https://dutchmeshcore.nl/network",
+      "children": [
+        {
+          "id": "net-cluster",
+          "page": "network-mqtt",
+          "href": "https://dutchmeshcore.nl/network/mqtt",
+          "label": {
+            "nl": "MQTT-cluster",
+            "en": "MQTT cluster",
+            "de": "MQTT-Cluster"
+          },
+          "sub": {
+            "nl": "Data sturen of ophalen",
+            "en": "Send or pull data",
+            "de": "Daten senden oder abrufen"
+          },
+          "icon": "server"
+        },
+        {
+          "id": "net-observers",
+          "page": "observers",
+          "href": "https://observers.dutchmeshcore.nl/",
+          "label": {
+            "nl": "Observers",
+            "en": "Observers",
+            "de": "Observer"
+          },
+          "sub": {
+            "nl": "Alle observers en wat ze horen",
+            "en": "Every observer and what it hears",
+            "de": "Alle Observer und was sie hören"
+          },
+          "icon": "server"
+        },
+        {
+          "id": "net-trends",
+          "page": "observers-trends",
+          "href": "https://observers.dutchmeshcore.nl/#stats",
+          "label": {
+            "nl": "Trends",
+            "en": "Trends",
+            "de": "Trends"
+          },
+          "sub": {
+            "nl": "Hoe het netwerk groeit",
+            "en": "How the network grows",
+            "de": "Wie das Netz wächst"
+          },
+          "icon": "chart"
+        },
+        {
+          "id": "net-status",
+          "page": "network",
+          "href": "https://dutchmeshcore.nl/network#status",
+          "label": {
+            "nl": "Netwerkstatus",
+            "en": "Network status",
+            "de": "Netzstatus"
+          },
+          "sub": {
+            "nl": "Draait alles?",
+            "en": "Is everything up?",
+            "de": "Läuft alles?"
+          },
+          "icon": "pulse",
+          "hash": "#status"
+        },
+        {
+          "id": "net-portal",
+          "external": true,
+          "href": "https://portal.dutchmeshcore.nl/",
+          "label": {
+            "nl": "Portal (abonnees)",
+            "en": "Portal (subscribers)",
+            "de": "Portal (Abonnenten)"
+          },
+          "sub": {
+            "nl": "Account voor publieke projecten",
+            "en": "Account for public projects",
+            "de": "Konto für öffentliche Projekte"
+          },
+          "icon": "lock"
+        },
+        {
+          "id": "net-filters",
+          "page": "observers-filters",
+          "href": "https://observers.dutchmeshcore.nl/#filters",
+          "label": {
+            "nl": "Filterstatistiek",
+            "en": "Filter statistics",
+            "de": "Filterstatistik"
+          },
+          "sub": {
+            "nl": "Wat repeaters tegenhouden",
+            "en": "What repeaters hold back",
+            "de": "Was Repeater zurückhalten"
+          },
+          "icon": "filter"
+        },
+        {
+          "id": "net-ingestors",
+          "page": "ingestors",
+          "href": "https://dutchmeshcore.nl/network/ingestors",
+          "label": {
+            "nl": "Ingestors",
+            "en": "Ingestors",
+            "de": "Ingestoren"
+          },
+          "sub": {
+            "nl": "Zo komt data in het cluster",
+            "en": "How data gets into the cluster",
+            "de": "So kommen Daten ins Cluster"
+          },
+          "icon": "antenna"
+        }
+      ],
+      "groups": [
+        {
+          "title": {
+            "nl": "Observers en data",
+            "en": "Observers and data",
+            "de": "Observer und Daten"
+          },
+          "items": [
+            "net-observers",
+            "net-trends",
+            "net-filters",
+            "net-ingestors"
+          ],
+          "all": {
+            "nl": "Netwerk-overzicht",
+            "en": "Network overview",
+            "de": "Netzwerk-Übersicht"
+          }
+        },
+        {
+          "title": {
+            "nl": "Diensten",
+            "en": "Services",
+            "de": "Dienste"
+          },
+          "items": [
+            "net-status",
+            "net-cluster",
+            "net-portal"
+          ]
+        }
+      ],
+      "card": {
+        "eyebrow": {
+          "nl": "Live · voorbeelddata",
+          "en": "Live · sample data",
+          "de": "Live · Beispieldaten"
+        },
+        "title": {
+          "nl": "Het netwerk nu",
+          "en": "The network right now",
+          "de": "Das Netzwerk jetzt"
+        },
+        "primary": "net-observers",
+        "primaryLabel": {
+          "nl": "Alle observers",
+          "en": "All observers",
+          "de": "Alle Observer"
+        },
+        "live": {
+          "kpis": [
+            {
+              "label": {
+                "nl": "Observers",
+                "en": "Observers",
+                "de": "Observer"
+              },
+              "value": "4"
+            },
+            {
+              "label": {
+                "nl": "Pakketten 24 u",
+                "en": "Packets 24 h",
+                "de": "Pakete 24 h"
+              },
+              "value": "54 758"
+            }
+          ],
+          "rows": [
+            {
+              "name": "AMS-Noord-01",
+              "status": "online",
+              "count": "18 432"
+            },
+            {
+              "name": "UTR-Dom-02",
+              "status": "online",
+              "count": "12 907"
+            },
+            {
+              "name": "RTM-Haven-03",
+              "status": "stale",
+              "count": "6 215"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "connected",
+      "page": "connected-tools",
+      "href": "https://dutchmeshcore.nl/connected",
+      "label": {
+        "nl": "Verbonden tools",
+        "en": "Connected tools",
+        "de": "Verbundene Tools"
+      }
+    },
+    {
+      "id": "community",
+      "label": {
+        "nl": "Community",
+        "en": "Community",
+        "de": "Community"
+      },
+      "page": "community",
+      "href": "https://dutchmeshcore.nl/community",
+      "children": [
+        {
+          "id": "com-page",
+          "page": "community",
+          "href": "https://dutchmeshcore.nl/community",
+          "label": {
+            "nl": "Over de community",
+            "en": "About the community",
+            "de": "Über die Community"
+          },
+          "sub": {
+            "nl": "Wie we zijn en hoe je meebouwt",
+            "en": "Who we are and how to help",
+            "de": "Wer wir sind und wie du mitbaust"
+          },
+          "icon": "users"
+        },
+        {
+          "id": "com-discord",
+          "external": true,
+          "href": "https://discord.dutchmeshcore.nl/",
+          "label": {
+            "nl": "Discord",
+            "en": "Discord",
+            "de": "Discord"
+          },
+          "sub": {
+            "nl": "Vragen en meepraten",
+            "en": "Questions and chat",
+            "de": "Fragen und mitreden"
+          },
+          "icon": "chat"
+        },
+        {
+          "id": "com-github",
+          "external": true,
+          "href": "https://github.com/Dutch-MeshCore",
+          "label": {
+            "nl": "GitHub",
+            "en": "GitHub",
+            "de": "GitHub"
+          },
+          "sub": {
+            "nl": "Alle code is open source",
+            "en": "All code is open source",
+            "de": "Aller Code ist Open Source"
+          },
+          "icon": "code"
+        },
+        {
+          "id": "com-meshwiki",
+          "external": true,
+          "href": "https://meshwiki.nl",
+          "label": {
+            "nl": "MeshWiki.nl",
+            "en": "MeshWiki.nl",
+            "de": "MeshWiki.nl"
+          },
+          "sub": {
+            "nl": "De Nederlandse kennisbank",
+            "en": "The Dutch knowledge base",
+            "de": "Die niederländische Wissensbasis"
+          },
+          "icon": "book"
+        }
+      ],
+      "groups": [
+        {
+          "title": {
+            "nl": "Meedoen",
+            "en": "Take part",
+            "de": "Mitmachen"
+          },
+          "items": [
+            "com-page",
+            "com-discord"
+          ],
+          "all": {
+            "nl": "Over de community",
+            "en": "About the community",
+            "de": "Über die Community"
+          }
+        },
+        {
+          "title": {
+            "nl": "Open en gedeeld",
+            "en": "Open and shared",
+            "de": "Offen und geteilt"
+          },
+          "items": [
+            "com-github",
+            "com-meshwiki"
+          ]
+        }
+      ],
+      "card": {
+        "eyebrow": {
+          "nl": "Hulp nodig?",
+          "en": "Need help?",
+          "de": "Hilfe nötig?"
+        },
+        "title": {
+          "nl": "Vraag het op Discord",
+          "en": "Ask on Discord",
+          "de": "Frag auf Discord"
+        },
+        "body": {
+          "nl": "Zet er je apparaat en firmwareversie bij, dan helpt iemand je meestal dezelfde dag.",
+          "en": "Add your device and firmware version, and someone usually helps you the same day.",
+          "de": "Nenn dein Gerät und deine Firmware-Version, dann hilft dir meist am selben Tag jemand."
+        },
+        "primary": "com-discord",
+        "primaryLabel": {
+          "nl": "Naar Discord",
+          "en": "Join Discord",
+          "de": "Zu Discord"
+        }
+      }
+    }
+  ],
+  "apps": {
+    "observers": {
+      "label": {
+        "nl": "Observers",
+        "en": "Observers",
+        "de": "Observer"
+      },
+      "routes": [],
+      "signIn": {
+        "id": "obs-signin",
+        "page": "observers-signin",
+        "href": "https://observers.dutchmeshcore.nl/#admin",
+        "label": {
+          "nl": "Inloggen",
+          "en": "Sign in",
+          "de": "Anmelden"
+        }
+      },
+      "account": [
+        {
+          "id": "obs-mine",
+          "page": "observers-mine",
+          "href": "https://observers.dutchmeshcore.nl/#myobservers",
+          "label": {
+            "nl": "Mijn observers",
+            "en": "My observers",
+            "de": "Meine Observer"
+          }
+        },
+        {
+          "id": "obs-account",
+          "page": "observers-account",
+          "href": "https://observers.dutchmeshcore.nl/#account",
+          "label": {
+            "nl": "Account",
+            "en": "Account",
+            "de": "Konto"
+          }
+        },
+        {
+          "id": "obs-admin",
+          "page": "observers-admin",
+          "href": "https://observers.dutchmeshcore.nl/#admin",
+          "label": {
+            "nl": "NOC",
+            "en": "NOC",
+            "de": "NOC"
+          }
+        }
+      ],
+      "themeExtras": [
+        {
+          "id": "normal",
+          "label": {
+            "nl": "Normaal",
+            "en": "Normal",
+            "de": "Normal"
+          }
+        },
+        {
+          "id": "deuteranopia",
+          "label": {
+            "nl": "Deuteranopie",
+            "en": "Deuteranopia",
+            "de": "Deuteranopie"
+          }
+        },
+        {
+          "id": "protanopia",
+          "label": {
+            "nl": "Protanopie",
+            "en": "Protanopia",
+            "de": "Protanopie"
+          }
+        },
+        {
+          "id": "tritanopia",
+          "label": {
+            "nl": "Tritanopie",
+            "en": "Tritanopia",
+            "de": "Tritanopie"
+          }
+        },
+        {
+          "id": "achromatopsia",
+          "label": {
+            "nl": "Achromatopsie",
+            "en": "Achromatopsia",
+            "de": "Achromatopsie"
+          }
+        }
+      ]
+    }
+  },
+  "footer": [
+    {
+      "title": {
+        "nl": "Product",
+        "en": "Product",
+        "de": "Produkt"
+      },
+      "items": [
+        "start",
+        "firmware",
+        "guides",
+        "connected"
+      ]
+    },
+    {
+      "title": {
+        "nl": "Netwerk",
+        "en": "Network",
+        "de": "Netzwerk"
+      },
+      "items": [
+        "net-cluster",
+        "net-observers",
+        "net-trends",
+        "net-ingestors",
+        "net-status",
+        "net-portal"
+      ]
+    },
+    {
+      "title": {
+        "nl": "Community",
+        "en": "Community",
+        "de": "Community"
+      },
+      "items": [
+        "com-page",
+        "com-discord",
+        "com-github"
+      ]
+    }
+  ],
+  "changelog": {
+    "page": "../data/changelog.json",
+    "href": "https://dutchmeshcore.nl/changelog.json"
+  }
+}

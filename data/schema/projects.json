@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "data/projects.yaml: community projects: repo and licence for open source, url for the others",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "category", "desc_key", "status", "last_checked"],
+    "anyOf": [{ "required": ["repo"] }, { "required": ["url"] }],
+    "dependentRequired": { "licence": ["repo"] },
+    "properties": {
+      "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+      "name": { "type": "string", "minLength": 1 },
+      "category": { "enum": ["app", "tool", "bridge", "firmware", "hardware", "library"] },
+      "repo": { "type": "string", "pattern": "^https://" },
+      "url": { "type": "string", "pattern": "^https://" },
+      "licence": { "type": "string", "minLength": 1 },
+      "maintainer": { "type": "string", "minLength": 1 },
+      "desc_key": { "type": "string", "minLength": 1 },
+      "status": { "enum": ["active", "archived"] },
+      "last_checked": { "type": "string", "format": "date" }
+    },
+    "additionalProperties": false
+  }
+}

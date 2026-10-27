@@ -1,0 +1,55 @@
+---
+// The CLI commands of stock MeshCore (/guides/cli/), from data/commands.yaml: per group, each command
+// with its forms, what it does, the value it starts with and where the firmware sets it. Values in a form
+// (<hours>) are editable in place (web/js/placeholders.js); search and the node filter run in web/js/filters.js,
+// and without JavaScript the full list shows. Inside .prose, so web/js/copy.js gives each form a copy button.
+import { t, loadData } from '../lib/site.mjs';
+import FilterForm from './FilterForm.astro';
+
+const { lang } = Astro.props;
+const commands = loadData('commands');
+const GROUPS = ['operational', 'adverts', 'radio', 'system', 'routing', 'regions', 'access', 'neighbours', 'statistics',
+  'logging', 'info', 'gps', 'sensors', 'bridge', 'ethernet', 'wifi'].filter((g) => commands.some((c) => c.group === g));
+const NODES = ['repeater', 'room_server', 'sensor', 'companion'];
+const RELEASE = 'repeater-v1.18.0';
+const src = (ref) => {
+  const [path, line] = ref.split(':');
+  return `https://github.com/meshcore-dev/MeshCore/blob/${RELEASE}/${path}${line ? `#L${line}` : ''}`;
+};
+// A form split into text and its values (<hours>); each value is editable, and shared within one command only.
+const parts = (form) => form.split(/(<[^>]+>)/).filter(Boolean);
+const text = (c) => [...c.syntax, t(lang, c.desc_key)].join(' ').toLowerCase();
+---
+<div class="prose cli">
+  <nav class="cli-groups" aria-label={t(lang, 'cli_groups')}>
+    <ul>{GROUPS.map((g) => <li><a href={`#group-${g}`}>{t(lang, `cli_group_${g}`)} <span class="n">{commands.filter((c) => c.group === g).length}</span></a></li>)}</ul>
+  </nav>
+  <FilterForm lang={lang} list="cli-list" search="cli_search" filters={[
+    { name: 'nodes', label: 'cli_node_q', options: NODES.map((n) => ({ value: n, label: `cli_node_${n}` })) },
+  ]} />
+  <div id="cli-list">
+    {GROUPS.map((g) => (
+      <section class="cli-group" id={`group-${g}`} data-filter-group>
+        <h2>{t(lang, `cli_group_${g}`)} <a class="anchor" href={`#group-${g}`} aria-label={`${t(lang, 'cli_link')}: ${t(lang, `cli_group_${g}`)}`}>#</a></h2>
+        <ul class="cmd-list">{commands.filter((c) => c.group === g).map((c) => (
+          <li class="cmd" id={`cmd-${c.id}`} data-filter-item data-nodes={c.nodes.join(' ')} data-text={text(c)}>
+            <h3 class="vh">{c.syntax[0]}</h3>
+            {c.syntax.map((form) => (
+              <pre>{parts(form).map((x) => /^<.+>$/.test(x)
+                ? <span class="ph" data-ph={`${c.id}:${x}`} contenteditable="plaintext-only" spellcheck="false" role="textbox" aria-label={x.slice(1, -1)}>{x}</span>
+                : x)}</pre>
+            ))}
+            <p>{t(lang, c.desc_key)} <a class="anchor" href={`#cmd-${c.id}`} aria-label={`${t(lang, 'cli_link')}: ${c.syntax[0]}`}>#</a></p>
+            <dl class="cmd-meta">
+              {c.default !== undefined && <Fragment><dt>{t(lang, 'cli_default')}</dt><dd><code>{c.default}</code> <a class="src" href={src(c.default_source)}>{t(lang, 'cli_in_source')}</a></dd></Fragment>}
+              {c.range && <Fragment><dt>{t(lang, 'cli_range')}</dt><dd>{c.range}</dd></Fragment>}
+              <dt>{t(lang, 'cli_nodes')}</dt><dd>{c.nodes.map((n) => t(lang, `cli_node_${n}`)).join(', ')}</dd>
+              {c.since && <Fragment><dt>{t(lang, 'cli_since')}</dt><dd>{c.since}</dd></Fragment>}
+              {c.build && <Fragment><dt>{t(lang, 'cli_build')}</dt><dd>{t(lang, `cli_build_${c.build}`)}</dd></Fragment>}
+            </dl>
+          </li>
+        ))}</ul>
+      </section>
+    ))}
+  </div>
+</div>

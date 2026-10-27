@@ -1,0 +1,16 @@
+---
+// The strip at the foot of a page's hero (src/lib/strips.mjs): a label, the facts, and where they come from.
+// A live strip is filled and shown by web/js/live-strip.js; a fixed one is written here and always shows.
+import { stripFor } from '../lib/strips.mjs';
+const { lang, slug } = Astro.props;
+const s = stripFor(slug, lang);
+---
+{s && (
+  <div class="credits" data-live-strip={s.live ? '' : undefined} hidden={s.live}>
+    <div class="credits-inner">
+      <div class="grp live">{s.live && <span class="live-dot" aria-hidden="true"></span>}<span class="lbl">{s.label}</span>
+        <span class="sentence">{(s.live ? s.keys : s.items).map((it, i) => <Fragment>{i > 0 && <span class="sep" aria-hidden="true"> · </span>}<span class="item"><span class="n" data-live={s.live ? it.key : undefined}>{it.n}</span> {it.text}</span></Fragment>)}</span></div>
+      {s.src && <div class="grp">{s.src.href ? <a class="wm mono" href={s.src.href}>{s.src.text}</a> : <span class="wm mono">{s.src.text}</span>}</div>}
+    </div>
+  </div>
+)}

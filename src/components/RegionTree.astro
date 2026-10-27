@@ -1,0 +1,74 @@
+---
+// The Regions block of one area on /guides/settings/: the regions a repeater there sits in, as boxes
+// inside each other (Europe, a group of countries such as Benelux, the country, a province or region, and a
+// town where the area uses one), each linking to that region on the MeshCore Analyzer's map. Which regions exist
+// comes from the catalog (data/regions.json, tools/update_regions.py), the groups of countries from
+// data/region_groups.yaml. The commands are nested, each region under its parent. An area whose group already
+// gives region commands (data/areas.yaml) shows the tree only: picking a province fills those commands in.
+// web/js/regions.js runs the province picker.
+import { t, loadData } from '../lib/site.mjs';
+import catalog from '../../data/regions.json';
+
+const { lang, area } = Astro.props;
+const cc = area.country.toLowerCase();
+const country = catalog.countries[cc];
+const group = loadData('region_groups').find((g) => g.countries.includes(area.country));
+const MAP = 'https://meshcore-analyzer.eu/#regions';
+const at = (code) => `${MAP}?region=${code}`;
+const r = (k) => t(lang, `regions_${k}`);
+// The area's own region commands, if its group gives them; otherwise the tree's own commands.
+const own = (area.changes || []).some((c) => (c.commands || []).some((l) => l.startsWith('region put')));
+const chain = [catalog.europe, ...(group ? [group.code] : []), cc];
+// The town's line shows once a town is typed in its box (web/js/regions.js).
+const TOWN = 'region put YOUR_CITY YOUR_PROVINCE';
+const commands = [`region put ${chain[0]}`, ...chain.slice(1).map((code, i) => `region put ${code} ${chain[i]}`),
+  `region put YOUR_PROVINCE ${cc}`, TOWN, 'region save'];
+const parts = (line) => line.split(/(YOUR_[A-Z]+)/).filter(Boolean);
+const regions = country ? country.regions : [];
+---
+<div class="regions" data-regions data-map={MAP}>
+  <h4>{r('title')}</h4>
+  <p>{r('body')}</p>
+  <div class="rbox r0">
+    <div class="rhd"><b>{r('europe')}</b> <code>{catalog.europe}</code><a href={MAP}>{r('map')}<span class="vh"> {r('map_label')}</span></a></div>
+    {(() => {
+      const inner = (
+        <div class="rbox r2">
+          <div class="rhd"><b>{t(lang, `country_${cc}`)}</b> <code>{cc}</code><a href={at(cc)}>{r('map')}<span class="vh"> {r('map_label')}</span></a></div>
+          {regions.length ? (
+            <div class="rbox r3">
+              <div class="rhd">
+                <select data-region-pick aria-label={r('pick')}>
+                  <option value="">{r('pick')}</option>
+                  {regions.map((x) => <option value={x.code}>{x.name} ({x.code})</option>)}
+                </select>
+                <a href={at(cc)} data-region-link>{r('map')}<span class="vh"> {r('map_label')}</span></a>
+              </div>
+              <div class="rbox r4"><div class="rhd"><input type="text" data-region-town placeholder={r('town')} aria-label={r('town')} autocomplete="off" spellcheck="false" /><a href={at(cc)} data-region-link>{r('map')}<span class="vh"> {r('map_label')}</span></a></div></div>
+            </div>
+          ) : (
+            <div class="rbox r4"><div class="rhd"><span>{r('region')}</span><a href={at(cc)}>{r('map')}<span class="vh"> {r('map_label')}</span></a></div></div>
+          )}
+        </div>
+      );
+      return group ? (
+        <div class="rbox r1">
+          <div class="rhd"><b>{group.name}</b> <code>{group.code}</code><a href={at(group.code)}>{r('map')}<span class="vh"> {r('map_label')}</span></a></div>
+          {inner}
+        </div>
+      ) : inner;
+    })()}
+  </div>
+  <p class="meta">{r('map_body')}</p>
+  {!own && regions.length > 0 && (
+    <Fragment>
+      <p class="ph-hint">{r('cmd_hint')}</p>
+      <pre>{commands.map((line, i) => {
+        const text = parts(line).map((x) => /^YOUR_/.test(x)
+          ? <span class="ph" data-ph={x} contenteditable="plaintext-only" spellcheck="false" role="textbox" aria-label={t(lang, `area_ph_${x.slice(5).toLowerCase()}`)}>{x}</span>
+          : x);
+        return line === TOWN ? <span data-town-line hidden>{'\n'}{text}</span> : <Fragment>{i > 0 && '\n'}{text}</Fragment>;
+      })}</pre>
+    </Fragment>
+  )}
+</div>

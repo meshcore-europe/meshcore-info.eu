@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "data/communities.yaml: community directory",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "country", "name", "links", "added", "last_checked"],
+    "properties": {
+      "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+      "country": { "type": "string", "pattern": "^[A-Za-z]{2}$" },
+      "region": { "type": "string", "minLength": 1 },
+      "name": { "type": "string", "minLength": 1 },
+      "links": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "oneOf": [{ "required": ["type", "url"] }, { "required": ["type", "ask_at"] }],
+          "properties": {
+            "type": { "enum": ["discord", "telegram", "signal", "matrix", "whatsapp", "forum", "website", "wiki", "map"] },
+            "url": { "type": "string", "pattern": "^https://" },
+            "ask_at": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" }
+          },
+          "additionalProperties": false
+        }
+      },
+      "channels": { "type": "array", "items": { "type": "string", "minLength": 1 }, "uniqueItems": true },
+      "languages": { "type": "array", "items": { "type": "string", "pattern": "^[a-z]{2,3}$" }, "uniqueItems": true },
+      "desc_key": { "type": "string", "minLength": 1 },
+      "added": { "type": "string", "format": "date" },
+      "last_checked": { "type": "string", "format": "date" }
+    },
+    "additionalProperties": false
+  }
+}

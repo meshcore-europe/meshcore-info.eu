@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "data/presets.yaml: the 868 MHz radio presets used in Europe, from the MeshCore project's list",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "frequency", "bandwidth", "spreading_factor", "coding_rate", "source", "last_checked"],
+    "properties": {
+      "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+      "name": { "type": "string", "minLength": 1 },
+      "frequency": { "type": "string", "pattern": "^(86[89]|43[34])\\.[0-9]{3}$" },
+      "bandwidth": { "type": "string", "pattern": "^[0-9]+(\\.[0-9]+)?$" },
+      "spreading_factor": { "type": "integer", "minimum": 5, "maximum": 12 },
+      "coding_rate": { "type": "integer", "minimum": 5, "maximum": 8 },
+      "path_hash_size": { "type": "integer", "minimum": 1, "maximum": 3 },
+      "other": { "const": true },
+      "source": { "type": "string", "pattern": "^https://" },
+      "last_checked": { "type": "string", "format": "date" }
+    },
+    "additionalProperties": false
+  }
+}

@@ -1,0 +1,19 @@
+---
+// One local group from data/communities.yaml, as community-card.html.
+import { t, loadData } from '../lib/site.mjs';
+const { lang, c } = Astro.props;
+// A link with ask_at has no public invite: the card names the group (in this file) that hands it out.
+const askAt = (l) => {
+  const g = loadData('communities').find((x) => x.id === l.ask_at);
+  if (!g) throw new Error(`data/communities.yaml: "${c.id}" asks for its ${l.type} link at unknown group "${l.ask_at}"`);
+  return g;
+};
+---
+<li class="card community-card" id={`community-${c.id}`}>
+  <h3>{c.name}</h3>
+  {c.region && <p class="muted">{c.region}</p>}
+  {c.desc_key && <p>{t(lang, c.desc_key)}</p>}
+  {c.links && c.links.length > 0 && <ul class="link-list">{c.links.map((l) => <li>{l.url ? <a href={l.url}>{t(lang, `link_${l.type}`)}</a> : <Fragment>{t(lang, `link_${l.type}`)}: {t(lang, 'community_ask_at')}{' '}<a href={`#community-${l.ask_at}`}>{askAt(l).name}</a></Fragment>}</li>)}</ul>}
+  {c.channels && c.channels.length > 0 && <div class="chans"><span class="label">{t(lang, 'community_channels')}:</span> <ul class="chan-list">{c.channels.map((ch) => <li><code>{ch}</code></li>)}</ul></div>}
+  {c.languages && c.languages.length > 0 && <p><span class="label">{t(lang, 'community_languages')}:</span> <span class="mono">{c.languages.map((x) => x.toUpperCase()).join(' ')}</span></p>}
+</li>

@@ -1,0 +1,17 @@
+{
+  "name": "meshcore-info-eu",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tools/astro.mjs build",
+    "dev": "node tools/astro.mjs dev",
+    "test": "node --test \"tests/js/*.test.mjs\""
+  },
+  "dependencies": {
+    "@astrojs/markdown-remark": "7.3.1",
+    "astro": "7.3.3",
+    "smol-toml": "1.8.0",
+    "unist-util-visit": "5.1.0",
+    "yaml": "2.9.1"
+  }
+}

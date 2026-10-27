@@ -1,0 +1,15 @@
+// meshcore-info.eu: the Astro build in dist/, served by preview/worker.js. Cloudflare Workers Builds
+// runs `npm ci && npm run build` and then `npx wrangler deploy` on every push to main.
+{
+  "$schema": "https://unpkg.com/wrangler/config-schema.json",
+  "name": "meshcore-info",
+  "main": "preview/worker.js",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

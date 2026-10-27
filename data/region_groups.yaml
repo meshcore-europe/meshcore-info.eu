@@ -1,0 +1,9 @@
+# Groups of countries that sit between Europe and a country in a repeater's region tree, shown in the Regions block
+# on /guides/settings/. The region catalog (data/regions.json) has none of them, so they are kept here
+# by hand. code is the region code; countries are ISO codes; source is where the group uses the code. Re-check
+# the source and update last_checked before changing an entry.
+- code: bx
+  name: Benelux
+  countries: [BE, NL, LU]
+  source: https://settings.dutchmeshcore.nl/en/
+  last_checked: "2026-10-21"

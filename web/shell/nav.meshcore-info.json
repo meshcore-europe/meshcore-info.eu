@@ -1,0 +1,832 @@
+{
+  "brand": {
+    "id": "brand",
+    "name": "meshcore-info.eu",
+    "mark": {
+      "text": "meshcore-info",
+      "suffix": ".eu"
+    },
+    "page": "home",
+    "href": "/"
+  },
+  "disclaimer": {
+    "id": "privacy",
+    "page": "privacy",
+    "href": "/privacy/",
+    "label": {
+      "nl": "Privacy",
+      "en": "Privacy",
+      "de": "Datenschutz"
+    }
+  },
+  "primary": [
+    {
+      "id": "start",
+      "page": "start",
+      "href": "/about/",
+      "label": {
+        "nl": "Start",
+        "en": "Start",
+        "de": "Start"
+      },
+      "children": [
+        {
+          "id": "about",
+          "page": "about",
+          "href": "/about/",
+          "label": {
+            "nl": "Wat is MeshCore",
+            "en": "What is MeshCore",
+            "de": "Was ist MeshCore"
+          },
+          "sub": {
+            "nl": "Berichten via radio, zonder internet",
+            "en": "Radio messages without the internet",
+            "de": "Nachrichten per Funk, ohne Internet"
+          },
+          "icon": "book"
+        },
+        {
+          "id": "devices",
+          "page": "devices",
+          "href": "/devices/",
+          "label": {
+            "nl": "Apparaten",
+            "en": "Devices",
+            "de": "Geräte"
+          },
+          "sub": {
+            "nl": "Boards en wat ze aan stroom kosten",
+            "en": "Boards, their power use and price",
+            "de": "Boards und ihr Stromverbrauch"
+          },
+          "icon": "device"
+        },
+        {
+          "id": "get-started",
+          "page": "get-started",
+          "href": "/get-started/",
+          "label": {
+            "nl": "Aan de slag",
+            "en": "Get started",
+            "de": "Loslegen"
+          },
+          "sub": {
+            "nl": "Van niets naar je eerste bericht",
+            "en": "From a new board to your first message",
+            "de": "Von null zur ersten Nachricht"
+          },
+          "icon": "play"
+        },
+        {
+          "id": "repeater-guide",
+          "page": "repeater-guide",
+          "href": "/repeater-guide/",
+          "label": {
+            "nl": "Repeatergids",
+            "en": "Repeater guide",
+            "de": "Repeater-Leitfaden"
+          },
+          "sub": {
+            "nl": "Plek, stroom en de wettelijke grenzen",
+            "en": "Placement, power and the legal limits",
+            "de": "Standort, Strom und die gesetzlichen Grenzen"
+          },
+          "icon": "antenna"
+        }
+      ],
+      "groups": [
+        {
+          "title": {
+            "nl": "Leren",
+            "en": "Learn",
+            "de": "Lernen"
+          },
+          "items": [
+            "about",
+            "devices"
+          ],
+          "all": {
+            "nl": "Meer over MeshCore",
+            "en": "More about MeshCore",
+            "de": "Mehr über MeshCore"
+          }
+        },
+        {
+          "title": {
+            "nl": "Doen",
+            "en": "Do",
+            "de": "Tun"
+          },
+          "items": [
+            "get-started",
+            "repeater-guide"
+          ]
+        }
+      ],
+      "card": {
+        "eyebrow": {
+          "nl": "Nieuw hier",
+          "en": "New here",
+          "de": "Neu hier"
+        },
+        "title": {
+          "nl": "Je eerste bericht",
+          "en": "Your first message",
+          "de": "Deine erste Nachricht"
+        },
+        "body": {
+          "nl": "Een board, de app en de instellingen voor je land. De meeste mensen zitten binnen een uur op het mesh.",
+          "en": "A board, the app and the settings for your country. You are on the mesh within an hour.",
+          "de": "Ein Board, die App und die Einstellungen für dein Land. Die meisten sind in einer Stunde im Mesh."
+        },
+        "primary": {
+          "page": "card",
+          "href": "/get-started/",
+          "label": {
+            "nl": "Aan de slag",
+            "en": "Get started",
+            "de": "Loslegen"
+          }
+        }
+      }
+    },
+    {
+      "id": "firmware",
+      "page": "firmware",
+      "href": "/firmware/",
+      "label": {
+        "nl": "Firmware",
+        "en": "Firmware",
+        "de": "Firmware"
+      },
+      "children": [
+        {
+          "id": "fw-build",
+          "page": "fw-build",
+          "href": "/firmware/",
+          "label": {
+            "nl": "Firmware-overzicht",
+            "en": "Firmware overview",
+            "de": "Firmware-Übersicht"
+          },
+          "sub": {
+            "nl": "Welke firmware je board draait",
+            "en": "Which firmware your board runs",
+            "de": "Welche Firmware dein Board nutzt"
+          },
+          "icon": "sliders"
+        },
+        {
+          "id": "fw-flash",
+          "page": "fw-flash",
+          "href": "/firmware/flasher/",
+          "label": {
+            "nl": "Flashen",
+            "en": "Flash",
+            "de": "Flashen"
+          },
+          "sub": {
+            "nl": "Vanuit je browser, via USB",
+            "en": "From your browser, over USB",
+            "de": "Aus dem Browser, über USB"
+          },
+          "icon": "chip"
+        },
+        {
+          "id": "fw-console",
+          "page": "fw-console",
+          "href": "/firmware/console/",
+          "label": {
+            "nl": "Seriële console",
+            "en": "Serial console",
+            "de": "Serielle Konsole"
+          },
+          "sub": {
+            "nl": "Commando's typen via USB",
+            "en": "Type commands over USB",
+            "de": "Befehle über USB tippen"
+          },
+          "icon": "terminal"
+        },
+        {
+          "id": "fw-changelog",
+          "page": "fw-changelog",
+          "href": "/firmware/changelog/",
+          "label": {
+            "nl": "Changelog",
+            "en": "Changelog",
+            "de": "Changelog"
+          },
+          "sub": {
+            "nl": "Wat er veranderd is",
+            "en": "What changed",
+            "de": "Was sich geändert hat"
+          },
+          "icon": "file"
+        }
+      ],
+      "groups": [
+        {
+          "title": {
+            "nl": "Op je radio",
+            "en": "On your radio",
+            "de": "Auf deinem Funkgerät"
+          },
+          "items": [
+            "fw-build",
+            "fw-flash",
+            "fw-console"
+          ],
+          "all": {
+            "nl": "Alle firmware",
+            "en": "All firmware",
+            "de": "Alle Firmware"
+          }
+        },
+        {
+          "title": {
+            "nl": "Bijblijven",
+            "en": "Keep up to date",
+            "de": "Auf dem Laufenden"
+          },
+          "items": [
+            "fw-changelog"
+          ]
+        }
+      ],
+      "card": {
+        "eyebrow": {
+          "nl": "Firmware",
+          "en": "Firmware",
+          "de": "Firmware"
+        },
+        "title": {
+          "nl": "Standaard MeshCore",
+          "en": "The official firmware",
+          "de": "Standard-MeshCore"
+        },
+        "body": {
+          "nl": "Flash de officiële firmware vanuit je browser. Je hoeft niets te installeren.",
+          "en": "Flash the official firmware from your browser. Nothing to install.",
+          "de": "Flashe die offizielle Firmware aus dem Browser. Nichts zu installieren."
+        },
+        "primary": {
+          "page": "card",
+          "href": "/firmware/flasher/",
+          "label": {
+            "nl": "Flash je board",
+            "en": "Flash your board",
+            "de": "Flashe dein Board"
+          }
+        }
+      }
+    },
+    {
+      "id": "guides",
+      "page": "guides",
+      "href": "/guides/",
+      "label": {
+        "nl": "Handleidingen",
+        "en": "Guides",
+        "de": "Anleitungen"
+      },
+      "children": [
+        {
+          "id": "guides-overview",
+          "page": "guides",
+          "href": "/guides/",
+          "label": {
+            "nl": "Overzicht handleidingen",
+            "en": "Guides overview",
+            "de": "Anleitungen-Übersicht"
+          },
+          "sub": {
+            "nl": "Elke handleiding, naar wat je wilt doen",
+            "en": "Every guide, by what you want to do",
+            "de": "Jede Anleitung, nach dem, was du tun willst"
+          },
+          "icon": "book"
+        },
+        {
+          "id": "guide-settings",
+          "page": "guide-settings",
+          "href": "/guides/settings/",
+          "label": {
+            "nl": "Aanbevolen instellingen",
+            "en": "Recommended settings",
+            "de": "Empfohlene Einstellungen"
+          },
+          "sub": {
+            "nl": "Radio, regio en adverts per land",
+            "en": "The preset and settings for your area",
+            "de": "Funk, Region und Adverts pro Land"
+          },
+          "icon": "sliders"
+        },
+        {
+          "id": "guide-antenna",
+          "page": "guide-antenna",
+          "href": "/guides/antenna/",
+          "label": {
+            "nl": "Antennegids",
+            "en": "Antenna guide",
+            "de": "Antennen-Leitfaden"
+          },
+          "sub": {
+            "nl": "Kiezen, aansluiten en monteren",
+            "en": "Choose, connect and mount one",
+            "de": "Wählen, anschließen und montieren"
+          },
+          "icon": "antenna"
+        },
+        {
+          "id": "guide-keygen",
+          "page": "guide-keygen",
+          "href": "/guides/keygen/",
+          "label": {
+            "nl": "Sleutel genereren",
+            "en": "Generate a key",
+            "de": "Schlüssel erzeugen"
+          },
+          "sub": {
+            "nl": "Met een prefix die jij kiest",
+            "en": "With a prefix you choose",
+            "de": "Mit einem Präfix deiner Wahl"
+          },
+          "icon": "key"
+        },
+        {
+          "id": "guide-channels",
+          "page": "guide-channels",
+          "href": "/guides/channels/",
+          "label": {
+            "nl": "Kanalen vinden",
+            "en": "Find channels",
+            "de": "Kanäle finden"
+          },
+          "sub": {
+            "nl": "Sleutels kopiëren en exporteren",
+            "en": "The channels near you, with their keys",
+            "de": "Schlüssel kopieren und exportieren"
+          },
+          "icon": "hash"
+        },
+        {
+          "id": "guide-filter",
+          "page": "guide-filter",
+          "href": "/guides/filter/",
+          "label": {
+            "nl": "Pakketfilter",
+            "en": "Packet filter",
+            "de": "Paketfilter"
+          },
+          "sub": {
+            "nl": "Uitgelegd, met commando's",
+            "en": "Explained, with commands",
+            "de": "Erklärt, mit Befehlen"
+          },
+          "icon": "filter"
+        },
+        {
+          "id": "guide-mqtt",
+          "page": "guide-mqtt",
+          "href": "/guides/mqtt/",
+          "label": {
+            "nl": "MQTT op je observer",
+            "en": "MQTT on your observer",
+            "de": "MQTT auf deinem Observer"
+          },
+          "sub": {
+            "nl": "Stuur door wat je node hoort",
+            "en": "Report what your node hears",
+            "de": "Weitergeben, was dein Node hört"
+          },
+          "icon": "terminal"
+        },
+        {
+          "id": "guide-mctomqtt",
+          "page": "guide-mctomqtt",
+          "href": "/guides/mctomqtt/",
+          "label": {
+            "nl": "Bridge-config maken",
+            "en": "Build a bridge config",
+            "de": "Bridge-Konfiguration erstellen"
+          },
+          "sub": {
+            "nl": "Een repeater via USB naar een broker",
+            "en": "A repeater over USB to a broker",
+            "de": "Ein Repeater über USB an einen Broker"
+          },
+          "icon": "file"
+        },
+        {
+          "id": "guide-cli",
+          "page": "guide-cli",
+          "href": "/guides/cli/",
+          "label": {
+            "nl": "CLI-commando's",
+            "en": "CLI commands",
+            "de": "CLI-Befehle"
+          },
+          "sub": {
+            "nl": "Elk commando uitgelegd",
+            "en": "Every command explained",
+            "de": "Jeder Befehl erklärt"
+          },
+          "icon": "code"
+        }
+      ],
+      "groups": [
+        {
+          "title": {
+            "nl": "Je node instellen",
+            "en": "Set up your node",
+            "de": "Deinen Node einrichten"
+          },
+          "items": [
+            "guides-overview",
+            "guide-settings",
+            "guide-keygen",
+            "guide-channels"
+          ],
+          "all": {
+            "nl": "Alle handleidingen",
+            "en": "All guides",
+            "de": "Alle Anleitungen"
+          }
+        },
+        {
+          "title": {
+            "nl": "Verdieping",
+            "en": "Go deeper",
+            "de": "Vertiefung"
+          },
+          "items": [
+            "guide-filter",
+            "guide-mqtt",
+            "guide-mctomqtt",
+            "guide-cli"
+          ]
+        }
+      ],
+      "card": {
+        "eyebrow": {
+          "nl": "Kennisbank",
+          "en": "Knowledge base",
+          "de": "Wissensbasis"
+        },
+        "title": {
+          "nl": "MeshWiki",
+          "en": "MeshWiki",
+          "de": "MeshWiki"
+        },
+        "body": {
+          "nl": "De communitywiki over MeshCore, voor alles wat hier niet staat.",
+          "en": "The community wiki on MeshCore, for everything not covered here.",
+          "de": "Das Community-Wiki zu MeshCore, für alles, was hier fehlt."
+        },
+        "primary": {
+          "page": "card",
+          "href": "https://meshwiki.nl",
+          "label": {
+            "nl": "Naar MeshWiki",
+            "en": "Go to MeshWiki",
+            "de": "Zu MeshWiki"
+          },
+          "external": true
+        }
+      }
+    },
+    {
+      "id": "network",
+      "page": "network",
+      "href": "/network/",
+      "label": {
+        "nl": "Netwerk",
+        "en": "Network",
+        "de": "Netzwerk"
+      },
+      "children": [
+        {
+          "id": "map",
+          "page": "map",
+          "href": "/map/",
+          "label": {
+            "nl": "Dekkingskaarten",
+            "en": "Coverage maps",
+            "de": "Abdeckungskarten"
+          },
+          "sub": {
+            "nl": "Hoe ver het mesh reikt",
+            "en": "Where the mesh reaches",
+            "de": "Wohin das Mesh reicht"
+          },
+          "icon": "map"
+        },
+        {
+          "id": "network-overview",
+          "page": "network",
+          "href": "/network/",
+          "label": {
+            "nl": "Het netwerk",
+            "en": "The network",
+            "de": "Das Netzwerk"
+          },
+          "sub": {
+            "nl": "Observers, cluster en status",
+            "en": "Observers and live numbers",
+            "de": "Observer, Cluster und Status"
+          },
+          "icon": "server"
+        }
+      ],
+      "groups": [
+        {
+          "title": {
+            "nl": "Kaarten",
+            "en": "Maps",
+            "de": "Karten"
+          },
+          "items": [
+            "map"
+          ],
+          "all": {
+            "nl": "Het netwerk",
+            "en": "The network",
+            "de": "Das Netzwerk"
+          }
+        },
+        {
+          "title": {
+            "nl": "Data",
+            "en": "Data",
+            "de": "Daten"
+          },
+          "items": [
+            "network-overview"
+          ]
+        }
+      ],
+      "card": {
+        "eyebrow": {
+          "nl": "Dekking",
+          "en": "Coverage",
+          "de": "Abdeckung"
+        },
+        "title": {
+          "nl": "Hoe ver het mesh reikt",
+          "en": "Where the mesh reaches",
+          "de": "Wohin das Mesh reicht"
+        },
+        "body": {
+          "nl": "Kaarten van communities in heel Europa, van de analyzer tot lokale projecten.",
+          "en": "Maps run by communities across Europe, from the MeshCore Analyzer to local projects.",
+          "de": "Karten von Communities in ganz Europa, vom Analyzer bis zu lokalen Projekten."
+        },
+        "primary": {
+          "page": "card",
+          "href": "/map/",
+          "label": {
+            "nl": "Kaarten openen",
+            "en": "Open the maps",
+            "de": "Karten öffnen"
+          }
+        }
+      }
+    },
+    {
+      "id": "community",
+      "page": "community",
+      "href": "/community/",
+      "label": {
+        "nl": "Community",
+        "en": "Community",
+        "de": "Community"
+      },
+      "children": [
+        {
+          "id": "local-groups",
+          "page": "community",
+          "href": "/community/",
+          "label": {
+            "nl": "Lokale groepen",
+            "en": "Local groups",
+            "de": "Lokale Gruppen"
+          },
+          "sub": {
+            "nl": "Vind de community bij jou in de buurt",
+            "en": "Find the local group near you",
+            "de": "Finde die Community in deiner Nähe"
+          },
+          "icon": "users"
+        },
+        {
+          "id": "projects",
+          "page": "projects",
+          "href": "/projects/",
+          "label": {
+            "nl": "Projecten",
+            "en": "Projects",
+            "de": "Projekte"
+          },
+          "sub": {
+            "nl": "Wat mensen met MeshCore bouwen",
+            "en": "What people build on MeshCore",
+            "de": "Was Leute mit MeshCore bauen"
+          },
+          "icon": "code"
+        },
+        {
+          "id": "news",
+          "page": "news",
+          "href": "/blog/",
+          "label": {
+            "nl": "Nieuws",
+            "en": "News",
+            "de": "Neuigkeiten"
+          },
+          "sub": {
+            "nl": "Releases en wat er veranderde",
+            "en": "From the mesh across Europe",
+            "de": "Releases und Änderungen"
+          },
+          "icon": "chat"
+        },
+        {
+          "id": "contribute",
+          "page": "contribute",
+          "href": "/contribute/",
+          "label": {
+            "nl": "Bijdragen",
+            "en": "Contribute",
+            "de": "Mitmachen"
+          },
+          "sub": {
+            "nl": "Help de site schrijven en vertalen",
+            "en": "Help write and translate the site",
+            "de": "Hilf, die Seite zu schreiben und zu übersetzen"
+          },
+          "icon": "file"
+        },
+        {
+          "id": "press-kit",
+          "page": "press-kit",
+          "href": "/press-kit/",
+          "label": {
+            "nl": "Promo & presskit",
+            "en": "Promo & press kit",
+            "de": "Promo & Pressekit"
+          },
+          "sub": {
+            "nl": "Logo, beelden, wallpapers en een tekst over de site",
+            "en": "Logo, images, wallpapers and a text about the site",
+            "de": "Logo, Bilder, Wallpaper und ein Text über die Seite"
+          },
+          "icon": "play"
+        }
+      ],
+      "groups": [
+        {
+          "title": {
+            "nl": "Mensen",
+            "en": "People",
+            "de": "Menschen"
+          },
+          "items": [
+            "local-groups",
+            "contribute",
+            "press-kit"
+          ],
+          "all": {
+            "nl": "Alle communities",
+            "en": "All local groups",
+            "de": "Alle Communities"
+          }
+        },
+        {
+          "title": {
+            "nl": "Wat ze maken",
+            "en": "Made by them",
+            "de": "Was sie bauen"
+          },
+          "items": [
+            "projects",
+            "news"
+          ]
+        }
+      ],
+      "card": {
+        "eyebrow": {
+          "nl": "Bij jou in de buurt",
+          "en": "Near you",
+          "de": "In deiner Nähe"
+        },
+        "title": {
+          "nl": "Sluit je aan bij een lokale groep",
+          "en": "Join a local group",
+          "de": "Tritt einer lokalen Gruppe bei"
+        },
+        "body": {
+          "nl": "Elk land heeft eigen kanalen, instellingen en mensen om iets te vragen.",
+          "en": "Each local group has its own channels, settings and people to ask.",
+          "de": "Jedes Land hat eigene Kanäle, Einstellungen und Leute zum Fragen."
+        },
+        "primary": {
+          "page": "card",
+          "href": "/community/",
+          "label": {
+            "nl": "Vind je groep",
+            "en": "Find your group",
+            "de": "Finde deine Gruppe"
+          }
+        }
+      }
+    }
+  ],
+  "footer": [
+    {
+      "title": {
+        "nl": "Start",
+        "en": "Start",
+        "de": "Start"
+      },
+      "items": [
+        "about",
+        "get-started",
+        "devices",
+        "repeater-guide"
+      ]
+    },
+    {
+      "title": {
+        "nl": "Firmware",
+        "en": "Firmware",
+        "de": "Firmware"
+      },
+      "items": [
+        "fw-build",
+        "fw-flash",
+        "fw-console",
+        "fw-changelog"
+      ]
+    },
+    {
+      "title": {
+        "nl": "Gidsen",
+        "en": "Guides",
+        "de": "Anleitungen"
+      },
+      "items": [
+        "guide-settings",
+        "guide-antenna",
+        "guide-keygen",
+        "guide-channels",
+        "guide-cli",
+        "guide-filter",
+        "guide-mqtt",
+        "guide-mctomqtt"
+      ]
+    },
+    {
+      "title": {
+        "nl": "Netwerk en community",
+        "en": "Network and community",
+        "de": "Netzwerk und Community"
+      },
+      "items": [
+        "map",
+        "network-overview",
+        "local-groups",
+        "projects",
+        "news",
+        "contribute",
+        "press-kit",
+        "wallpapers"
+      ]
+    }
+  ],
+  "extra": [
+    {
+      "id": "wallpapers",
+      "href": "/wallpapers/",
+      "label": {
+        "nl": "Wallpapers",
+        "en": "Wallpapers",
+        "de": "Wallpaper"
+      }
+    }
+  ],
+  "footerNote": [
+    {
+      "nl": "Een niet-commerciële communitygids voor MeshCore in Europa, door vrijwilligers, zonder advertenties, affiliatelinks of tracking. Geen onderdeel van het MeshCore-project.",
+      "en": "A non-commercial community guide to MeshCore in Europe, by volunteers, without ads, affiliate links or tracking. Not part of the MeshCore project.",
+      "de": "Ein nicht-kommerzieller Community-Leitfaden zu MeshCore in Europa, von Freiwilligen, ohne Werbung, Affiliate-Links oder Tracking. Kein Teil des MeshCore-Projekts."
+    },
+    {
+      "nl": "Tekst CC BY 4.0, code MIT.",
+      "en": "Text CC BY 4.0, code MIT.",
+      "de": "Text CC BY 4.0, Code MIT."
+    }
+  ]
+}

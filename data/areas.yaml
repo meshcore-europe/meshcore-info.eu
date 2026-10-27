@@ -1,0 +1,88 @@
+# The areas that use their own radio preset or change settings from MeshCore's defaults, shown on
+# /guides/settings/. preset is an id from data/presets.yaml. changes lists only what differs
+# from the firmware's defaults (examples/simple_repeater/MyMesh.cpp in meshcore-dev/MeshCore), or from the
+# defaults of an older release that an updated repeater keeps (loop.detect minimal, default since 1.18); each has a
+# string key for what it does and, for a repeater, the CLI commands. source is where the area's group
+# decided the settings. Re-check the source and update last_checked before changing an entry.
+# Region commands are nested, each region under its parent (Europe, Benelux, country, province, city), as the
+# Regions block on the page shows them: `region put <name> <parent>`, since firmware 1.10.
+- id: czechia
+  country: CZ
+  name: Czechia
+  preset: czech-republic-narrow
+  source: https://api.meshcore.nz/api/v1/config
+  last_checked: "2026-10-13"
+- id: hungary
+  country: HU
+  name: Hungary
+  preset: hungary
+  source: https://api.meshcore.nz/api/v1/config
+  last_checked: "2026-10-13"
+- id: netherlands
+  country: NL
+  name: Netherlands
+  preset: netherlands
+  group: Dutch MeshCore
+  source: https://settings.dutchmeshcore.nl/en/
+  last_checked: "2026-10-13"
+  firmware: "1.15"
+  changes:
+    - device: repeater
+      key: area_change_nl_regions
+      commands:
+        - region put eu
+        - region put bx eu
+        - region put nl bx
+        - region put YOUR_PROVINCE nl
+        - region put YOUR_CITY YOUR_PROVINCE
+        - region default YOUR_PROVINCE
+        - region save
+    - device: repeater
+      key: area_change_strict_regions
+      commands:
+        - region denyf *
+        - region save
+    - device: repeater
+      key: area_change_zero_hop
+      commands:
+        - set advert.interval 240
+    - device: repeater
+      key: area_change_path_hash
+      commands:
+        - set path.hash.mode 1
+    - device: repeater
+      key: area_change_loop
+      commands:
+        - set loop.detect minimal
+    - device: repeater
+      key: area_change_dutycycle
+      commands:
+        - set dutycycle 10
+    - device: companion
+      key: area_change_nl_companion_region
+    - device: companion
+      key: area_change_companion_path_hash
+- id: netherlands-limburg
+  country: NL
+  name: Limburg
+  preset: netherlands-limburg
+  source: https://api.meshcore.nz/api/v1/config
+  last_checked: "2026-10-13"
+- id: portugal
+  country: PT
+  name: Portugal
+  preset: portugal-868
+  source: https://api.meshcore.nz/api/v1/config
+  last_checked: "2026-10-13"
+- id: slovakia
+  country: SK
+  name: Slovakia
+  preset: slovakia
+  source: https://api.meshcore.nz/api/v1/config
+  last_checked: "2026-10-13"
+- id: switzerland
+  country: CH
+  name: Switzerland
+  preset: switzerland
+  source: https://api.meshcore.nz/api/v1/config
+  last_checked: "2026-10-13"

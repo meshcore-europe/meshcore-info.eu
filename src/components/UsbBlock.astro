@@ -1,0 +1,21 @@
+---
+// One area's "send over USB" block on /guides/settings/, run by web/js/usb-settings.js. Hidden until
+// that script finds Web Serial; the commands above stay to copy in any other browser.
+import { t } from '../lib/site.mjs';
+const { lang, commands } = Astro.props;
+const u = (k) => t(lang, `usb_${k}`);
+---
+<div class="usb-send" data-usb data-commands={JSON.stringify(commands)} hidden>
+  <p class="usb-title"><strong>{u('title')}</strong> {u('body')}</p>
+  <p class="row">
+    <button type="button" class="btn btn-sm" data-connect>{u('connect')}</button>
+    <button type="button" class="btn btn-sm" data-check hidden>{u('check')}</button>
+    <button type="button" class="btn btn-sm btn-primary" data-send hidden>{u('send')}</button>
+    <button type="button" class="btn btn-sm" data-reboot hidden>{u('reboot')}</button>
+    <button type="button" class="btn btn-sm" data-disconnect hidden>{u('disconnect')}</button>
+  </p>
+  <div class="table-wrap" tabindex="0" role="region" aria-label={u('title')}>
+    <table class="usb-table" hidden><thead><tr><th scope="col">{u('col_command')}</th><th scope="col">{u('col_now')}</th><th scope="col">{u('col_new')}</th><th scope="col">{u('col_reply')}</th></tr></thead><tbody></tbody></table>
+  </div>
+  <p class="usb-status" data-status aria-live="polite"></p>
+</div>

@@ -1,0 +1,12 @@
+---
+// One project from data/projects.yaml, as project-card.html. data-category drives web/js/filters.js.
+import { t } from '../lib/site.mjs';
+const { lang, p } = Astro.props;
+---
+<li class="card project-card" id={`project-${p.id}`} data-category={p.category}>
+  <h3>{p.name}{p.status === 'archived' && <Fragment> <span class="badge">{t(lang, 'project_archived')}</span></Fragment>}</h3>
+  <ul class="tags"><li class="badge">{t(lang, `project_cat_${p.category}`)}</li></ul>
+  {p.desc_key && <p>{t(lang, p.desc_key)}</p>}
+  {(p.licence || p.maintainer) && <p class="meta">{p.licence && <Fragment>{t(lang, 'project_licence')}: <span class="mono">{p.licence}</span></Fragment>}{p.licence && p.maintainer && ' · '}{p.maintainer}</p>}
+  <p class="card-links">{p.repo && <a href={p.repo}>{t(lang, 'project_repo')}</a>}{p.url && <a href={p.url}>{t(lang, 'project_site')}</a>}</p>
+</li>

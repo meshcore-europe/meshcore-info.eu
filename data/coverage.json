@@ -1,0 +1,274 @@
+{
+  "languages": [
+    {
+      "lang": "nl",
+      "label": "Nederlands",
+      "locale": "nl",
+      "strings": {
+        "human": 0,
+        "ai": 876,
+        "missing": 0,
+        "total": 876
+      },
+      "pages": {
+        "human": 1,
+        "ai": 27,
+        "stale": 0,
+        "missing": 0,
+        "total": 28
+      }
+    },
+    {
+      "lang": "de",
+      "label": "Deutsch",
+      "locale": "de",
+      "strings": {
+        "human": 0,
+        "ai": 876,
+        "missing": 0,
+        "total": 876
+      },
+      "pages": {
+        "human": 0,
+        "ai": 28,
+        "stale": 0,
+        "missing": 0,
+        "total": 28
+      }
+    },
+    {
+      "lang": "fr",
+      "label": "Français",
+      "locale": "fr",
+      "strings": {
+        "human": 0,
+        "ai": 876,
+        "missing": 0,
+        "total": 876
+      },
+      "pages": {
+        "human": 0,
+        "ai": 28,
+        "stale": 0,
+        "missing": 0,
+        "total": 28
+      }
+    },
+    {
+      "lang": "es",
+      "label": "Español",
+      "locale": "es",
+      "strings": {
+        "human": 0,
+        "ai": 876,
+        "missing": 0,
+        "total": 876
+      },
+      "pages": {
+        "human": 0,
+        "ai": 28,
+        "stale": 0,
+        "missing": 0,
+        "total": 28
+      }
+    },
+    {
+      "lang": "it",
+      "label": "Italiano",
+      "locale": "it",
+      "strings": {
+        "human": 0,
+        "ai": 876,
+        "missing": 0,
+        "total": 876
+      },
+      "pages": {
+        "human": 0,
+        "ai": 28,
+        "stale": 0,
+        "missing": 0,
+        "total": 28
+      }
+    },
+    {
+      "lang": "pl",
+      "label": "Polski",
+      "locale": "pl",
+      "strings": {
+        "human": 0,
+        "ai": 876,
+        "missing": 0,
+        "total": 876
+      },
+      "pages": {
+        "human": 0,
+        "ai": 28,
+        "stale": 0,
+        "missing": 0,
+        "total": 28
+      }
+    },
+    {
+      "lang": "pt",
+      "label": "Português",
+      "locale": "pt-PT",
+      "strings": {
+        "human": 0,
+        "ai": 876,
+        "missing": 0,
+        "total": 876
+      },
+      "pages": {
+        "human": 0,
+        "ai": 28,
+        "stale": 0,
+        "missing": 0,
+        "total": 28
+      }
+    },
+    {
+      "lang": "cs",
+      "label": "Čeština",
+      "locale": "cs",
+      "strings": {
+        "human": 0,
+        "ai": 876,
+        "missing": 0,
+        "total": 876
+      },
+      "pages": {
+        "human": 0,
+        "ai": 28,
+        "stale": 0,
+        "missing": 0,
+        "total": 28
+      }
+    },
+    {
+      "lang": "sv",
+      "label": "Svenska",
+      "locale": "sv",
+      "strings": {
+        "human": 0,
+        "ai": 876,
+        "missing": 0,
+        "total": 876
+      },
+      "pages": {
+        "human": 0,
+        "ai": 28,
+        "stale": 0,
+        "missing": 0,
+        "total": 28
+      }
+    },
+    {
+      "lang": "da",
+      "label": "Dansk",
+      "locale": "da",
+      "strings": {
+        "human": 0,
+        "ai": 876,
+        "missing": 0,
+        "total": 876
+      },
+      "pages": {
+        "human": 0,
+        "ai": 28,
+        "stale": 0,
+        "missing": 0,
+        "total": 28
+      }
+    },
+    {
+      "lang": "nb",
+      "label": "Norsk bokmål",
+      "locale": "nb",
+      "strings": {
+        "human": 0,
+        "ai": 876,
+        "missing": 0,
+        "total": 876
+      },
+      "pages": {
+        "human": 0,
+        "ai": 28,
+        "stale": 0,
+        "missing": 0,
+        "total": 28
+      }
+    },
+    {
+      "lang": "fi",
+      "label": "Suomi",
+      "locale": "fi",
+      "strings": {
+        "human": 0,
+        "ai": 876,
+        "missing": 0,
+        "total": 876
+      },
+      "pages": {
+        "human": 0,
+        "ai": 28,
+        "stale": 0,
+        "missing": 0,
+        "total": 28
+      }
+    },
+    {
+      "lang": "hu",
+      "label": "Magyar",
+      "locale": "hu",
+      "strings": {
+        "human": 0,
+        "ai": 876,
+        "missing": 0,
+        "total": 876
+      },
+      "pages": {
+        "human": 0,
+        "ai": 28,
+        "stale": 0,
+        "missing": 0,
+        "total": 28
+      }
+    },
+    {
+      "lang": "ro",
+      "label": "Română",
+      "locale": "ro",
+      "strings": {
+        "human": 0,
+        "ai": 876,
+        "missing": 0,
+        "total": 876
+      },
+      "pages": {
+        "human": 0,
+        "ai": 28,
+        "stale": 0,
+        "missing": 0,
+        "total": 28
+      }
+    },
+    {
+      "lang": "el",
+      "label": "Ελληνικά",
+      "locale": "el",
+      "strings": {
+        "human": 0,
+        "ai": 876,
+        "missing": 0,
+        "total": 876
+      },
+      "pages": {
+        "human": 0,
+        "ai": 28,
+        "stale": 0,
+        "missing": 0,
+        "total": 28
+      }
+    }
+  ]
+}

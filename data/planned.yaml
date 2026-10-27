@@ -1,0 +1,9 @@
+# What a planned page will hold: a planned page shows its lead and its sections
+# before it is built, so readers and the team can see its structure. Keyed by the page path; "network" is the
+# planned section "How data gets in" on The network. Texts in data/i18n/en.json as
+# planned.<id>.lead and planned.<id>.<section>.title / .desc, where <id> is the path with / as -.
+# When a page is built, its entry goes.
+- path: guides/filter
+  sections: [what, configs, settings]
+- path: guides/mqtt
+  sections: [need, settings, commands, check]

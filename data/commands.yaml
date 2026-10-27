@@ -1,0 +1,767 @@
+# The CLI commands of stock MeshCore firmware 1.18.0 (tag repeater-v1.18.0 of meshcore-dev/MeshCore),
+# shown on /guides/cli/. Read from the firmware source, not from docs/cli_commands.md, which lags
+# behind it. source is the handler, default_source the line that sets the value a new repeater starts with
+# (paths in that tag). nodes are the example firmwares that accept the command. Commands only in a fork stay out.
+# Re-read the source of a new release before changing an entry.
+# MeshCore stock firmware CLI commands, read from source at tag repeater-v1.18.0 (81dbae5), the same commit as
+# companion-v1.18.0. Defaults are the repeater's (examples/simple_repeater); room server, sensor and companion can
+# differ. A command only a companion takes has the companion's default (examples/companion_radio/NodePrefs.h).
+
+- id: reboot
+  group: operational
+  syntax: ["reboot"]
+  nodes: [repeater, room_server, sensor, companion]
+  source: "src/helpers/CommonCLI.cpp:196"
+  desc_key: cmd_reboot_desc
+- id: poweroff
+  group: operational
+  syntax: ["poweroff", "shutdown"]
+  nodes: [repeater, room_server, sensor, companion]
+  source: "src/helpers/CommonCLI.cpp:194"
+  desc_key: cmd_poweroff_desc
+- id: clkreboot
+  group: operational
+  syntax: ["clkreboot"]
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:198"
+  desc_key: cmd_clkreboot_desc
+- id: clock
+  group: system
+  syntax: ["clock", "time <epoch_seconds>"]
+  range: "later than the current clock time"
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:228"
+  desc_key: cmd_clock_desc
+- id: clock-sync
+  group: system
+  syntax: ["clock sync"]
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:210"
+  desc_key: cmd_clock_sync_desc
+- id: start-ota
+  group: operational
+  syntax: ["start ota"]
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:220"
+  desc_key: cmd_start_ota_desc
+- id: erase
+  group: operational
+  syntax: ["erase"]
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:280"
+  desc_key: cmd_erase_desc
+- id: room-post
+  group: operational
+  syntax: ["room.post <message>"]
+  range: "1-151 characters"
+  nodes: [room_server]
+  source: "examples/simple_room_server/MyMesh.cpp:977"
+  desc_key: cmd_room_post_desc
+- id: advert
+  group: adverts
+  syntax: ["advert"]
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:206"
+  desc_key: cmd_advert_desc
+- id: advert-zerohop
+  group: adverts
+  syntax: ["advert.zerohop"]
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:202"
+  desc_key: cmd_advert_zerohop_desc
+- id: advert-interval
+  group: adverts
+  syntax: ["get advert.interval", "set advert.interval <minutes>"]
+  default: "2"
+  default_source: "examples/simple_repeater/MyMesh.cpp:904"
+  range: "0, 60-240"
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:503"
+  desc_key: cmd_advert_interval_desc
+- id: flood-advert-interval
+  group: adverts
+  syntax: ["get flood.advert.interval", "set flood.advert.interval <hours>"]
+  default: "47"
+  default_source: "examples/simple_repeater/MyMesh.cpp:905"
+  range: "0, 3-168"
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:493"
+  desc_key: cmd_flood_advert_interval_desc
+- id: neighbours
+  group: neighbours
+  syntax: ["neighbors"]
+  nodes: [repeater]
+  source: "src/helpers/CommonCLI.cpp:239"
+  desc_key: cmd_neighbours_desc
+- id: neighbour-remove
+  group: neighbours
+  syntax: ["neighbor.remove <key_prefix>"]
+  nodes: [repeater]
+  source: "src/helpers/CommonCLI.cpp:241"
+  desc_key: cmd_neighbour_remove_desc
+- id: discover-neighbours
+  group: neighbours
+  syntax: ["discover.neighbors"]
+  nodes: [repeater]
+  source: "examples/simple_repeater/MyMesh.cpp:1275"
+  desc_key: cmd_discover_neighbours_desc
+- id: clear-stats
+  group: statistics
+  syntax: ["clear stats"]
+  nodes: [repeater, room_server]
+  source: "src/helpers/CommonCLI.cpp:273"
+  desc_key: cmd_clear_stats_desc
+- id: stats-core
+  group: statistics
+  syntax: ["stats-core"]
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:479"
+  desc_key: cmd_stats_core_desc
+- id: stats-radio
+  group: statistics
+  syntax: ["stats-radio"]
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:477"
+  desc_key: cmd_stats_radio_desc
+- id: stats-packets
+  group: statistics
+  syntax: ["stats-packets"]
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:475"
+  desc_key: cmd_stats_packets_desc
+- id: log-capture
+  group: logging
+  syntax: ["log start", "log stop"]
+  nodes: [repeater, room_server]
+  source: "src/helpers/CommonCLI.cpp:463"
+  desc_key: cmd_log_capture_desc
+- id: log-erase
+  group: logging
+  syntax: ["log erase"]
+  nodes: [repeater, room_server]
+  source: "src/helpers/CommonCLI.cpp:469"
+  desc_key: cmd_log_erase_desc
+- id: log
+  group: logging
+  syntax: ["log"]
+  nodes: [repeater, room_server]
+  source: "src/helpers/CommonCLI.cpp:472"
+  desc_key: cmd_log_desc
+- id: ver
+  group: info
+  syntax: ["ver"]
+  nodes: [repeater, room_server, sensor, companion]
+  source: "src/helpers/CommonCLI.cpp:283"
+  desc_key: cmd_ver_desc
+- id: board
+  group: info
+  syntax: ["board"]
+  nodes: [repeater, room_server, sensor, companion]
+  source: "src/helpers/CommonCLI.cpp:285"
+  desc_key: cmd_board_desc
+- id: power
+  group: info
+  syntax: ["power"]
+  nodes: [repeater, room_server, sensor]
+  since: "1.18"
+  source: "src/helpers/CommonCLI.cpp:287"
+  desc_key: cmd_power_desc
+- id: public-key
+  group: info
+  syntax: ["get public.key"]
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:750"
+  desc_key: cmd_public_key_desc
+- id: role
+  group: info
+  syntax: ["get role"]
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:753"
+  desc_key: cmd_role_desc
+- id: bootloader-ver
+  group: info
+  syntax: ["get bootloader.ver"]
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:783"
+  desc_key: cmd_bootloader_ver_desc
+- id: pwrmgt-support
+  group: info
+  syntax: ["get pwrmgt.support"]
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:802"
+  desc_key: cmd_pwrmgt_support_desc
+- id: pwrmgt-source
+  group: info
+  syntax: ["get pwrmgt.source"]
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:808"
+  desc_key: cmd_pwrmgt_source_desc
+- id: pwrmgt-bootreason
+  group: info
+  syntax: ["get pwrmgt.bootreason"]
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:814"
+  desc_key: cmd_pwrmgt_bootreason_desc
+- id: pwrmgt-bootmv
+  group: info
+  syntax: ["get pwrmgt.bootmv"]
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:818"
+  desc_key: cmd_pwrmgt_bootmv_desc
+- id: radio
+  group: radio
+  syntax: ["get radio", "set radio <freq>,<bw>,<sf>,<cr>"]
+  default: "869.618,62.5,8,5"
+  default_source: "platformio.ini:29"
+  range: "freq 150-2500 MHz, bw 7-500 kHz, sf 5-12, cr 5-8"
+  nodes: [repeater, room_server, sensor, companion]
+  source: "src/helpers/CommonRadioPrefs.cpp:39"
+  desc_key: cmd_radio_desc
+- id: tx
+  group: radio
+  syntax: ["get tx", "set tx <dbm>"]
+  nodes: [repeater, room_server, sensor, companion]
+  source: "src/helpers/CommonRadioPrefs.cpp:141"
+  desc_key: cmd_tx_desc
+- id: tempradio
+  group: radio
+  syntax: ["tempradio <freq>,<bw>,<sf>,<cr>,<minutes>"]
+  range: "freq 150-2500 MHz, bw 7-500 kHz, sf 5-12, cr 5-8, minutes above 0"
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:252"
+  desc_key: cmd_tempradio_desc
+- id: freq
+  group: radio
+  syntax: ["get freq", "set freq <mhz>"]
+  default: "869.618"
+  default_source: "platformio.ini:29"
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:607"
+  desc_key: cmd_freq_desc
+- id: radio-rxgain
+  group: radio
+  syntax: ["get radio.rxgain", "set radio.rxgain <state>"]
+  range: "on, off"
+  nodes: [repeater, room_server, sensor, companion]
+  since: "1.14.1"
+  source: "src/helpers/CommonRadioPrefs.cpp:126"
+  desc_key: cmd_radio_rxgain_desc
+- id: radio-fem-rxgain
+  group: radio
+  syntax: ["get radio.fem.rxgain", "set radio.fem.rxgain <state>"]
+  default: "on"
+  default_source: "examples/simple_repeater/MyMesh.cpp:936"
+  range: "on, off"
+  nodes: [repeater, room_server, sensor]
+  source: "variants/heltec_v4/HeltecV4Board.cpp:98"
+  desc_key: cmd_radio_fem_rxgain_desc
+- id: radio-fem-txgain
+  group: radio
+  syntax: ["get radio.fem.txgain", "set radio.fem.txgain <state>"]
+  default: "off"
+  default_source: "examples/simple_repeater/MyMesh.cpp:937"
+  range: "on, off"
+  nodes: [repeater, room_server, sensor]
+  source: "variants/station_g3_esp32/StationG3Board.cpp:94"
+  desc_key: cmd_radio_fem_txgain_desc
+- id: extra-sf
+  group: radio
+  syntax: ["get extra.sf", "set extra.sf <sf_list>"]
+  range: "up to 3 spreading factors"
+  nodes: [repeater]
+  source: "src/helpers/CommonCLI.cpp:674"
+  desc_key: cmd_extra_sf_desc
+- id: repeat
+  group: routing
+  syntax: ["get repeat", "set repeat <state>"]
+  default: "on"
+  default_source: "src/helpers/CommonCLI.h:34"
+  range: "on, off"
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:538"
+  desc_key: cmd_repeat_desc
+- id: path-hash-mode
+  group: routing
+  syntax: ["get path.hash.mode", "set path.hash.mode <mode>"]
+  default: "0"
+  default_source: "src/helpers/CommonCLI.h:71"
+  range: "0-2"
+  nodes: [repeater, room_server, sensor, companion]
+  since: "1.14"
+  source: "src/helpers/CommonRadioPrefs.cpp:179"
+  desc_key: cmd_path_hash_mode_desc
+- id: loop-detect
+  group: routing
+  syntax: ["get loop.detect", "set loop.detect <level>"]
+  default: "minimal"
+  default_source: "examples/simple_repeater/MyMesh.cpp:911"
+  range: "off, minimal, moderate, strict"
+  nodes: [repeater, room_server, sensor]
+  since: "1.14"
+  source: "src/helpers/CommonCLI.cpp:587"
+  desc_key: cmd_loop_detect_desc
+- id: txdelay
+  group: routing
+  syntax: ["get txdelay", "set txdelay <factor>"]
+  default: "0.5"
+  default_source: "examples/simple_repeater/MyMesh.cpp:893"
+  range: "0-2"
+  nodes: [repeater, room_server, sensor, companion]
+  source: "src/helpers/CommonRadioPrefs.cpp:205"
+  desc_key: cmd_txdelay_desc
+- id: direct-txdelay
+  group: routing
+  syntax: ["get direct.txdelay", "set direct.txdelay <factor>"]
+  default: "0.3"
+  default_source: "examples/simple_repeater/MyMesh.cpp:894"
+  range: "0-2"
+  nodes: [repeater, room_server, sensor, companion]
+  source: "src/helpers/CommonRadioPrefs.cpp:220"
+  desc_key: cmd_direct_txdelay_desc
+- id: rxdelay
+  group: routing
+  syntax: ["get rxdelay", "set rxdelay <base>"]
+  default: "0"
+  default_source: "examples/simple_repeater/MyMesh.cpp:892"
+  range: "0-20"
+  nodes: [repeater, room_server, sensor, companion]
+  source: "src/helpers/CommonRadioPrefs.cpp:152"
+  desc_key: cmd_rxdelay_desc
+- id: dutycycle
+  group: routing
+  syntax: ["get dutycycle", "set dutycycle <percent>"]
+  default: "50"
+  default_source: "examples/simple_repeater/MyMesh.cpp:891"
+  range: "1-100"
+  nodes: [repeater, room_server, sensor, companion]
+  since: "1.15"
+  source: "src/helpers/CommonRadioPrefs.cpp:88"
+  desc_key: cmd_dutycycle_desc
+- id: af
+  group: routing
+  syntax: ["get af", "set af <factor>"]
+  default: "1"
+  default_source: "examples/simple_repeater/MyMesh.cpp:891"
+  range: "0-9"
+  nodes: [repeater, room_server, sensor, companion]
+  source: "src/helpers/CommonRadioPrefs.cpp:69"
+  desc_key: cmd_af_desc
+- id: int-thresh
+  group: routing
+  syntax: ["get int.thresh", "set int.thresh <db>"]
+  default: "0"
+  default_source: "examples/simple_repeater/MyMesh.cpp:909"
+  nodes: [repeater, room_server, sensor, companion]
+  source: "src/helpers/CommonRadioPrefs.cpp:106"
+  desc_key: cmd_int_thresh_desc
+- id: cad
+  group: routing
+  syntax: ["get cad", "set cad <state>"]
+  default: "off"
+  default_source: "examples/simple_repeater/MyMesh.cpp:910"
+  range: "on, off"
+  nodes: [repeater, room_server, sensor, companion]
+  source: "src/helpers/CommonRadioPrefs.cpp:116"
+  desc_key: cmd_cad_desc
+- id: agc-reset-interval
+  group: routing
+  syntax: ["get agc.reset.interval", "set agc.reset.interval <seconds>"]
+  default: "0"
+  default_source: "src/helpers/CommonCLI.h:51"
+  range: "0-1020"
+  nodes: [repeater, room_server, sensor, companion]
+  source: "src/helpers/CommonRadioPrefs.cpp:167"
+  desc_key: cmd_agc_reset_interval_desc
+- id: multi-acks
+  group: routing
+  syntax: ["get multi.acks", "set multi.acks <count>"]
+  default: "0"
+  default_source: "src/helpers/CommonCLI.h:45"
+  nodes: [repeater, room_server, sensor, companion]
+  source: "src/helpers/CommonRadioPrefs.cpp:195"
+  desc_key: cmd_multi_acks_desc
+- id: flood-max
+  group: routing
+  syntax: ["get flood.max", "set flood.max <hops>"]
+  default: "64"
+  default_source: "examples/simple_repeater/MyMesh.cpp:906"
+  range: "0-64"
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:568"
+  desc_key: cmd_flood_max_desc
+- id: flood-max-unscoped
+  group: routing
+  syntax: ["get flood.max.unscoped", "set flood.max.unscoped <hops>"]
+  default: "64"
+  default_source: "examples/simple_repeater/MyMesh.cpp:907"
+  range: "0-64"
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:550"
+  desc_key: cmd_flood_max_unscoped_desc
+- id: flood-max-advert
+  group: routing
+  syntax: ["get flood.max.advert", "set flood.max.advert <hops>"]
+  default: "8"
+  default_source: "examples/simple_repeater/MyMesh.cpp:908"
+  range: "0-64"
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:559"
+  desc_key: cmd_flood_max_advert_desc
+- id: name
+  group: system
+  syntax: ["get name", "set name <name>"]
+  range: "up to 31 bytes (23 in an advert with a location), no [ ] \\ : , ? *"
+  nodes: [repeater, room_server, sensor, companion]
+  source: "src/helpers/CommonCLI.cpp:530"
+  desc_key: cmd_name_desc
+- id: lat
+  group: system
+  syntax: ["get lat", "set lat <degrees>"]
+  default: "0"
+  default_source: "examples/simple_repeater/MyMesh.cpp:26"
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:542"
+  desc_key: cmd_lat_desc
+- id: lon
+  group: system
+  syntax: ["get lon", "set lon <degrees>"]
+  default: "0"
+  default_source: "examples/simple_repeater/MyMesh.cpp:29"
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:546"
+  desc_key: cmd_lon_desc
+- id: prv-key
+  group: system
+  syntax: ["get prv.key", "set prv.key <private_key>"]
+  range: "128 hex characters"
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:517"
+  desc_key: cmd_prv_key_desc
+- id: password
+  group: system
+  syntax: ["password <password>"]
+  default: "password"
+  default_source: "examples/simple_repeater/MyMesh.cpp:33"
+  range: "up to 15 characters"
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:267"
+  desc_key: cmd_password_desc
+- id: guest-password
+  group: system
+  syntax: ["get guest.password", "set guest.password <password>"]
+  range: "up to 15 characters"
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:513"
+  desc_key: cmd_guest_password_desc
+- id: owner-info
+  group: system
+  syntax: ["get owner.info", "set owner.info <text>"]
+  range: "up to 119 characters"
+  nodes: [repeater, room_server, sensor]
+  since: "1.12"
+  source: "src/helpers/CommonCLI.cpp:577"
+  desc_key: cmd_owner_info_desc
+- id: adc-multiplier
+  group: system
+  syntax: ["get adc.multiplier", "set adc.multiplier <multiplier>"]
+  default: "0"
+  default_source: "examples/simple_repeater/MyMesh.cpp:927"
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:660"
+  desc_key: cmd_adc_multiplier_desc
+- id: powersaving
+  group: system
+  syntax: ["powersaving", "powersaving on", "powersaving off"]
+  default: "off"
+  default_source: "src/helpers/CommonCLI.h:60"
+  range: "on, off"
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:439"
+  desc_key: cmd_powersaving_desc
+- id: setperm
+  group: access
+  syntax: ["setperm <public_key> <permissions>"]
+  range: "0 guest (removes), 1 read-only, 2 read-write, 3 admin"
+  nodes: [repeater, room_server, sensor]
+  source: "examples/simple_repeater/MyMesh.cpp:1242"
+  desc_key: cmd_setperm_desc
+- id: acl
+  group: access
+  syntax: ["get acl"]
+  nodes: [repeater, room_server, sensor]
+  source: "examples/simple_repeater/MyMesh.cpp:1264"
+  desc_key: cmd_acl_desc
+- id: allow-read-only
+  group: access
+  syntax: ["get allow.read.only", "set allow.read.only <state>"]
+  default: "off"
+  default_source: "src/helpers/CommonCLI.h:44"
+  range: "on, off"
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:489"
+  desc_key: cmd_allow_read_only_desc
+- id: region
+  group: regions
+  syntax: ["region"]
+  nodes: [repeater, room_server, sensor]
+  since: "1.10"
+  source: "src/helpers/CommonCLI.cpp:909"
+  desc_key: cmd_region_desc
+- id: region-load
+  group: regions
+  syntax: ["region load"]
+  nodes: [repeater, room_server, sensor]
+  since: "1.10"
+  source: "src/helpers/CommonCLI.cpp:911"
+  desc_key: cmd_region_load_desc
+- id: region-save
+  group: regions
+  syntax: ["region save"]
+  nodes: [repeater, room_server, sensor]
+  since: "1.10"
+  source: "src/helpers/CommonCLI.cpp:913"
+  desc_key: cmd_region_save_desc
+- id: region-flood
+  group: regions
+  syntax: ["region allowf <name>", "region denyf <name>"]
+  nodes: [repeater, room_server, sensor]
+  since: "1.10"
+  source: "src/helpers/CommonCLI.cpp:918"
+  desc_key: cmd_region_flood_desc
+- id: region-get
+  group: regions
+  syntax: ["region get <name>"]
+  nodes: [repeater, room_server, sensor]
+  since: "1.10"
+  source: "src/helpers/CommonCLI.cpp:934"
+  desc_key: cmd_region_get_desc
+- id: region-home
+  group: regions
+  syntax: ["region home", "region home <name>"]
+  nodes: [repeater, room_server, sensor]
+  since: "1.10"
+  source: "src/helpers/CommonCLI.cpp:946"
+  desc_key: cmd_region_home_desc
+- id: region-default
+  group: regions
+  syntax: ["region default", "region default <name>", "region default <null>"]
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:957"
+  desc_key: cmd_region_default_desc
+- id: region-put
+  group: regions
+  syntax: ["region put <name>", "region put <name> <parent>"]
+  nodes: [repeater, room_server, sensor]
+  since: "1.10"
+  source: "src/helpers/CommonCLI.cpp:981"
+  desc_key: cmd_region_put_desc
+- id: region-def
+  group: regions
+  syntax: ["region def <tree>"]
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:894"
+  desc_key: cmd_region_def_desc
+- id: region-remove
+  group: regions
+  syntax: ["region remove <name>"]
+  nodes: [repeater, room_server, sensor]
+  since: "1.10"
+  source: "src/helpers/CommonCLI.cpp:994"
+  desc_key: cmd_region_remove_desc
+- id: region-list
+  group: regions
+  syntax: ["region list <filter>"]
+  range: "allowed, denied"
+  nodes: [repeater, room_server, sensor]
+  since: "1.12"
+  source: "src/helpers/CommonCLI.cpp:1005"
+  desc_key: cmd_region_list_desc
+- id: gps
+  group: gps
+  syntax: ["gps", "gps on", "gps off"]
+  default: "off"
+  default_source: "examples/simple_repeater/MyMesh.cpp:923"
+  range: "on, off"
+  nodes: [repeater, room_server, sensor]
+  build: gps
+  source: "src/helpers/CommonCLI.cpp:347"
+  desc_key: cmd_gps_desc
+- id: gps-sync
+  group: gps
+  syntax: ["gps sync"]
+  nodes: [repeater, room_server, sensor]
+  build: gps
+  source: "src/helpers/CommonCLI.cpp:363"
+  desc_key: cmd_gps_sync_desc
+- id: gps-setloc
+  group: gps
+  syntax: ["gps setloc"]
+  nodes: [repeater, room_server, sensor]
+  build: gps
+  source: "src/helpers/CommonCLI.cpp:385"
+  desc_key: cmd_gps_setloc_desc
+- id: gps-diag
+  group: gps
+  syntax: ["gps diag"]
+  nodes: [repeater, room_server, sensor]
+  since: "1.18"
+  build: gps
+  source: "src/helpers/CommonCLI.cpp:371"
+  desc_key: cmd_gps_diag_desc
+- id: gps-advert
+  group: gps
+  syntax: ["gps advert", "gps advert <policy>"]
+  default: "prefs"
+  default_source: "examples/simple_repeater/MyMesh.cpp:925"
+  range: "none, share, prefs"
+  nodes: [repeater, room_server, sensor]
+  build: gps
+  source: "src/helpers/CommonCLI.cpp:390"
+  desc_key: cmd_gps_advert_desc
+- id: sensor-list
+  group: sensors
+  syntax: ["sensor list", "sensor list <start>"]
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:319"
+  desc_key: cmd_sensor_list_desc
+- id: sensor-setting
+  group: sensors
+  syntax: ["sensor get <key>", "sensor set <key> <value>"]
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:308"
+  desc_key: cmd_sensor_setting_desc
+- id: io
+  group: sensors
+  syntax: ["io", "io <hex_mask>", "io r<hex_mask>", "io s<hex_mask>", "io t<hex_mask>"]
+  nodes: [sensor]
+  source: "examples/simple_sensor/SensorMesh.cpp:499"
+  desc_key: cmd_io_desc
+- id: bridge-type
+  group: bridge
+  syntax: ["get bridge.type"]
+  nodes: [repeater, room_server, sensor]
+  source: "src/helpers/CommonCLI.cpp:755"
+  desc_key: cmd_bridge_type_desc
+- id: bridge-enabled
+  group: bridge
+  syntax: ["get bridge.enabled", "set bridge.enabled <state>"]
+  default: "on"
+  default_source: "examples/simple_repeater/MyMesh.cpp:914"
+  range: "on, off"
+  nodes: [repeater]
+  build: bridge
+  source: "src/helpers/CommonCLI.cpp:612"
+  desc_key: cmd_bridge_enabled_desc
+- id: bridge-delay
+  group: bridge
+  syntax: ["get bridge.delay", "set bridge.delay <ms>"]
+  default: "500"
+  default_source: "examples/simple_repeater/MyMesh.cpp:915"
+  range: "0-10000"
+  nodes: [repeater]
+  build: bridge
+  source: "src/helpers/CommonCLI.cpp:617"
+  desc_key: cmd_bridge_delay_desc
+- id: bridge-source
+  group: bridge
+  syntax: ["get bridge.source", "set bridge.source <source>"]
+  default: "tx"
+  default_source: "examples/simple_repeater/MyMesh.cpp:916"
+  range: "rx, tx"
+  nodes: [repeater]
+  build: bridge
+  source: "src/helpers/CommonCLI.cpp:626"
+  desc_key: cmd_bridge_source_desc
+- id: bridge-baud
+  group: bridge
+  syntax: ["get bridge.baud", "set bridge.baud <baud>"]
+  default: "115200"
+  default_source: "examples/simple_repeater/MyMesh.cpp:917"
+  range: "9600-115200"
+  nodes: [repeater]
+  build: bridge
+  source: "src/helpers/CommonCLI.cpp:632"
+  desc_key: cmd_bridge_baud_desc
+- id: bridge-channel
+  group: bridge
+  syntax: ["get bridge.channel", "set bridge.channel <channel>"]
+  default: "1"
+  default_source: "examples/simple_repeater/MyMesh.cpp:918"
+  range: "1-14"
+  nodes: [repeater]
+  build: bridge
+  source: "src/helpers/CommonCLI.cpp:644"
+  desc_key: cmd_bridge_channel_desc
+- id: bridge-secret
+  group: bridge
+  syntax: ["get bridge.secret", "set bridge.secret <secret>"]
+  default: "LVSITANOS"
+  default_source: "examples/simple_repeater/MyMesh.cpp:920"
+  range: "up to 15 characters"
+  nodes: [repeater]
+  build: bridge
+  source: "src/helpers/CommonCLI.cpp:654"
+  desc_key: cmd_bridge_secret_desc
+- id: eth-status
+  group: ethernet
+  syntax: ["eth.status"]
+  nodes: [repeater, room_server]
+  build: ethernet
+  source: "src/helpers/nrf52/EthernetCLI.h:89"
+  desc_key: cmd_eth_status_desc
+- id: pin
+  group: system
+  syntax: ["set pin <pin>"]
+  default: "0"
+  default_source: "examples/companion_radio/NodePrefs.h:32"
+  range: "6 digits, or 0"
+  nodes: [companion]
+  source: "examples/companion_radio/MyMesh.cpp:2125"
+  desc_key: cmd_pin_desc
+- id: tz-offset
+  group: system
+  syntax: ["get tz.offset", "set tz.offset <hours>"]
+  default: "0"
+  default_source: "examples/companion_radio/NodePrefs.h:50"
+  range: "-12 to 14"
+  nodes: [companion]
+  source: "examples/companion_radio/MyMesh.cpp:2198"
+  desc_key: cmd_tz_offset_desc
+- id: wifi-ssid
+  group: wifi
+  syntax: ["get wifi.ssid", "set wifi.ssid <ssid>"]
+  nodes: [companion]
+  build: wifi
+  source: "examples/companion_radio/MyMesh.cpp:2133"
+  desc_key: cmd_wifi_ssid_desc
+- id: wifi-pwd
+  group: wifi
+  syntax: ["get wifi.pwd", "set wifi.pwd <password>"]
+  nodes: [companion]
+  build: wifi
+  source: "examples/companion_radio/MyMesh.cpp:2139"
+  desc_key: cmd_wifi_pwd_desc
+- id: wifi-enabled
+  group: wifi
+  syntax: ["get wifi.enabled", "set wifi.enabled <state>"]
+  default: "1"
+  default_source: "examples/companion_radio/NodePrefs.h:57"
+  range: "1 or 0"
+  nodes: [companion]
+  build: wifi
+  source: "examples/companion_radio/MyMesh.cpp:2160"
+  desc_key: cmd_wifi_enabled_desc
+- id: wifi-clear
+  group: wifi
+  syntax: ["set wifi.clear"]
+  nodes: [companion]
+  build: wifi
+  source: "examples/companion_radio/MyMesh.cpp:2149"
+  desc_key: cmd_wifi_clear_desc
+- id: wifi-status
+  group: wifi
+  syntax: ["get wifi.status", "get wifi.ip"]
+  nodes: [companion]
+  build: wifi
+  source: "examples/companion_radio/MyMesh.cpp:2170"
+  desc_key: cmd_wifi_status_desc

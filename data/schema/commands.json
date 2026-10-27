@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "data/commands.yaml: the CLI commands of stock MeshCore firmware, read from its source",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "group", "syntax", "nodes", "source", "desc_key"],
+    "properties": {
+      "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+      "group": { "enum": ["operational", "adverts", "neighbours", "statistics", "logging", "info", "radio", "system", "routing", "access", "regions", "gps", "sensors", "bridge", "ethernet", "wifi"] },
+      "syntax": { "type": "array", "items": { "type": "string", "minLength": 1 }, "minItems": 1 },
+      "default": { "type": "string" },
+      "default_source": { "type": "string", "pattern": "^[^:]+:[0-9]+$" },
+      "range": { "type": "string", "minLength": 1 },
+      "nodes": { "type": "array", "items": { "enum": ["repeater", "room_server", "sensor", "companion"] }, "minItems": 1, "uniqueItems": true },
+      "since": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+(\\.[0-9]+)?$" },
+      "build": { "enum": ["gps", "sensors", "bridge", "ethernet", "wifi"] },
+      "source": { "type": "string", "pattern": "^[^:]+:[0-9]+$" },
+      "desc_key": { "type": "string", "pattern": "^cmd_[a-z0-9_]+_desc$" }
+    },
+    "dependentRequired": { "default": ["default_source"] },
+    "additionalProperties": false
+  }
+}

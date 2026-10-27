@@ -1,0 +1,12 @@
+---
+// One coverage map from data/maps.yaml, as map-card.html.
+import { t } from '../lib/site.mjs';
+const { lang, m } = Astro.props;
+---
+<li class="card map-card" id={`map-${m.id}`}>
+  <h3>{m.name}</h3>
+  <p class="muted">{t(lang, `map_scope_${m.scope}`)}{m.country && ` · ${t(lang, `country_${m.country.toLowerCase()}`)}`}</p>
+  {m.desc_key && <p>{t(lang, m.desc_key)}</p>}
+  {m.shows && m.shows.length > 0 && <ul class="tags">{m.shows.map((s) => <li class="badge">{t(lang, `map_shows_${s}`)}</li>)}</ul>}
+  <p class="card-links"><a href={m.url}>{t(lang, 'map_open')}</a></p>
+</li>

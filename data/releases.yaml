@@ -1,0 +1,22 @@
+# MeshCore firmware releases on the Changelog. Newest first. The summaries are our own words,
+# written from the official notes (never copied); their texts are in data/i18n/en.json as release.<id>.<n>.
+# A new release gets a block here, with its date from the GitHub release and the link to its notes. The daily
+# update-firmware workflow adds a stub block (points: 0) in its pull request; write the summaries there.
+- id: v1-18-0
+  version: "1.18.0"
+  date: 2026-10-15
+  roles: [companion, repeater, room_server]
+  notes: "https://blog.meshcore.io/2026/10/15/release-1-18-0"
+  points: 6
+- id: v1-17-1
+  version: "1.17.1"
+  date: 2026-08-14
+  roles: [companion, repeater, room_server]
+  notes: "https://blog.meshcore.io/2026/08/14/release-1-17-1"
+  points: 2
+- id: v1-17-0
+  version: "1.17.0"
+  date: 2026-08-09
+  roles: [companion, repeater, room_server]
+  notes: "https://blog.meshcore.io/2026/08/09/release-1-17-0"
+  points: 5

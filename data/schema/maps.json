@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "data/maps.yaml: coverage maps and analyzers",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "url", "scope", "shows", "desc_key", "last_checked"],
+    "properties": {
+      "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+      "name": { "type": "string", "minLength": 1 },
+      "url": { "type": "string", "pattern": "^https://" },
+      "scope": { "enum": ["europe", "country", "region"] },
+      "country": { "type": "string", "pattern": "^[A-Za-z]{2}$" },
+      "shows": {
+        "type": "array",
+        "items": { "enum": ["nodes", "coverage", "traffic", "analyzer", "statistics"] },
+        "minItems": 1,
+        "uniqueItems": true
+      },
+      "runs_on": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+      "desc_key": { "type": "string", "minLength": 1 },
+      "last_checked": { "type": "string", "format": "date" }
+    },
+    "if": { "properties": { "scope": { "const": "country" } } },
+    "then": { "required": ["country"] },
+    "additionalProperties": false
+  }
+}

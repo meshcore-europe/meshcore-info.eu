@@ -1,0 +1,47 @@
+---
+// The flasher (/firmware/flasher/), run by web/js/flasher.js: pick a board and a role from the latest
+// MeshCore release; ESP32 boards flash over USB on the page, nRF52 boards get their UF2 file. Other firmware links
+// to its own flasher.
+import { t } from '../lib/site.mjs';
+const { lang } = Astro.props;
+const f = (k) => t(lang, `flash_${k}`);
+---
+<div class="flasher" data-flasher
+  data-role_companion_radio_ble={f('role_ble')} data-role_companion_radio_usb={f('role_usb')} data-role_repeater={f('role_repeater')} data-role_room_server={f('role_room_server')}
+  data-unsupported={f('status_unsupported')} data-no_list={f('status_no_list')} data-downloading={f('status_downloading')} data-connecting={f('status_connecting')}
+  data-flashing={f('status_flashing')} data-done={f('status_done')} data-failed={f('status_failed')} data-no_file={f('status_no_file')}>
+  <p class="muted" data-needs-js>{f('needs_js').split('{link}')[0]}<a href="https://github.com/meshcore-dev/MeshCore/releases">{f('releases_link')}</a>{f('needs_js').split('{link}')[1]}</p>
+  <div data-ui hidden>
+    <h2 id="board">{f('board_title')}</h2>
+    <p class="row flash-pick">
+      <label>{f('filter_label')}<input name="filter" autocomplete="off" spellcheck="false" placeholder="Heltec" /></label>
+      <label>{f('board_label')}<select name="board"></select></label>
+      <label>{f('role_label')}<select name="role"></select></label>
+    </p>
+    <p class="muted" data-no-match hidden>{f('no_match')}</p>
+    <p class="meta">{f('version_before')} <span class="mono" data-version></span>{f('version_after')}</p>
+    <section data-esp hidden>
+      <h2 id="flash">{f('flash_title')}</h2>
+      <fieldset class="flash-mode">
+        <legend>{f('mode_legend')}</legend>
+        <label><input type="radio" name="mode" value="update" checked /> {f('mode_update')}</label>
+        <label><input type="radio" name="mode" value="fresh" /> {f('mode_fresh')}</label>
+      </fieldset>
+      <p data-wipe-confirm hidden><label><input type="checkbox" name="wipe-ok" /> {f('wipe_ok')}</label></p>
+      <p><button type="button" class="btn btn-primary" data-flash>{f('flash_button')}</button></p>
+      <progress max="100" value="0" hidden></progress>
+      <p class="flash-status" data-status aria-live="polite"></p>
+      <p class="muted">{f('esp_help')}</p>
+    </section>
+    <section data-uf2 hidden>
+      <h2 id="uf2">{f('uf2_title')}</h2>
+      <ol>
+        <li>{f('uf2_step1')} <a data-uf2-link href="#"></a></li>
+        <li>{f('uf2_step2')}</li>
+        <li>{f('uf2_step3')}</li>
+      </ol>
+    </section>
+    <p class="meta">{f('other_firmware').split('{link}')[0]}<a href="https://toolbox.dutchmeshcore.nl/">DutchMeshCore Toolbox</a>{f('other_firmware').split('{link}')[1]}</p>
+  </div>
+</div>
+<script is:inline type="module" src="/js/flasher.js"></script>

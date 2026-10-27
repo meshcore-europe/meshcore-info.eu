@@ -1,0 +1,76 @@
+name: Add a device
+description: Suggest hardware for the device catalog. Specs only, no shop links.
+title: "Add device: "
+labels: [device, needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The catalog lists specifications taken from manufacturer documentation. It never links to shops. A maintainer checks every value against the source before adding it.
+  - type: input
+    id: name
+    attributes:
+      label: Device name
+    validations:
+      required: true
+  - type: input
+    id: maker
+    attributes:
+      label: Manufacturer
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Manufacturer documentation
+      description: Spec sheet or product documentation by the manufacturer, not a shop listing.
+    validations:
+      required: true
+  - type: input
+    id: mcu
+    attributes:
+      label: Processor
+      description: For example nRF52840 or ESP32-S3.
+  - type: input
+    id: radio
+    attributes:
+      label: LoRa chip
+      description: For example SX1262.
+  - type: checkboxes
+    id: roles
+    attributes:
+      label: MeshCore roles it suits
+      options:
+        - label: Companion (pairs with a phone)
+        - label: Repeater
+        - label: Room server
+  - type: dropdown
+    id: form_factor
+    attributes:
+      label: Form factor
+      options:
+        - Handheld
+        - Bare board
+        - Enclosed node
+        - Wearable
+        - USB stick
+  - type: dropdown
+    id: firmware
+    attributes:
+      label: MeshCore support
+      options:
+        - Official build
+        - Community build
+        - Not sure
+  - type: textarea
+    id: specs
+    attributes:
+      label: Other specs
+      description: Battery (built in, mAh), GPS, screen, Bluetooth, Wi-Fi, USB, rough price band. Anything you know.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: The device supports the EU 868 MHz band, and I linked manufacturer documentation, not a shop.
+          required: true

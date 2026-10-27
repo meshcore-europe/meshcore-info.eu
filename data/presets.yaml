@@ -1,0 +1,111 @@
+# The 868 MHz radio presets used in Europe, as the MeshCore app offers them. Source: the MeshCore project's own
+# list (suggested_radio_settings in https://api.meshcore.nz/api/v1/config), which the app downloads. Keep the
+# names as the app shows them. path_hash_size is the path hash size the preset sets in the app, when it sets
+# one. Re-check the list and update last_checked before changing an entry.
+- id: eu-uk-narrow
+  name: EU/UK (Narrow)
+  frequency: "869.618"
+  bandwidth: "62.5"
+  spreading_factor: 8
+  coding_rate: 8
+  source: https://api.meshcore.nz/api/v1/config
+  last_checked: "2026-10-13"
+- id: czech-republic-narrow
+  name: Czech Republic (Narrow)
+  frequency: "869.432"
+  bandwidth: "62.5"
+  spreading_factor: 7
+  coding_rate: 5
+  path_hash_size: 2
+  source: https://api.meshcore.nz/api/v1/config
+  last_checked: "2026-10-13"
+- id: hungary
+  name: Hungary
+  frequency: "869.618"
+  bandwidth: "62.5"
+  spreading_factor: 7
+  coding_rate: 5
+  path_hash_size: 2
+  source: https://api.meshcore.nz/api/v1/config
+  last_checked: "2026-10-13"
+- id: netherlands
+  name: Netherlands
+  frequency: "869.618"
+  bandwidth: "62.5"
+  spreading_factor: 7
+  coding_rate: 5
+  source: https://api.meshcore.nz/api/v1/config
+  last_checked: "2026-10-13"
+- id: netherlands-limburg
+  name: Netherlands (Limburg)
+  frequency: "869.618"
+  bandwidth: "62.5"
+  spreading_factor: 8
+  coding_rate: 8
+  path_hash_size: 2
+  source: https://api.meshcore.nz/api/v1/config
+  last_checked: "2026-10-13"
+- id: portugal-868
+  name: Portugal 868
+  frequency: "869.618"
+  bandwidth: "62.5"
+  spreading_factor: 7
+  coding_rate: 6
+  source: https://api.meshcore.nz/api/v1/config
+  last_checked: "2026-10-13"
+- id: slovakia
+  name: Slovakia
+  frequency: "869.618"
+  bandwidth: "62.5"
+  spreading_factor: 7
+  coding_rate: 5
+  path_hash_size: 2
+  source: https://api.meshcore.nz/api/v1/config
+  last_checked: "2026-10-13"
+- id: switzerland
+  name: Switzerland
+  frequency: "869.618"
+  bandwidth: "62.5"
+  spreading_factor: 8
+  coding_rate: 8
+  source: https://api.meshcore.nz/api/v1/config
+  last_checked: "2026-10-13"
+# The other European presets in the MeshCore project's list. The list names no area for them, so get-started
+# leaves them out (other: true); Recommended settings shows them under their own heading. The 433 MHz ones need
+# a board with a 433 MHz radio.
+- id: eu-uk-deprecated
+  name: EU/UK (Deprecated)
+  frequency: "869.525"
+  bandwidth: "250"
+  spreading_factor: 11
+  coding_rate: 5
+  other: true
+  source: https://api.meshcore.nz/api/v1/config
+  last_checked: "2026-10-13"
+- id: eu-433-long-range
+  name: EU 433MHz (Long Range)
+  frequency: "433.650"
+  bandwidth: "250"
+  spreading_factor: 11
+  coding_rate: 5
+  other: true
+  source: https://api.meshcore.nz/api/v1/config
+  last_checked: "2026-10-13"
+- id: eu-433-narrow
+  name: EU 433MHz (Narrow)
+  frequency: "433.650"
+  bandwidth: "62.5"
+  spreading_factor: 8
+  coding_rate: 8
+  other: true
+  source: https://api.meshcore.nz/api/v1/config
+  last_checked: "2026-10-13"
+- id: portugal-433
+  name: Portugal 433
+  frequency: "433.375"
+  bandwidth: "62.5"
+  spreading_factor: 9
+  coding_rate: 6
+  other: true
+  source: https://api.meshcore.nz/api/v1/config
+  last_checked: "2026-10-13"

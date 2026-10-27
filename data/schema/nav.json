@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "data/nav.yaml: main and footer menus",
+  "type": "object",
+  "required": ["main", "footer"],
+  "properties": {
+    "main": { "$ref": "#/$defs/menu" },
+    "footer": { "$ref": "#/$defs/menu" }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "menu": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key", "path"],
+        "properties": {
+          "key": { "type": "string", "minLength": 1 },
+          "path": { "type": "string", "pattern": "^/[a-z0-9/-]*$" }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

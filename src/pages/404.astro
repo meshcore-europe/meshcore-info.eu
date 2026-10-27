@@ -1,0 +1,13 @@
+---
+// The root 404 page, in English, for paths outside a language.
+import Base from '../layouts/Base.astro';
+import { t } from '../lib/site.mjs';
+---
+<Base lang="en" title={`${t('en', 'not_found_title')} | meshcore-info.eu`} noAlternates>
+  <header class="page-head">
+    <div class="eyebrow">404</div>
+    <h1>{t('en', 'not_found_title')}</h1>
+    <p class="lead">{t('en', 'not_found_body')}</p>
+  </header>
+  <p><a class="btn btn-primary" href="/">{t('en', 'not_found_home')}</a></p>
+</Base>

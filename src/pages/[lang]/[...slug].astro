@@ -1,0 +1,154 @@
+---
+// Every content page in every language it exists in. A page that is not built yet is a stub with its
+// title, lead and section headings, so links, anchors and hreflang already resolve. Menu pages that have no content file yet get a stub with their
+// menu label in every language.
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { PARAMS, t } from '../../lib/site.mjs';
+import { allPages, translationsOf, translationState, isPorted, newsFor } from '../../lib/pages.mjs';
+import { PLANNED } from '../../lib/shell.mjs';
+import { LANG_KEYS } from '../../lib/site.mjs';
+import DataSection from '../../components/DataSection.astro';
+import Home from '../../components/Home.astro';
+import PlannedSections from '../../components/PlannedSections.astro';
+import PageStrip from '../../components/PageStrip.astro';
+import { stripFor } from '../../lib/strips.mjs';
+import { localize, sectionLabel, siblingsOf } from '../../lib/shell.mjs';
+
+export async function getStaticPaths() {
+  const pages = await allPages();
+  // Menu pages without content yet: a stub in every language until their plan builds them.
+  const planned = PLANNED.flatMap((p) => LANG_KEYS.map((lang) => ({ params: { lang, slug: p.path }, props: { planned: p, lang } })));
+  return [...pages.map((page) => ({ params: { lang: page.lang, slug: page.slug || undefined }, props: { page, pages } })), ...planned];
+}
+
+const { planned } = Astro.props;
+let lang, slug, d, langs, state, ported, Content, headings, editUrl, title, news, pages, hero;
+// The image of each main page: <name>-pastel.webp and -sepia.webp in web/media.
+// Sub-pages are added here as their image is finished; a planned page shows it too.
+const HEROES = {
+  about: 'about-hero', guides: 'guides-hero', network: 'network-hero', community: 'community-hero', firmware: 'firmware-hero',
+  devices: 'devices-hero', 'get-started': 'start-hero', 'repeater-guide': 'repeater-hero', 'guides/keygen': 'keygen-hero', 'guides/cli': 'cli-hero', 'guides/filter': 'filter-hero', 'guides/antenna': 'antenna-hero',
+  'firmware/flasher': 'flasher-hero', 'firmware/console': 'console-hero', 'firmware/changelog': 'changelog-hero',
+  'guides/settings': 'settings-hero', 'guides/channels': 'channels-hero', 'guides/mqtt': 'mqtt-hero', 'guides/mctomqtt': 'mctomqtt-hero', map: 'map-hero',
+  'network/ingestors': 'ingestors-hero', projects: 'projects-hero', contribute: 'contribute-hero',
+  blog: 'news-hero', 'blog/welcome': 'welcome-hero', 'press-kit': 'presskit-hero', privacy: 'privacy-hero',
+};
+// Dates written in full, British English for English.
+const dateOf = (date, l) => new Intl.DateTimeFormat(l === 'en' ? 'en-GB' : l, { dateStyle: 'long' }).format(date);
+const iso = (date) => date.toISOString().slice(0, 10);
+// A title with the site name in it keeps the name on one line.
+const SITE = 'meshcore-info.eu';
+// The eyebrow is set in capitals, which turns 500 mW into 500 MW: units keep their case.
+const UNIT = /\b(mW|[kMG]Hz|dB[mid]?)\b/;
+if (planned) {
+  lang = Astro.props.lang;
+  slug = planned.path;
+  title = `${planned.label[lang] || planned.label.en} | meshcore-info.eu`;
+  // A planned page opens on its image too, once the image is made.
+  hero = HEROES[slug] || null;
+} else {
+  const page = Astro.props.page;
+  pages = Astro.props.pages;
+  ({ lang, slug } = page);
+  const entry = page.entry;
+  d = entry.data;
+  langs = translationsOf(pages, slug);
+  state = translationState(pages, page);
+  ported = isPorted(slug);
+  news = slug === 'blog' ? newsFor(pages, lang) : null;
+  ({ Content, headings } = await render(entry));
+  // English pages are edited in this repository, translations in the translations repository.
+  const repo = lang === 'en' ? `${PARAMS.repo}/edit/${PARAMS.repoBranch}` : `${PARAMS.i18nRepo}/edit/${PARAMS.i18nRepoBranch || 'main'}`;
+  editUrl = `${repo}/content/${lang}/${entry.filePath.split('/').slice(2).join('/')}`;
+  title = slug ? `${d.title} | meshcore-info.eu` : `${t(lang, 'site_tagline')} | meshcore-info.eu`;
+  // A page that opens with a picture behind its title, as the home does.
+  hero = HEROES[slug] || null;
+}
+---
+{!planned && slug === '' ? (
+<Base lang={lang} title={title} description={d.description} path="" langs={langs} enSource={langs.includes('en')} home>
+  <Home lang={lang} news={newsFor(pages, lang)} localize={(href) => localize(href, lang)} />
+</Base>
+) : planned ? (
+<Base lang={lang} title={title} path={slug} langs={LANG_KEYS} overlay={hero} live={hero && stripFor(slug, lang)?.live}>
+  {hero && (
+    <section class="xhero page-xhero" aria-labelledby="page-title">
+      <img class="for-dark" src={`/media/${hero}-sepia.webp`} alt="" width="1600" height="1100" decoding="async" />
+      <img class="for-light" src={`/media/${hero}-pastel.webp`} alt="" width="1600" height="1100" decoding="async" />
+      <div class="xhero-inner">
+        {sectionLabel(slug, lang) && <div class="eyebrow">{sectionLabel(slug, lang)}</div>}
+        <h1 id="page-title">{planned.label[lang] || planned.label.en}</h1>
+        <p class="lead">{t(lang, `planned.${slug.replace(/\//g, '-')}.lead`)}</p>
+      </div>
+      <PageStrip lang={lang} slug={slug} />
+    </section>
+  )}
+  <div class:list={[hero && 'container']}>
+  <article class="article">
+    {!hero && (
+    <header class="page-head">
+      {sectionLabel(slug, lang) && <div class="eyebrow">{sectionLabel(slug, lang)}</div>}
+      <h1>{planned.label[lang] || planned.label.en}</h1>
+      <p class="lead">{t(lang, `planned.${slug.replace(/\//g, '-')}.lead`)}</p>
+    </header>
+    )}
+    <PlannedSections lang={lang} path={slug} />
+    <aside class="callout callout-tip planned-note stub-note">
+      <p>{t(lang, 'planned_note')}</p>
+      {siblingsOf(slug, lang).length > 0 && <Fragment>
+        <p>{t(lang, 'planned_more')}</p>
+        <ul class="planned-links">{siblingsOf(slug, lang).map((s) => <li><a class="btn btn-sm" href={s.href}>{s.label}</a></li>)}</ul>
+      </Fragment>}
+    </aside>
+  </article>
+  </div>
+</Base>
+) : (
+<Base lang={lang} title={title} description={d.description} path={slug} langs={langs} enSource={langs.includes('en')} overlay={hero} live={hero && stripFor(slug, lang)?.live}>
+  {hero && (
+    <section class="xhero page-xhero" aria-labelledby="page-title">
+      <img class="for-dark" src={`/media/${hero}-sepia.webp`} alt="" width="1600" height="1100" decoding="async" />
+      <img class="for-light" src={`/media/${hero}-pastel.webp`} alt="" width="1600" height="1100" decoding="async" />
+      <div class="xhero-inner">
+        {(d.eyebrow || sectionLabel(slug, lang)) && <div class="eyebrow">{(d.eyebrow || sectionLabel(slug, lang)).split(UNIT).map((x, i) => i % 2 ? <span class="unit">{x}</span> : x)}</div>}
+        <h1 id="page-title">{d.title}</h1>
+        {d.date && <p class="muted"><time datetime={iso(d.date)}>{dateOf(d.date, lang)}</time></p>}
+        {state && <span class={`badge ${state.status === 'human' ? 'ok' : ''}`}>{t(lang, state.status === 'human' ? 'badge_human' : 'badge_ai')}</span>}
+        {d.lead && <p class="lead">{d.lead}</p>}
+      </div>
+      <PageStrip lang={lang} slug={slug} />
+    </section>
+  )}
+  <div class:list={[hero && 'container']}>
+  <article class={d.layout ? 'article article-wide' : 'article'}>
+    {!hero && <header class="page-head">
+      {(d.eyebrow || sectionLabel(slug, lang)) && <div class="eyebrow">{(d.eyebrow || sectionLabel(slug, lang)).split(UNIT).map((x, i) => i % 2 ? <span class="unit">{x}</span> : x)}</div>}
+      <h1>{d.title.split(SITE).map((x, i) => <Fragment>{i > 0 && <span class="nobr">{SITE}</span>}{x}</Fragment>)}</h1>
+      {d.date && <p class="muted"><time datetime={iso(d.date)}>{dateOf(d.date, lang)}</time></p>}
+      {state && <span class={`badge ${state.status === 'human' ? 'ok' : ''}`}>{t(lang, state.status === 'human' ? 'badge_human' : 'badge_ai')}</span>}
+      {d.lead && <p class="lead">{d.lead}</p>}
+    </header>}
+    {state && (state.status === 'ai' || state.stale) && (
+      <aside class="note tr-banner" role="note">
+        {state.status === 'ai' && <p><strong>{t(lang, 'banner_ai_title')}</strong> {t(lang, 'banner_ai_body')}</p>}
+        {state.stale && <p>{t(lang, 'banner_stale')} <a href={`/en/${slug ? slug + '/' : ''}`} hreflang="en">{t(lang, 'read_english')}</a></p>}
+        <p><a href={editUrl}>{t(lang, 'banner_improve')}</a></p>
+      </aside>
+    )}
+    {ported ? <Fragment><div class="prose"><Content /></div>{d.layout && <DataSection lang={lang} layout={d.layout} />}{news && (
+      <ul class="post-list">{news.map((p) => (
+        <li><time datetime={iso(p.entry.data.date)}>{dateOf(p.entry.data.date, lang)}</time> <a href={`/${p.lang}/${p.slug}/`} hreflang={p.lang !== lang ? p.lang : undefined}>{p.entry.data.title}</a>
+          {p.entry.data.description && <p class="muted">{p.entry.data.description}</p>}</li>
+      ))}</ul>
+    )}</Fragment> : (
+      <div class="prose stub">
+        <p class="muted stub-note">This page is not finished yet. Its sections:</p>
+        {headings.filter((h) => h.depth <= 3).map((h) => h.depth === 2 ? <h2 id={h.slug}>{h.text}</h2> : <h3 id={h.slug}>{h.text}</h3>)}
+      </div>
+    )}
+    <p class="page-foot"><a href={editUrl}>{t(lang, 'edit_page')}</a></p>
+  </article>
+  </div>
+</Base>
+)}
