@@ -1,0 +1,38 @@
+# meshcore-info.eu
+
+> A non-commercial guide to MeshCore in Europe, written by volunteers from the local groups, in 16 languages. MeshCore sends short text messages by LoRa radio on 868 MHz, from one small device to the next, without the internet or a subscription. The site holds what the European meshes share: the radio settings per area, guides, browser tools and the local groups.
+
+English is the source; every page also exists at /<language>/ for nl, de, fr, es, it, pl, pt, cs, sv, da, nb, fi, hu, ro and el. Text and data are CC BY 4.0: reuse them with meshcore-info.eu named as the source.
+
+## Start
+
+- [What is MeshCore?](https://meshcore-info.eu/en/about/): the mesh, companions, repeaters and room servers, routing, encryption, and the 868 MHz band in Europe.
+- [Get started](https://meshcore-info.eu/en/get-started/): flash MeshCore from the browser, pair the app, pick the radio preset your area uses and send a first message.
+- [Devices](https://meshcore-info.eu/en/devices/): LoRa devices that run MeshCore in Europe, compared by specifications, power use and rough price.
+
+## Guides
+
+- [Recommended settings](https://meshcore-info.eu/en/guides/settings/): the radio preset per area in Europe, and the settings local groups changed from the defaults, with the commands.
+- [Repeater guide](https://meshcore-info.eu/en/repeater-guide/): plan, power, configure and legally operate a repeater, with the 868 MHz power and duty-cycle limits.
+- [Antenna guide](https://meshcore-info.eu/en/guides/antenna/): antenna types and gain, connectors, cable loss, mounting, and how gain counts toward the legal limit.
+- [Find channels](https://meshcore-info.eu/en/guides/channels/): the channels heard per country, with the key of every #channel.
+- [CLI commands](https://meshcore-info.eu/en/guides/cli/): every command of the MeshCore firmware for repeaters, room servers, sensors and companions.
+- [Generate a key](https://meshcore-info.eu/en/guides/keygen/): a MeshCore key with a chosen prefix, made in the browser.
+
+## Firmware
+
+- [Flash](https://meshcore-info.eu/en/firmware/flasher/): flash MeshCore onto an ESP32 board over USB from the browser, or get the UF2 file for an nRF52 board.
+- [Serial console](https://meshcore-info.eu/en/firmware/console/): configure a repeater, room server or sensor over USB from the browser.
+- [Changelog](https://meshcore-info.eu/en/firmware/changelog/): what each MeshCore release changes, in plain words.
+
+## Community
+
+- [Local groups](https://meshcore-info.eu/en/community/): MeshCore groups across Europe by country, with their chats, forums and channels.
+- [Coverage maps](https://meshcore-info.eu/en/map/): live maps, coverage maps and packet analysers for Europe.
+- [Projects](https://meshcore-info.eu/en/projects/): apps, analyzers, bridges, libraries, firmware forks and hardware designs.
+- [Contribute](https://meshcore-info.eu/en/contribute/): add a group, a device or a project, review a translation, or improve a guide.
+
+## Optional
+
+- [Press kit](https://meshcore-info.eu/en/press-kit/): the logo, images, videos and a short text about the site.
+- [Sitemap](https://meshcore-info.eu/sitemap.xml): every page in every language.
