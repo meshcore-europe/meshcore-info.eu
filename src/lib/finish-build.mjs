@@ -4,6 +4,7 @@
 // <lang>/404.html, where Cloudflare looks for it. And a content hash on every stylesheet and script URL
 // (/css/site.css?v=1a2b3c4d), in the pages and in the module imports, so a deploy never pairs new HTML with a
 // stylesheet or script the browser still holds from before (they are cached for an hour, preview/cache.js).
+// And sitemap.xml: every page with a canonical address and no noindex.
 import { readFileSync, writeFileSync, renameSync, rmdirSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 
@@ -57,6 +58,23 @@ export function versionAssets(out) {
   }
 }
 
+const CANONICAL = /<link rel="canonical" href="([^"]+)"/;
+const NOINDEX = /<meta name="robots" content="[^"]*noindex/;
+
+// The addresses for sitemap.xml: the canonical of every page that has one and is not noindex, sorted.
+export function sitemapUrls(out) {
+  return files(out).filter((f) => f.endsWith('.html')).flatMap((file) => {
+    const text = readFileSync(file, 'utf8');
+    const m = text.match(CANONICAL);
+    return m && !NOINDEX.test(text) ? [m[1]] : [];
+  }).sort();
+}
+
+export function sitemap(urls) {
+  const items = urls.map((u) => `  <url><loc>${u}</loc></url>`).join('\n');
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${items}\n</urlset>\n`;
+}
+
 export function finishBuild() {
   return {
     name: 'meshcore-info:finish-build',
@@ -71,6 +89,7 @@ export function finishBuild() {
           rmdirSync(`${out}${lang}/404`);
         }
         versionAssets(out);
+        writeFileSync(`${out}sitemap.xml`, sitemap(sitemapUrls(out)));
       },
     },
   };

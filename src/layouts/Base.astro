@@ -58,6 +58,7 @@ const pageDescription = description || t(lang, 'site_description');
   {(home || live) && <script is:inline src="/js/live-strip.js" defer></script>}
   {home && <script is:inline src="/js/hero-film.js" defer></script>}
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  {!noAlternates && <link rel="canonical" href={abs(href(lang))}>}
   {!noAlternates && alternates.map((a) => <link rel="alternate" hreflang={languageOf(a.lang).locale} href={abs(a.href)}>)}
   {!noAlternates && enSource && <link rel="alternate" hreflang="x-default" href={abs(href('en'))}>}
 </head>
