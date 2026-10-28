@@ -24,7 +24,7 @@ body:
     id: region
     attributes:
       label: Region or city
-      description: Leave empty for a country-wide group.
+      description: In the group's own language, for example München or Kärnten. Leave empty for a country-wide group.
   - type: textarea
     id: links
     attributes:

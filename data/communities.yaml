@@ -68,7 +68,7 @@
 
 - id: de-berlin-chaos-mesh
   country: DE
-  region: Berlin and Brandenburg
+  region: Berlin und Brandenburg
   name: Berlin Chaos Mesh
   links:
   - type: forum
@@ -89,7 +89,7 @@
 
 - id: de-isarmesh
   country: DE
-  region: Munich and the Isar area (Bavaria)
+  region: München und Isartal (Bayern)
   name: isarmesh.de
   links:
   - type: forum
@@ -101,7 +101,7 @@
 
 - id: de-mesh-dresden
   country: DE
-  region: Dresden (Saxony)
+  region: Dresden (Sachsen)
   name: Mesh Dresden
   links:
   - type: website
@@ -446,7 +446,7 @@
 
 - id: at-carinthiamesh
   country: AT
-  region: Carinthia
+  region: Kärnten
   name: CarinthiaMesh
   links:
   - type: website
@@ -480,7 +480,7 @@
 
 - id: be-meshpot
   country: BE
-  region: Brussels and Wallonia
+  region: Bruxelles et Wallonie
   name: Meshpot
   links:
   - type: website
@@ -515,7 +515,7 @@
 
 - id: de-bremesh
   country: DE
-  region: Bremen and Bremerhaven
+  region: Bremen und Bremerhaven
   name: BreMesh
   links:
   - type: website
@@ -551,7 +551,7 @@
 
 - id: de-mesh-rheinland
   country: DE
-  region: Rhineland
+  region: Rheinland
   name: Mesh Rheinland
   links:
   - type: website
@@ -574,7 +574,7 @@
 
 - id: de-ffnw
   country: DE
-  region: Weser-Ems (Lower Saxony)
+  region: Weser-Ems (Niedersachsen)
   name: Freifunk Nordwest
   links:
   - type: website
@@ -588,7 +588,7 @@
 
 - id: de-meshcore-dresden
   country: DE
-  region: Dresden (Saxony)
+  region: Dresden (Sachsen)
   name: MeshCore Dresden
   links:
   - type: website
@@ -600,7 +600,7 @@
 
 - id: de-meshmitte
   country: DE
-  region: Uslar (Lower Saxony)
+  region: Uslar (Niedersachsen)
   name: MeshMitte
   links:
   - type: website
@@ -624,11 +624,13 @@
 
 - id: de-hansemesh
   country: DE
-  region: Hamburg and northern Germany
+  region: Hamburg und Norddeutschland
   name: HanseMesh
   links:
   - type: website
     url: "https://hansemesh.de/"
+  channels:
+  - "#hansemesh"
   languages: [de]
   desc_key: community.de-hansemesh.desc
   added: 2026-10-28
@@ -705,7 +707,7 @@
 
 - id: pl-meshgo
   country: PL
-  region: Pomerania (Tricity)
+  region: Pomorze (Trójmiasto)
   name: MeshGo (MeshCore Pomorze)
   links:
   - type: website
@@ -741,7 +743,7 @@
 
 - id: es-meshcore-catalunya
   country: ES
-  region: Catalonia
+  region: Catalunya
   name: MeshCore Catalunya
   links:
   - type: website
@@ -753,7 +755,7 @@
 
 - id: es-nomadmesh
   country: ES
-  region: Alpujarras (Andalusia)
+  region: Alpujarras (Andalucía)
   name: NomadMesh
   links:
   - type: website
