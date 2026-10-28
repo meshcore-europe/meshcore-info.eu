@@ -71,8 +71,9 @@ log in with a password and manage it over the radio. The
 [repeater guide](/repeater-guide/) shows how.
 
 **Room server.** A small message board on the mesh. When you log in, you get
-the posts you missed while out of range, up to the last 32. A local group
-uses one for announcements.
+the posts you missed while out of range, up to the last 32. It keeps them
+in memory only, so a restart or a power cut clears them. A local group uses
+one for announcements.
 
 ## How a message finds its way {#routing}
 
