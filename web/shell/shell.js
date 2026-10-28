@@ -167,10 +167,18 @@
     });
 
     // Close a dropdown when focus moves to something outside it. A null relatedTarget (focus went nowhere,
-    // e.g. a click on the page background) is left to the click handler.
+    // e.g. a click on the page background) is left to the click handler. So is a press on another menu's
+    // button: focus moves there on pointerdown, the click opens that menu on pointerup, and closing in
+    // between would flash the page through.
+    let pressing = false;
+    document.addEventListener('pointerdown', () => { pressing = true; }, true);
+    document.addEventListener('pointerup', () => { pressing = false; }, true);
+    document.addEventListener('pointercancel', () => { pressing = false; }, true);
     document.addEventListener('focusout', (e) => {
       const dd = e.target.closest && e.target.closest('.dd.open');
-      if (dd && e.relatedTarget && !dd.contains(e.relatedTarget)) setOpen(dd, false);
+      if (!dd || !e.relatedTarget || dd.contains(e.relatedTarget)) return;
+      if (pressing && e.relatedTarget.closest('.dd-trig')) return;
+      setOpen(dd, false);
     });
 
     window.addEventListener('resize', () => { if (document.body.classList.contains('drawer-open')) placeDrawer(); });

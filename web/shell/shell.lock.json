@@ -1,6 +1,6 @@
 {
   "source": "EU-Meshcore-Analyzer/Branding/shell",
-  "commit": "8e08c1bb50618512bdf6ce5f810c94fd8c4c5370",
+  "commit": "23422634f2289cf0f25f51f3f292829470ce11a3",
   "written": "2026-10-28",
   "files": {
     "base.css": "f4a2be75dfc1905686f2e6458c9a70ac915d327873ccb3158178b4f5ee989e4a",
@@ -10,7 +10,7 @@
     "navmodel.js": "92102b5da5b1131a8d69aba0746f697c92296febf2fb75e026700f8fb7d5de42",
     "prefs.js": "44bb7d8550bc7e0d0dbf7bc833e779a8ff9f2f3163a72e07280fa02bccd4e166",
     "shell.css": "66f46f8d1e1705db4f66d792f5c50dd84e408b476d48422158866141b726768b",
-    "shell.js": "e942bbcc1bc3cac4a447dc8fe5b8cffaf5b38d4bf3c7de1aec215ef479f1ae4a",
+    "shell.js": "c860aca375688810d7688c2eca05d2ab5af4e2b10b08df33a29f2a7a4312052d",
     "tokens.css": "7cbc81e13a658f4b7306128166d2c82238e2632e2404e751ae7ed78bf75d0ffe",
     "vendor/maplibre-gl.css": "576b085fdd9487a65a19215328c1e086c07ce5bf6da09b666b3806d3d008dae9",
     "vendor/maplibre-gl.js": "be9633c4d870e26fb37f1cfe5c5a77181667114003ea16207ac7850d8da8add1"
