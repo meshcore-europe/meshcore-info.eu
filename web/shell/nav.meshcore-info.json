@@ -373,6 +373,22 @@
           "icon": "hash"
         },
         {
+          "id": "guide-resilient",
+          "page": "guide-resilient",
+          "href": "/guides/resilient/",
+          "label": {
+            "nl": "Weerbaar mesh",
+            "en": "Make the mesh resilient",
+            "de": "Widerstandsfähiges Mesh"
+          },
+          "sub": {
+            "nl": "Wat helpt tegen floods en spam",
+            "en": "What helps against floods and spam",
+            "de": "Was gegen Floods und Spam hilft"
+          },
+          "icon": "shield"
+        },
+        {
           "id": "guide-filter",
           "page": "guide-filter",
           "href": "/guides/filter/",
@@ -463,6 +479,7 @@
             "de": "Vertiefung"
           },
           "items": [
+            "guide-resilient",
             "guide-filter",
             "guide-mqtt",
             "guide-mctomqtt",
@@ -783,6 +800,7 @@
         "guide-keygen",
         "guide-channels",
         "guide-cli",
+        "guide-resilient",
         "guide-filter",
         "guide-mqtt",
         "guide-mctomqtt"

@@ -101,6 +101,7 @@
     hash: '<path d="M4 9h16M4 15h16M10 3L8 21M16 3l-2 18"/>',
     terminal: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/>',
     filter: '<path d="M3 4h18l-7 9v6l-4 2v-8z"/>',
+    shield: '<path d="M12 3l8 3v6c0 4.5-3.4 7.8-8 9-4.6-1.2-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/>',
     file: '<path d="M14 3H6a1 1 0 00-1 1v16a1 1 0 001 1h12a1 1 0 001-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/>',
     play: '<circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4z"/>',
     sliders: '<path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/>',

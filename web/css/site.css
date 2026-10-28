@@ -533,3 +533,89 @@ a.path-card { display: flex; flex-direction: column; gap: 6px; height: 100%; tex
 .gain-diagram figcaption { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; margin-top: 8px; font-size: var(--fs-sm); color: var(--text-muted); }
 .gain-diagram figcaption span { display: inline-flex; align-items: center; gap: 6px; }
 .eyebrow .unit { text-transform: none; }
+/* The 3 figures of the guide to a resilient mesh ({{< forged-path >}}, {{< dc-gate >}}, {{< copies >}},
+   src/lib/resilient-diagrams.mjs). Each loops its story; with reduced motion it shows the last frame. */
+.rz-figure { margin: 24px 0 32px; max-width: 640px; }
+.rz-figure svg { display: block; width: 100%; height: auto; overflow: visible; }
+.rz-figure text { font-family: var(--font-mono); font-size: 16px; fill: var(--heading); text-anchor: middle; }
+.rz-figure figcaption { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; margin-top: 8px; font-size: var(--fs-sm); color: var(--text-muted); }
+.rz-figure figcaption > span { display: inline-flex; align-items: center; gap: 6px; }
+.rz-rep circle { fill: var(--surface); stroke: var(--heading); stroke-width: 2; }
+.rz-figure .rz-rep text { font-size: 13px; }
+.rz-sender circle { fill: var(--surface); stroke: var(--danger); stroke-width: 2.5; }
+.rz-figure .rz-sender text, .rz-figure .rz-you text { font-family: var(--font-sans); font-size: 15px; fill: var(--text-muted); }
+.rz-you circle { fill: var(--accent); stroke: var(--heading); stroke-width: 2; }
+.rz-route { fill: none; stroke: var(--border-strong); stroke-width: 2; stroke-dasharray: 4 6; }
+.rz-packet { fill: var(--danger); }
+.rz-figure .rz-path-label { font-family: var(--font-sans); font-size: 15px; fill: var(--text-muted); text-anchor: end; }
+.rz-box rect { stroke-width: 2; }
+.rz-fake rect { fill: none; stroke: var(--danger); stroke-dasharray: 5 4; }
+.rz-figure .rz-fake text { fill: var(--danger-text); }
+.rz-real rect { fill: var(--accent); fill-opacity: .22; stroke: var(--accent); }
+.key.rz-fake { background: none; border: 2px dashed var(--danger); }
+.key.rz-real { background: var(--accent); }
+.rz-forged .rz-packet { animation: rz-hop 10s linear infinite; }
+.rz-forged .rz-box.rz-step-0, .rz-forged .rz-box.rz-step-1, .rz-forged .rz-box.rz-step-2 { animation: rz-in-6 10s infinite; }
+.rz-forged .rz-box.rz-step-3 { animation: rz-in-20 10s infinite; }
+.rz-forged .rz-box.rz-step-4 { animation: rz-in-34 10s infinite; }
+.rz-forged .rz-box.rz-step-5 { animation: rz-in-48 10s infinite; }
+.rz-forged .rz-rep.rz-step-3 circle { animation: rz-ping-20 10s infinite; }
+.rz-forged .rz-rep.rz-step-4 circle { animation: rz-ping-34 10s infinite; }
+.rz-forged .rz-rep.rz-step-5 circle { animation: rz-ping-48 10s infinite; }
+@keyframes rz-hop { 0%, 8% { transform: translateX(0); opacity: 1; } 20% { transform: translateX(110px); } 34% { transform: translateX(240px); } 48% { transform: translateX(370px); } 60%, 90% { transform: translateX(480px); opacity: 1; } 95%, 100% { transform: translateX(480px); opacity: 0; } }
+@keyframes rz-in-6 { 0%, 5% { opacity: 0; } 7%, 92% { opacity: 1; } 97%, 100% { opacity: 0; } }
+@keyframes rz-in-20 { 0%, 19% { opacity: 0; } 21%, 92% { opacity: 1; } 97%, 100% { opacity: 0; } }
+@keyframes rz-in-34 { 0%, 33% { opacity: 0; } 35%, 92% { opacity: 1; } 97%, 100% { opacity: 0; } }
+@keyframes rz-in-48 { 0%, 47% { opacity: 0; } 49%, 92% { opacity: 1; } 97%, 100% { opacity: 0; } }
+@keyframes rz-ping-20 { 0%, 19%, 27%, 100% { stroke: var(--heading); stroke-width: 2; } 21% { stroke: var(--accent); stroke-width: 7; } }
+@keyframes rz-ping-34 { 0%, 33%, 41%, 100% { stroke: var(--heading); stroke-width: 2; } 35% { stroke: var(--accent); stroke-width: 7; } }
+@keyframes rz-ping-48 { 0%, 47%, 55%, 100% { stroke: var(--heading); stroke-width: 2; } 49% { stroke: var(--accent); stroke-width: 7; } }
+.rz-ring { fill: var(--accent); stroke: var(--accent); stroke-width: 2; }
+.rz-ring-0 { fill-opacity: .10; } .rz-ring-1 { fill-opacity: .16; } .rz-ring-2 { fill-opacity: .24; } .rz-ring-3 { fill-opacity: .75; }
+.rz-figure .rz-ring-label { font-family: var(--font-sans); font-size: 14px; }
+.rz-figure .rz-ring-label-3 { font-weight: 600; fill: var(--accent-ink); }
+.rz-meter { fill: var(--surface-hover); stroke: var(--border-strong); stroke-width: 1.5; }
+.rz-level { fill: var(--danger); fill-opacity: .55; transform-box: fill-box; transform-origin: bottom; transform: scaleY(.45); }
+.rz-thresh { stroke: var(--heading); stroke-width: 2; stroke-dasharray: 6 4; }
+.rz-figure .rz-thresh-label { text-anchor: start; font-size: 15px; }
+.rz-figure .rz-meter-label { font-family: var(--font-sans); font-size: 14px; fill: var(--text-muted); }
+.rz-steps { margin: 4px 0 0; padding-left: 1.4em; }
+.rz-steps li { margin: 2px 0; }
+.rz-gate .rz-level { animation: rz-level 12s ease-in-out infinite; }
+.rz-gate .rz-ring-0, .rz-gate .rz-ring-label-0 { animation: rz-gate-0 12s infinite; }
+.rz-gate .rz-ring-1, .rz-gate .rz-ring-label-1 { animation: rz-gate-1 12s infinite; }
+.rz-gate-step-0 { animation: rz-step-0 12s infinite; }
+.rz-gate-step-1 { animation: rz-step-1 12s infinite; }
+.rz-gate-step-2 { animation: rz-step-2 12s infinite; }
+@keyframes rz-level { 0%, 22% { transform: scaleY(.18); } 30%, 55% { transform: scaleY(.40); } 62%, 85% { transform: scaleY(.46); } 93%, 100% { transform: scaleY(.18); } }
+@keyframes rz-gate-0 { 0%, 29% { fill-opacity: .10; stroke: var(--accent); opacity: 1; } 31%, 88% { fill-opacity: 0; stroke: var(--danger); opacity: .55; } 91%, 100% { fill-opacity: .10; stroke: var(--accent); opacity: 1; } }
+@keyframes rz-gate-1 { 0%, 59% { fill-opacity: .16; stroke: var(--accent); opacity: 1; } 61%, 88% { fill-opacity: 0; stroke: var(--danger); opacity: .55; } 91%, 100% { fill-opacity: .16; stroke: var(--accent); opacity: 1; } }
+@keyframes rz-step-0 { 0%, 28% { color: var(--heading); } 30%, 100% { color: var(--text-faint); } }
+@keyframes rz-step-1 { 0%, 28%, 90%, 100% { color: var(--text-faint); } 30%, 58% { color: var(--heading); } 60%, 88% { color: var(--text-faint); } }
+@keyframes rz-step-2 { 0%, 58%, 90%, 100% { color: var(--text-faint); } 60%, 88% { color: var(--heading); } }
+.rz-hop { stroke: var(--danger); stroke-width: 2.5; }
+.rz-hear { stroke: var(--text-muted); stroke-width: 1.5; stroke-dasharray: 3 4; }
+.rz-obs > rect:first-child { fill: var(--surface); stroke: var(--heading); stroke-width: 2.5; }
+.rz-copy-path { fill: var(--surface-hover); stroke: var(--border-strong); stroke-width: 1.5; }
+.rz-figure .rz-obs text { font-size: 15px; }
+.rz-shortest .rz-copy-path { fill: var(--accent); fill-opacity: .3; stroke: var(--accent); stroke-width: 2.5; }
+.rz-hidden circle { stroke-dasharray: 4 4; }
+.rz-figure .rz-hidden text { font-family: var(--font-sans); fill: var(--danger-text); font-weight: 600; }
+.key.rz-rep { border-radius: 50%; background: var(--surface); border: 2px solid var(--heading); }
+.key.rz-obs { background: var(--surface); border: 2px solid var(--heading); border-radius: 2px; }
+.key.rz-shortest { background: var(--accent); }
+.rz-copies .rz-hop-0 { animation: rz-in-6 10s infinite; }
+.rz-copies .rz-hop-1, .rz-copies .rz-copy-0 { animation: rz-in-20 10s infinite; }
+.rz-copies .rz-hop-2, .rz-copies .rz-hop-3, .rz-copies .rz-copy-1 { animation: rz-in-34 10s infinite; }
+.rz-copies .rz-copy-2 { animation: rz-in-48 10s infinite; }
+.rz-copies .rz-shortest .rz-copy-path { animation: rz-short 10s infinite; }
+@keyframes rz-short { 0%, 59% { fill: var(--surface-hover); fill-opacity: 1; stroke: var(--border-strong); stroke-width: 1.5; } 62%, 92% { fill: var(--accent); fill-opacity: .3; stroke: var(--accent); stroke-width: 2.5; } }
+/* On a phone the figure is half its size: its text grows so it still reads. */
+@media (max-width: 539px) { .rz-figure text, .rz-figure .rz-rep text, .rz-figure .rz-obs text { font-size: 20px; } .rz-figure .rz-sender text, .rz-figure .rz-you text, .rz-figure .rz-path-label, .rz-figure .rz-ring-label, .rz-figure .rz-meter-label, .rz-figure .rz-thresh-label { font-size: 19px; } }
+@media (prefers-reduced-motion: reduce) {
+  .rz-figure *, .rz-figure *::before { animation: none !important; }
+  .rz-forged .rz-packet { transform: translateX(480px); }
+  .rz-gate .rz-level { transform: scaleY(.46); }
+  .rz-gate .rz-ring-0, .rz-gate .rz-ring-1 { fill-opacity: 0; stroke: var(--danger); }
+  .rz-gate .rz-ring-label-0, .rz-gate .rz-ring-label-1, .rz-gate .rz-ring-0, .rz-gate .rz-ring-1 { opacity: .55; }
+}

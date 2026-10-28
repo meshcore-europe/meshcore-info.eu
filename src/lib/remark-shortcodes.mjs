@@ -4,17 +4,21 @@
 //   {{< coverage >}}   the translation table from data/coverage.json
 //   {{< presets >}}    the European radio presets from data/presets.yaml
 //   {{< gain >}}       the beam of a dipole and a collinear, to scale (gain-diagram.mjs)
+//   {{< forged-path >}}, {{< dc-gate >}}, {{< copies >}}  the figures of the guide to a resilient mesh (resilient-diagrams.mjs)
 // The same mistakes fail the build as in themes/fieldmap/layouts/_shortcodes/: positional parameters, an
 // unknown type, a legal callout without verified=, a verified= that is not a date.
 import { readFileSync } from 'node:fs';
 import { ROOT, t, loadData } from './site.mjs';
 import { gainDiagram } from './gain-diagram.mjs';
+import { forgedPath, dcGate, copies } from './resilient-diagrams.mjs';
 
 const OPEN = /^\{\{<\s*callout\b([^>]*)>\}\}[ \t]*\n?/;
 const CLOSE = /\n?[ \t]*\{\{<\s*\/callout\s*>\}\}\s*$/;
 const COVERAGE = /^\{\{<\s*coverage\s*>\}\}$/;
 const PRESETS = /^\{\{<\s*presets\s*>\}\}$/;
 const GAIN = /^\{\{<\s*gain\s*>\}\}$/;
+const FIGURES = { 'forged-path': forgedPath, 'dc-gate': dcGate, copies };
+const FIGURE = /^\{\{<\s*(forged-path|dc-gate|copies)\s*>\}\}$/;
 const TYPES = ['tip', 'warning', 'legal'];
 
 function langOf(file) {
@@ -91,6 +95,10 @@ export function remarkShortcodes() {
       }
       if (kids[i].type === 'paragraph' && first && GAIN.test(first.value.trim()) && kids[i].children.length === 1) {
         kids[i] = { type: 'html', value: gainDiagram(lang) };
+        continue;
+      }
+      if (kids[i].type === 'paragraph' && first && FIGURE.test(first.value.trim()) && kids[i].children.length === 1) {
+        kids[i] = { type: 'html', value: FIGURES[FIGURE.exec(first.value.trim())[1]](lang) };
         continue;
       }
       if (kids[i].type !== 'paragraph' || !first) continue;

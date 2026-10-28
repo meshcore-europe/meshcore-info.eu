@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import { LANG_KEYS, fileSourceHash } from './site.mjs';
 
 // Pages this build renders in full; every other content page gets a stub until it is built.
-export const PORTED = new Set(['about', 'get-started', 'contribute', 'privacy', 'repeater-guide', 'devices', 'community', 'map', 'projects', 'blog', 'guides', 'guides/settings', 'guides/cli', 'guides/keygen', 'guides/channels', 'guides/antenna', 'guides/mctomqtt', 'guides/mqtt', 'guides/filter', 'firmware', 'firmware/changelog', 'firmware/console', 'firmware/flasher', 'network', 'press-kit', 'wallpapers']);
+export const PORTED = new Set(['about', 'get-started', 'contribute', 'privacy', 'repeater-guide', 'devices', 'community', 'map', 'projects', 'blog', 'guides', 'guides/settings', 'guides/cli', 'guides/keygen', 'guides/channels', 'guides/antenna', 'guides/mctomqtt', 'guides/mqtt', 'guides/filter', 'guides/resilient', 'firmware', 'firmware/changelog', 'firmware/console', 'firmware/flasher', 'network', 'press-kit', 'wallpapers']);
 export const isPorted = (slug) => PORTED.has(slug) || slug.startsWith('blog/');
 
 // The news posts in a language, newest first; a language without its own posts gets the English ones,

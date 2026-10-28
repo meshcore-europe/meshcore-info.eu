@@ -24,6 +24,7 @@ const STRIPS = {
   'guides/mctomqtt': live('observers'),
   'guides/mqtt': live('observers'),
   'guides/filter': live('repeaters'),
+  'guides/resilient': live('repeaters'),
   network: live('observers', 'packets', 'repeaters'),
   firmware: 'release',
   'firmware/flasher': 'release',
