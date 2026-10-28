@@ -1,11 +1,14 @@
-// A path without a language (/ or /press-kit/): send the visitor to that page in the best matching language
-// it exists in, and leave a note for web/js/lang-nudge.js to say so there. Runs in <head>; the language list in
-// <body> is the no-JS fallback.
+// A path without a language (/ or /press-kit/): send the visitor to that page in the language this device
+// remembers (web/js/lang-nudge.js keeps it), else in the best matching language it exists in, and then leave a
+// note for web/js/lang-nudge.js to say so there. Runs in <head>; the language list in <body> is the no-JS fallback.
 (function () {
-  try { sessionStorage.setItem('lang-picked', '1'); } catch (e) { /* no notice then */ }
   var root = document.documentElement;
   var langs = (root.getAttribute('data-langs') || '').split(' ');
   var path = root.getAttribute('data-path') || '';
+  var kept = null;
+  try { kept = localStorage.getItem('site-lang'); } catch (e) { /* storage blocked: pick again */ }
+  if (kept && langs.indexOf(kept) !== -1) { location.replace('/' + kept + '/' + path + location.hash); return; }
+  try { sessionStorage.setItem('lang-picked', '1'); } catch (e) { /* no notice then */ }
   var prefs = navigator.languages || [navigator.language || 'en'];
   for (var i = 0; i < prefs.length; i++) {
     var base = String(prefs[i] || '').toLowerCase().split('-')[0];

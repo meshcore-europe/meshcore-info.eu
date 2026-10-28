@@ -1,7 +1,12 @@
 // After the language picker chose this page's language (web/js/picker.js), say so once, in a callout that points
 // at the language menu in the header, with a button that opens it. The notice stays hidden without JavaScript or
-// when the visitor came here any other way.
+// when the visitor came here any other way. The language the visitor kept, or picked in the menu, stays on this
+// device (localStorage site-lang), so the picker uses it next time and the notice does not come back.
 (function () {
+  function keep(lang) { try { localStorage.setItem('site-lang', lang); } catch (e) { /* storage blocked */ } }
+  Array.prototype.forEach.call(document.querySelectorAll('#dmc-dd-lang a[hreflang]'), function (a) {
+    a.addEventListener('click', function () { keep(a.getAttribute('hreflang')); });
+  });
   var note = document.querySelector('[data-lang-nudge]');
   var trig = document.querySelector('button[aria-controls="dmc-dd-lang"]');
   if (!note || !trig) return;
@@ -26,6 +31,8 @@
     window.removeEventListener('resize', place);
   }
 
+  // Seen once is enough: this language stays until the visitor picks another in the menu.
+  keep(document.documentElement.getAttribute('lang').split('-')[0]);
   note.hidden = false;
   trig.classList.add('lang-nudged');
   place();
@@ -39,4 +46,5 @@
   });
   trig.addEventListener('click', close);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  document.addEventListener('click', function (e) { if (!note.contains(e.target)) close(); });
 })();
