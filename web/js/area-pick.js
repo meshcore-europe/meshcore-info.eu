@@ -66,8 +66,10 @@
 
   var first = countryOf(location.hash);
   show(first);
-  // An anchor without a country (#eu-uk) opens the page as without one, at the picker.
-  if (!first && location.hash) { history.replaceState(null, '', location.pathname + location.search); form.scrollIntoView(); }
+  // An anchor in the area list without a country (#eu-uk) opens the page as without one, at the picker. An
+  // anchor elsewhere on the page (#traffic) is left to the browser.
+  var hashed = location.hash.length > 1 && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+  if (!first && location.hash && (!hashed || page.contains(hashed))) { history.replaceState(null, '', location.pathname + location.search); form.scrollIntoView(); }
   // The anchor itself when it shows (an area), else its country's block (a line of the hidden EU/UK list).
   var target = first && document.getElementById(decodeURIComponent(location.hash.slice(1)));
   if (first) (target && target.offsetParent ? target : own[first] || eu).scrollIntoView();
