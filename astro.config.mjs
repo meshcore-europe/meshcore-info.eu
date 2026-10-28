@@ -7,6 +7,7 @@ import { BASE_URL } from './src/lib/site.mjs';
 import { remarkHeadingIds } from './src/lib/remark-heading-ids.mjs';
 import { remarkShortcodes } from './src/lib/remark-shortcodes.mjs';
 import { rehypeSiteLinks } from './src/lib/rehype-site-links.mjs';
+import { rehypeHeadingAnchors } from './src/lib/rehype-heading-anchors.mjs';
 import { finishBuild } from './src/lib/finish-build.mjs';
 
 export default defineConfig({
@@ -19,7 +20,7 @@ export default defineConfig({
   markdown: {
     // Plain <pre><code>: highlighters emit style="" attributes, which the CSP forbids.
     syntaxHighlight: false,
-    processor: unified({ remarkPlugins: [remarkHeadingIds, remarkShortcodes], rehypePlugins: [rehypeSiteLinks] }),
+    processor: unified({ remarkPlugins: [remarkHeadingIds, remarkShortcodes], rehypePlugins: [rehypeSiteLinks, rehypeHeadingAnchors] }),
   },
   integrations: [finishBuild()],
 });

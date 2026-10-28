@@ -65,6 +65,10 @@ if (planned) {
   // A page that opens with a picture behind its title, as the home does.
   hero = HEROES[slug] || null;
 }
+// A page with 4 or more sections opens with a list of them. The anchor plugin adds a "#" to each heading's
+// text, which the list leaves out.
+const sections = Content && ported ? headings.filter((h) => h.depth === 2 && h.slug).map((h) => ({ ...h, text: h.text.replace(/\s*#$/, '') })) : [];
+const toc = sections.length >= 4 ? sections : null;
 ---
 {!planned && slug === '' ? (
 <Base lang={lang} title={title} description={d.description} path="" langs={langs} enSource={langs.includes('en')} home>
@@ -135,6 +139,12 @@ if (planned) {
         {state.stale && <p>{t(lang, 'banner_stale')} <a href={`/en/${slug ? slug + '/' : ''}`} hreflang="en">{t(lang, 'read_english')}</a></p>}
         <p><a href={editUrl}>{t(lang, 'banner_improve')}</a></p>
       </aside>
+    )}
+    {toc && (
+      <nav class="toc" aria-labelledby="toc-title">
+        <h2 id="toc-title" class="toc-title">{t(lang, 'toc_title')}</h2>
+        <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
+      </nav>
     )}
     {ported ? <Fragment><div class="prose"><Content /></div>{d.layout && <DataSection lang={lang} layout={d.layout} />}{news && (
       <ul class="post-list">{news.map((p) => (

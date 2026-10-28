@@ -288,6 +288,15 @@ a.path-card { display: flex; flex-direction: column; gap: 6px; height: 100%; tex
 .area h5 { margin: 14px 0 6px; font-family: var(--label-font); font-size: var(--label-size); letter-spacing: var(--label-spacing); text-transform: var(--label-transform); font-weight: var(--fw-medium); color: var(--text-muted); }
 .anchor { color: var(--text-faint); text-decoration: none; font-weight: normal; }
 .anchor:hover { color: var(--accent); }
+/* The "#" after a page's headings shows on hover and on focus, so it does not crowd the heading text. */
+.prose :is(h2, h3) .anchor { opacity: 0; }
+.prose :is(h2, h3):hover .anchor, .prose .anchor:focus-visible { opacity: 1; }
+@media (hover: none) { .prose :is(h2, h3) .anchor { opacity: 1; } }
+/* A long page opens with its sections: one numbered list, in the page's own type. */
+.toc { margin: 24px 0 32px; padding: 16px 20px; border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.toc-title { margin: 0 0 8px; font-family: var(--label-font); font-size: var(--label-size); letter-spacing: var(--label-spacing); text-transform: var(--label-transform); font-weight: var(--fw-medium); color: var(--text-muted); }
+.toc ol { margin: 0; padding-left: 1.4em; }
+.toc li { margin: 4px 0; }
 .area-preset { display: grid; grid-template-columns: minmax(max-content, 15em) 1fr; gap: 4px 24px; margin: 12px 0; }
 .area-preset dt { color: var(--text-muted); }
 .area-preset dd { margin: 0; }
