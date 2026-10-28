@@ -1,32 +1,6 @@
 ---
-// The root: a language picker. web/js/picker.js sends the visitor to the best matching language;
-// the list of links is the fallback without JavaScript (as the Hugo alias page does).
-import { LANGUAGES, t } from '../lib/site.mjs';
+// The root: a language picker for the home.
+import Picker from '../components/Picker.astro';
+import { LANG_KEYS } from '../lib/site.mjs';
 ---
-<!doctype html>
-<html lang="en" data-langs={LANGUAGES.map((l) => l.key).join(' ')} data-theme="industrial">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>meshcore-info.eu</title>
-  <meta name="robots" content="noindex">
-  <meta name="color-scheme" content="light dark">
-  <script is:inline src="/js/picker.js"></script>
-  <script is:inline src="/shell/prefs.js"></script>
-  <link rel="stylesheet" href="/shell/fonts.css">
-  <link rel="stylesheet" href="/shell/tokens.css">
-  <link rel="stylesheet" href="/shell/base.css">
-  <link rel="stylesheet" href="/shell/shell.css">
-  <link rel="stylesheet" href="/css/site.css">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-</head>
-<body class="picker">
-  <main class="page container">
-    <p class="brand-mark">meshcore-info<span class="tld">.eu</span></p>
-    <h1>{t('en', 'picker_title')}</h1>
-    <ul class="lang-grid">
-      {LANGUAGES.map((l) => <li><a href={`/${l.key}/`} lang={l.locale} hreflang={l.locale}>{l.label}</a></li>)}
-    </ul>
-  </main>
-</body>
-</html>
+<Picker langs={LANG_KEYS} />

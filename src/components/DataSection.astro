@@ -57,9 +57,9 @@ if (layout === 'projects') projects = [...loadData('projects')].sort(byName);
     {communities.length ? (
       <Fragment>
         <nav class="country-jump" aria-label={t(lang, 'community_jump')}>
-          <ul class="tags">{countries.map((cc) => <li><a class="badge" href={`#country-${cc.toLowerCase()}`} title={t(lang, `country_${cc.toLowerCase()}`)}>{cc}</a></li>)}</ul>
+          <ul class="tags"><li><a class="badge" href="#countries">{t(lang, 'community_all')}</a></li>{countries.map((cc) => <li><a class="badge" href={`#country-${cc.toLowerCase()}`} title={t(lang, `country_${cc.toLowerCase()}`)}>{cc}</a></li>)}</ul>
         </nav>
-        <div class="countries">{countries.map((cc) => (
+        <div class="countries" id="countries">{countries.map((cc) => (
           <section class="country" id={`country-${cc.toLowerCase()}`}>
             <h2><span class="cc mono" aria-hidden="true">{cc}</span> {t(lang, `country_${cc.toLowerCase()}`)}</h2>
             <ul class="card-grid">{communities.filter((c) => c.country.toUpperCase() === cc).map((c) => <CommunityCard lang={lang} c={c} />)}</ul>
@@ -97,7 +97,7 @@ if (layout === 'projects') projects = [...loadData('projects')].sort(byName);
   <Fragment>
     {projects.length ? (
       <Fragment>
-        <FilterForm lang={lang} list="project-list" filters={[{ name: 'category', label: 'filter_category_q', options: opts(['app', 'tool', 'bridge', 'firmware', 'hardware', 'library'], 'project_cat_') }]} />
+        <FilterForm lang={lang} list="project-list" filters={[{ name: 'category', label: 'filter_category_q', options: opts(['app', 'tool', 'bridge', 'firmware', 'hardware', 'library', 'docs'], 'project_cat_') }]} />
         <h2 class="vh">{t(lang, 'projects_list_title')}</h2>
         <ul class="card-grid" id="project-list">{projects.map((p) => <ProjectCard lang={lang} p={p} />)}</ul>
       </Fragment>

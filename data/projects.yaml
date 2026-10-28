@@ -565,3 +565,14 @@
   desc_key: project.roadstr.desc
   status: active
   last_checked: 2026-10-23
+
+- id: domca-docs
+  name: DOMCA MeshCore documentation
+  category: docs
+  repo: "https://github.com/pe1hvh/meshcore-docs"
+  url: "https://docs.domca.nl/"
+  licence: CC-BY-SA-4.0
+  maintainer: pe1hvh
+  desc_key: project.domca-docs.desc
+  status: active
+  last_checked: 2026-10-28

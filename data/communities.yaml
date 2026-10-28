@@ -622,6 +622,18 @@
   added: 2026-10-23
   last_checked: 2026-10-23
 
+- id: de-hansemesh
+  country: DE
+  region: Hamburg and northern Germany
+  name: HanseMesh
+  links:
+  - type: website
+    url: "https://hansemesh.de/"
+  languages: [de]
+  desc_key: community.de-hansemesh.desc
+  added: 2026-10-28
+  last_checked: 2026-10-28
+
 - id: ie-mayo-mesh
   country: IE
   region: County Mayo

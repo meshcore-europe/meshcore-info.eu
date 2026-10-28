@@ -55,6 +55,7 @@ const pageDescription = description || t(lang, 'site_description');
   <script is:inline src="/js/checklist.js" defer></script>
   <script is:inline src="/js/placeholders.js" defer></script>
   <script is:inline src="/js/filters.js" defer></script>
+  <script is:inline src="/js/lang-nudge.js" defer></script>
   {(home || live) && <script is:inline src="/js/live-strip.js" defer></script>}
   {home && <script is:inline src="/js/hero-film.js" defer></script>}
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -67,5 +68,13 @@ const pageDescription = description || t(lang, 'site_description');
   <Fragment set:html={shellTop(opts)} />
   {home || overlay ? <main id="main" class="home"><slot /></main> : <main id="main" class="page container"><slot /></main>}
   <Fragment set:html={shellBottom(opts)} />
+  {/* In English in every language, as the language picker is: the picked language may not be the visitor's. */}
+  {!noAlternates && (
+    <aside class="lang-nudge" lang="en" role="status" data-lang-nudge hidden>
+      <p>{t('en', 'lang_nudge').replace('{language}', languageOf(lang).label)}</p>
+      <button class="btn" type="button" data-lang-nudge-open>{t('en', 'lang_nudge_change')}</button>
+      <button class="lang-nudge-close" type="button" aria-label={t('en', 'lang_nudge_close')} data-lang-nudge-close>×</button>
+    </aside>
+  )}
 </body>
 </html>

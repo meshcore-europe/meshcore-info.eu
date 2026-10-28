@@ -1,0 +1,21 @@
+---
+// Every page at its address without a language (/press-kit/, /blog/welcome/): a language picker that sends the
+// visitor to the page in their language, so a link shared without /en/ still lands. It offers the languages the
+// page exists in; a menu page without content yet exists in every language.
+import Picker from '../components/Picker.astro';
+import { allPages, translationsOf } from '../lib/pages.mjs';
+import { PLANNED } from '../lib/shell.mjs';
+import { LANG_KEYS } from '../lib/site.mjs';
+
+export async function getStaticPaths() {
+  const pages = await allPages();
+  const slugs = [...new Set(pages.map((p) => p.slug).filter(Boolean))];
+  return [
+    ...slugs.map((slug) => ({ params: { slug }, props: { langs: translationsOf(pages, slug) } })),
+    ...PLANNED.filter((p) => !slugs.includes(p.path)).map((p) => ({ params: { slug: p.path }, props: { langs: LANG_KEYS } })),
+  ];
+}
+
+const { slug } = Astro.params;
+---
+<Picker path={slug} langs={Astro.props.langs} />

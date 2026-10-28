@@ -225,3 +225,11 @@
   shows: [traffic, analyzer]
   desc_key: map.hopradar.desc
   last_checked: 2026-10-23
+
+- id: mapme-sh
+  name: mapme.sh
+  url: "https://mapme.sh/"
+  scope: europe
+  shows: [coverage]
+  desc_key: map.mapme-sh.desc
+  last_checked: 2026-10-28

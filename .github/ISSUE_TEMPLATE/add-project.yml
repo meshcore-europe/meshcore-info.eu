@@ -1,12 +1,12 @@
 name: Add a project
-description: List a community tool, app, bridge, firmware, hardware design or library.
+description: List a community tool, app, bridge, firmware, hardware design, library or documentation.
 title: "Add project: "
 labels: [project, needs-triage]
 body:
   - type: markdown
     attributes:
       value: |
-        Projects are listed with a short description and a link to their source code or their site. Shops, shop links and affiliate links are not listed.
+        Projects are listed with a short description and a link to their source code or their site. Shops are not listed. The project's own site may have affiliate or shop links; the links you give here must not.
   - type: input
     id: name
     attributes:
@@ -34,6 +34,7 @@ body:
         - firmware
         - hardware
         - library
+        - docs
     validations:
       required: true
   - type: input

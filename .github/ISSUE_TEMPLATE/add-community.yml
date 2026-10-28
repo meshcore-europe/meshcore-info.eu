@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        A maintainer checks the links and adds the group to `data/communities.yaml`. It then appears on the Community page in every language. Only public groups that anyone can join are listed.
+        A maintainer checks the links and adds the group to `data/communities.yaml`. It then appears on the Community page in every language. Only public groups that anyone can join are listed. The group's own site may have affiliate or shop links; the links you give here must not.
   - type: input
     id: name
     attributes:
