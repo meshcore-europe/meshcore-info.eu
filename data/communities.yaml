@@ -1,10 +1,11 @@
 # Community directory. Public groups only, each link checked
-# live on the last_checked date. Group websites are linked only when their
-# home page carries no affiliate, referral or shop links. Descriptions live in
+# live on the last_checked date. A group's own site may carry affiliate or
+# shop links; our link to it stays clean. Descriptions live in
 # data/i18n/en.json as community.<id>.desc.
 
 - id: nl-dutch-meshcore
   country: NL
+  scope: country
   name: Dutch MeshCore (DMC)
   links:
   - type: website
@@ -18,6 +19,7 @@
 
 - id: nl-meshcore-net
   country: NL
+  scope: country
   name: MeshCore Nederland (MeshCore-Net)
   links:
   - type: telegram
@@ -31,6 +33,7 @@
 
 - id: be-radio-actief
   country: BE
+  scope: country
   name: MeshCore België (Radio-Actief)
   links:
   - type: website
@@ -44,6 +47,7 @@
 
 - id: lu-meshcore-luxembourg
   country: LU
+  scope: country
   name: MeshCore Luxembourg
   links:
   - type: website
@@ -55,6 +59,7 @@
 
 - id: de-meshcore-de
   country: DE
+  scope: country
   name: MeshCore DE
   links:
   - type: telegram
@@ -69,6 +74,14 @@
 - id: de-berlin-chaos-mesh
   country: DE
   region: Berlin und Brandenburg
+  scope: region
+  location:
+    lat: 52.52
+    lon: 13.405
+    place: Berlin
+    source: "https://www.openstreetmap.org/relation/62422"
+    checked: 2026-10-28
+  radius_km: 100
   name: Berlin Chaos Mesh
   links:
   - type: forum
@@ -90,6 +103,14 @@
 - id: de-isarmesh
   country: DE
   region: München und Isartal (Bayern)
+  scope: region
+  location:
+    lat: 48.137
+    lon: 11.575
+    place: München
+    source: "https://www.openstreetmap.org/relation/62428"
+    checked: 2026-10-28
+  radius_km: 60
   name: isarmesh.de
   links:
   - type: forum
@@ -102,6 +123,14 @@
 - id: de-mesh-dresden
   country: DE
   region: Dresden (Sachsen)
+  scope: city
+  location:
+    lat: 51.05
+    lon: 13.738
+    place: Dresden
+    source: "https://www.openstreetmap.org/relation/191645"
+    checked: 2026-10-28
+  radius_km: 40
   name: Mesh Dresden
   links:
   - type: website
@@ -115,6 +144,7 @@
 
 - id: at-meshcore-austria
   country: AT
+  scope: country
   name: MeshCore Österreich
   links:
   - type: website
@@ -135,6 +165,7 @@
 
 - id: ch-meshcore-switzerland
   country: CH
+  scope: country
   name: MeshCore Switzerland
   links:
   - type: website
@@ -156,6 +187,7 @@
 
 - id: cz-meshcore-cr
   country: CZ
+  scope: country
   name: MeshCore ČR
   links:
   - type: website
@@ -176,6 +208,7 @@
 
 - id: sk-meshcore-slovensko
   country: SK
+  scope: country
   name: MeshCore Slovensko
   links:
   - type: website
@@ -189,6 +222,7 @@
 
 - id: pl-meshcore-polska
   country: PL
+  scope: country
   name: MeshCore Polska
   links:
   - type: website
@@ -204,6 +238,7 @@
 
 - id: fr-meshcore-france
   country: FR
+  scope: country
   name: MeshCore France
   links:
   - type: website
@@ -216,6 +251,14 @@
 - id: fr-mesh-idf
   country: FR
   region: Île-de-France
+  scope: region
+  location:
+    lat: 48.857
+    lon: 2.352
+    place: Paris
+    source: "https://www.openstreetmap.org/relation/8649"
+    checked: 2026-10-28
+  radius_km: 60
   name: Les Mesh en Île-de-France
   links:
   - type: website
@@ -229,6 +272,7 @@
 
 - id: it-meshcore-italia
   country: IT
+  scope: country
   name: MeshCore Italia
   links:
   - type: website
@@ -242,17 +286,23 @@
 
 - id: pt-meshcore-portugal
   country: PT
-  name: MeshCore Portugal
+  scope: country
+  name: MeshCore PT
   links:
+  - type: website
+    url: "https://www.meshcore.pt/"
   - type: telegram
     url: "https://t.me/addlist/UJOTC1fHFUxlZTY0"
-  languages: [pt]
+  channels:
+  - "#portugal"
+  languages: [pt, es, en]
   desc_key: community.pt-meshcore-portugal.desc
   added: 2026-10-02
-  last_checked: 2026-10-02
+  last_checked: 2026-10-30
 
 - id: dk-meshcore-dk
   country: DK
+  scope: country
   name: MeshCore.dk
   links:
   - type: website
@@ -264,6 +314,7 @@
 
 - id: se-meshat
   country: SE
+  scope: country
   name: Meshat.se (Sweden Mesh)
   links:
   - type: website
@@ -281,6 +332,7 @@
 
 - id: fi-mesh-finland
   country: FI
+  scope: country
   name: MeshCore Finland
   links:
   - type: website
@@ -294,6 +346,7 @@
 
 - id: no-meshwiki
   country: "NO"
+  scope: country
   name: MeshWiki.no
   links:
   - type: website
@@ -305,6 +358,7 @@
 
 - id: ee-estmesh
   country: EE
+  scope: country
   name: MeshCore Estonia / ESTMesh
   links:
   - type: website
@@ -325,6 +379,7 @@
 
 - id: lv-apraide
   country: LV
+  scope: country
   name: Apraide.lv
   links:
   - type: website
@@ -338,6 +393,7 @@
 
 - id: lt-atviras-tinklas
   country: LT
+  scope: country
   name: Atviras Tinklas
   links:
   - type: website
@@ -351,6 +407,7 @@
 
 - id: si-meshcore-slovenija
   country: SI
+  scope: country
   name: MeshCore Slovenija
   links:
   - type: website
@@ -364,6 +421,7 @@
 
 - id: bg-meshcore-bulgaria
   country: BG
+  scope: country
   name: Meshcore България
   links:
   - type: website
@@ -382,6 +440,7 @@
 
 - id: rs-meshcore-srbija
   country: RS
+  scope: country
   name: MeshCore Srbija
   links:
   - type: website
@@ -393,6 +452,7 @@
 
 - id: gr-meshcore-greece
   country: GR
+  scope: country
   name: MeshCore Greece
   links:
   - type: discord
@@ -404,6 +464,7 @@
 
 - id: gb-meshhub-uk
   country: GB
+  scope: country
   name: Mesh Hub UK
   links:
   - type: website
@@ -418,6 +479,14 @@
 - id: gb-scotmesh
   country: GB
   region: Scotland
+  scope: region
+  location:
+    lat: 56.4
+    lon: -3.43
+    place: Perth
+    source: "https://www.openstreetmap.org/relation/58446"
+    checked: 2026-10-28
+  radius_km: 200
   name: ScotMesh
   links:
   - type: website
@@ -433,6 +502,7 @@
 
 - id: ie-lora-project
   country: IE
+  scope: country
   name: LoRa Project Ireland
   links:
   - type: website
@@ -447,6 +517,14 @@
 - id: at-carinthiamesh
   country: AT
   region: Kärnten
+  scope: region
+  location:
+    lat: 46.624
+    lon: 14.308
+    place: Klagenfurt
+    source: "https://www.openstreetmap.org/relation/52345"
+    checked: 2026-10-28
+  radius_km: 60
   name: CarinthiaMesh
   links:
   - type: website
@@ -458,6 +536,7 @@
 
 - id: at-meshcore-austria-at
   country: AT
+  scope: country
   name: MeshCore-Austria.at
   links:
   - type: website
@@ -469,6 +548,7 @@
 
 - id: be-loramesh
   country: BE
+  scope: country
   name: LoraMesh België
   links:
   - type: website
@@ -481,6 +561,14 @@
 - id: be-meshpot
   country: BE
   region: Bruxelles et Wallonie
+  scope: region
+  location:
+    lat: 50.467
+    lon: 4.866
+    place: Namur
+    source: "https://www.openstreetmap.org/relation/90348"
+    checked: 2026-10-28
+  radius_km: 100
   name: Meshpot
   links:
   - type: website
@@ -492,6 +580,7 @@
 
 - id: fr-loramesh
   country: FR
+  scope: country
   name: LoraMesh France
   links:
   - type: website
@@ -504,6 +593,14 @@
 - id: de-bsmesh
   country: DE
   region: Braunschweig
+  scope: city
+  location:
+    lat: 52.265
+    lon: 10.524
+    place: Braunschweig
+    source: "https://www.openstreetmap.org/relation/62531"
+    checked: 2026-10-28
+  radius_km: 40
   name: BSmesh
   links:
   - type: website
@@ -516,6 +613,14 @@
 - id: de-bremesh
   country: DE
   region: Bremen und Bremerhaven
+  scope: region
+  location:
+    lat: 53.076
+    lon: 8.807
+    place: Bremen
+    source: "https://www.openstreetmap.org/relation/62559"
+    checked: 2026-10-28
+  radius_km: 60
   name: BreMesh
   links:
   - type: website
@@ -528,6 +633,14 @@
 - id: de-pemesh
   country: DE
   region: Peine
+  scope: city
+  location:
+    lat: 52.319
+    lon: 10.233
+    place: Peine
+    source: "https://www.openstreetmap.org/relation/62494"
+    checked: 2026-10-28
+  radius_km: 25
   name: PEmesh
   links:
   - type: website
@@ -540,6 +653,14 @@
 - id: de-muensterland
   country: DE
   region: Münsterland
+  scope: region
+  location:
+    lat: 51.963
+    lon: 7.625
+    place: Münster
+    source: "https://www.openstreetmap.org/relation/62591"
+    checked: 2026-10-28
+  radius_km: 65
   name: MeshCore Münsterland
   links:
   - type: website
@@ -552,6 +673,14 @@
 - id: de-mesh-rheinland
   country: DE
   region: Rheinland
+  scope: region
+  location:
+    lat: 50.938
+    lon: 6.96
+    place: Köln
+    source: "https://www.openstreetmap.org/relation/62578"
+    checked: 2026-10-28
+  radius_km: 70
   name: Mesh Rheinland
   links:
   - type: website
@@ -563,6 +692,7 @@
 
 - id: de-meshcore-de-wiki
   country: DE
+  scope: country
   name: MeshCore Wiki DE
   links:
   - type: website
@@ -575,6 +705,14 @@
 - id: de-ffnw
   country: DE
   region: Weser-Ems (Niedersachsen)
+  scope: region
+  location:
+    lat: 53.139
+    lon: 8.215
+    place: Oldenburg
+    source: "https://www.openstreetmap.org/relation/17580093"
+    checked: 2026-10-28
+  radius_km: 90
   name: Freifunk Nordwest
   links:
   - type: website
@@ -589,6 +727,14 @@
 - id: de-meshcore-dresden
   country: DE
   region: Dresden (Sachsen)
+  scope: city
+  location:
+    lat: 51.05
+    lon: 13.738
+    place: Dresden
+    source: "https://www.openstreetmap.org/relation/191645"
+    checked: 2026-10-28
+  radius_km: 40
   name: MeshCore Dresden
   links:
   - type: website
@@ -601,6 +747,14 @@
 - id: de-meshmitte
   country: DE
   region: Uslar (Niedersachsen)
+  scope: region
+  location:
+    lat: 51.651
+    lon: 9.678
+    place: Uslar
+    source: "https://www.openstreetmap.org/relation/1397829"
+    checked: 2026-10-28
+  radius_km: 50
   name: MeshMitte
   links:
   - type: website
@@ -613,6 +767,14 @@
 - id: de-saarmesh
   country: DE
   region: Saarland
+  scope: region
+  location:
+    lat: 49.384
+    lon: 6.954
+    place: Saarland
+    source: "https://www.openstreetmap.org/relation/62372"
+    checked: 2026-10-28
+  radius_km: 45
   name: SaarMesh
   links:
   - type: website
@@ -625,6 +787,14 @@
 - id: de-hansemesh
   country: DE
   region: Hamburg und Norddeutschland
+  scope: region
+  location:
+    lat: 53.551
+    lon: 10.001
+    place: Hamburg
+    source: "https://www.openstreetmap.org/relation/62782"
+    checked: 2026-10-28
+  radius_km: 120
   name: HanseMesh
   links:
   - type: website
@@ -636,9 +806,39 @@
   added: 2026-10-28
   last_checked: 2026-10-28
 
+- id: de-mesh-weiterstadt
+  country: DE
+  region: Weiterstadt
+  scope: city
+  location:
+    lat: 49.918
+    lon: 8.592
+    place: Weiterstadt
+    source: "https://www.openstreetmap.org/relation/452419"
+    checked: 2026-10-30
+  radius_km: 15
+  name: Mesh@Weiterstadt
+  links:
+  - type: website
+    url: "https://mesh.weiterstadt.social/"
+  channels:
+  - "#weiterstadt"
+  languages: [de, en]
+  desc_key: community.de-mesh-weiterstadt.desc
+  added: 2026-10-30
+  last_checked: 2026-10-30
+
 - id: ie-mayo-mesh
   country: IE
   region: County Mayo
+  scope: region
+  location:
+    lat: 53.857
+    lon: -9.298
+    place: Castlebar
+    source: "https://www.openstreetmap.org/relation/338539"
+    checked: 2026-10-28
+  radius_km: 50
   name: Mayo Mesh
   links:
   - type: website
@@ -651,6 +851,14 @@
 - id: it-lora-brescia
   country: IT
   region: Brescia
+  scope: city
+  location:
+    lat: 45.54
+    lon: 10.22
+    place: Brescia
+    source: "https://www.openstreetmap.org/search?query=Brescia"
+    checked: 2026-10-28
+  radius_km: 50
   name: LoRa Brescia
   links:
   - type: website
@@ -662,6 +870,7 @@
 
 - id: it-meshcore-ita
   country: IT
+  scope: country
   name: MeshCore ITA
   links:
   - type: website
@@ -673,6 +882,7 @@
 
 - id: nl-meshwiki
   country: NL
+  scope: country
   name: MeshWiki NL
   links:
   - type: website
@@ -684,6 +894,7 @@
 
 - id: pl-lora-meshcore-polska
   country: PL
+  scope: country
   name: LoRa MeshCore Polska
   links:
   - type: website
@@ -696,6 +907,14 @@
 - id: pl-meshcore-podlasie
   country: PL
   region: Podlasie
+  scope: region
+  location:
+    lat: 53.128
+    lon: 23.147
+    place: Białystok
+    source: "https://www.openstreetmap.org/relation/224461"
+    checked: 2026-10-28
+  radius_km: 90
   name: MeshCore Podlasie
   links:
   - type: website
@@ -708,6 +927,14 @@
 - id: pl-meshgo
   country: PL
   region: Pomorze (Trójmiasto)
+  scope: region
+  location:
+    lat: 54.352
+    lon: 18.646
+    place: Gdańsk
+    source: "https://www.openstreetmap.org/search?query=Gda%C5%84sk"
+    checked: 2026-10-28
+  radius_km: 60
   name: MeshGo (MeshCore Pomorze)
   links:
   - type: website
@@ -720,6 +947,14 @@
 - id: ro-brasov-mesh
   country: RO
   region: Brașov
+  scope: city
+  location:
+    lat: 45.653
+    lon: 25.611
+    place: Brașov
+    source: "https://www.openstreetmap.org/relation/10367676"
+    checked: 2026-10-28
+  radius_km: 40
   name: Brașov Mesh
   links:
   - type: website
@@ -732,6 +967,14 @@
 - id: ro-meshcore-iasi
   country: RO
   region: Iași
+  scope: city
+  location:
+    lat: 47.162
+    lon: 27.584
+    place: Iași
+    source: "https://www.openstreetmap.org/relation/1207838"
+    checked: 2026-10-28
+  radius_km: 40
   name: MeshCore Iași
   links:
   - type: website
@@ -744,6 +987,14 @@
 - id: es-meshcore-catalunya
   country: ES
   region: Catalunya
+  scope: region
+  location:
+    lat: 41.852
+    lon: 1.575
+    place: Catalunya
+    source: "https://www.openstreetmap.org/relation/349053"
+    checked: 2026-10-28
+  radius_km: 150
   name: MeshCore Catalunya
   links:
   - type: website
@@ -756,6 +1007,14 @@
 - id: es-nomadmesh
   country: ES
   region: Alpujarras (Andalucía)
+  scope: region
+  location:
+    lat: 36.99
+    lon: -3.15
+    place: Alpujarras
+    source: "https://www.openstreetmap.org/relation/347311"
+    checked: 2026-10-28
+  radius_km: 40
   name: NomadMesh
   links:
   - type: website
@@ -767,6 +1026,7 @@
 
 - id: ua-meshcore-ua
   country: UA
+  scope: country
   name: MeshCore UA
   links:
   - type: website
@@ -779,6 +1039,14 @@
 - id: gb-ipnet
   country: GB
   region: Suffolk, Essex, Norfolk and Cambridgeshire
+  scope: region
+  location:
+    lat: 52.246
+    lon: 0.713
+    place: Bury St Edmunds
+    source: "https://www.openstreetmap.org/relation/28595"
+    checked: 2026-10-28
+  radius_km: 100
   name: IPNet
   links:
   - type: website
@@ -791,6 +1059,14 @@
 - id: gb-meshcore-wales
   country: GB
   region: Wales
+  scope: region
+  location:
+    lat: 52.293
+    lon: -3.739
+    place: Wales
+    source: "https://www.openstreetmap.org/relation/58437"
+    checked: 2026-10-28
+  radius_km: 140
   name: MeshCore.Wales
   links:
   - type: website
@@ -803,6 +1079,14 @@
 - id: gb-northmesh
   country: GB
   region: Northern England
+  scope: region
+  location:
+    lat: 54.0
+    lon: -1.8
+    place: Northern England
+    source: "https://www.openstreetmap.org/search?query=Northern+England"
+    checked: 2026-10-28
+  radius_km: 150
   name: NorthMesh
   links:
   - type: website
@@ -814,6 +1098,7 @@
 
 - id: nl-signal
   country: NL
+  scope: country
   name: MeshCore NL on Signal
   links:
   - type: signal
@@ -825,6 +1110,14 @@
 - id: nl-limburg-whatsapp
   country: NL
   region: Limburg
+  scope: region
+  location:
+    lat: 51.19
+    lon: 5.99
+    place: Limburg
+    source: "https://www.openstreetmap.org/relation/47793"
+    checked: 2026-10-28
+  radius_km: 50
   name: MeshCore Limburg on WhatsApp
   links:
   - type: whatsapp

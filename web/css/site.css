@@ -628,3 +628,12 @@ a.path-card { display: flex; flex-direction: column; gap: 6px; height: 100%; tex
   .rz-gate .rz-ring-0, .rz-gate .rz-ring-1 { fill-opacity: 0; stroke: var(--danger); }
   .rz-gate .rz-ring-label-0, .rz-gate .rz-ring-label-1, .rz-gate .rz-ring-0, .rz-gate .rz-ring-1 { opacity: .55; }
 }
+
+/* Radius search on /community/ (web/js/radius.js). Hidden until the script runs. */
+.community-search { margin: 24px 0; }
+.community-search[hidden], .community-results[hidden] { display: none; }
+.community-search .filters { margin: 12px 0 8px; }
+.community-results { margin: 16px 0; }
+.community-block { margin: 16px 0 24px; }
+.community-block h3 { margin: 0 0 12px; }
+.community-distance { display: inline-block; margin: 0 0 8px; font-family: var(--font-mono); }

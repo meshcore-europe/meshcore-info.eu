@@ -9,7 +9,8 @@ const askAt = (l) => {
   return g;
 };
 ---
-<li class="card community-card" id={`community-${c.id}`}>
+<li class="card community-card" id={`community-${c.id}`} data-id={c.id} data-country={c.country.toUpperCase()} data-scope={c.scope}
+  data-lat={c.location?.lat} data-lon={c.location?.lon} data-radius={c.radius_km} data-place={c.location?.place}>
   <h3>{c.name}</h3>
   {c.region && <p class="muted">{c.region}</p>}
   {c.desc_key && <p>{t(lang, c.desc_key)}</p>}

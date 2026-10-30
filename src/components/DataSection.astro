@@ -6,6 +6,7 @@ import { t, PARAMS, loadData } from '../lib/site.mjs';
 import FilterForm from './FilterForm.astro';
 import DeviceCard from './DeviceCard.astro';
 import CommunityCard from './CommunityCard.astro';
+import CommunitySearch from './CommunitySearch.astro';
 import MapCard from './MapCard.astro';
 import ProjectCard from './ProjectCard.astro';
 import GuideHub from './GuideHub.astro';
@@ -56,6 +57,7 @@ if (layout === 'projects') projects = [...loadData('projects')].sort(byName);
   <Fragment>
     {communities.length ? (
       <Fragment>
+        <CommunitySearch lang={lang} countries={countries} />
         <nav class="country-jump" aria-label={t(lang, 'community_jump')}>
           <ul class="tags"><li><a class="badge" href="#countries">{t(lang, 'community_all')}</a></li>{countries.map((cc) => <li><a class="badge" href={`#country-${cc.toLowerCase()}`} title={t(lang, `country_${cc.toLowerCase()}`)}>{cc}</a></li>)}</ul>
         </nav>

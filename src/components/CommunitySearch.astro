@@ -1,0 +1,45 @@
+---
+// The radius search above the country list on /community/. web/js/radius.js shows it and fills the
+// result list from the cards below (data-* on each card); web/js/radius-core.js has the distance and
+// the match rule. Hidden until the script runs, so without JavaScript only the country list shows.
+// Place files: web/places/<cc>.json, built by tools/build_places.py from GeoNames (CC BY 4.0).
+import { t, PARAMS } from '../lib/site.mjs';
+const { lang, countries } = Astro.props;
+const keys = ['search_loading', 'search_error', 'search_unknown', 'search_need_country', 'search_pick', 'search_denied',
+  'search_here', 'search_results', 'search_covers', 'search_national', 'search_none', 'search_none_country', 'search_nearest', 'search_km'];
+const msg = Object.fromEntries(keys.map((k) => [`data-${k.replace(/_/g, '-')}`, t(lang, `community_${k}`)]));
+const names = Object.fromEntries(countries.map((cc) => [`data-country-${cc.toLowerCase()}`, t(lang, `country_${cc.toLowerCase()}`)]));
+---
+<section class="community-search" data-community-search data-list="#countries" {...msg} {...names} hidden>
+  <h2>{t(lang, 'community_search_title')}</h2>
+  <form class="filters" data-search-form>
+    <div class="filters-row">
+      <label>{t(lang, 'community_search_country')}
+        <select name="country" required>
+          <option value="">{t(lang, 'community_search_country_pick')}</option>
+          {countries.map((cc) => <option value={cc}>{t(lang, `country_${cc.toLowerCase()}`)}</option>)}
+        </select>
+      </label>
+      <label class="filter-search">{t(lang, 'community_search_place')}<input type="text" name="place" autocomplete="off" spellcheck="false" /></label>
+      <label>{t(lang, 'community_search_radius')}
+        <select name="radius">
+          {[25, 50, 100, 200].map((n) => <option value={n} selected={n === 50}>{t(lang, 'community_search_km').replace('{n}', String(n))}</option>)}
+        <option value="all">{t(lang, 'community_search_all')}</option>
+        </select>
+      </label>
+      <button type="submit" class="btn btn-primary">{t(lang, 'community_search_go')}</button>
+      <button type="button" class="btn" data-locate>{t(lang, 'community_search_locate')}</button>
+    </div>
+  </form>
+  <p class="meta">{t(lang, 'community_search_privacy')}</p>
+  <div class="community-results" data-results aria-live="polite" hidden></div>
+  <template data-missing>
+    <section class="note cta-box">
+      <h3>{t(lang, 'community_missing_title')}</h3>
+      <p>{t(lang, 'community_missing_body')}</p>
+      <p><a class="btn btn-primary" href={`${PARAMS.repo}/issues/new?template=add-community.yml`}>{t(lang, 'community_missing_cta')}</a></p>
+    </section>
+  </template>
+  <p class="meta">{t(lang, 'community_search_credit')} <a href="https://www.geonames.org/">GeoNames</a></p>
+</section>
+<script is:inline type="module" src="/js/radius.js"></script>
