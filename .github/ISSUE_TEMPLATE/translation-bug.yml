@@ -27,6 +27,23 @@ body:
         - Magyar (hu)
         - Română (ro)
         - Ελληνικά (el)
+        - Frysk (fy)
+        - Български (bg)
+        - Hrvatski (hr)
+        - Eesti (et)
+        - Gaeilge (ga)
+        - Latviešu (lv)
+        - Lietuvių (lt)
+        - Malti (mt)
+        - Slovenčina (sk)
+        - Slovenščina (sl)
+        - Srpski (sr)
+        - Українська (uk)
+        - Català (ca)
+        - Euskara (eu)
+        - Galego (gl)
+        - Cymraeg (cy)
+        - Lëtzebuergesch (lb)
     validations:
       required: true
   - type: input

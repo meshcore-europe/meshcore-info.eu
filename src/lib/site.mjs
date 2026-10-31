@@ -14,13 +14,19 @@ export const BASE_URL = config.baseURL;
 export const PARAMS = config.params;
 
 // In weight order, English first. locale is the lang and hreflang value.
-export const LANGUAGES = Object.entries(config.languages)
+const ALL = Object.entries(config.languages)
   .sort(([, a], [, b]) => (a.weight ?? 0) - (b.weight ?? 0))
   .map(([key, l]) => ({ key, label: l.label, locale: l.locale ?? key }));
+const strings = Object.fromEntries(ALL.map(({ key: k }) => [k, JSON.parse(readFileSync(`${ROOT}data/i18n/${k}.json`, 'utf8'))]));
+// A language goes on the site once its home page is translated: a new language starts
+// with a strings file that holds only _meta and no pages, and until then nobody sees it.
+const started = (k) => k === 'en' || existsSync(`${ROOT}content/${k}/_index.md`);
+export const LANGUAGES = ALL.filter((l) => started(l.key));
 export const LANG_KEYS = LANGUAGES.map((l) => l.key);
 export const languageOf = (key) => LANGUAGES.find((l) => l.key === key);
-
-const strings = Object.fromEntries(LANG_KEYS.map((k) => [k, JSON.parse(readFileSync(`${ROOT}data/i18n/${k}.json`, 'utf8'))]));
+// Languages offered by the visitor's area (data/regional_languages.yaml), once they are on the site.
+export const REGIONAL = parseYaml(readFileSync(ROOT + 'data/regional_languages.yaml', 'utf8'))
+  .filter((r) => LANG_KEYS.includes(r.id));
 
 // A string in a language, else English. A key English lacks fails the build, as in Hugo.
 // Translated values are { value, _ai, _seeded } or plain strings (human).

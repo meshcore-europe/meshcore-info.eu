@@ -1,0 +1,35 @@
+# Languages offered by area, not by browser language: most readers of these
+# languages have a browser in Dutch, Spanish, English or French. A visitor in
+# one of the areas sees a note once, in that language, that offers the same
+# page in it. country is the ISO 3166-1 code, region (optional) the ISO
+# 3166-2 subdivision without the country, as Cloudflare gives them
+# (request.cf.country and request.cf.regionCode). Without region the whole
+# country counts. A language shows only once it is translated.
+- id: fy
+  areas:
+    - { country: NL, region: FR }   # Fryslân
+- id: ca
+  areas:
+    - { country: ES, region: CT }   # Catalonia
+    - { country: ES, region: VC }   # Valencian Community
+    - { country: ES, region: IB }   # Balearic Islands
+    - { country: AD }               # Andorra
+- id: eu
+  areas:
+    - { country: ES, region: PV }   # Basque Country
+    - { country: ES, region: NC }   # Navarre
+- id: gl
+  areas:
+    - { country: ES, region: GA }   # Galicia
+- id: cy
+  areas:
+    - { country: GB, region: WLS }  # Wales
+- id: lb
+  areas:
+    - { country: LU }
+- id: ga
+  areas:
+    - { country: IE }
+- id: mt
+  areas:
+    - { country: MT }

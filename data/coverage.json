@@ -6,15 +6,15 @@
       "locale": "nl",
       "strings": {
         "human": 0,
-        "ai": 989,
-        "missing": 50,
-        "total": 1039
+        "ai": 1040,
+        "missing": 0,
+        "total": 1040
       },
       "pages": {
-        "human": 1,
-        "ai": 16,
-        "stale": 11,
-        "missing": 1,
+        "human": 0,
+        "ai": 29,
+        "stale": 0,
+        "missing": 0,
         "total": 29
       }
     },
@@ -24,9 +24,9 @@
       "locale": "de",
       "strings": {
         "human": 0,
-        "ai": 989,
-        "missing": 50,
-        "total": 1039
+        "ai": 988,
+        "missing": 52,
+        "total": 1040
       },
       "pages": {
         "human": 0,
@@ -42,9 +42,9 @@
       "locale": "fr",
       "strings": {
         "human": 0,
-        "ai": 989,
-        "missing": 50,
-        "total": 1039
+        "ai": 988,
+        "missing": 52,
+        "total": 1040
       },
       "pages": {
         "human": 0,
@@ -60,9 +60,9 @@
       "locale": "es",
       "strings": {
         "human": 0,
-        "ai": 989,
-        "missing": 50,
-        "total": 1039
+        "ai": 988,
+        "missing": 52,
+        "total": 1040
       },
       "pages": {
         "human": 0,
@@ -78,9 +78,9 @@
       "locale": "it",
       "strings": {
         "human": 0,
-        "ai": 989,
-        "missing": 50,
-        "total": 1039
+        "ai": 988,
+        "missing": 52,
+        "total": 1040
       },
       "pages": {
         "human": 0,
@@ -96,9 +96,9 @@
       "locale": "pl",
       "strings": {
         "human": 0,
-        "ai": 989,
-        "missing": 50,
-        "total": 1039
+        "ai": 988,
+        "missing": 52,
+        "total": 1040
       },
       "pages": {
         "human": 0,
@@ -114,9 +114,9 @@
       "locale": "pt-PT",
       "strings": {
         "human": 0,
-        "ai": 989,
-        "missing": 50,
-        "total": 1039
+        "ai": 988,
+        "missing": 52,
+        "total": 1040
       },
       "pages": {
         "human": 0,
@@ -132,9 +132,9 @@
       "locale": "cs",
       "strings": {
         "human": 0,
-        "ai": 989,
-        "missing": 50,
-        "total": 1039
+        "ai": 988,
+        "missing": 52,
+        "total": 1040
       },
       "pages": {
         "human": 0,
@@ -150,9 +150,9 @@
       "locale": "sv",
       "strings": {
         "human": 0,
-        "ai": 989,
-        "missing": 50,
-        "total": 1039
+        "ai": 988,
+        "missing": 52,
+        "total": 1040
       },
       "pages": {
         "human": 0,
@@ -168,9 +168,9 @@
       "locale": "da",
       "strings": {
         "human": 0,
-        "ai": 989,
-        "missing": 50,
-        "total": 1039
+        "ai": 988,
+        "missing": 52,
+        "total": 1040
       },
       "pages": {
         "human": 0,
@@ -186,9 +186,9 @@
       "locale": "nb",
       "strings": {
         "human": 0,
-        "ai": 989,
-        "missing": 50,
-        "total": 1039
+        "ai": 988,
+        "missing": 52,
+        "total": 1040
       },
       "pages": {
         "human": 0,
@@ -204,9 +204,9 @@
       "locale": "fi",
       "strings": {
         "human": 0,
-        "ai": 989,
-        "missing": 50,
-        "total": 1039
+        "ai": 988,
+        "missing": 52,
+        "total": 1040
       },
       "pages": {
         "human": 0,
@@ -222,9 +222,9 @@
       "locale": "hu",
       "strings": {
         "human": 0,
-        "ai": 989,
-        "missing": 50,
-        "total": 1039
+        "ai": 988,
+        "missing": 52,
+        "total": 1040
       },
       "pages": {
         "human": 0,
@@ -240,9 +240,9 @@
       "locale": "ro",
       "strings": {
         "human": 0,
-        "ai": 989,
-        "missing": 50,
-        "total": 1039
+        "ai": 988,
+        "missing": 52,
+        "total": 1040
       },
       "pages": {
         "human": 0,
@@ -258,15 +258,321 @@
       "locale": "el",
       "strings": {
         "human": 0,
-        "ai": 989,
-        "missing": 50,
-        "total": 1039
+        "ai": 988,
+        "missing": 52,
+        "total": 1040
       },
       "pages": {
         "human": 0,
         "ai": 17,
         "stale": 11,
         "missing": 1,
+        "total": 29
+      }
+    },
+    {
+      "lang": "fy",
+      "label": "Frysk",
+      "locale": "fy",
+      "strings": {
+        "human": 0,
+        "ai": 1040,
+        "missing": 0,
+        "total": 1040
+      },
+      "pages": {
+        "human": 0,
+        "ai": 29,
+        "stale": 0,
+        "missing": 0,
+        "total": 29
+      }
+    },
+    {
+      "lang": "bg",
+      "label": "Български",
+      "locale": "bg",
+      "strings": {
+        "human": 0,
+        "ai": 0,
+        "missing": 1040,
+        "total": 1040
+      },
+      "pages": {
+        "human": 0,
+        "ai": 0,
+        "stale": 0,
+        "missing": 29,
+        "total": 29
+      }
+    },
+    {
+      "lang": "hr",
+      "label": "Hrvatski",
+      "locale": "hr",
+      "strings": {
+        "human": 0,
+        "ai": 0,
+        "missing": 1040,
+        "total": 1040
+      },
+      "pages": {
+        "human": 0,
+        "ai": 0,
+        "stale": 0,
+        "missing": 29,
+        "total": 29
+      }
+    },
+    {
+      "lang": "et",
+      "label": "Eesti",
+      "locale": "et",
+      "strings": {
+        "human": 0,
+        "ai": 0,
+        "missing": 1040,
+        "total": 1040
+      },
+      "pages": {
+        "human": 0,
+        "ai": 0,
+        "stale": 0,
+        "missing": 29,
+        "total": 29
+      }
+    },
+    {
+      "lang": "ga",
+      "label": "Gaeilge",
+      "locale": "ga",
+      "strings": {
+        "human": 0,
+        "ai": 0,
+        "missing": 1040,
+        "total": 1040
+      },
+      "pages": {
+        "human": 0,
+        "ai": 0,
+        "stale": 0,
+        "missing": 29,
+        "total": 29
+      }
+    },
+    {
+      "lang": "lv",
+      "label": "Latviešu",
+      "locale": "lv",
+      "strings": {
+        "human": 0,
+        "ai": 0,
+        "missing": 1040,
+        "total": 1040
+      },
+      "pages": {
+        "human": 0,
+        "ai": 0,
+        "stale": 0,
+        "missing": 29,
+        "total": 29
+      }
+    },
+    {
+      "lang": "lt",
+      "label": "Lietuvių",
+      "locale": "lt",
+      "strings": {
+        "human": 0,
+        "ai": 0,
+        "missing": 1040,
+        "total": 1040
+      },
+      "pages": {
+        "human": 0,
+        "ai": 0,
+        "stale": 0,
+        "missing": 29,
+        "total": 29
+      }
+    },
+    {
+      "lang": "mt",
+      "label": "Malti",
+      "locale": "mt",
+      "strings": {
+        "human": 0,
+        "ai": 0,
+        "missing": 1040,
+        "total": 1040
+      },
+      "pages": {
+        "human": 0,
+        "ai": 0,
+        "stale": 0,
+        "missing": 29,
+        "total": 29
+      }
+    },
+    {
+      "lang": "sk",
+      "label": "Slovenčina",
+      "locale": "sk",
+      "strings": {
+        "human": 0,
+        "ai": 0,
+        "missing": 1040,
+        "total": 1040
+      },
+      "pages": {
+        "human": 0,
+        "ai": 0,
+        "stale": 0,
+        "missing": 29,
+        "total": 29
+      }
+    },
+    {
+      "lang": "sl",
+      "label": "Slovenščina",
+      "locale": "sl",
+      "strings": {
+        "human": 0,
+        "ai": 0,
+        "missing": 1040,
+        "total": 1040
+      },
+      "pages": {
+        "human": 0,
+        "ai": 0,
+        "stale": 0,
+        "missing": 29,
+        "total": 29
+      }
+    },
+    {
+      "lang": "sr",
+      "label": "Srpski",
+      "locale": "sr-Latn",
+      "strings": {
+        "human": 0,
+        "ai": 0,
+        "missing": 1040,
+        "total": 1040
+      },
+      "pages": {
+        "human": 0,
+        "ai": 0,
+        "stale": 0,
+        "missing": 29,
+        "total": 29
+      }
+    },
+    {
+      "lang": "uk",
+      "label": "Українська",
+      "locale": "uk",
+      "strings": {
+        "human": 0,
+        "ai": 0,
+        "missing": 1040,
+        "total": 1040
+      },
+      "pages": {
+        "human": 0,
+        "ai": 0,
+        "stale": 0,
+        "missing": 29,
+        "total": 29
+      }
+    },
+    {
+      "lang": "ca",
+      "label": "Català",
+      "locale": "ca",
+      "strings": {
+        "human": 0,
+        "ai": 0,
+        "missing": 1040,
+        "total": 1040
+      },
+      "pages": {
+        "human": 0,
+        "ai": 0,
+        "stale": 0,
+        "missing": 29,
+        "total": 29
+      }
+    },
+    {
+      "lang": "eu",
+      "label": "Euskara",
+      "locale": "eu",
+      "strings": {
+        "human": 0,
+        "ai": 0,
+        "missing": 1040,
+        "total": 1040
+      },
+      "pages": {
+        "human": 0,
+        "ai": 0,
+        "stale": 0,
+        "missing": 29,
+        "total": 29
+      }
+    },
+    {
+      "lang": "gl",
+      "label": "Galego",
+      "locale": "gl",
+      "strings": {
+        "human": 0,
+        "ai": 0,
+        "missing": 1040,
+        "total": 1040
+      },
+      "pages": {
+        "human": 0,
+        "ai": 0,
+        "stale": 0,
+        "missing": 29,
+        "total": 29
+      }
+    },
+    {
+      "lang": "cy",
+      "label": "Cymraeg",
+      "locale": "cy",
+      "strings": {
+        "human": 0,
+        "ai": 0,
+        "missing": 1040,
+        "total": 1040
+      },
+      "pages": {
+        "human": 0,
+        "ai": 0,
+        "stale": 0,
+        "missing": 29,
+        "total": 29
+      }
+    },
+    {
+      "lang": "lb",
+      "label": "Lëtzebuergesch",
+      "locale": "lb",
+      "strings": {
+        "human": 0,
+        "ai": 0,
+        "missing": 1040,
+        "total": 1040
+      },
+      "pages": {
+        "human": 0,
+        "ai": 0,
+        "stale": 0,
+        "missing": 29,
         "total": 29
       }
     }

@@ -6,7 +6,7 @@
 //   langs (the languages the page exists in, for hreflang and the language menu),
 //   enSource (whether an English page exists; it is the x-default), noAlternates (404 pages).
 import { existsSync } from 'node:fs';
-import { BASE_URL, ROOT, languageOf, t } from '../lib/site.mjs';
+import { BASE_URL, LANGUAGES, REGIONAL, ROOT, languageOf, t } from '../lib/site.mjs';
 import { shellTop, shellBottom } from '../lib/shell.mjs';
 
 const { lang, title, description, path = '', langs = [lang], enSource = true, noAlternates = false, home = false, overlay = false, live = false } = Astro.props;
@@ -19,6 +19,10 @@ const opts = { lang, alternates, path: noAlternates ? null : path };
 const cardName = path ? path.replace(/\//g, '-') : 'home';
 const card = abs(`/media/og/${existsSync(`${ROOT}web/media/og/${cardName}.jpg`) ? cardName : 'home'}.jpg`);
 const pageDescription = description || t(lang, 'site_description');
+// The language menu holds every other language; the note counts them.
+const others = (l) => t(l, 'lang_nudge_others').replace('{count}', String(LANGUAGES.length - 1));
+// A regional language other than the page's, with the same page in it where it exists.
+const regional = REGIONAL.filter((r) => r.id !== lang).map((r) => ({ ...r, ...languageOf(r.id), href: langs.includes(r.id) ? href(r.id) : `/${r.id}/` }));
 ---
 <!doctype html>
 <html lang={locale} data-lang="fixed" data-theme="industrial">
@@ -72,9 +76,19 @@ const pageDescription = description || t(lang, 'site_description');
   {!noAlternates && (
     <aside class="lang-nudge" lang="en" role="status" data-lang-nudge hidden>
       <p>{t('en', 'lang_nudge').replace('{language}', languageOf(lang).label)}</p>
-      <button class="btn" type="button" data-lang-nudge-open>{t('en', 'lang_nudge_change')}</button>
+      <button class="btn btn-primary" type="button" lang={locale} data-lang-nudge-keep>{languageOf(lang).label}</button>
+      <button class="btn btn-quiet" type="button" data-lang-nudge-open>{others('en')}</button>
       <button class="lang-nudge-close" type="button" aria-label={t('en', 'lang_nudge_close')} data-lang-nudge-close>×</button>
     </aside>
   )}
+  {/* Offered once to a visitor in the language's area (web/js/lang-nudge.js asks /where), in that language. */}
+  {!noAlternates && regional.map((r) => (
+    <aside class="lang-nudge" lang={r.locale} role="status" data-lang-region={JSON.stringify(r.areas)} hidden>
+      <p>{t(r.id, 'lang_nudge_region').replace('{language}', r.label)}</p>
+      <a class="btn btn-primary" href={r.href} hreflang={r.locale} data-lang-nudge-go={r.id}>{r.label}</a>
+      <button class="btn btn-quiet" type="button" data-lang-nudge-open>{others(r.id)}</button>
+      <button class="lang-nudge-close" type="button" aria-label={t(r.id, 'lang_nudge_close')} data-lang-nudge-close>×</button>
+    </aside>
+  ))}
 </body>
 </html>

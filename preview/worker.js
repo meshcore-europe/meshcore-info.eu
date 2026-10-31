@@ -6,6 +6,7 @@
 import { cacheFor } from './cache.js';
 import { fwProxy } from './fw-proxy.js';
 import { cardPath, onOrigin } from './og.js';
+import { where } from './where.js';
 
 const NOINDEX = 'noindex, nofollow, noarchive';
 const INDEXED_HOST = 'meshcore-info.eu';
@@ -26,6 +27,7 @@ export default {
       });
     }
     if (url.pathname === '/fw-proxy') return fwProxy(request);
+    if (url.pathname === '/where') return where(request);
     const card = cardPath(url.pathname, new Date());
     const asset = await env.ASSETS.fetch(card === url.pathname ? request : new Request(new URL(card, url), request));
     let response = new Response(asset.body, asset);
