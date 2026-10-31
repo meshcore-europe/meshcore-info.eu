@@ -1,7 +1,7 @@
 // The radius search on /community/ (web/js/radius-core.js has the maths). Everything runs in the browser:
-// the place file of the chosen country (/places/<cc>.json, our own copy of GeoNames) is fetched on the first
+// the postcode file of the chosen country (/places/<cc>.json, our own copy of GeoNames) is fetched on the first
 // search, and a position from "Use my location" never leaves the device.
-import { search, lookup, ALL_OF_COUNTRY } from './radius-core.js';
+import { search, lookup, hasPostcodes, ALL_OF_COUNTRY } from './radius-core.js';
 
 const root = document.querySelector('[data-community-search]');
 
@@ -69,16 +69,13 @@ if (root) {
     out.replaceChildren(...blocks);
   };
 
-  // Several places with one name: a short list to pick from.
-  const choose = (hits, name, radius, country) => {
-    const ul = el('ul', 'tags');
-    for (const h of hits) {
-      const b = el('button', 'badge', h.label); b.type = 'button';
-      b.addEventListener('click', () => show(h, h.label, radius, country));
-      const li = el('li'); li.append(b); ul.append(li);
-    }
+  // A country without postcodes in GeoNames (Greece): no distance search, all its groups instead.
+  const listCountry = (country) => {
+    const mine = groups.filter((g) => g.country === country);
+    const blocks = [el('p', null, msg('search-no-postcodes', { country: countryName(country) }))];
+    if (mine.length) blocks.push(section(msg('search-national', { country: countryName(country) }), mine.map((g) => cardOf(g))));
     out.hidden = false;
-    out.replaceChildren(el('p', null, msg('search-pick', { name })), ul);
+    out.replaceChildren(...blocks);
   };
 
   form.addEventListener('submit', async (ev) => {
@@ -90,9 +87,9 @@ if (root) {
     say(msg('search-loading'));
     let places;
     try { places = await placesOf(country); } catch { return say(msg('search-error')); }
+    if (!hasPostcodes(places)) return listCountry(country);
     const hits = lookup(places, text, country);
     if (!hits.length) return say(msg('search-unknown', { country: countryName(country) }));
-    if (hits.length > 1) return choose(hits, text, radius, country);
     show(hits[0], hits[0].label, radius, country);
   });
 

@@ -39,7 +39,6 @@ export function search(point, groups, searchKm, country) {
   };
 }
 
-export const normName = (text) => text.trim().toLowerCase().normalize('NFKD').replace(/\p{M}/gu, '').replace(/ß/g, 'ss').replace(/[\s\-_.,']+/g, ' ').trim();
 // Same keys as norm_postcode in tools/build_places.py (tests/js/postcode-parity.test.mjs compares them):
 // no spaces or hyphens, upper case, and the written prefix of Luxembourg ("L-1234") and Latvia ("LV-1050") dropped.
 const PREFIX = { LU: 'L', LV: 'LV' };
@@ -50,20 +49,19 @@ export function normPostcode(text, country = '') {
   return key;
 }
 
-// The place file of one country: { p: { postcode: [lat, lon, place] }, n: { name: [[lat, lon, label]] } }.
-// Returns [{ lat, lon, label }]: one point for a postcode, one or more for a name, none when unknown.
-// A typed postcode longer than the keys (UK "SW1A 1AA", Portuguese "1000-001") loses characters from the
-// end until a key matches.
+// The place file of one country: { p: { postcode: [lat, lon, place] } }. Returns [{ lat, lon, label }]: one
+// point, or none when the postcode is unknown (or when the text is no postcode: a place name has no digit). A typed postcode longer than the keys (UK "SW1A 1AA", Portuguese
+// "1000-001") loses characters from the end until a key matches.
 export function lookup(places, input, country = '') {
-  const text = input.trim();
-  if (!text) return [];
-  if (/\d/.test(text)) {
-    let key = normPostcode(text, country);
-    while (key.length >= 2) {
-      const hit = places.p[key];
-      if (hit) return [{ lat: hit[0], lon: hit[1], label: hit[2] }];
-      key = key.slice(0, -1);
-    }
+  if (!/\d/.test(input)) return [];
+  let key = normPostcode(input, country);
+  while (key.length >= 2) {
+    const hit = places.p[key];
+    if (hit) return [{ lat: hit[0], lon: hit[1], label: hit[2] }];
+    key = key.slice(0, -1);
   }
-  return (places.n[normName(text)] || []).map(([lat, lon, label]) => ({ lat, lon, label }));
+  return [];
 }
+
+// Greece has no postcodes in the dump: its place file is empty, and the page lists the country's groups.
+export const hasPostcodes = (places) => Object.keys(places.p).length > 0;

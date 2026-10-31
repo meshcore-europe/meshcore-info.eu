@@ -5,7 +5,7 @@
 // Place files: web/places/<cc>.json, built by tools/build_places.py from GeoNames (CC BY 4.0).
 import { t, PARAMS } from '../lib/site.mjs';
 const { lang, countries } = Astro.props;
-const keys = ['search_loading', 'search_error', 'search_unknown', 'search_need_country', 'search_pick', 'search_denied',
+const keys = ['search_loading', 'search_error', 'search_unknown', 'search_need_country', 'search_no_postcodes', 'search_denied',
   'search_here', 'search_results', 'search_covers', 'search_national', 'search_none', 'search_none_country', 'search_nearest', 'search_km'];
 const msg = Object.fromEntries(keys.map((k) => [`data-${k.replace(/_/g, '-')}`, t(lang, `community_${k}`)]));
 const names = Object.fromEntries(countries.map((cc) => [`data-country-${cc.toLowerCase()}`, t(lang, `country_${cc.toLowerCase()}`)]));
