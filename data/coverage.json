@@ -24,15 +24,15 @@
       "locale": "de",
       "strings": {
         "human": 0,
-        "ai": 988,
-        "missing": 52,
+        "ai": 1040,
+        "missing": 0,
         "total": 1040
       },
       "pages": {
         "human": 0,
-        "ai": 17,
-        "stale": 11,
-        "missing": 1,
+        "ai": 29,
+        "stale": 0,
+        "missing": 0,
         "total": 29
       }
     },
@@ -42,15 +42,15 @@
       "locale": "fr",
       "strings": {
         "human": 0,
-        "ai": 988,
-        "missing": 52,
+        "ai": 1040,
+        "missing": 0,
         "total": 1040
       },
       "pages": {
         "human": 0,
-        "ai": 17,
-        "stale": 11,
-        "missing": 1,
+        "ai": 29,
+        "stale": 0,
+        "missing": 0,
         "total": 29
       }
     },
@@ -60,15 +60,15 @@
       "locale": "es",
       "strings": {
         "human": 0,
-        "ai": 988,
-        "missing": 52,
+        "ai": 1040,
+        "missing": 0,
         "total": 1040
       },
       "pages": {
         "human": 0,
-        "ai": 17,
-        "stale": 11,
-        "missing": 1,
+        "ai": 29,
+        "stale": 0,
+        "missing": 0,
         "total": 29
       }
     },
@@ -78,15 +78,15 @@
       "locale": "it",
       "strings": {
         "human": 0,
-        "ai": 988,
-        "missing": 52,
+        "ai": 1040,
+        "missing": 0,
         "total": 1040
       },
       "pages": {
         "human": 0,
-        "ai": 17,
-        "stale": 11,
-        "missing": 1,
+        "ai": 29,
+        "stale": 0,
+        "missing": 0,
         "total": 29
       }
     },
@@ -96,15 +96,15 @@
       "locale": "pl",
       "strings": {
         "human": 0,
-        "ai": 988,
-        "missing": 52,
+        "ai": 1040,
+        "missing": 0,
         "total": 1040
       },
       "pages": {
         "human": 0,
-        "ai": 17,
-        "stale": 11,
-        "missing": 1,
+        "ai": 29,
+        "stale": 0,
+        "missing": 0,
         "total": 29
       }
     },
@@ -114,15 +114,15 @@
       "locale": "pt-PT",
       "strings": {
         "human": 0,
-        "ai": 988,
-        "missing": 52,
+        "ai": 1040,
+        "missing": 0,
         "total": 1040
       },
       "pages": {
         "human": 0,
-        "ai": 17,
-        "stale": 11,
-        "missing": 1,
+        "ai": 29,
+        "stale": 0,
+        "missing": 0,
         "total": 29
       }
     },
@@ -132,15 +132,15 @@
       "locale": "cs",
       "strings": {
         "human": 0,
-        "ai": 988,
-        "missing": 52,
+        "ai": 1040,
+        "missing": 0,
         "total": 1040
       },
       "pages": {
         "human": 0,
-        "ai": 17,
-        "stale": 11,
-        "missing": 1,
+        "ai": 29,
+        "stale": 0,
+        "missing": 0,
         "total": 29
       }
     },
@@ -150,15 +150,15 @@
       "locale": "sv",
       "strings": {
         "human": 0,
-        "ai": 988,
-        "missing": 52,
+        "ai": 1040,
+        "missing": 0,
         "total": 1040
       },
       "pages": {
         "human": 0,
-        "ai": 17,
-        "stale": 11,
-        "missing": 1,
+        "ai": 29,
+        "stale": 0,
+        "missing": 0,
         "total": 29
       }
     },
@@ -168,15 +168,15 @@
       "locale": "da",
       "strings": {
         "human": 0,
-        "ai": 988,
-        "missing": 52,
+        "ai": 1040,
+        "missing": 0,
         "total": 1040
       },
       "pages": {
         "human": 0,
-        "ai": 17,
-        "stale": 11,
-        "missing": 1,
+        "ai": 29,
+        "stale": 0,
+        "missing": 0,
         "total": 29
       }
     },
@@ -186,15 +186,15 @@
       "locale": "nb",
       "strings": {
         "human": 0,
-        "ai": 988,
-        "missing": 52,
+        "ai": 1040,
+        "missing": 0,
         "total": 1040
       },
       "pages": {
         "human": 0,
-        "ai": 17,
-        "stale": 11,
-        "missing": 1,
+        "ai": 29,
+        "stale": 0,
+        "missing": 0,
         "total": 29
       }
     },
@@ -204,15 +204,15 @@
       "locale": "fi",
       "strings": {
         "human": 0,
-        "ai": 988,
-        "missing": 52,
+        "ai": 1040,
+        "missing": 0,
         "total": 1040
       },
       "pages": {
         "human": 0,
-        "ai": 17,
-        "stale": 11,
-        "missing": 1,
+        "ai": 29,
+        "stale": 0,
+        "missing": 0,
         "total": 29
       }
     },
@@ -222,15 +222,15 @@
       "locale": "hu",
       "strings": {
         "human": 0,
-        "ai": 988,
-        "missing": 52,
+        "ai": 1040,
+        "missing": 0,
         "total": 1040
       },
       "pages": {
         "human": 0,
-        "ai": 17,
-        "stale": 11,
-        "missing": 1,
+        "ai": 29,
+        "stale": 0,
+        "missing": 0,
         "total": 29
       }
     },
@@ -240,15 +240,15 @@
       "locale": "ro",
       "strings": {
         "human": 0,
-        "ai": 988,
-        "missing": 52,
+        "ai": 1040,
+        "missing": 0,
         "total": 1040
       },
       "pages": {
         "human": 0,
-        "ai": 17,
-        "stale": 11,
-        "missing": 1,
+        "ai": 29,
+        "stale": 0,
+        "missing": 0,
         "total": 29
       }
     },
@@ -258,15 +258,15 @@
       "locale": "el",
       "strings": {
         "human": 0,
-        "ai": 988,
-        "missing": 52,
+        "ai": 1040,
+        "missing": 0,
         "total": 1040
       },
       "pages": {
         "human": 0,
-        "ai": 17,
-        "stale": 11,
-        "missing": 1,
+        "ai": 29,
+        "stale": 0,
+        "missing": 0,
         "total": 29
       }
     },
