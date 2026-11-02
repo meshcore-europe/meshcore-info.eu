@@ -828,6 +828,52 @@
   added: 2026-10-30
   last_checked: 2026-10-30
 
+- id: de-msemesh
+  country: DE
+  region: Mecklenburgische Seenplatte
+  scope: region
+  location:
+    lat: 53.584
+    lon: 13.064
+    place: Mecklenburgische Seenplatte
+    source: "https://www.openstreetmap.org/relation/1739376"
+    checked: 2026-11-02
+  radius_km: 60
+  name: MSEmesh
+  links:
+  - type: website
+    url: "https://msemesh.de/"
+  - type: matrix
+    url: "https://matrix.to/#/#msemesh:matrix.org"
+  - type: signal
+    url: "https://signal.group/#CjQKID-t0aGphVhMOtoOJ0KXwWTC1X19sTMmkqZ_6NyLJ4AMEhBSAlBMLsj5vdCsWL2L55pN"
+  languages: [de]
+  desc_key: community.de-msemesh.desc
+  added: 2026-11-02
+  last_checked: 2026-11-02
+
+- id: de-ka-mesh
+  country: DE
+  region: Karlsruhe und Pforzheim (Baden-Württemberg)
+  scope: region
+  location:
+    lat: 49.007
+    lon: 8.403
+    place: Karlsruhe
+    source: "https://www.openstreetmap.org/relation/62518"
+    checked: 2026-11-02
+  radius_km: 40
+  name: ka-mesh.de
+  links:
+  - type: website
+    url: "https://ka-mesh.de/"
+  channels:
+  - "#karlsruhe"
+  languages: [de]
+  desc_key: community.de-ka-mesh.desc
+  added: 2026-11-02
+  last_checked: 2026-11-02
+
 - id: ie-mayo-mesh
   country: IE
   region: County Mayo
@@ -879,6 +925,28 @@
   desc_key: community.it-meshcore-ita.desc
   added: 2026-10-23
   last_checked: 2026-10-23
+
+- id: it-meshcore-torino
+  country: IT
+  region: Torino e provincia
+  scope: region
+  location:
+    lat: 45.068
+    lon: 7.682
+    place: Torino
+    source: "https://www.openstreetmap.org/relation/43992"
+    checked: 2026-11-02
+  radius_km: 50
+  name: MeshCore Torino
+  links:
+  - type: website
+    url: "https://meshcore-torino.it/"
+  - type: telegram
+    url: "https://t.me/+Hgu8jCljAtA2MmQ8"
+  languages: [it]
+  desc_key: community.it-meshcore-torino.desc
+  added: 2026-11-02
+  last_checked: 2026-11-02
 
 - id: nl-meshwiki
   country: NL
