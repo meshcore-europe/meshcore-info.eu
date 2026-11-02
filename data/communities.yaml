@@ -874,6 +874,26 @@
   added: 2026-11-02
   last_checked: 2026-11-02
 
+- id: de-ostfriesland
+  country: DE
+  region: Ostfriesland (Niedersachsen)
+  scope: region
+  location:
+    lat: 53.373
+    lon: 7.439
+    place: Ostfriesland
+    source: "https://www.openstreetmap.org/relation/2136137"
+    checked: 2026-11-02
+  radius_km: 50
+  name: "#ostfriesland"
+  links: []
+  channels:
+  - "#ostfriesland"
+  languages: [de]
+  desc_key: community.de-ostfriesland.desc
+  added: 2026-11-02
+  last_checked: 2026-11-02
+
 - id: ie-mayo-mesh
   country: IE
   region: County Mayo

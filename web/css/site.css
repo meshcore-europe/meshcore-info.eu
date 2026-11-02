@@ -234,6 +234,7 @@ main.home { padding: 0; }
 .credits[hidden] { display: none; }
 .credits-inner { width: min(var(--max), calc(100% - 2 * var(--gutter))); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 24px; min-height: 64px; }
 .credits .grp { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.credits .grp + .grp { flex: none; }
 .credits .lbl { font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: rgba(244,246,246,.62); white-space: nowrap; padding-right: 14px; border-right: 1px solid rgba(255,255,255,.18); }
 .credits .sentence { font-family: var(--font-mono); font-size: 13px; color: rgba(244,246,246,.72); }
 .credits .item { white-space: nowrap; }
@@ -244,7 +245,9 @@ main.home { padding: 0; }
 .live-dot::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; border: 1px solid #4ade80; animation: live-ping 2s ease-out infinite; }
 @keyframes live-ping { from { transform: scale(.6); opacity: .9; } to { transform: scale(1.8); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .live-dot::after { animation: none; } }
-@media (max-width: 767px) { .credits-inner { flex-direction: column; align-items: flex-start; gap: 6px; padding: 12px 0; } .credits .grp + .grp { display: none; } .credits .lbl { border-right: 0; padding-right: 0; } .credits .grp.live { flex-wrap: wrap; gap: 4px 10px; } }
+@media (max-width: 767px) { .credits-inner { flex-direction: column; align-items: flex-start; gap: 6px; padding: 12px 0; } .credits .grp + .grp { display: none; } .credits .lbl { border-right: 0; padding-right: 0; } .credits .grp.live { width: 100%; flex-wrap: wrap; gap: 4px 10px; } .credits .item { white-space: normal; } }
+/* On a phone the numbers take as many lines as the language needs, so they sit under the hero text instead of over it. */
+@media (max-width: 767px) { .xhero { flex-direction: column; justify-content: flex-end; align-items: stretch; height: auto; min-height: max(100svh, 560px); } .xhero-inner { padding-bottom: 24px; } .credits { position: relative; } }
 /* Where the numbers wrap, they stack without the dots between them. */
 @media (max-width: 1023px) { .credits .grp + .grp { display: none; } .credits .sentence { display: flex; flex-wrap: wrap; gap: 2px 14px; } .credits .sep { display: none; } }
 
