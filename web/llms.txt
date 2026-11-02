@@ -1,6 +1,6 @@
 # meshcore-info.eu
 
-> A non-commercial guide to MeshCore in Europe, written by volunteers from the local groups, in 16 languages. MeshCore sends short text messages by LoRa radio on 868 MHz, from one small device to the next, without the internet or a subscription. The site holds what the European meshes share: the radio settings per area, guides, browser tools and the local groups.
+> A non-commercial guide to MeshCore in Europe, written by volunteers from the local groups, in 33 languages. MeshCore sends short text messages by LoRa radio on 868 MHz, from one small device to the next, without the internet or a subscription. The site holds what the European meshes share: the radio settings per area, guides, browser tools and the local groups.
 
 English is the source; every page also exists at /<language>/ for nl, de, fr, es, it, pl, pt, cs, sv, da, nb, fi, hu, ro and el. Text and data are CC BY 4.0: reuse them with meshcore-info.eu named as the source.
 
