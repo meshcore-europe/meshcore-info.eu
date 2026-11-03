@@ -12,6 +12,18 @@
       "root": { "type": "string", "pattern": "^[a-z0-9-]+$" },
       "note_key": { "type": "string", "pattern": "^regions_note_[a-z0-9_]+$" },
       "footnote_key": { "type": "string", "pattern": "^regions_footnote_[a-z0-9_]+$" },
+      "preset_regions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["code", "name"],
+          "properties": {
+            "code": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+            "name": { "type": "string", "minLength": 1 }
+          },
+          "additionalProperties": false
+        }
+      },
       "source": { "type": "string", "pattern": "^https://" },
       "last_checked": { "type": "string", "format": "date" },
       "regions": {

@@ -1,7 +1,7 @@
 # The regions a country's own community decided, shown on /guides/settings/ instead of the region catalog
 # (data/regions.json). root is the code the community uses for Europe. regions are its regions below the country,
 # each with the smaller regions inside it. A code can sit in two regions when the community splits it, as Portugal
-# does with Setubal. note_key and footnote_key are strings. Re-check the source and update last_checked before
+# does with Setubal. preset_regions are regions that go with the radio preset. note_key and footnote_key are strings. Re-check the source and update last_checked before
 # changing an entry.
 - id: portugal
   country: PT
@@ -9,6 +9,9 @@
   root: europe
   note_key: regions_note_pt
   footnote_key: regions_footnote_pt
+  preset_regions:
+    - { code: pt-868, name: Portugal 868 }
+    - { code: pt-433, name: Portugal 433 }
   source: https://www.meshcore.pt/en/docs/help/regions
   last_checked: "2026-11-03"
   regions:

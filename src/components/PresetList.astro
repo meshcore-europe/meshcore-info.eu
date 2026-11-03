@@ -1,0 +1,14 @@
+---
+// The settings of one radio preset on /guides/settings/.
+import { t } from '../lib/site.mjs';
+const { lang, preset: p, firmware } = Astro.props;
+---
+<dl class="area-preset">
+  <dt>{t(lang, 'area_preset')}</dt><dd><strong>{p.name}</strong></dd>
+  <dt>{t(lang, 'presets_frequency')}</dt><dd class="mono">{p.frequency}</dd>
+  <dt>{t(lang, 'presets_bandwidth')}</dt><dd class="mono">{p.bandwidth}</dd>
+  <dt>{t(lang, 'presets_sf')}</dt><dd class="mono">{p.spreading_factor}</dd>
+  <dt>{t(lang, 'presets_cr')}</dt><dd class="mono">{p.coding_rate}</dd>
+  {p.path_hash_size && <Fragment><dt>{t(lang, 'area_path_hash')}</dt><dd class="mono">{p.path_hash_size} {t(lang, 'area_bytes')}</dd></Fragment>}
+  {firmware && <Fragment><dt>{t(lang, 'area_firmware')}</dt><dd class="mono">{firmware} {t(lang, 'area_or_newer')}</dd></Fragment>}
+</dl>

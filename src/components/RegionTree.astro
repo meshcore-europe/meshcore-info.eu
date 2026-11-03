@@ -8,6 +8,7 @@
 // country whose community decided its own regions (data/region_baselines.yaml) takes its root and regions from there.
 // web/js/regions.js runs the province picker.
 import { t, loadData } from '../lib/site.mjs';
+import CommandLine from './CommandLine.astro';
 import catalog from '../../data/regions.json';
 
 const { lang, area } = Astro.props;
@@ -22,11 +23,12 @@ const r = (k) => t(lang, `regions_${k}`);
 // The area's own region commands, if its group gives them; otherwise the tree's own commands.
 const own = (area.changes || []).some((c) => (c.commands || []).some((l) => l.startsWith('region put')));
 const chain = [root, ...(group ? [group.code] : []), cc];
-// The town's line shows once a town is typed in its box (web/js/regions.js).
+const presetRegions = baseline ? baseline.preset_regions || [] : [];
+// The same nested tree, written 2 ways. The town shows once it is typed in its box (web/js/regions.js).
 const TOWN = 'region put YOUR_CITY YOUR_PROVINCE';
-const commands = [`region put ${chain[0]}`, ...chain.slice(1).map((code, i) => `region put ${code} ${chain[i]}`),
-  `region put YOUR_PROVINCE ${cc}`, TOWN, 'region save'];
-const parts = (line) => line.split(/(YOUR_[A-Z]+)/).filter(Boolean);
+const putLines = [`region put ${chain[0]}`, ...chain.slice(1).map((code, i) => `region put ${code} ${chain[i]}`),
+  ...(presetRegions.length ? [`region put YOUR_BAND ${cc}`] : []), `region put YOUR_PROVINCE ${cc}`, TOWN, 'region save'];
+const defLine = `region def ${chain.join(' ')}${presetRegions.length ? ` YOUR_BAND|${cc}` : ''} YOUR_PROVINCE`;
 const regions = baseline ? baseline.regions : country ? country.regions : [];
 ---
 <div class="regions" data-regions data-map={MAP}>
@@ -39,6 +41,16 @@ const regions = baseline ? baseline.regions : country ? country.regions : [];
       const inner = (
         <div class="rbox r2">
           <div class="rhd"><b>{t(lang, `country_${cc}`)}</b> <code>{cc}</code><a href={at(cc)}>{r('map')}<span class="vh"> {r('map_label')}</span></a></div>
+          {presetRegions.length > 0 && (
+            <div class="rbox r3">
+              <div class="rhd">
+                <select data-band-pick aria-label={r('preset_pick')}>
+                  <option value="">{r('preset_pick')}</option>
+                  {presetRegions.map((x) => <option value={x.code}>{x.name} ({x.code})</option>)}
+                </select>
+              </div>
+            </div>
+          )}
           {regions.length ? (
             <div class="rbox r3">
               <div class="rhd">
@@ -64,15 +76,23 @@ const regions = baseline ? baseline.regions : country ? country.regions : [];
     })()}
   </div>
   <p class="meta">{r('map_body')}</p>
+  <p>{r('nesting')} <a href={`/${lang}/guides/resilient/#gate`}>{r('nesting_link')}</a></p>
   {!own && regions.length > 0 && (
     <Fragment>
       <p class="ph-hint">{r('cmd_hint')}</p>
-      <pre>{commands.map((line, i) => {
-        const text = parts(line).map((x) => /^YOUR_/.test(x)
-          ? <span class="ph" data-ph={x} contenteditable="plaintext-only" spellcheck="false" role="textbox" aria-label={t(lang, `area_ph_${x.slice(5).toLowerCase()}`)}>{x}</span>
-          : x);
-        return line === TOWN ? <span data-town-line hidden>{'\n'}{text}</span> : <Fragment>{i > 0 && '\n'}{text}</Fragment>;
-      })}</pre>
+      <fieldset class="cmd-style" data-cmd-style hidden>
+        <legend>{r('style')}</legend>
+        <label><input type="radio" name={`cmd-style-${area.id}`} value="put" checked /> {r('style_put')}</label>
+        <label><input type="radio" name={`cmd-style-${area.id}`} value="def" /> {r('style_def')}</label>
+      </fieldset>
+      <div data-cmd="put">
+        <pre>{putLines.map((line, i) => {
+          return line === TOWN ? <span data-town-line hidden>{'\n'}<CommandLine lang={lang} line={line} /></span> : <Fragment>{i > 0 && '\n'}<CommandLine lang={lang} line={line} /></Fragment>;
+        })}</pre>
+      </div>
+      <div data-cmd="def" hidden>
+        <pre><CommandLine lang={lang} line={defLine} /><span data-town-line hidden> <CommandLine lang={lang} line="YOUR_CITY" /></span>{'\nregion save'}</pre>
+      </div>
     </Fragment>
   )}
 </div>

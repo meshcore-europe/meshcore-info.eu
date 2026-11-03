@@ -10,6 +10,7 @@
       "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
       "name": { "type": "string", "minLength": 1 },
       "preset": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+      "also_preset": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
       "group": { "type": "string", "minLength": 1 },
       "note_key": { "type": "string", "pattern": "^area_note_[a-z0-9_]+$" },
       "source": { "type": "string", "pattern": "^https://" },

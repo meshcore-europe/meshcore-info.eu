@@ -7,6 +7,7 @@ import map from '../data/europe-map.json';
 import UsbBlock from './UsbBlock.astro';
 import RegionTree from './RegionTree.astro';
 import RegionBaseline from './RegionBaseline.astro';
+import PresetList from './PresetList.astro';
 
 const { lang } = Astro.props;
 const presets = Object.fromEntries(loadData('presets').map((p) => [p.id, p]));
@@ -23,10 +24,10 @@ const COVERED = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE
 const others = COVERED.filter((cc) => !countries.includes(cc)).sort((a, b) => country(a).localeCompare(country(b)));
 // The country picker: every country above, each by its own name.
 const picks = [...countries, ...others].sort((a, b) => country(a).localeCompare(country(b)));
-// Where a country on the map links to: its one area, its heading when it has several, or its line in the EU/UK list.
+// Where a country on the map links to: its one area, its country heading, or its line in the EU/UK list.
 const target = (cc) => {
   const own = areas.filter((a) => a.country === cc && !map.provinces[a.id]);
-  if (own.length) return { href: own.length > 1 ? `#country-${cc.toLowerCase()}` : `#area-${own[0].id}`, preset: own.map((a) => presets[a.preset].name).join(', '), kind: 'own' };
+  if (own.length) return { href: `#area-${own[0].id}`, preset: [own[0].preset, own[0].also_preset].filter(Boolean).map((id) => presets[id].name).join(', '), kind: 'own' };
   if (others.includes(cc)) return { href: `#area-${cc.toLowerCase()}`, preset: fallback.name, kind: 'eu' };
   return null;
 };
@@ -79,19 +80,17 @@ const dateOf = (iso) => new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : lang, 
       })()}
       {areas.filter((a) => a.country === cc).map((a) => {
         const p = presets[a.preset];
+        // An area on 2 presets shows them side by side, each with its own USB block.
+        const also = a.also_preset && presets[a.also_preset];
         return (
           <section class="area" id={`area-${a.id}`}>
             {a.name !== country(cc) ? <h3>{a.name} <a class="anchor" href={`#area-${a.id}`} aria-label={`${t(lang, 'area_link')}: ${a.name}`}>#</a></h3>
               : areas.filter((x) => x.country === cc).length > 1 && <h3>{a.name} <a class="anchor" href={`#area-${a.id}`} aria-label={`${t(lang, 'area_link')}: ${a.name}`}>#</a></h3>}
-            <dl class="area-preset">
-              <dt>{t(lang, 'area_preset')}</dt><dd><strong>{p.name}</strong></dd>
-              <dt>{t(lang, 'presets_frequency')}</dt><dd class="mono">{p.frequency}</dd>
-              <dt>{t(lang, 'presets_bandwidth')}</dt><dd class="mono">{p.bandwidth}</dd>
-              <dt>{t(lang, 'presets_sf')}</dt><dd class="mono">{p.spreading_factor}</dd>
-              <dt>{t(lang, 'presets_cr')}</dt><dd class="mono">{p.coding_rate}</dd>
-              {p.path_hash_size && <Fragment><dt>{t(lang, 'area_path_hash')}</dt><dd class="mono">{p.path_hash_size} {t(lang, 'area_bytes')}</dd></Fragment>}
-              {a.firmware && <Fragment><dt>{t(lang, 'area_firmware')}</dt><dd class="mono">{a.firmware} {t(lang, 'area_or_newer')}</dd></Fragment>}
-            </dl>
+            {also ? (
+              <div class="area-presets">
+                {[p, also].map((x) => <div><PresetList lang={lang} preset={x} /><UsbBlock lang={lang} commands={usbCommands(x, a)} /></div>)}
+              </div>
+            ) : <PresetList lang={lang} preset={p} firmware={a.firmware} />}
             {a.note_key && <p>{t(lang, a.note_key)}</p>}
             <RegionTree lang={lang} area={a} />
             {a.changes && (
@@ -112,7 +111,7 @@ const dateOf = (iso) => new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : lang, 
                 ))}
               </Fragment>
             )}
-            <UsbBlock lang={lang} commands={usbCommands(p, a)} />
+            {!also && <UsbBlock lang={lang} commands={usbCommands(p, a)} />}
             <p class="meta">{a.group
               ? <Fragment>{`${t(lang, 'area_source_group')} `}<a href={a.source}>{a.group}</a></Fragment>
               : <a href={a.source}>{t(lang, 'area_source_preset')}</a>}, {t(lang, 'area_checked')} <time datetime={a.last_checked}>{dateOf(a.last_checked)}</time></p>

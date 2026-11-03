@@ -1,7 +1,7 @@
 ---
 title: "What is MeshCore?"
 lead: "MeshCore sends text messages by radio, from node to node. It works without the internet or a subscription."
-description: "What MeshCore is and is not: node kinds, routing, how it differs from Meshtastic, encryption and the 868 MHz band."
+description: "What MeshCore is and is not: node kinds, routing, encryption and the 868 MHz band."
 eyebrow: "MeshCore v1.18.0"
 ---
 
@@ -43,7 +43,6 @@ and that it does not do.
   and test messages slow the mesh down for all.
 - **It is not Meshtastic.** Meshtastic is a different system that runs on
   much the same boards. The two cannot talk to each other.
-  [Coming from Meshtastic](#meshtastic) lists what works differently.
 
 ## The mesh in a minute {#mesh}
 
@@ -93,25 +92,6 @@ Repeaters remember what they recently passed on and drop copies that arrive
 again by another route. A message can cross up to 64 repeaters, or 32 where the preset uses 2-byte
 IDs.
 
-## Coming from Meshtastic {#meshtastic}
-
-Many boards run either MeshCore or Meshtastic, and you flash the one you
-want. These are the differences you notice first. They follow MeshCore
-v1.18.0 and the Meshtastic documentation of November 2026.
-
-- **Who passes messages on.** In MeshCore only repeaters do; your companion
-  never does. In Meshtastic the default client role passes messages on as
-  well, unless another node already did.
-- **How far a message goes.** A MeshCore message can cross up to 64
-  repeaters. Meshtastic stops after 3 hops by default, and 7 at most.
-- **Readings from other nodes.** Repeaters and sensor nodes in MeshCore send
-  readings such as battery voltage when you ask for them. They do not send
-  them to the whole mesh.
-- **The internet.** The MeshCore firmware has no link between meshes over
-  the internet. [Observers](/network/) report what they hear to maps, one
-  way only. Meshtastic has a built-in MQTT module
-  that can carry messages between meshes over the internet.
-
 ## Encryption and privacy {#encryption}
 
 Your direct messages are encrypted end to end: only you and the other person
@@ -153,11 +133,15 @@ other. Some countries and regions use a variant: your
   fail.
 - A backup for local authorities when their usual networks fail.
 - Local chat on radios that people own themselves.
+- Keeping a search and rescue team in touch where there is no mobile network.
+  MeshCore SAR, a community app on [Projects](/projects/), adds maps and
+  shared locations.
 - Checking a remote site from home. Repeaters and sensor nodes report their
   battery voltage and other readings when you ask.
 - Watching a sensor. A sensor node runs MeshCore's firmware for measuring
-  things. It keeps a history of its readings. If you subscribe, it alerts
-  you, for example when its battery runs low.
+  things. It keeps a history of its battery voltage. Log in as admin and it
+  alerts you when the battery runs low. You add alerts for other readings
+  with your own code.
 - Switching something far away, such as a pump. You add that to the sensor
   firmware with your own code.
 - Experimenting with radio, antennas, solar power and open-source software.

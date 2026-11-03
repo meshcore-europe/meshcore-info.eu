@@ -1,0 +1,9 @@
+---
+// One command in a <pre>, split into text and the values to fill in (YOUR_PROVINCE), each editable in place.
+import { t } from '../lib/site.mjs';
+const { lang, line } = Astro.props;
+const parts = line.split(/(YOUR_[A-Z]+)/).filter(Boolean);
+---
+{parts.map((x) => /^YOUR_/.test(x)
+  ? <span class="ph" data-ph={x} contenteditable="plaintext-only" spellcheck="false" role="textbox" aria-label={t(lang, `area_ph_${x.slice(5).toLowerCase()}`)}>{x}</span>
+  : x)}

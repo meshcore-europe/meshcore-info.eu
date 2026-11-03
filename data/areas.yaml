@@ -70,15 +70,9 @@
   last_checked: "2026-10-13"
 - id: portugal
   country: PT
-  name: Portugal 868
+  name: Portugal
   preset: portugal-868
-  note_key: area_note_pt_bridges
-  source: https://api.meshcore.nz/api/v1/config
-  last_checked: "2026-11-03"
-- id: portugal-433
-  country: PT
-  name: Portugal 433
-  preset: portugal-433
+  also_preset: portugal-433
   note_key: area_note_pt_bridges
   source: https://api.meshcore.nz/api/v1/config
   last_checked: "2026-11-03"
