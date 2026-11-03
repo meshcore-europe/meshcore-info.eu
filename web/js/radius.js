@@ -50,6 +50,8 @@ if (root) {
 
   const show = (point, label, radius, country) => {
     const r = search(point, groups, radius, country);
+    // web/js/community-map.js shows the point and how far the search reached.
+    document.dispatchEvent(new CustomEvent('community:point', { detail: { lat: point.lat, lon: point.lon, km: radius, country } }));
     const blocks = [];
     if (r.local.length) {
       blocks.push(section(msg('search-results', { place: label }), r.local.map((x) => cardOf(x.group, x.covers ? msg('search-covers') : km(x.km)))));
@@ -101,6 +103,19 @@ if (root) {
       (pos) => show({ lat: pos.coords.latitude, lon: pos.coords.longitude }, msg('search-here'), radius, country),
       () => say(msg('search-denied')),
       { maximumAge: 600000, timeout: 15000 });
+  });
+
+  // A dot or a country on the map (web/js/community-map.js): the same list, without a distance.
+  document.addEventListener('community:groups', (ev) => {
+    const { ids, country, none, title } = ev.detail;
+    out.hidden = false;
+    if (none) out.replaceChildren(el('p', null, title), root.querySelector('template[data-missing]').content.cloneNode(true));
+    else {
+      const mine = country ? groups.filter((g) => g.country === country) : ids.map((id) => groups.find((g) => g.id === id));
+      out.replaceChildren(section(title.replace('{country}', country ? countryName(country) : ''), mine.map((g) => cardOf(g))));
+    }
+    const box = out.getBoundingClientRect();
+    if (box.top > innerHeight - 80 || box.bottom < 0) out.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   });
 
   // The country select starts on the country of the browser language, when a group is listed there.

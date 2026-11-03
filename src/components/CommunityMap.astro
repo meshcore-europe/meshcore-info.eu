@@ -1,0 +1,49 @@
+---
+// The map of the local groups on /community/: Europe as an inline SVG, a link on every country with a group, a dot
+// with its area on every group of a place, and an open dot in the country for every group of a whole country. Without JavaScript the links jump to the list below; web/js/community-map.js
+// adds zoom, the larger detail (web/data/community-map-detail.json) and fills the result list next to it.
+import map from '../data/europe-map.json';
+import { t } from '../lib/site.mjs';
+import { project, kmToUnits, mainBox, countryAnchor } from '../../web/js/map-view.js';
+const { lang, communities, countries } = Astro.props;
+// Dots on one spot sit in a small ring; web/js/community-map.js keeps them apart at every zoom.
+const ring = (i, n) => (n > 1 ? { ox: Math.cos((2 * Math.PI * i) / n - Math.PI / 2), oy: Math.sin((2 * Math.PI * i) / n - Math.PI / 2) } : { ox: 0, oy: 0 });
+const placed = communities.filter((c) => c.location);
+const spot = (c) => `${c.location.lat},${c.location.lon}`;
+const local = placed.map((c) => {
+  const same = placed.filter((o) => spot(o) === spot(c));
+  return { c, ...project(c.location.lat, c.location.lon), r: kmToUnits(c.radius_km), ...ring(same.indexOf(c), same.length) };
+});
+const national = countries.flatMap((cc) => {
+  const mine = communities.filter((c) => !c.location && c.country.toUpperCase() === cc);
+  if (!mine.length) return [];
+  const at = countryAnchor(map.countries[cc]);
+  return mine.map((c, i) => ({ c, ...at, ...ring(i, mine.length) }));
+});
+---
+<figure class="community-map" data-community-map data-width={map.width} data-height={map.height} data-detail="/data/community-map-detail.json"
+  data-here={t(lang, 'community_map_here')} data-country-title={t(lang, 'community_map_country')} data-none={t(lang, 'community_map_none')}>
+  <div class="community-map-frame">
+    <svg viewBox={`0 0 ${map.width} ${map.height}`} role="group" aria-label={t(lang, 'community_map_label')}>
+      <path class="land" d={map.land} />
+      <g data-detail-countries></g>
+      {Object.entries(map.countries).map(([cc, d]) => countries.includes(cc)
+        ? <a class="map-country" href={`#country-${cc.toLowerCase()}`} data-country={cc} data-box={mainBox(d).join(' ')} aria-label={t(lang, `country_${cc.toLowerCase()}`)}><path d={d} /></a>
+        : <path class="map-other" d={d} />)}
+      <path class="map-regions" data-detail-regions d="" />
+      <g class="map-areas">{local.map(({ c, x, y, r }) => <circle data-area={c.id} cx={x.toFixed(1)} cy={y.toFixed(1)} r={r.toFixed(1)} />)}</g>
+      <g class="map-towns" data-detail-towns></g>
+      <circle class="map-reach" data-reach r="0" hidden />
+      <g class="map-dots">{local.map(({ c, x, y, ox, oy }) => <a href={`#community-${c.id}`} data-group={c.id} data-x={x.toFixed(1)} data-y={y.toFixed(1)} data-ox={ox.toFixed(3)} data-oy={oy.toFixed(3)} aria-label={c.name}><title>{c.name}</title><circle cx={(x + ox * 14).toFixed(1)} cy={(y + oy * 14).toFixed(1)} r="6" /></a>)}
+        {national.map(({ c, x, y, ox, oy }) => <a class="map-national" href={`#community-${c.id}`} data-group={c.id} data-x={x.toFixed(1)} data-y={y.toFixed(1)} data-ox={ox.toFixed(3)} data-oy={oy.toFixed(3)} aria-label={c.name}><title>{c.name}</title><circle cx={(x + ox * 14).toFixed(1)} cy={(y + oy * 14).toFixed(1)} r="6" /></a>)}</g>
+      <circle class="map-point" data-point r="6" hidden />
+    </svg>
+    <div class="community-map-zoom" data-zoom hidden>
+      <button type="button" class="btn" data-zoom-in aria-label={t(lang, 'community_map_zoom_in')}>+</button>
+      <button type="button" class="btn" data-zoom-out aria-label={t(lang, 'community_map_zoom_out')} disabled>&minus;</button>
+      <button type="button" class="btn" data-zoom-reset hidden>{t(lang, 'community_map_reset')}</button>
+    </div>
+  </div>
+  <figcaption class="meta">{t(lang, 'community_map_hint')} {t(lang, 'community_map_credit')} <a href="https://www.naturalearthdata.com/">Natural Earth</a></figcaption>
+</figure>
+<script is:inline type="module" src="/js/community-map.js"></script>

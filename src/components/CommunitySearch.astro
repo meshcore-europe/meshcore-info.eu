@@ -11,7 +11,7 @@ const msg = Object.fromEntries(keys.map((k) => [`data-${k.replace(/_/g, '-')}`, 
 const names = Object.fromEntries(countries.map((cc) => [`data-country-${cc.toLowerCase()}`, t(lang, `country_${cc.toLowerCase()}`)]));
 ---
 <section class="community-search" data-community-search data-list="#countries" {...msg} {...names} hidden>
-  <h2>{t(lang, 'community_search_title')}</h2>
+  <h3>{t(lang, 'community_search_or')}</h3>
   <form class="filters" data-search-form>
     <div class="filters-row">
       <label>{t(lang, 'community_search_country')}

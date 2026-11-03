@@ -633,10 +633,46 @@ a.path-card { display: flex; flex-direction: column; gap: 6px; height: 100%; tex
 }
 
 /* Radius search on /community/ (web/js/radius.js). Hidden until the script runs. */
-.community-search { margin: 24px 0; }
+.community-finder { margin: 24px 0; }
+.community-finder-grid { display: grid; gap: 24px; align-items: start; }
+@media (min-width: 960px) { .community-finder-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); } }
+.community-map { margin: 0; }
+.community-map-frame { position: relative; overflow: hidden; border: 1px solid var(--border); border-radius: 8px; background: var(--bg); }
+.community-map svg { display: block; width: 100%; height: auto; touch-action: pan-x pan-y; user-select: none; -webkit-user-select: none; cursor: grab; }
+.community-map.is-zoomed svg { touch-action: none; }
+.community-map svg:active { cursor: grabbing; }
+.community-map path, .community-map circle { vector-effect: non-scaling-stroke; }
+.community-map .land { fill: var(--surface-hover); }
+.community-map .map-other { fill: var(--surface-hover); stroke: var(--bg); stroke-width: 1; }
+.community-map .map-country path { fill: var(--border-strong); stroke: var(--bg); stroke-width: 1; stroke-linejoin: round; }
+.community-map .map-country:hover path, .community-map .map-country:focus-visible path { fill: var(--accent-strong); fill-opacity: .35; }
+.community-map [data-detail-countries] path { fill: var(--surface-hover); pointer-events: none; }
+.community-map [data-detail-countries] path.has-groups { fill: var(--border-strong); }
+/* With the finer outlines in place the coarse ones only take the clicks. */
+.community-map .has-detail .map-other { fill: none; stroke: none; }
+.community-map .has-detail .map-country path { fill: transparent; stroke: none; }
+.community-map .map-regions { fill: none; stroke: var(--bg); stroke-width: 1; pointer-events: none; }
+.community-map .map-areas circle { fill: var(--accent); fill-opacity: .14; stroke: var(--accent); stroke-opacity: .55; stroke-width: 1; pointer-events: none; }
+.community-map .map-dots circle { fill: var(--accent); stroke: var(--bg); stroke-width: 1.5; }
+.community-map .map-dots a:hover circle, .community-map .map-dots a:focus-visible circle, .community-map .map-dots a.picked circle { fill: var(--accent-strong); stroke: var(--text); stroke-width: 2; }
+.community-map .map-dots .map-national circle { fill: var(--bg); stroke: var(--accent); stroke-width: 2.5; }
+.community-map .map-dots .map-national:hover circle, .community-map .map-dots .map-national:focus-visible circle, .community-map .map-dots .map-national.picked circle { fill: var(--accent-strong); stroke: var(--text); }
+.community-map .map-towns { pointer-events: none; }
+.community-map .map-towns circle { fill: var(--text-muted); }
+.community-map .map-towns text { fill: var(--text); paint-order: stroke; stroke: var(--bg); stroke-width: .25em; stroke-linejoin: round; }
+.community-map .map-towns [hidden], .community-map .map-reach[hidden], .community-map .map-point[hidden] { display: none; }
+.community-map .map-reach { fill: none; stroke: var(--text); stroke-width: 1.5; stroke-dasharray: 5 5; pointer-events: none; }
+.community-map .map-point { fill: var(--text); stroke: var(--bg); stroke-width: 2; pointer-events: none; }
+.community-map-zoom { position: absolute; top: 8px; right: 8px; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.community-map-zoom[hidden] { display: none; }
+.community-map-zoom .btn { min-width: 44px; min-height: 44px; }
+.community-map-zoom .btn[hidden] { display: none; }
+.community-map figcaption { margin-top: 8px; }
+.community-search { margin: 0; }
+.community-search > h3 { margin-top: 0; }
 .community-search[hidden], .community-results[hidden] { display: none; }
 .community-search .filters { margin: 12px 0 8px; }
-.community-results { margin: 16px 0; }
+.community-results { margin: 16px 0; scroll-margin-top: calc(var(--header-h) + 16px); }
 .community-block { margin: 16px 0 24px; }
 .community-block h3 { margin: 0 0 12px; }
 .community-distance { display: inline-block; margin: 0 0 8px; font-family: var(--font-mono); }
