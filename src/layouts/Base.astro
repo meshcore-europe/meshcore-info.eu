@@ -9,6 +9,8 @@ import { existsSync } from 'node:fs';
 import { BASE_URL, LANGUAGES, REGIONAL, ROOT, languageOf, t } from '../lib/site.mjs';
 import { shellTop, shellBottom } from '../lib/shell.mjs';
 
+// The languages written in Cyrillic: their pages draw with those faces too, so these are fetched early as well.
+const CYRILLIC = ['bg', 'uk'];
 const { lang, title, description, path = '', langs = [lang], enSource = true, noAlternates = false, home = false, overlay = false, live = false } = Astro.props;
 const locale = languageOf(lang).locale;
 const href = (l) => `/${l}/${path ? path + '/' : ''}`;
@@ -48,6 +50,8 @@ const regional = REGIONAL.filter((r) => r.id !== lang).map((r) => ({ ...r, ...la
        first show in a system font and then jump (web/shell/fonts.css uses font-display: swap). -->
   <link rel="preload" href="/fonts/ibm-plex-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/ibm-plex-mono-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+  {CYRILLIC.includes(lang) && <link rel="preload" href="/fonts/ibm-plex-sans-cyrillic-var.woff2" as="font" type="font/woff2" crossorigin>}
+  {CYRILLIC.includes(lang) && <link rel="preload" href="/fonts/ibm-plex-mono-cyrillic-400.woff2" as="font" type="font/woff2" crossorigin>}
   <link rel="stylesheet" href="/shell/fonts.css">
   <link rel="stylesheet" href="/shell/tokens.css">
   <link rel="stylesheet" href="/shell/base.css">

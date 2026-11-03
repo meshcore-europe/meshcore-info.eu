@@ -11,6 +11,7 @@
       "name": { "type": "string", "minLength": 1 },
       "preset": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
       "group": { "type": "string", "minLength": 1 },
+      "note_key": { "type": "string", "pattern": "^area_note_[a-z0-9_]+$" },
       "source": { "type": "string", "pattern": "^https://" },
       "last_checked": { "type": "string", "format": "date" },
       "firmware": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+$" },

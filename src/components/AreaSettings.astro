@@ -6,10 +6,12 @@ import { t, PARAMS, loadData } from '../lib/site.mjs';
 import map from '../data/europe-map.json';
 import UsbBlock from './UsbBlock.astro';
 import RegionTree from './RegionTree.astro';
+import RegionBaseline from './RegionBaseline.astro';
 
 const { lang } = Astro.props;
 const presets = Object.fromEntries(loadData('presets').map((p) => [p.id, p]));
 const areas = loadData('areas');
+const baselines = loadData('region_baselines');
 const country = (cc) => t(lang, `country_${cc.toLowerCase()}`);
 const countries = [...new Set(areas.map((a) => a.country))].sort((a, b) => country(a).localeCompare(country(b)));
 const fallback = presets['eu-uk-narrow'];
@@ -21,10 +23,10 @@ const COVERED = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE
 const others = COVERED.filter((cc) => !countries.includes(cc)).sort((a, b) => country(a).localeCompare(country(b)));
 // The country picker: every country above, each by its own name.
 const picks = [...countries, ...others].sort((a, b) => country(a).localeCompare(country(b)));
-// Where a country on the map links to: its one area, its country heading, or its line in the EU/UK list.
+// Where a country on the map links to: its one area, its heading when it has several, or its line in the EU/UK list.
 const target = (cc) => {
   const own = areas.filter((a) => a.country === cc && !map.provinces[a.id]);
-  if (own.length) return { href: `#area-${own[0].id}`, preset: presets[own[0].preset].name, kind: 'own' };
+  if (own.length) return { href: own.length > 1 ? `#country-${cc.toLowerCase()}` : `#area-${own[0].id}`, preset: own.map((a) => presets[a.preset].name).join(', '), kind: 'own' };
   if (others.includes(cc)) return { href: `#area-${cc.toLowerCase()}`, preset: fallback.name, kind: 'eu' };
   return null;
 };
@@ -90,6 +92,7 @@ const dateOf = (iso) => new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : lang, 
               {p.path_hash_size && <Fragment><dt>{t(lang, 'area_path_hash')}</dt><dd class="mono">{p.path_hash_size} {t(lang, 'area_bytes')}</dd></Fragment>}
               {a.firmware && <Fragment><dt>{t(lang, 'area_firmware')}</dt><dd class="mono">{a.firmware} {t(lang, 'area_or_newer')}</dd></Fragment>}
             </dl>
+            {a.note_key && <p>{t(lang, a.note_key)}</p>}
             <RegionTree lang={lang} area={a} />
             {a.changes && (
               <Fragment>
@@ -116,6 +119,7 @@ const dateOf = (iso) => new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : lang, 
           </section>
         );
       })}
+      {baselines.filter((b) => b.country === cc).map((b) => <RegionBaseline lang={lang} baseline={b} />)}
     </section>
   ))}
   <section class="country" id="eu-uk" data-one={t(lang, 'area_country_eu').replace('{preset}', fallback.name)}>

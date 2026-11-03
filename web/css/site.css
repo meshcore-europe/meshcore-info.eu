@@ -528,6 +528,7 @@ a.path-card { display: flex; flex-direction: column; gap: 6px; height: 100%; tex
 .rhd select { width: auto; flex: 0 1 auto; min-width: 0; max-width: 100%; min-height: 32px; padding: 3px 32px 3px 8px; font-size: var(--fs-sm); border-color: var(--border-strong); }
 .rhd input[data-region-town] { width: auto; flex: 0 1 16rem; min-width: 0; min-height: 32px; padding: 3px 8px; font-size: var(--fs-sm); border-color: var(--border-strong); }
 .regions .meta { margin-top: 10px; }
+.region-baseline code { white-space: nowrap; }
 @media (max-width: 539px) { .rbox { padding: 6px 8px 8px; } }
 /* The beam of a dipole and a collinear on the antenna guide ({{< gain >}}, src/lib/gain-diagram.mjs). */
 .gain-diagram { margin: 24px 0 32px; max-width: 640px; }

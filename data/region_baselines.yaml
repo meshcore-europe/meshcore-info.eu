@@ -1,0 +1,65 @@
+# The regions a country's own community decided, shown on /guides/settings/ instead of the region catalog
+# (data/regions.json). root is the code the community uses for Europe. regions are its regions below the country,
+# each with the smaller regions inside it. A code can sit in two regions when the community splits it, as Portugal
+# does with Setubal. note_key and footnote_key are strings. Re-check the source and update last_checked before
+# changing an entry.
+- id: portugal
+  country: PT
+  group: MeshCore Portugal
+  root: europe
+  note_key: regions_note_pt
+  footnote_key: regions_footnote_pt
+  source: https://www.meshcore.pt/en/docs/help/regions
+  last_checked: "2026-11-03"
+  regions:
+    - code: pt-norte
+      name: Norte
+      inside:
+        - { code: pt-braga, name: Braga }
+        - { code: pt-braganca, name: Bragança }
+        - { code: pt-porto, name: Porto }
+        - { code: pt-viana-do-castelo, name: Viana do Castelo }
+        - { code: pt-vila-real, name: Vila Real }
+    - code: pt-centro
+      name: Centro
+      inside:
+        - { code: pt-aveiro, name: Aveiro }
+        - { code: pt-castelo-branco, name: Castelo Branco }
+        - { code: pt-coimbra, name: Coimbra }
+        - { code: pt-guarda, name: Guarda }
+        - { code: pt-leiria, name: Leiria }
+        - { code: pt-viseu, name: Viseu }
+    - code: pt-lisboa-vale-do-tejo
+      name: Lisboa e Vale do Tejo
+      inside:
+        - { code: pt-lisboa, name: Lisboa }
+        - { code: pt-santarem, name: Santarém }
+        - { code: pt-setubal, name: Setúbal }
+    - code: pt-alentejo
+      name: Alentejo
+      inside:
+        - { code: pt-beja, name: Beja }
+        - { code: pt-evora, name: Évora }
+        - { code: pt-portalegre, name: Portalegre }
+        - { code: pt-setubal, name: Setúbal }
+    - code: pt-algarve
+      name: Algarve
+      inside:
+        - { code: pt-faro, name: Faro }
+    - code: pt-acores
+      name: Açores
+      inside:
+        - { code: pt-ilha-de-santa-maria, name: Ilha de Santa Maria }
+        - { code: pt-ilha-de-sao-miguel, name: Ilha de São Miguel }
+        - { code: pt-ilha-terceira, name: Ilha Terceira }
+        - { code: pt-ilha-da-graciosa, name: Ilha da Graciosa }
+        - { code: pt-ilha-de-sao-jorge, name: Ilha de São Jorge }
+        - { code: pt-ilha-do-pico, name: Ilha do Pico }
+        - { code: pt-ilha-do-faial, name: Ilha do Faial }
+        - { code: pt-ilha-das-flores, name: Ilha das Flores }
+        - { code: pt-ilha-do-corvo, name: Ilha do Corvo }
+    - code: pt-madeira
+      name: Madeira
+      inside:
+        - { code: pt-ilha-da-madeira, name: Ilha da Madeira }
+        - { code: pt-ilha-de-porto-santo, name: Ilha de Porto Santo }

@@ -52,7 +52,15 @@
   spreading_factor: 7
   coding_rate: 6
   source: https://api.meshcore.nz/api/v1/config
-  last_checked: "2026-10-13"
+  last_checked: "2026-11-03"
+- id: portugal-433
+  name: Portugal 433
+  frequency: "433.375"
+  bandwidth: "62.5"
+  spreading_factor: 9
+  coding_rate: 6
+  source: https://api.meshcore.nz/api/v1/config
+  last_checked: "2026-11-03"
 - id: slovakia
   name: Slovakia
   frequency: "869.618"
@@ -97,15 +105,6 @@
   bandwidth: "62.5"
   spreading_factor: 8
   coding_rate: 8
-  other: true
-  source: https://api.meshcore.nz/api/v1/config
-  last_checked: "2026-10-13"
-- id: portugal-433
-  name: Portugal 433
-  frequency: "433.375"
-  bandwidth: "62.5"
-  spreading_factor: 9
-  coding_rate: 6
   other: true
   source: https://api.meshcore.nz/api/v1/config
   last_checked: "2026-10-13"

@@ -4,7 +4,8 @@
 // town where the area uses one), each linking to that region on the MeshCore Analyzer's map. Which regions exist
 // comes from the catalog (data/regions.json, tools/update_regions.py), the groups of countries from
 // data/region_groups.yaml. The commands are nested, each region under its parent. An area whose group already
-// gives region commands (data/areas.yaml) shows the tree only: picking a province fills those commands in.
+// gives region commands (data/areas.yaml) shows the tree only: picking a province fills those commands in. A
+// country whose community decided its own regions (data/region_baselines.yaml) takes its root and regions from there.
 // web/js/regions.js runs the province picker.
 import { t, loadData } from '../lib/site.mjs';
 import catalog from '../../data/regions.json';
@@ -13,24 +14,27 @@ const { lang, area } = Astro.props;
 const cc = area.country.toLowerCase();
 const country = catalog.countries[cc];
 const group = loadData('region_groups').find((g) => g.countries.includes(area.country));
+const baseline = loadData('region_baselines').find((b) => b.country === area.country);
+const root = baseline ? baseline.root : catalog.europe;
 const MAP = 'https://meshcore-analyzer.eu/#regions';
 const at = (code) => `${MAP}?region=${code}`;
 const r = (k) => t(lang, `regions_${k}`);
 // The area's own region commands, if its group gives them; otherwise the tree's own commands.
 const own = (area.changes || []).some((c) => (c.commands || []).some((l) => l.startsWith('region put')));
-const chain = [catalog.europe, ...(group ? [group.code] : []), cc];
+const chain = [root, ...(group ? [group.code] : []), cc];
 // The town's line shows once a town is typed in its box (web/js/regions.js).
 const TOWN = 'region put YOUR_CITY YOUR_PROVINCE';
 const commands = [`region put ${chain[0]}`, ...chain.slice(1).map((code, i) => `region put ${code} ${chain[i]}`),
   `region put YOUR_PROVINCE ${cc}`, TOWN, 'region save'];
 const parts = (line) => line.split(/(YOUR_[A-Z]+)/).filter(Boolean);
-const regions = country ? country.regions : [];
+const regions = baseline ? baseline.regions : country ? country.regions : [];
 ---
 <div class="regions" data-regions data-map={MAP}>
   <h4>{r('title')}</h4>
   <p>{r('body')}</p>
+  {baseline && <p>{t(lang, baseline.note_key)}</p>}
   <div class="rbox r0">
-    <div class="rhd"><b>{r('europe')}</b> <code>{catalog.europe}</code><a href={MAP}>{r('map')}<span class="vh"> {r('map_label')}</span></a></div>
+    <div class="rhd"><b>{r('europe')}</b> <code>{root}</code><a href={MAP}>{r('map')}<span class="vh"> {r('map_label')}</span></a></div>
     {(() => {
       const inner = (
         <div class="rbox r2">
@@ -44,7 +48,7 @@ const regions = country ? country.regions : [];
                 </select>
                 <a href={at(cc)} data-region-link>{r('map')}<span class="vh"> {r('map_label')}</span></a>
               </div>
-              <div class="rbox r4"><div class="rhd"><input type="text" data-region-town placeholder={r('town')} aria-label={r('town')} autocomplete="off" spellcheck="false" /><a href={at(cc)} data-region-link>{r('map')}<span class="vh"> {r('map_label')}</span></a></div></div>
+              <div class="rbox r4"><div class="rhd"><input type="text" data-region-town placeholder={baseline ? r('district') : r('town')} aria-label={baseline ? r('district') : r('town')} autocomplete="off" spellcheck="false" /><a href={at(cc)} data-region-link>{r('map')}<span class="vh"> {r('map_label')}</span></a></div></div>
             </div>
           ) : (
             <div class="rbox r4"><div class="rhd"><span>{r('region')}</span><a href={at(cc)}>{r('map')}<span class="vh"> {r('map_label')}</span></a></div></div>

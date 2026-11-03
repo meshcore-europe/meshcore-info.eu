@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "data/region_baselines.yaml: the regions a country's own community decided",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "country", "group", "root", "note_key", "source", "last_checked", "regions"],
+    "properties": {
+      "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+      "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
+      "group": { "type": "string", "minLength": 1 },
+      "root": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "note_key": { "type": "string", "pattern": "^regions_note_[a-z0-9_]+$" },
+      "footnote_key": { "type": "string", "pattern": "^regions_footnote_[a-z0-9_]+$" },
+      "source": { "type": "string", "pattern": "^https://" },
+      "last_checked": { "type": "string", "format": "date" },
+      "regions": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "required": ["code", "name", "inside"],
+          "properties": {
+            "code": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+            "name": { "type": "string", "minLength": 1 },
+            "inside": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["code", "name"],
+                "properties": {
+                  "code": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+                  "name": { "type": "string", "minLength": 1 }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "additionalProperties": false
+  }
+}
