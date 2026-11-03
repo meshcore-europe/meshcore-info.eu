@@ -963,6 +963,9 @@
     url: "https://meshcore-torino.it/"
   - type: telegram
     url: "https://t.me/+Hgu8jCljAtA2MmQ8"
+  channels:
+  - "#Torino"
+  - "#Alert-Torino"
   languages: [it]
   desc_key: community.it-meshcore-torino.desc
   added: 2026-11-02

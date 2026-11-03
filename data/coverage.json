@@ -6,14 +6,14 @@
       "locale": "nl",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -24,14 +24,14 @@
       "locale": "de",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -42,14 +42,14 @@
       "locale": "fr",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -60,14 +60,14 @@
       "locale": "es",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -77,15 +77,15 @@
       "label": "Italiano",
       "locale": "it",
       "strings": {
-        "human": 0,
+        "human": 1,
         "ai": 1043,
-        "missing": 1,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -96,14 +96,14 @@
       "locale": "pl",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -114,14 +114,14 @@
       "locale": "pt-PT",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -132,14 +132,14 @@
       "locale": "cs",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -150,14 +150,14 @@
       "locale": "sv",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -168,14 +168,14 @@
       "locale": "da",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -186,14 +186,14 @@
       "locale": "nb",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -204,14 +204,14 @@
       "locale": "fi",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -222,14 +222,14 @@
       "locale": "hu",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -240,14 +240,14 @@
       "locale": "ro",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -258,14 +258,14 @@
       "locale": "el",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -276,14 +276,14 @@
       "locale": "fy",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -294,14 +294,14 @@
       "locale": "bg",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -312,14 +312,14 @@
       "locale": "hr",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -330,14 +330,14 @@
       "locale": "et",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -348,14 +348,14 @@
       "locale": "ga",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -366,14 +366,14 @@
       "locale": "lv",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -384,14 +384,14 @@
       "locale": "lt",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -402,14 +402,14 @@
       "locale": "mt",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -420,14 +420,14 @@
       "locale": "sk",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -438,14 +438,14 @@
       "locale": "sl",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -456,14 +456,14 @@
       "locale": "sr-Latn",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -474,14 +474,14 @@
       "locale": "uk",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -492,14 +492,14 @@
       "locale": "ca",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -510,14 +510,14 @@
       "locale": "eu",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -528,14 +528,14 @@
       "locale": "gl",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -546,14 +546,14 @@
       "locale": "cy",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
@@ -564,14 +564,14 @@
       "locale": "lb",
       "strings": {
         "human": 0,
-        "ai": 1043,
-        "missing": 1,
+        "ai": 1044,
+        "missing": 0,
         "total": 1044
       },
       "pages": {
         "human": 0,
-        "ai": 28,
-        "stale": 1,
+        "ai": 29,
+        "stale": 0,
         "missing": 0,
         "total": 29
       }
