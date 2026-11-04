@@ -639,6 +639,22 @@
           "icon": "users"
         },
         {
+          "id": "meetings",
+          "page": "meetings",
+          "href": "/meetings/",
+          "label": {
+            "nl": "Bijeenkomsten",
+            "en": "Meetings",
+            "de": "Treffen"
+          },
+          "sub": {
+            "nl": "De volgende bijeenkomsten, fysiek en online",
+            "en": "The next meetings, in person and online",
+            "de": "Die nächsten Treffen, vor Ort und online"
+          },
+          "icon": "calendar"
+        },
+        {
           "id": "projects",
           "page": "projects",
           "href": "/projects/",
@@ -712,8 +728,8 @@
           },
           "items": [
             "local-groups",
-            "contribute",
-            "press-kit"
+            "meetings",
+            "projects"
           ],
           "all": {
             "nl": "Alle communities",
@@ -723,13 +739,14 @@
         },
         {
           "title": {
-            "nl": "Wat ze maken",
-            "en": "Made by them",
-            "de": "Was sie bauen"
+            "nl": "Deze site",
+            "en": "This site",
+            "de": "Diese Seite"
           },
           "items": [
-            "projects",
-            "news"
+            "news",
+            "contribute",
+            "press-kit"
           ]
         }
       ],
@@ -816,6 +833,7 @@
         "map",
         "network-overview",
         "local-groups",
+        "meetings",
         "projects",
         "news",
         "contribute",

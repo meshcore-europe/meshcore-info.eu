@@ -82,3 +82,17 @@
   time: "18:00"
   timezone: Europe/Berlin
   last_checked: 2026-11-03
+
+- id: communitytreffen
+  country: DE
+  name: Communitytreffen
+  kind: online
+  place: Online
+  languages: [de]
+  date: '2026-11-06'
+  time: '19:00'
+  timezone: Europe/Berlin
+  repeat: monthly
+  last_checked: '2026-11-04'
+  group: de-ffnw
+  url: https://meet.ffnw.de/Communitytreffen
