@@ -1,6 +1,6 @@
 {
  "source": "https://raw.githubusercontent.com/marcelverdult/meshcore-regions/main/index.json",
- "generated_at": "2026-10-21T08:10:14Z",
+ "generated_at": "2026-11-03T10:21:38Z",
  "europe": "eu",
  "countries": {
   "ad": {
@@ -78,7 +78,32 @@
   },
   "by": {
    "name": "Belarus",
-   "regions": []
+   "regions": [
+    {
+     "code": "brest",
+     "name": "Brest"
+    },
+    {
+     "code": "gomel",
+     "name": "Gomel"
+    },
+    {
+     "code": "grodno",
+     "name": "Grodno"
+    },
+    {
+     "code": "minsk",
+     "name": "Minsk"
+    },
+    {
+     "code": "mogilev",
+     "name": "Mogilev"
+    },
+    {
+     "code": "vitebsk",
+     "name": "Vitebsk"
+    }
+   ]
   },
   "ch": {
    "name": "Switzerland",
@@ -165,6 +190,10 @@
      "name": "Bayern"
     },
     {
+     "code": "bergstrasse",
+     "name": "Bergstrasse"
+    },
+    {
      "code": "de-be",
      "name": "Berlin"
     },
@@ -191,6 +220,10 @@
     {
      "code": "de-dk",
      "name": "Dänemark"
+    },
+    {
+     "code": "eifel",
+     "name": "Eifel"
     },
     {
      "code": "pamina",
@@ -257,6 +290,10 @@
      "name": "Nordrhein-Westfalen"
     },
     {
+     "code": "odenwald",
+     "name": "Odenwald"
+    },
+    {
      "code": "de-ost",
      "name": "Ostdeutschland"
     },
@@ -267,6 +304,10 @@
     {
      "code": "rhein-main",
      "name": "Rhein-Main"
+    },
+    {
+     "code": "rheinland",
+     "name": "Rheinland"
     },
     {
      "code": "de-rp",
@@ -289,16 +330,32 @@
      "name": "Samtgemeinde Tostedt"
     },
     {
+     "code": "sauerland",
+     "name": "Sauerland"
+    },
+    {
      "code": "de-sh",
      "name": "Schleswig-Holstein"
+    },
+    {
+     "code": "de-solling",
+     "name": "Solling"
     },
     {
      "code": "de-sued",
      "name": "Süddeutschland"
     },
     {
+     "code": "taunus",
+     "name": "Taunus"
+    },
+    {
      "code": "de-th",
      "name": "Thüringen"
+    },
+    {
+     "code": "trier",
+     "name": "Trier"
     },
     {
      "code": "upper-rhine",
@@ -307,12 +364,20 @@
     {
      "code": "de-west",
      "name": "Westdeutschland"
+    },
+    {
+     "code": "westerwald",
+     "name": "Westerwald"
     }
    ]
   },
   "dk": {
    "name": "Denmark",
    "regions": [
+    {
+     "code": "dk-horsens",
+     "name": "Horsens"
+    },
     {
      "code": "dk-mdj",
      "name": "Region Midtjylland"
@@ -665,6 +730,10 @@
      "name": "South West & South Wales"
     },
     {
+     "code": "suffolk",
+     "name": "Suffolk"
+    },
+    {
      "code": "wls",
      "name": "Wales"
     },
@@ -688,7 +757,12 @@
   },
   "ie": {
    "name": "Ireland",
-   "regions": []
+   "regions": [
+    {
+     "code": "connacht",
+     "name": "Connacht"
+    }
+   ]
   },
   "im": {
    "name": "Isle of Man",
@@ -906,12 +980,20 @@
      "name": "Alta"
     },
     {
+     "code": "no-alta",
+     "name": "Alta"
+    },
+    {
      "code": "anx",
      "name": "Andenes"
     },
     {
      "code": "bdu",
      "name": "Bardufoss"
+    },
+    {
+     "code": "no-bergen",
+     "name": "Bergen"
     },
     {
      "code": "bvg",
@@ -938,6 +1020,10 @@
      "name": "Båtsfjord"
     },
     {
+     "code": "no-drammen",
+     "name": "Drammen"
+    },
+    {
      "code": "eve",
      "name": "Evenes"
     },
@@ -950,12 +1036,20 @@
      "name": "Florø"
     },
     {
+     "code": "no-fredrikstad",
+     "name": "Fredrikstad"
+    },
+    {
      "code": "fde",
      "name": "Førde"
     },
     {
      "code": "osl",
      "name": "Gardermoen/Oslo"
+    },
+    {
+     "code": "no-hamar",
+     "name": "Hamar"
     },
     {
      "code": "hft",
@@ -978,8 +1072,16 @@
      "name": "Kirkenes"
     },
     {
+     "code": "no-kirkenes",
+     "name": "Kirkenes"
+    },
+    {
      "code": "krs",
      "name": "Kjevik/Kristiansand"
+    },
+    {
+     "code": "no-kristiansand",
+     "name": "Kristiansand"
     },
     {
      "code": "ksu",
@@ -1006,6 +1108,10 @@
      "name": "Molde"
     },
     {
+     "code": "no-molde",
+     "name": "Molde"
+    },
+    {
      "code": "mjf",
      "name": "Mosjøen"
     },
@@ -1026,6 +1132,10 @@
      "name": "Oslo"
     },
     {
+     "code": "no-oslo",
+     "name": "Oslo"
+    },
+    {
      "code": "rrs",
      "name": "Røros"
     },
@@ -1042,8 +1152,16 @@
      "name": "Sandane"
     },
     {
+     "code": "no-sandnes",
+     "name": "Sandnes"
+    },
+    {
      "code": "ssj",
      "name": "Sandnessjøen"
+    },
+    {
+     "code": "no-skien",
+     "name": "Skien"
     },
     {
      "code": "sog",
@@ -1052,6 +1170,10 @@
     {
      "code": "svg",
      "name": "Sola/Stavanger"
+    },
+    {
+     "code": "no-stavanger",
+     "name": "Stavanger"
     },
     {
      "code": "skn",
@@ -1080,6 +1202,10 @@
     {
      "code": "tos",
      "name": "Tromsø"
+    },
+    {
+     "code": "no-trondheim",
+     "name": "Trondheim"
     },
     {
      "code": "no-tonsberg",
@@ -1135,6 +1261,10 @@
      "name": "Lublin"
     },
     {
+     "code": "pl-podlasie",
+     "name": "Podlasie"
+    },
+    {
      "code": "poz",
      "name": "Poznań / Wielkopolska"
     },
@@ -1164,12 +1294,28 @@
    "name": "Portugal",
    "regions": [
     {
+     "code": "pt-alentejo",
+     "name": "Alentejo"
+    },
+    {
+     "code": "pt-algarve",
+     "name": "Algarve"
+    },
+    {
      "code": "pt-acores",
      "name": "Açores"
     },
     {
+     "code": "pt-centro",
+     "name": "Centro"
+    },
+    {
      "code": "pt-lisboa-vale-do-tejo",
      "name": "Lisboa e Vale do Tejo"
+    },
+    {
+     "code": "pt-madeira",
+     "name": "Madeira"
     }
    ]
   },

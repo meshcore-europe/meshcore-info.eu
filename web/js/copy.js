@@ -23,4 +23,16 @@
     });
     wrap.appendChild(btn);
   });
+  // The short links (src/components/ShortLink.astro): the button copies the whole address.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-copy-text]'), function (btn) {
+    var shown = btn.textContent;
+    btn.hidden = false;
+    btn.addEventListener('click', function () {
+      navigator.clipboard.writeText(btn.getAttribute('data-copy-text')).then(function () {
+        btn.textContent = done;
+        btn.classList.add('copied');
+        setTimeout(function () { btn.textContent = shown; btn.classList.remove('copied'); }, 2000);
+      }, function () { /* permission denied: keep the label, the address stays on the page */ });
+    });
+  });
 })();

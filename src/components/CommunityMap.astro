@@ -4,6 +4,7 @@
 // adds zoom, the larger detail (web/data/community-map-detail.json) and fills the result list next to it.
 import map from '../data/europe-map.json';
 import { t } from '../lib/site.mjs';
+import { allMeetings, meetingSpot, meetingsPage } from '../lib/meetings.mjs';
 import { project, kmToUnits, mainBox, countryAnchor } from '../../web/js/map-view.js';
 const { lang, communities, countries } = Astro.props;
 // Dots on one spot sit in a small ring; web/js/community-map.js keeps them apart at every zoom.
@@ -19,6 +20,12 @@ const national = countries.flatMap((cc) => {
   if (!mine.length) return [];
   const at = countryAnchor(map.countries[cc]);
   return mine.map((c, i) => ({ c, ...at, ...ring(i, mine.length) }));
+});
+// In-person meetings for web/js/community-map.js, which draws those of the next 30 days above the dots.
+const page = meetingsPage(lang);
+const spots = allMeetings().flatMap((m) => {
+  const spot = meetingSpot(m);
+  return spot ? [{ ...project(spot.lat, spot.lon), id: m.id, group: m.group, name: m.name, date: m.date, repeat: m.repeat, last_checked: m.last_checked, href: `${page}#meeting-${m.id}` }] : [];
 });
 ---
 <figure class="community-map" data-community-map data-width={map.width} data-height={map.height} data-detail="/data/community-map-detail.json"
@@ -36,6 +43,7 @@ const national = countries.flatMap((cc) => {
       <circle class="map-reach" data-reach r="0" hidden />
       <g class="map-dots">{local.map(({ c, x, y, ox, oy }) => <a href={`#community-${c.id}`} data-group={c.id} data-x={x.toFixed(1)} data-y={y.toFixed(1)} data-ox={ox.toFixed(3)} data-oy={oy.toFixed(3)} aria-label={c.name}><title>{c.name}</title><circle cx={(x + ox * 14).toFixed(1)} cy={(y + oy * 14).toFixed(1)} r="6" /></a>)}
         {national.map(({ c, x, y, ox, oy }) => <a class="map-national" href={`#community-${c.id}`} data-group={c.id} data-x={x.toFixed(1)} data-y={y.toFixed(1)} data-ox={ox.toFixed(3)} data-oy={oy.toFixed(3)} aria-label={c.name}><title>{c.name}</title><circle cx={(x + ox * 14).toFixed(1)} cy={(y + oy * 14).toFixed(1)} r="6" /></a>)}</g>
+      <g class="map-meetings" data-meeting-marks data-meetings={JSON.stringify(spots)}></g>
       <circle class="map-point" data-point r="6" hidden />
     </svg>
     <div class="community-map-zoom" data-zoom hidden>
@@ -44,6 +52,6 @@ const national = countries.flatMap((cc) => {
       <button type="button" class="btn" data-zoom-reset hidden>{t(lang, 'community_map_reset')}</button>
     </div>
   </div>
-  <figcaption class="meta">{t(lang, 'community_map_hint')} {t(lang, 'community_map_credit')} <a href="https://www.naturalearthdata.com/">Natural Earth</a></figcaption>
+  <figcaption class="meta">{t(lang, 'community_map_hint')} {t(lang, 'meetings_map_hint')} {t(lang, 'community_map_credit')} <a href="https://www.naturalearthdata.com/">Natural Earth</a></figcaption>
 </figure>
 <script is:inline type="module" src="/js/community-map.js"></script>

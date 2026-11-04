@@ -1,0 +1,14 @@
+---
+// A short link to copy into a mesh message, under the heading it belongs to. Props: lang, name (/flash, /s/nl-li).
+// The address stays whole with https://, because that is what the reader sends. web/js/copy.js shows the button.
+import { t } from '../lib/site.mjs';
+import { SHORT_ORIGIN } from '../lib/short-links.mjs';
+
+const { lang, name } = Astro.props;
+const url = `${SHORT_ORIGIN}${name}`;
+---
+<div class="short-link">
+  <span class="short-link-label">{t(lang, 'short_link')}</span>
+  <span class="short-link-url"><span class="short-link-origin">{SHORT_ORIGIN}</span><b>{name}</b></span>
+  <button type="button" class="short-link-copy" data-copy-text={url} aria-label={`${t(lang, 'copy')}: ${url}`} hidden>{t(lang, 'copy')}</button>
+</div>

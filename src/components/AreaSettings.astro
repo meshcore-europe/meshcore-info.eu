@@ -1,11 +1,15 @@
 ---
 // The recommended settings per area (/guides/settings/): per country its areas, each with its radio
-// preset and the settings its local group changed from MeshCore's defaults. Inside .prose, so web/js/copy.js
-// gives every command block a copy button.
+// preset and the settings its local group changed from MeshCore's defaults; then the other EU/UK countries, each
+// with the general region tree behind a <details>, so every country can be opened without JavaScript
+// (web/js/area-pick.js shows the picked one, open). Inside .prose, so web/js/copy.js gives every command block a
+// copy button.
 import { t, PARAMS, loadData } from '../lib/site.mjs';
 import map from '../data/europe-map.json';
 import UsbBlock from './UsbBlock.astro';
 import RegionTree from './RegionTree.astro';
+import ShortLink from './ShortLink.astro';
+import { COVERED, areaName, countryName } from '../lib/short-links.mjs';
 import RegionBaseline from './RegionBaseline.astro';
 import PresetList from './PresetList.astro';
 
@@ -13,14 +17,13 @@ const { lang } = Astro.props;
 const presets = Object.fromEntries(loadData('presets').map((p) => [p.id, p]));
 const areas = loadData('areas');
 const baselines = loadData('region_baselines');
+// The local groups the areas and baselines point to by id, for their name and their entry on Local groups.
+const groups = Object.fromEntries(loadData('communities').map((c) => [c.id, c]));
 const country = (cc) => t(lang, `country_${cc.toLowerCase()}`);
 const countries = [...new Set(areas.map((a) => a.country))].sort((a, b) => country(a).localeCompare(country(b)));
 const fallback = presets['eu-uk-narrow'];
 const otherPresets = Object.values(presets).filter((p) => p.other);
-// The countries MeshCore's own list names for EU/UK (Narrow): the EU and the UK. Those without an area of
-// their own use it.
-const COVERED = ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU',
-  'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'GB'];
+// The countries on MeshCore's EU/UK (Narrow) list without an area of their own use it.
 const others = COVERED.filter((cc) => !countries.includes(cc)).sort((a, b) => country(a).localeCompare(country(b)));
 // The country picker: every country above, each by its own name.
 const picks = [...countries, ...others].sort((a, b) => country(a).localeCompare(country(b)));
@@ -78,6 +81,7 @@ const dateOf = (iso) => new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : lang, 
         const single = own.length === 1 && own[0].name === country(cc);
         return <h2><span class="cc mono" aria-hidden="true">{cc}</span> {country(cc)} <a class="anchor" href={single ? `#area-${own[0].id}` : `#country-${cc.toLowerCase()}`} aria-label={`${t(lang, 'area_link')}: ${country(cc)}`}>#</a></h2>;
       })()}
+      <ShortLink lang={lang} name={countryName(cc)} />
       {areas.filter((a) => a.country === cc).map((a) => {
         const p = presets[a.preset];
         // An area on 2 presets shows them side by side, each with its own USB block.
@@ -86,6 +90,7 @@ const dateOf = (iso) => new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : lang, 
           <section class="area" id={`area-${a.id}`}>
             {a.name !== country(cc) ? <h3>{a.name} <a class="anchor" href={`#area-${a.id}`} aria-label={`${t(lang, 'area_link')}: ${a.name}`}>#</a></h3>
               : areas.filter((x) => x.country === cc).length > 1 && <h3>{a.name} <a class="anchor" href={`#area-${a.id}`} aria-label={`${t(lang, 'area_link')}: ${a.name}`}>#</a></h3>}
+            {areaName(a) && <ShortLink lang={lang} name={areaName(a)} />}
             {also ? (
               <div class="area-presets">
                 {[p, also].map((x) => <div><PresetList lang={lang} preset={x} /><UsbBlock lang={lang} commands={usbCommands(x, a)} /></div>)}
@@ -113,16 +118,17 @@ const dateOf = (iso) => new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : lang, 
             )}
             {!also && <UsbBlock lang={lang} commands={usbCommands(p, a)} />}
             <p class="meta">{a.group
-              ? <Fragment>{`${t(lang, 'area_source_group')} `}<a href={a.source}>{a.group}</a></Fragment>
+              ? <Fragment>{`${t(lang, 'area_source_group')} `}<a href={`/${lang}/community/#community-${a.group}`}>{groups[a.group].name}</a>: <a href={a.source}>{t(lang, 'area_source_link')}</a></Fragment>
               : <a href={a.source}>{t(lang, 'area_source_preset')}</a>}, {t(lang, 'area_checked')} <time datetime={a.last_checked}>{dateOf(a.last_checked)}</time></p>
           </section>
         );
       })}
-      {baselines.filter((b) => b.country === cc).map((b) => <RegionBaseline lang={lang} baseline={b} />)}
+      {baselines.filter((b) => b.country === cc).map((b) => <RegionBaseline lang={lang} baseline={b} group={groups[b.group]} />)}
     </section>
   ))}
   <section class="country" id="eu-uk" data-one={t(lang, 'area_country_eu').replace('{preset}', fallback.name)}>
     <h2>{t(lang, 'area_others_title')} <a class="anchor" href="#eu-uk" aria-label={`${t(lang, 'area_link')}: ${t(lang, 'area_others_title')}`}>#</a></h2>
+    <div data-eu-short hidden><ShortLink lang={lang} name="/s/" /></div>
     <p>{t(lang, 'area_others_body')}</p>
     <dl class="area-preset">
       <dt>{t(lang, 'area_preset')}</dt><dd><strong>{fallback.name}</strong></dd>
@@ -133,7 +139,12 @@ const dateOf = (iso) => new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : lang, 
     </dl>
     <UsbBlock lang={lang} commands={usbCommands(fallback, null)} />
     <ul class="area-others">{others.map((cc) => (
-      <li id={`area-${cc.toLowerCase()}`}><span class="cc mono" aria-hidden="true">{cc}</span> {country(cc)} <a class="anchor" href={`#area-${cc.toLowerCase()}`} aria-label={`${t(lang, 'area_link')}: ${country(cc)}`}>#</a></li>
+      <li id={`area-${cc.toLowerCase()}`}>
+        <details>
+          <summary><span class="cc mono" aria-hidden="true">{cc}</span> {country(cc)} <a class="anchor" href={`#area-${cc.toLowerCase()}`} aria-label={`${t(lang, 'area_link')}: ${country(cc)}`}>#</a></summary>
+          <RegionTree lang={lang} area={{ id: cc.toLowerCase(), country: cc }} />
+        </details>
+      </li>
     ))}</ul>
     <p class="meta"><a href={fallback.source}>{t(lang, 'area_source_preset')}</a>, {t(lang, 'area_checked')} <time datetime={fallback.last_checked}>{dateOf(fallback.last_checked)}</time></p>
   </section>

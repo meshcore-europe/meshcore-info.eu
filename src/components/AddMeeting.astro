@@ -1,0 +1,76 @@
+---
+// The way to add a meeting. Without JavaScript this is a link to the issue form. web/js/meeting-add.js shows the form
+// here: it shows the next dates straight away and opens the issue form with the answers filled in.
+import { t, PARAMS, hasString, loadData } from '../lib/site.mjs';
+import { feedGroups } from '../lib/meetings.mjs';
+const { lang } = Astro.props;
+const formUrl = `${PARAMS.repo}/issues/new`;
+const countries = Object.keys(loadData('meeting_zones')).filter((cc) => hasString(`country_${cc.toLowerCase()}`))
+  .map((cc) => [cc, t(lang, `country_${cc.toLowerCase()}`)]).sort((a, b) => a[1].localeCompare(b[1]));
+const repeats = { once: 'meetings_repeat_once', weekly: 'meetings_repeat_weekly', m1: 'meetings_repeat_monthly_1', m2: 'meetings_repeat_monthly_2', m3: 'meetings_repeat_monthly_3', m4: 'meetings_repeat_monthly_4', last: 'meetings_repeat_monthly_last' };
+const data = Object.fromEntries(Object.entries(repeats).map(([k, key]) => [`data-repeat-${k}`, t(lang, key)]));
+const needs = Object.fromEntries(['need_new_group', 'need_new_link', 'need_who', 'need_page', 'need_place', 'need_open', 'need_date'].map((k) => [`data-${k.replace(/_/g, '-')}`, t(lang, `meetings_add_${k}`)]));
+---
+<section class="note cta-box meeting-add" id="add-meeting" data-meeting-add data-form={formUrl} data-site-feeds="https://meshcore-info.eu/meetings/" {...data} {...needs}
+  data-feed-group={t(lang, 'meetings_add_feed_group')} data-feed-new={t(lang, 'meetings_add_feed_new')} data-feed-none={t(lang, 'meetings_add_feed_none')}>
+  <h2>{t(lang, 'meetings_add_title')}</h2>
+  <p>{t(lang, 'meetings_add_body')}</p>
+  <p data-no-script><a class="btn btn-primary" href={`${formUrl}?template=add-meeting.yml`}>{t(lang, 'meetings_add_title')}</a></p>
+  <div class="meeting-add-grid" data-with-script hidden>
+    <form class="meeting-add-form">
+      <label>{t(lang, 'meetings_add_group')}
+        <select name="group">
+          {feedGroups().map((g) => <option value={g.id} data-name={g.name}>{g.name}</option>)}
+          <option value="new">{t(lang, 'meetings_add_group_new')}</option>
+          <option value="none">{t(lang, 'meetings_add_group_none')}</option>
+        </select>
+      </label>
+      <label data-only="new" hidden>{t(lang, 'meetings_add_new_group')}<input name="new_group" type="text" autocomplete="off" /></label>
+      <label data-only="new" hidden>{t(lang, 'meetings_add_region')}<input name="region" type="text" autocomplete="off" /></label>
+      <label data-only="new" hidden>{t(lang, 'meetings_add_links')}<input name="links" type="url" placeholder="https://" autocomplete="off" /></label>
+      <label data-only="none" hidden>{t(lang, 'meetings_add_who')}<input name="who" type="text" placeholder={t(lang, 'meetings_add_who_example')} autocomplete="off" /></label>
+      <label data-only="new none" hidden>{t(lang, 'community_search_country')}
+        <select name="country">{countries.map(([cc, name]) => <option value={cc}>{name}</option>)}</select>
+      </label>
+      <label data-only="none" hidden>{t(lang, 'meetings_add_page')}<input name="page" type="url" placeholder="https://" autocomplete="off" /></label>
+      <label>{t(lang, 'meetings_add_name')}<input name="name" type="text" autocomplete="off" /></label>
+      <label>{t(lang, 'meetings_add_kind')}
+        <select name="kind">
+          <option value="In person">{t(lang, 'meetings_kind_in_person')}</option>
+          <option value="Online">{t(lang, 'meetings_kind_online')}</option>
+          <option value="On a channel">{t(lang, 'meetings_kind_channel')}</option>
+        </select>
+      </label>
+      <label>{t(lang, 'meetings_add_place')}<input name="place" type="text" autocomplete="off" /></label>
+      <label>{t(lang, 'meetings_add_first')}<input name="first" type="date" /></label>
+      <label>{t(lang, 'meetings_add_time')}<input name="time" type="time" value="19:00" /></label>
+      <label>{t(lang, 'meetings_add_rule')}<select name="rule"></select></label>
+      <label>{t(lang, 'meetings_add_languages')}<input name="languages" type="text" placeholder="nl, en" autocomplete="off" /></label>
+      <label class="meeting-add-check"><input name="open" type="checkbox" /> {t(lang, 'meetings_add_open')}</label>
+      <p class="muted" data-need aria-live="polite" hidden></p>
+      <p><a class="btn btn-primary" data-open-form>{t(lang, 'meetings_add_open_form')}</a></p>
+    </form>
+    <div class="meeting-add-side">
+      <section>
+        <h3>{t(lang, 'meetings_add_next_dates')}</h3>
+        <p class="muted" data-rule-text></p>
+        <ul class="meeting-add-dates mono" data-dates></ul>
+      </section>
+      <section>
+        <h3>{t(lang, 'meetings_add_feed_title')}</h3>
+        <p data-feed-text></p>
+        <code data-feed-link></code>
+      </section>
+      <section data-how>
+        <h3>{t(lang, 'meetings_add_how_title')}</h3>
+        <ol>
+          <li>{t(lang, 'meetings_add_how_1')}</li>
+          <li>{t(lang, 'meetings_add_how_2')}</li>
+          <li>{t(lang, 'meetings_add_how_3')}</li>
+        </ol>
+        <p class="muted">{t(lang, 'meetings_add_how_note')}</p>
+      </section>
+    </div>
+  </div>
+</section>
+<script is:inline type="module" src="/js/meeting-add.js"></script>

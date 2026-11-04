@@ -34,6 +34,12 @@ body:
       label: Changed settings
       description: One per line, as the repeater command or the setting in the app, with a short reason. Leave empty if your area only uses its own preset.
       render: text
+  - type: textarea
+    id: regions
+    attributes:
+      label: Region commands
+      description: The `region put` commands your group gives, one per line, each region after the one it sits in (for example `region put eu`, `region put nl eu`). Write YOUR_PROVINCE where a repeater owner fills in their province and YOUR_CITY for their town. Leave empty if your group gives no regions.
+      render: text
   - type: input
     id: source
     attributes:
@@ -45,4 +51,4 @@ body:
     id: group
     attributes:
       label: Local group
-      description: The name of the group that uses these settings.
+      description: The name of the group that uses these settings, as Local groups on the site lists it.

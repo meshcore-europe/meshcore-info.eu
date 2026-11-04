@@ -1,0 +1,16 @@
+# The short links to pages: meshcore-info.eu/<id> sends the reader to the page, in their language. The id is
+# the page's English menu word in lower case, at most 8 letters, and never a language code or an existing path.
+# It stays once it is out: tests/short_links.lock fails the gate when one disappears. When a page moves or
+# goes, point it at the nearest page. Never give a name a second meaning.
+- id: flash
+  path: firmware/flasher
+- id: start
+  path: get-started
+- id: settings
+  path: guides/settings
+- id: repeater
+  path: repeater-guide
+- id: antenna
+  path: guides/antenna
+- id: channels
+  path: guides/channels

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "data/short_links.yaml: the short links to pages",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "path"],
+    "properties": {
+      "id": { "type": "string", "pattern": "^[a-z]{2,8}$" },
+      "path": { "type": "string", "pattern": "^[a-z0-9-]+(/[a-z0-9-]+)*$" }
+    },
+    "additionalProperties": false
+  }
+}

@@ -1,0 +1,106 @@
+name: Add a meeting
+description: List a public MeshCore meeting on the Meetings page.
+title: "Add meeting: "
+labels: [community, needs-triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A maintainer checks the link and adds the meeting to `data/meetings.yaml`. You do not need a listed group: a new group's meeting goes on the list first, then the group goes on Local groups. Only meetings anyone can join are listed.
+  - type: input
+    id: group
+    attributes:
+      label: Local group
+      description: Its name on Local groups. Leave empty if your group is new or if there is no group.
+  - type: input
+    id: new_group
+    attributes:
+      label: Name of your new group
+      description: Only if your group is not on Local groups yet.
+  - type: input
+    id: region
+    attributes:
+      label: Region or city of your new group
+      description: Leave empty for a country-wide group.
+  - type: input
+    id: links
+    attributes:
+      label: Your new group's public website or chat
+  - type: input
+    id: who
+    attributes:
+      label: Who runs this meeting, if there is no group
+      description: A club, a hackerspace or a name you want to show.
+  - type: input
+    id: page
+    attributes:
+      label: Public page about this meeting
+      description: Needed if there is no group. It has no tracking parameters or shop links.
+  - type: input
+    id: country
+    attributes:
+      label: Country
+      description: Two-letter ISO code, for example NL, DE or GB.
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Name of the meeting
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: How do people join?
+      options:
+        - In person
+        - Online
+        - On a channel
+    validations:
+      required: true
+  - type: input
+    id: place
+    attributes:
+      label: Public place, link or channel
+    validations:
+      required: true
+  - type: input
+    id: first
+    attributes:
+      label: First date
+      description: For example 2026-12-08.
+    validations:
+      required: true
+  - type: input
+    id: time
+    attributes:
+      label: Time, in local time
+      description: For example 19:00.
+    validations:
+      required: true
+  - type: dropdown
+    id: rule
+    attributes:
+      label: How often?
+      description: A monthly meeting repeats on the first date's weekday and its place in the month, such as the 2nd Tuesday.
+      options:
+        - Only this date
+        - Every week
+        - Every month
+    validations:
+      required: true
+  - type: input
+    id: languages
+    attributes:
+      label: Languages spoken
+      description: For example "nl, en".
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: Anyone can join this meeting, without an invite.
+          required: true

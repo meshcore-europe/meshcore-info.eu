@@ -1,6 +1,8 @@
 // The map on /community/: zoom and pan by changing the viewBox, with wheel, pinch, drag, buttons and keys. A click on
 // a dot or a country fills the result list through web/js/radius.js. Everything stays in the browser.
 import { project, kmToUnits, clampView, viewBox, zoomAt, fitBox, dotsNear } from './map-view.js';
+import { nextDate, addDays, todayIn } from './meetings-core.js';
+import { pageLocale } from './meeting-row.js';
 
 const root = document.querySelector('[data-community-map]');
 
@@ -15,6 +17,28 @@ if (root) {
     a, id: a.dataset.group, x: Number(a.dataset.x), y: Number(a.dataset.y), circle: a.querySelector('circle'),
     atX: Number(a.dataset.x), atY: Number(a.dataset.y), ox: Number(a.dataset.ox || 0), oy: Number(a.dataset.oy || 0),
   }));
+  // The in-person meetings of the next 30 days, with their date, drawn above the dots.
+  const MEETING_DAYS = 30;
+  const today = todayIn(Intl.DateTimeFormat().resolvedOptions().timeZone);
+  const dayMonth = new Intl.DateTimeFormat(pageLocale(), { day: 'numeric', month: 'short', timeZone: 'UTC' });
+  const marks = [];
+  const markLayer = root.querySelector('[data-meeting-marks]');
+  for (const m of JSON.parse(markLayer.dataset.meetings)) {
+    const next = nextDate(m, today);
+    if (!next || next > addDays(today, MEETING_DAYS)) continue;
+    const a = document.createElementNS(NS, 'a'), title = document.createElementNS(NS, 'title');
+    const rect = document.createElementNS(NS, 'rect'), text = document.createElementNS(NS, 'text');
+    const label = dayMonth.format(new Date(`${next}T12:00:00Z`));
+    a.setAttribute('href', m.href);
+    if (m.group) a.dataset.markGroup = m.group;
+    a.setAttribute('aria-label', `${label}: ${m.name}`);
+    title.textContent = `${label}: ${m.name}`;
+    text.textContent = label;
+    text.setAttribute('dy', '0.35em');
+    a.append(title, rect, text);
+    markLayer.append(a);
+    marks.push({ x: m.x, y: m.y, rect, text });
+  }
   const SEARCH_ZOOM = 7;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let view = { x: W / 2, y: H / 2, z: 1 };
@@ -34,6 +58,13 @@ if (root) {
       if (!d.ox && !d.oy) continue;
       d.x = d.atX + (d.ox * size * 1.6) / px; d.y = d.atY + (d.oy * size * 1.6) / px;
       d.circle.setAttribute('cx', d.x.toFixed(2)); d.circle.setAttribute('cy', d.y.toFixed(2));
+    }
+    markLayer.setAttribute('font-size', (11 / px).toFixed(2));
+    for (const { x, y, rect, text } of marks) {
+      const s = (size + 1) / px;
+      rect.setAttribute('x', (x - s).toFixed(2)); rect.setAttribute('y', (y - s).toFixed(2));
+      rect.setAttribute('width', (2 * s).toFixed(2)); rect.setAttribute('height', (2 * s).toFixed(2));
+      text.setAttribute('x', (x + s + 4 / px).toFixed(2)); text.setAttribute('y', y.toFixed(2));
     }
     pointEl.setAttribute('r', (7 / px).toFixed(2));
     towns.setAttribute('font-size', (12 / px).toFixed(2));
@@ -109,8 +140,13 @@ if (root) {
   // One click rule for mouse, touch and keyboard. A tap reaches every dot near it, since dots overlap on a small screen.
   svg.addEventListener('click', (ev) => {
     const link = ev.target.closest('a');
-    if (link) ev.preventDefault();
+    // A meeting without a listed group opens the meetings page; one with a group shows that group.
+    if (link && (dragged || !link.closest('[data-meeting-marks]') || link.dataset.markGroup)) ev.preventDefault();
     if (dragged) return;
+    if (link?.closest('[data-meeting-marks]')) {
+      if (link.dataset.markGroup) showDots(dots.filter((d) => d.id === link.dataset.markGroup));
+      return;
+    }
     if (!link) {
       if (!ev.target.classList.contains('map-other')) return;
       pick([]);

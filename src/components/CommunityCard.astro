@@ -1,7 +1,12 @@
 ---
 // One local group from data/communities.yaml, as community-card.html.
 import { t, loadData } from '../lib/site.mjs';
+import { groupMeetings, meetingsPage, localeOf } from '../lib/meetings.mjs';
 const { lang, c } = Astro.props;
+const { mine, next, last } = groupMeetings(c.id);
+const page = meetingsPage(lang);
+const longDate = new Intl.DateTimeFormat(localeOf(lang), { dateStyle: 'full', timeZone: 'UTC' });
+const inUtc = (date) => new Date(`${date}T12:00:00Z`);
 // A link with ask_at has no public invite: the card names the group (in this file) that hands it out.
 const askAt = (l) => {
   const g = loadData('communities').find((x) => x.id === l.ask_at);
@@ -14,7 +19,14 @@ const askAt = (l) => {
   <h3>{c.name}</h3>
   {c.region && <p class="muted">{c.region}</p>}
   {c.desc_key && <p>{t(lang, c.desc_key)}</p>}
+  {mine.length > 0 && (
+    <p class="community-meeting" data-group-meetings={JSON.stringify(mine)} data-page={page} data-next-label={t(lang, 'meetings_next')} data-last-label={t(lang, 'meetings_last')}>
+      {next ? <Fragment><span class="label">{t(lang, 'meetings_next')}</span><a href={`${page}#meeting-${next.m.id}`}>{longDate.format(inUtc(next.at))}, {next.m.time}</a></Fragment>
+        : last && <Fragment><span class="label">{t(lang, 'meetings_last')}</span>{longDate.format(inUtc(last))}</Fragment>}
+    </p>
+  )}
   {c.links && c.links.length > 0 && <ul class="link-list">{c.links.map((l) => <li>{l.url ? <a href={l.url}>{t(lang, `link_${l.type}`)}</a> : <Fragment>{t(lang, `link_${l.type}`)}: {t(lang, 'community_ask_at')}{' '}<a href={`#community-${l.ask_at}`}>{askAt(l).name}</a></Fragment>}</li>)}</ul>}
+  <p class="community-feed"><a href={`${page}?feed=${c.id}#feed`}>{t(lang, 'meetings_group_feed')}</a></p>
   {c.channels && c.channels.length > 0 && <div class="chans"><span class="label">{t(lang, 'community_channels')}:</span> <ul class="chan-list">{c.channels.map((ch) => <li><code>{ch}</code></li>)}</ul></div>}
   {c.languages && c.languages.length > 0 && <p><span class="label">{t(lang, 'community_languages')}:</span> <span class="mono">{c.languages.map((x) => x.toUpperCase()).join(' ')}</span></p>}
 </li>

@@ -3,12 +3,15 @@
 //   {{< callout type="tip|warning|legal" verified="YYYY-MM-DD" >}}Markdown{{< /callout >}}
 //   {{< coverage >}}   the translation table from data/coverage.json
 //   {{< presets >}}    the European radio presets from data/presets.yaml
+//   {{< short-links >}}  the short links to copy (short-links.mjs)
 //   {{< gain >}}       the beam of a dipole and a collinear, to scale (gain-diagram.mjs)
 //   {{< forged-path >}}, {{< dc-gate >}}, {{< copies >}}  the figures of the guide to a resilient mesh (resilient-diagrams.mjs)
 // The same mistakes fail the build as in themes/fieldmap/layouts/_shortcodes/: positional parameters, an
 // unknown type, a legal callout without verified=, a verified= that is not a date.
 import { readFileSync } from 'node:fs';
-import { ROOT, t, loadData } from './site.mjs';
+import { parse as parseYaml } from 'yaml';
+import { ROOT, contentFile, t, loadData } from './site.mjs';
+import { SHORT_ORIGIN } from './short-links.mjs';
 import { gainDiagram } from './gain-diagram.mjs';
 import { forgedPath, dcGate, copies } from './resilient-diagrams.mjs';
 
@@ -16,6 +19,7 @@ const OPEN = /^\{\{<\s*callout\b([^>]*)>\}\}[ \t]*\n?/;
 const CLOSE = /\n?[ \t]*\{\{<\s*\/callout\s*>\}\}\s*$/;
 const COVERAGE = /^\{\{<\s*coverage\s*>\}\}$/;
 const PRESETS = /^\{\{<\s*presets\s*>\}\}$/;
+const SHORT_LINKS = /^\{\{<\s*short-links\s*>\}\}$/;
 const GAIN = /^\{\{<\s*gain\s*>\}\}$/;
 const FIGURES = { 'forged-path': forgedPath, 'dc-gate': dcGate, copies };
 const FIGURE = /^\{\{<\s*(forged-path|dc-gate|copies)\s*>\}\}$/;
@@ -51,6 +55,26 @@ export function parseParams(raw, where) {
 }
 
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+// The press kit's list of short links: the pages by their own title, and one example of each kind of area.
+export function shortLinksTable(lang) {
+  const titleOf = (path) => {
+    const file = contentFile(lang, path) || contentFile('en', path);
+    return parseYaml(readFileSync(`${ROOT}${file}`, 'utf8').split(/^---$/m)[1]).title;
+  };
+  const rows = [
+    ...loadData('short_links').map((p) => [titleOf(p.path), `/${p.id}`]),
+    [t(lang, 'short_links_country'), '/s/de'],
+    [t(lang, 'short_links_area'), '/s/nl-li'],
+  ];
+  const copy = esc(t(lang, 'copy'));
+  const row = ([label, name]) => {
+    const url = esc(`${SHORT_ORIGIN}${name}`);
+    return `<tr><td>${esc(label)}</td><td><span class="short-link-url"><span class="short-link-origin">${esc(SHORT_ORIGIN)}</span><b>${esc(name)}</b></span></td>` +
+      `<td><button type="button" class="short-link-copy" data-copy-text="${url}" aria-label="${copy}: ${url}" hidden>${copy}</button></td></tr>`;
+  };
+  return `<table class="short-table"><thead><tr><th scope="col">${esc(t(lang, 'short_links_page'))}</th><th scope="col">${esc(t(lang, 'short_link'))}</th><th scope="col" aria-label="${copy}"></th></tr></thead><tbody>${rows.map(row).join('')}</tbody></table>`;
+}
 
 export function coverageTable(lang) {
   const cov = JSON.parse(readFileSync(`${ROOT}data/coverage.json`, 'utf8'));
@@ -91,6 +115,10 @@ export function remarkShortcodes() {
       }
       if (kids[i].type === 'paragraph' && first && PRESETS.test(first.value.trim()) && kids[i].children.length === 1) {
         kids[i] = { type: 'html', value: presetsTable(lang) };
+        continue;
+      }
+      if (kids[i].type === 'paragraph' && first && SHORT_LINKS.test(first.value.trim()) && kids[i].children.length === 1) {
+        kids[i] = { type: 'html', value: shortLinksTable(lang) };
         continue;
       }
       if (kids[i].type === 'paragraph' && first && GAIN.test(first.value.trim()) && kids[i].children.length === 1) {

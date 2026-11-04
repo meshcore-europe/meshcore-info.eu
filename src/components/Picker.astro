@@ -1,10 +1,14 @@
 ---
 // A language picker for a path without a language: / or a page such as /press-kit/. web/js/picker.js sends
 // the visitor to the page in the best matching language; the list of links is the fallback without JavaScript.
-// Props: path (the page's slug, '' for the home), langs (the languages the page exists in).
-import { LANGUAGES, t } from '../lib/site.mjs';
+// Props: path (the page's slug, '' for the home), langs (the languages the page exists in), title and description
+// (for the card an app shows for a short link: it reads this page and runs no script).
+import { existsSync } from 'node:fs';
+import { BASE_URL, LANGUAGES, ROOT, t } from '../lib/site.mjs';
 
-const { path = '', langs } = Astro.props;
+const { path = '', langs, title = 'meshcore-info.eu', description = t('en', 'site_description') } = Astro.props;
+const cardName = path ? path.replace(/\//g, '-') : 'home';
+const card = new URL(`/media/og/${existsSync(`${ROOT}web/media/og/${cardName}.jpg`) ? cardName : 'home'}.jpg`, BASE_URL).href;
 const shown = LANGUAGES.filter((l) => langs.includes(l.key));
 const suffix = path ? `${path}/` : '';
 ---
@@ -13,8 +17,17 @@ const suffix = path ? `${path}/` : '';
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>meshcore-info.eu</title>
+  <title>{title}</title>
   <meta name="robots" content="noindex">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="meshcore-info.eu">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={card}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content={card}>
   <meta name="color-scheme" content="light dark">
   <script is:inline src="/js/picker.js"></script>
   <script is:inline src="/shell/prefs.js"></script>

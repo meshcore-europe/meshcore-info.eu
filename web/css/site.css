@@ -24,9 +24,9 @@
 .prose ul, .prose ol { padding-left: 22px; }
 .prose li + li { margin-top: 6px; }
 /* Tables in running text: one style, a framed box whose cells wrap. A table may grow past the reading width
-   into the empty right half of the page (main.page is the container, so 100cqw is its width); only one that is
-   still too wide scrolls, and then shows a shadow on the side that has more. */
-main.page { container-type: inline-size; }
+   into the empty right half of the page (the page's column is the container, so 100cqw is its width: main.page, or
+   the .container under a hero); only one that is still too wide scrolls, and then shows a shadow on the side that has more. */
+main.page, main.home > .container { container-type: inline-size; }
 .prose table:not(.table-wrap table), .prose .table-wrap {
   display: block; width: fit-content; max-width: 100cqw; overflow-x: auto; margin-block: 16px;
   border: 1px solid var(--border); border-radius: var(--radius-lg);
@@ -151,6 +151,7 @@ main a[href^="http"]:not([href^="https://meshcore-info.eu"]):not([href^="https:/
 .country-jump .tags a:hover { border-color: var(--accent); }
 .countries { columns: 4 260px; column-gap: 16px; scroll-margin-top: calc(var(--header-h) + 16px); }
 .countries .country { break-inside: avoid; margin-bottom: 24px; scroll-margin-top: calc(var(--header-h) + 16px); }
+.community-card { scroll-margin-top: calc(var(--header-h) + 16px); }
 .countries .country > h2 { margin: 0 0 12px; font-size: var(--fs-xl); }
 .countries .card-grid { grid-template-columns: 1fr; margin: 0; gap: 12px; }
 /* A country chosen in the jump list shows alone, its groups across the full width. */
@@ -323,7 +324,11 @@ a.path-card { display: flex; flex-direction: column; gap: 6px; height: 100%; tex
 .area-map figcaption { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin-top: 8px; font-size: var(--fs-sm); color: var(--text-muted); }
 .key { display: inline-block; width: 12px; height: 12px; border-radius: 3px; }
 .area-others { list-style: none; padding: 0; columns: 3 12em; }
-.area-others li { scroll-margin-top: 80px; }
+.area-others li { scroll-margin-top: 80px; break-inside: avoid; }
+/* A country opened shows its regions at full width, so the list drops its columns while one is open. */
+.area-others:has(details[open]) { columns: auto; }
+.area-others summary { cursor: pointer; }
+.area-others details .regions { margin-top: 12px; }
 /* The CLI commands (/guides/cli/): group chips, then one block per command. */
 .cli .cli-groups ul { list-style: none; padding: 0; margin: 16px 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .cli .cli-groups li { margin: 0; }
@@ -472,7 +477,7 @@ a.path-card { display: flex; flex-direction: column; gap: 6px; height: 100%; tex
 }
 /* A page hero (the guides hub): the render of the mode behind the title, under the floating header, as on the
    home; no data-theme means dark. The picture is aligned to its top so the repeater's antenna stays whole. */
-.page-xhero { height: 68svh; min-height: 460px; background: #191812; }
+.page-xhero { height: auto; min-height: max(68svh, 460px); background: #191812; }
 :root[data-theme="industrial-light"] .page-xhero { background: #b3b8b3; }
 .page-xhero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 10%; }
 .page-xhero .for-light, :root[data-theme="industrial-light"] .page-xhero .for-dark { display: none; }
@@ -683,3 +688,112 @@ a.path-card { display: flex; flex-direction: column; gap: 6px; height: 100%; tex
 .community-block { margin: 16px 0 24px; }
 .community-block h3 { margin: 0 0 12px; }
 .community-distance { display: inline-block; margin: 0 0 8px; font-family: var(--font-mono); }
+
+/* The meetings page: a schedule strip with a shape per kind of meeting, then the list. */
+.meeting-chips { margin: 16px 0; }
+.meeting-chips button { cursor: pointer; font-family: var(--font-mono); color: var(--text); background: none; }
+.meeting-chips button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.meeting-strip { margin: 16px 0 24px; padding: 14px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); }
+.meeting-strip .label { margin: 0 0 8px; font-family: var(--label-font); font-size: var(--label-size); letter-spacing: var(--label-spacing); text-transform: var(--label-transform); font-weight: var(--fw-medium); }
+.meeting-weeks { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); margin-bottom: 4px; font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+.meeting-weeks span { overflow: hidden; white-space: nowrap; padding-left: 3px; }
+.meeting-strip svg { display: block; width: 100%; height: auto; overflow: visible; }
+.meeting-strip svg a { fill: var(--accent); }
+.meeting-strip svg a:hover, .meeting-strip svg a:focus-visible { fill: var(--accent-strong); outline: none; }
+.meeting-strip .meeting-mark-open { fill: none; stroke: currentColor; stroke-width: 2; color: var(--accent); }
+.meeting-lane { fill: var(--surface-2); }
+.meeting-week { stroke: var(--border-strong); stroke-width: .5; }
+.meeting-today { stroke: var(--text); stroke-width: 1; }
+.meeting-legend { list-style: none; margin: 10px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: var(--fs-sm); color: var(--text-muted); }
+.meeting-key { display: inline-flex; align-items: center; gap: 6px; }
+.meeting-key::before { content: ""; width: 9px; height: 9px; flex: none; background: var(--accent); border-radius: 1px; }
+.meeting-key-online::before { background: none; border: 2px solid var(--accent); border-radius: 50%; box-sizing: border-box; }
+.meeting-key-channel::before { transform: rotate(45deg) scale(.85); }
+.meeting-key-today::before { width: 1px; height: 13px; background: var(--text); border-radius: 0; }
+.meeting-list { list-style: none; margin: 0 0 12px; padding: 0; border-top: 1px solid var(--border-strong); }
+.meeting-row { display: grid; grid-template-columns: 7.5em minmax(0, 1fr) auto; gap: 4px 18px; padding: 14px 0; border-bottom: 1px solid var(--border); scroll-margin-top: 80px; }
+.meeting-row[hidden] { display: none; }
+.meeting-row:target { background: var(--surface-2); }
+.meeting-row p { margin: 0; }
+.meeting-row h3 { margin: 0 0 2px; font-size: var(--fs-lg); }
+.meeting-row .muted { color: var(--text-muted); font-size: var(--fs-sm); }
+.meeting-when { font-size: var(--fs-sm); color: var(--text); font-variant-numeric: tabular-nums; }
+.meeting-when time { font-size: var(--fs-md); font-weight: var(--fw-medium); }
+.meeting-side { display: grid; gap: 8px; justify-items: end; align-content: start; }
+.meeting-side .meeting-key { font-family: var(--label-font); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); white-space: nowrap; }
+.meeting-side .btn { white-space: nowrap; }
+.meeting-feed { margin: 24px 0; padding: 20px; }
+.meeting-feed label { display: flex; flex-direction: column; gap: 4px; max-width: 24em; margin: 12px 0; }
+.meeting-feed label[hidden] { display: none; }
+.meeting-feed-line { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.meeting-feed-line code { flex: 1 1 240px; min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 639px) {
+  .meeting-row { grid-template-columns: minmax(0, 1fr); }
+  .meeting-side { justify-items: start; grid-auto-flow: column; justify-content: start; align-items: center; }
+}
+.btn-small { padding: 5px 9px; font-size: 12px; min-height: 0; }
+.next-meetings { margin: 32px 0; }
+.community-meeting { border-top: 1px solid var(--border); padding-top: 8px; font-size: var(--fs-sm); }
+.community-meeting .label { display: block; font-family: var(--label-font); font-size: var(--label-size); letter-spacing: var(--label-spacing); text-transform: var(--label-transform); }
+.community-meeting[hidden] { display: none; }
+.community-feed { font-size: var(--fs-sm); }
+.community-map .map-meetings { font-family: var(--font-mono); }
+.community-map .map-meetings rect { fill: var(--accent); stroke: var(--bg); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.community-map .map-meetings a:hover rect, .community-map .map-meetings a:focus-visible rect { fill: var(--accent-strong); }
+.community-map .map-meetings text { fill: var(--text); paint-order: stroke; stroke: var(--bg); stroke-width: .25em; stroke-linejoin: round; }
+.meeting-add-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 24px; align-items: start; margin-top: 16px; }
+.meeting-add-grid[hidden] { display: none; }
+.meeting-add-form { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(13em, 1fr)); }
+.meeting-add-form label { display: flex; flex-direction: column; gap: 4px; margin: 0; }
+.meeting-add-form label[hidden] { display: none; }
+.meeting-add-form .meeting-add-check { flex-direction: row; align-items: flex-start; gap: 8px; grid-column: 1 / -1; }
+.meeting-add-form > p { grid-column: 1 / -1; margin: 0; }
+.meeting-add-form .btn.is-off { opacity: .45; cursor: not-allowed; }
+.meeting-add-side { display: grid; gap: 20px; }
+.meeting-add-side section { min-width: 0; }
+.meeting-add-side section[hidden] { display: none; }
+.meeting-add-side h3 { margin: 0 0 6px; font-size: var(--fs-md); }
+.meeting-add-side code { overflow-wrap: anywhere; }
+.meeting-add-side ol { margin: 0 0 8px; padding-left: 1.3em; }
+.meeting-add-dates { list-style: none; margin: 0; padding: 0; font-size: var(--fs-sm); }
+.meeting-add .muted { color: var(--text-muted); font-size: var(--fs-sm); }
+@media (max-width: 719px) { .meeting-add-grid { grid-template-columns: minmax(0, 1fr); } }
+/* A short link to copy into a mesh message, under a heading (src/components/ShortLink.astro). The origin is dimmed:
+   only the name differs per link. */
+.short-link { display: flex; width: fit-content; max-width: 100%; align-items: stretch; margin: 10px 0 16px; font-family: var(--font-mono); font-size: 13px; line-height: 1.3; color: var(--text); background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--control-radius); }
+.short-link-label { display: flex; align-items: center; padding: 0 12px; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; color: var(--text-muted); border-right: 1px solid var(--border); }
+.short-link-url { display: flex; align-items: center; padding: 9px 12px; min-width: 0; font-family: var(--font-mono); overflow-wrap: anywhere; }
+.short-link-origin { color: var(--text-muted); }
+.short-link-url b { font-weight: 600; color: var(--text); }
+.short-link-copy { min-width: 72px; min-height: 36px; padding: 0 14px; font: inherit; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--text); background: none; border: 0; border-left: 1px solid var(--border); border-radius: 0 var(--control-radius) var(--control-radius) 0; cursor: pointer; transition: background .15s, color .15s; }
+.short-link-copy:hover { background: var(--surface-hover); }
+.short-link-copy.copied { color: var(--accent-strong); }
+.short-link-copy:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+/* On the hero picture, in the same glass as the strip at its foot. */
+.xhero .short-link { margin: 0 0 20px; color: #f4f6f6; background: rgba(11,15,17,.42); border-color: rgba(244,246,246,.28); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.xhero .short-link-label { color: rgba(244,246,246,.72); border-color: rgba(244,246,246,.18); }
+.xhero .short-link-origin { color: rgba(244,246,246,.62); }
+.xhero .short-link-url b { color: #fff; }
+.xhero .short-link-copy { color: #f4f6f6; border-color: rgba(244,246,246,.18); }
+.xhero .short-link-copy:hover { background: rgba(244,246,246,.12); }
+.xhero .short-link-copy.copied { color: #cfe6a3; }
+/* The press kit's list. */
+.short-table td { vertical-align: middle; }
+.short-table .short-link-url { display: block; padding: 0; font-size: 12px; white-space: nowrap; }
+.short-table .short-link-copy { min-width: 64px; min-height: 30px; padding: 0 8px; color: var(--text-muted); border: 1px solid transparent; border-radius: var(--control-radius); }
+.short-table .short-link-copy:hover { color: var(--text); background: none; border-color: var(--border-strong); }
+@media (max-width: 767px) {
+  .short-link { display: grid; grid-template-columns: minmax(0, 1fr) auto; width: 100%; box-sizing: border-box; }
+  .short-link-label { grid-column: 1; padding: 8px 12px 0; border: 0; }
+  .short-link-url { display: block; padding: 4px 0 10px 12px; font-size: 12px; white-space: nowrap; overflow-wrap: normal; }
+  .short-link-copy { grid-column: 2; grid-row: 1 / 3; }
+  .short-table thead { display: none; }
+  .short-table, .short-table tbody { display: block; }
+  .short-table tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 8px; align-items: center; padding: 10px 12px; border-top: 1px solid var(--border); }
+  .short-table tr:first-child { border-top: 0; }
+  .short-table td { display: block; padding: 0; background: none; border: 0; }
+  .short-table td:nth-child(2) { grid-column: 1; grid-row: 2; }
+  .short-table td:nth-child(3) { grid-column: 2; grid-row: 1 / 3; }
+  .short-table .short-link-url { padding: 0; }
+}
+.note.meeting-add { max-width: none; }

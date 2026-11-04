@@ -11,11 +11,14 @@ export async function getStaticPaths() {
   const pages = await allPages();
   const slugs = [...new Set(pages.map((p) => p.slug).filter(Boolean))];
   return [
-    ...slugs.map((slug) => ({ params: { slug }, props: { langs: translationsOf(pages, slug) } })),
+    ...slugs.map((slug) => {
+      const en = pages.find((p) => p.slug === slug && p.lang === 'en');
+      return { params: { slug }, props: { langs: translationsOf(pages, slug), title: en && `${en.entry.data.title} | meshcore-info.eu`, description: en?.entry.data.description } };
+    }),
     ...PLANNED.filter((p) => !slugs.includes(p.path)).map((p) => ({ params: { slug: p.path }, props: { langs: LANG_KEYS } })),
   ];
 }
 
 const { slug } = Astro.params;
 ---
-<Picker path={slug} langs={Astro.props.langs} />
+<Picker path={slug} langs={Astro.props.langs} title={Astro.props.title} description={Astro.props.description} />

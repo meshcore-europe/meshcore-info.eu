@@ -1,7 +1,9 @@
 // The radius search on /community/ (web/js/radius-core.js has the maths). Everything runs in the browser:
 // the postcode file of the chosen country (/places/<cc>.json, our own copy of GeoNames) is fetched on the first
 // search, and a position from "Use my location" never leaves the device.
-import { search, lookup, hasPostcodes, ALL_OF_COUNTRY } from './radius-core.js';
+import { search, lookup, hasPostcodes, distanceKm, ALL_OF_COUNTRY } from './radius-core.js';
+import { todayIn } from './meetings-core.js';
+import { refreshRow, pageLocale } from './meeting-row.js';
 
 const root = document.querySelector('[data-community-search]');
 
@@ -48,6 +50,25 @@ if (root) {
 
   const radiusOf = (form) => (form.elements.radius.value === 'all' ? ALL_OF_COUNTRY : Number(form.elements.radius.value));
 
+  // Meetings a group card does not show: without a group, near the point, and those a group in the results lists.
+  const meetingRows = [...root.querySelector('template[data-meeting-rows]').content.querySelectorAll('ul')];
+  const meetingsNear = (point, radius, country, ids) => {
+    const today = todayIn(Intl.DateTimeFormat().resolvedOptions().timeZone);
+    return meetingRows.flatMap((ul) => {
+      const near = ul.dataset.lat ? distanceKm(point.lat, point.lon, Number(ul.dataset.lat), Number(ul.dataset.lon)) <= radius : false;
+      if (!near && !ids.includes(ul.dataset.listedBy)) return [];
+      const row = ul.firstElementChild.cloneNode(true);
+      return refreshRow(row, JSON.parse(row.dataset.meeting), today, pageLocale()) ? [row] : [];
+    });
+  };
+  const meetingsSection = (title, rows) => {
+    const s = el('section', 'community-block');
+    const ul = el('ul', 'meeting-list');
+    ul.append(...rows);
+    s.append(el('h3', null, title), ul);
+    return s;
+  };
+
   const show = (point, label, radius, country) => {
     const r = search(point, groups, radius, country);
     // web/js/community-map.js shows the point and how far the search reached.
@@ -64,6 +85,8 @@ if (root) {
       }
       blocks.push(none);
     }
+    const meetings = meetingsNear(point, radius, country, r.local.map((x) => x.group.id));
+    if (meetings.length) blocks.push(meetingsSection(msg('search-meetings', { place: label }), meetings));
     if (r.national.length) blocks.push(section(msg('search-national', { country: countryName(country) }), r.national.map((g) => cardOf(g))));
     // No local group in the radius: the same "Is your group missing?" box as at the foot of the page.
     if (!r.local.length) blocks.push(root.querySelector('template[data-missing]').content.cloneNode(true));

@@ -1,9 +1,9 @@
 ---
 // The table of a country's own regions on /guides/settings/, once per country, under its areas. Which regions it
-// lists comes from data/region_baselines.yaml.
+// lists comes from data/region_baselines.yaml; group is the community it points to, for its name.
 import { t } from '../lib/site.mjs';
 
-const { lang, baseline } = Astro.props;
+const { lang, baseline, group } = Astro.props;
 const r = (k) => t(lang, `regions_${k}`);
 const dateOf = (iso) => new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : lang, { dateStyle: 'long' }).format(new Date(`${iso}T00:00:00Z`));
 ---
@@ -18,5 +18,5 @@ const dateOf = (iso) => new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : lang, 
     </table>
   </div>
   {baseline.footnote_key && <p>{t(lang, baseline.footnote_key)}</p>}
-  <p class="meta">{`${t(lang, 'area_source_group')} `}<a href={baseline.source}>{baseline.group}</a>, {t(lang, 'area_checked')} <time datetime={baseline.last_checked}>{dateOf(baseline.last_checked)}</time></p>
+  <p class="meta">{`${t(lang, 'area_source_group')} `}<a href={baseline.source}>{group.name}</a>, {t(lang, 'area_checked')} <time datetime={baseline.last_checked}>{dateOf(baseline.last_checked)}</time></p>
 </section>

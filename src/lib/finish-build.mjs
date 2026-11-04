@@ -4,6 +4,7 @@
 // <lang>/404.html, where Cloudflare looks for it. And a content hash on every stylesheet and script URL
 // (/css/site.css?v=1a2b3c4d), in the pages and in the module imports, so a deploy never pairs new HTML with a
 // stylesheet or script the browser still holds from before (they are cached for an hour, preview/cache.js).
+// And _redirects: the short links (short-links.mjs).
 // And sitemap.xml: every page with a canonical address and no noindex.
 import { readFileSync, writeFileSync, renameSync, rmdirSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -11,10 +12,13 @@ import { createHash } from 'node:crypto';
 export const FIRST_PARTY_CONNECT = 'https://meshcore-analyzer.eu';
 export function siteHeaders(text) {
   if (!/connect-src 'self';/.test(text)) throw new Error("static/_headers: expected connect-src 'self'");
-  return text.replace("connect-src 'self';", `connect-src 'self' ${FIRST_PARTY_CONNECT};`);
+  const site = text.replace("connect-src 'self';", `connect-src 'self' ${FIRST_PARTY_CONNECT};`);
+  // The calendar feeds on /meetings/: a calendar app goes by this type.
+  return `${site.trimEnd()}\n\n/meetings/*.ics\n  Content-Type: text/calendar; charset=utf-8\n`;
 }
 import { fileURLToPath } from 'node:url';
 import { ROOT, LANG_KEYS } from './site.mjs';
+import { redirectsFile } from './short-links.mjs';
 
 const ASSET = /((?:href|src)=")(\/(?:css|js|shell)\/[^"?#]+\.(?:css|js))(")/g;
 const IMPORT = /(from\s+['"])(\.\/[^'"?#]+\.js)(['"])/g;
@@ -82,6 +86,7 @@ export function finishBuild() {
       'astro:build:done': ({ dir }) => {
         const out = fileURLToPath(dir);
         writeFileSync(`${out}_headers`, siteHeaders(readFileSync(`${ROOT}static/_headers`, 'utf8')));
+        writeFileSync(`${out}_redirects`, redirectsFile());
         for (const lang of LANG_KEYS) {
           const from = `${out}${lang}/404/index.html`;
           if (!existsSync(from)) continue;

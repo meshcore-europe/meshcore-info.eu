@@ -12,6 +12,8 @@ import DataSection from '../../components/DataSection.astro';
 import Home from '../../components/Home.astro';
 import PlannedSections from '../../components/PlannedSections.astro';
 import PageStrip from '../../components/PageStrip.astro';
+import ShortLink from '../../components/ShortLink.astro';
+import { pageName } from '../../lib/short-links.mjs';
 import { stripFor } from '../../lib/strips.mjs';
 import { localize, sectionLabel, siblingsOf, menuText } from '../../lib/shell.mjs';
 
@@ -117,6 +119,7 @@ const toc = sections.length >= 4 ? sections : null;
       <div class="xhero-inner">
         {(d.eyebrow || sectionLabel(slug, lang)) && <div class="eyebrow">{(d.eyebrow || sectionLabel(slug, lang)).split(UNIT).map((x, i) => i % 2 ? <span class="unit">{x}</span> : x)}</div>}
         <h1 id="page-title">{d.title}</h1>
+        {pageName(slug) && <ShortLink lang={lang} name={pageName(slug)} />}
         {d.date && <p class="muted"><time datetime={iso(d.date)}>{dateOf(d.date, lang)}</time></p>}
         {state && <span class={`badge ${state.status === 'human' ? 'ok' : ''}`}>{t(lang, state.status === 'human' ? 'badge_human' : 'badge_ai')}</span>}
         {d.lead && <p class="lead">{d.lead}</p>}
@@ -129,6 +132,7 @@ const toc = sections.length >= 4 ? sections : null;
     {!hero && <header class="page-head">
       {(d.eyebrow || sectionLabel(slug, lang)) && <div class="eyebrow">{(d.eyebrow || sectionLabel(slug, lang)).split(UNIT).map((x, i) => i % 2 ? <span class="unit">{x}</span> : x)}</div>}
       <h1>{d.title.split(SITE).map((x, i) => <Fragment>{i > 0 && <span class="nobr">{SITE}</span>}{x}</Fragment>)}</h1>
+      {pageName(slug) && <ShortLink lang={lang} name={pageName(slug)} />}
       {d.date && <p class="muted"><time datetime={iso(d.date)}>{dateOf(d.date, lang)}</time></p>}
       {state && <span class={`badge ${state.status === 'human' ? 'ok' : ''}`}>{t(lang, state.status === 'human' ? 'badge_human' : 'badge_ai')}</span>}
       {d.lead && <p class="lead">{d.lead}</p>}

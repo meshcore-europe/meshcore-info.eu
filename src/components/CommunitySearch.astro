@@ -4,9 +4,11 @@
 // the match rule. Hidden until the script runs, so without JavaScript only the country list shows.
 // Place files: web/places/<cc>.json, built by tools/build_places.py from GeoNames (CC BY 4.0).
 import { t, PARAMS } from '../lib/site.mjs';
+import { upcoming, meetingSpot } from '../lib/meetings.mjs';
+import MeetingRow from './MeetingRow.astro';
 const { lang, countries } = Astro.props;
 const keys = ['search_loading', 'search_error', 'search_unknown', 'search_need_country', 'search_no_postcodes', 'search_denied',
-  'search_here', 'search_results', 'search_covers', 'search_national', 'search_none', 'search_none_country', 'search_nearest', 'search_km'];
+  'search_here', 'search_results', 'search_covers', 'search_meetings', 'search_national', 'search_none', 'search_none_country', 'search_nearest', 'search_km'];
 const msg = Object.fromEntries(keys.map((k) => [`data-${k.replace(/_/g, '-')}`, t(lang, `community_${k}`)]));
 const names = Object.fromEntries(countries.map((cc) => [`data-country-${cc.toLowerCase()}`, t(lang, `country_${cc.toLowerCase()}`)]));
 ---
@@ -33,6 +35,12 @@ const names = Object.fromEntries(countries.map((cc) => [`data-country-${cc.toLow
   </form>
   <p class="meta">{t(lang, 'community_search_privacy')}</p>
   <div class="community-results" data-results aria-live="polite" hidden></div>
+  <template data-meeting-rows>
+    {upcoming().filter(({ meeting: m }) => m.who || m.listed_by).map(({ meeting: m, next }) => {
+      const spot = meetingSpot(m);
+      return <ul data-listed-by={m.listed_by} data-lat={spot?.lat} data-lon={spot?.lon}><MeetingRow lang={lang} m={m} next={next} /></ul>;
+    })}
+  </template>
   <template data-missing>
     <section class="note cta-box">
       <h3>{t(lang, 'community_missing_title')}</h3>

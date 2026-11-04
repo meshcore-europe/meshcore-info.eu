@@ -1,7 +1,8 @@
 // The country picker on /guides/settings/ (src/components/AreaSettings.astro). Picking a country, in the
-// list or on the map, shows that country only: its own areas, or the EU/UK (Narrow) block under its own name. An
-// anchor in the address (#area-netherlands-limburg, #area-de) picks its country, so links to an area keep working.
-// Without JavaScript the form stays hidden and every country shows.
+// list or on the map, shows that country only: its own areas, or the EU/UK (Narrow) block under its own name with
+// that country's regions open. An anchor in the address (#area-netherlands-limburg, #area-de) picks its country, so
+// links to an area keep working. Without JavaScript the form stays hidden and every country shows, each of the
+// EU/UK countries closed until opened.
 (function () {
   var form = document.querySelector('[data-area-pick]');
   if (!form) return;
@@ -11,7 +12,13 @@
   var title = eu.querySelector('h2');
   var anchor = title.querySelector('a.anchor');
   var anchorLabel = anchor.getAttribute('aria-label').split(':')[0];
-  var body = eu.querySelector('h2 + p');
+  var body = eu.querySelector('h2 ~ p');
+  var list = eu.querySelector('.area-others');
+  var short = eu.querySelector('[data-eu-short]');
+  var shortName = short.querySelector('b');
+  var shortCopy = short.querySelector('[data-copy-text]');
+  var shortBase = shortCopy.getAttribute('data-copy-text');
+  var shortLabel = shortCopy.getAttribute('aria-label');
   var own = {};
   Array.prototype.forEach.call(page.querySelectorAll('section.country[id^="country-"]'), function (s) {
     own[s.id.slice(8).toUpperCase()] = s;
@@ -32,6 +39,16 @@
     select.value = cc;
     Object.keys(own).forEach(function (k) { own[k].hidden = k !== cc; });
     eu.hidden = !cc || !!own[cc];
+    Array.prototype.forEach.call(list.children, function (li) {
+      var mine = !eu.hidden && li.id === 'area-' + cc.toLowerCase();
+      li.hidden = !mine;
+      var details = li.querySelector('details');
+      if (details) {
+        details.open = mine;
+        // The picked country's name is the heading above, so its line in the list goes.
+        details.querySelector('summary').hidden = mine;
+      }
+    });
     if (!eu.hidden) {
       var name = select.selectedOptions[0].textContent;
       var code = document.createElement('span');
@@ -40,6 +57,12 @@
       anchor.setAttribute('aria-label', anchorLabel + ': ' + name);
       title.replaceChildren(code, ' ' + name + ' ', anchor);
       body.textContent = eu.getAttribute('data-one').replace('{country}', name);
+      // This country's short link, under its name.
+      var path = cc.toLowerCase();
+      shortName.textContent = '/s/' + path;
+      shortCopy.setAttribute('data-copy-text', shortBase + path);
+      shortCopy.setAttribute('aria-label', shortLabel + path);
+      short.hidden = false;
     }
     Array.prototype.forEach.call(links, function (a) {
       var picked = !!cc && countryOf(a.getAttribute('href')) === cc;
@@ -55,7 +78,6 @@
     history.replaceState(null, '', location.pathname + location.search + anchor);
   }
 
-  eu.querySelector('.area-others').hidden = true;
   form.addEventListener('submit', function (e) { e.preventDefault(); });
   select.addEventListener('change', function () { pick(select.value); });
   Array.prototype.forEach.call(links, function (a) {

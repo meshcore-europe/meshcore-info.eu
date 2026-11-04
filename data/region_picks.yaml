@@ -1,0 +1,10 @@
+# The regions the province picker on /guides/settings/ offers for a country, where the region catalog
+# (data/regions.json) lists more than its provinces or states: wider regions, groups of towns and local meshes stay
+# in the catalog and on the map, but a repeater's province is one of these. A country not listed here offers
+# every region the catalog has. Every code must be in the catalog for that country. source is where the list of
+# provinces or states comes from. Re-check the source and update last_checked before changing an entry.
+- id: germany
+  country: DE
+  regions: [de-bw, de-by, de-be, de-bb, de-hb, de-hh, de-he, de-mv, de-ni, de-nw, de-rp, de-sl, de-sn, de-st, de-sh, de-th]
+  source: https://en.wikipedia.org/wiki/ISO_3166-2:DE
+  last_checked: "2026-11-03"

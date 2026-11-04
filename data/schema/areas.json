@@ -7,11 +7,12 @@
     "required": ["id", "country", "name", "preset", "source", "last_checked"],
     "properties": {
       "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+      "short": { "type": "string", "pattern": "^[a-z]{2}-[a-z0-9]+$" },
       "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
       "name": { "type": "string", "minLength": 1 },
       "preset": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
       "also_preset": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
-      "group": { "type": "string", "minLength": 1 },
+      "group": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
       "note_key": { "type": "string", "pattern": "^area_note_[a-z0-9_]+$" },
       "source": { "type": "string", "pattern": "^https://" },
       "last_checked": { "type": "string", "format": "date" },

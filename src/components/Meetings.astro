@@ -1,0 +1,70 @@
+---
+// The meetings page: the country choice, the strip of the next 8 weeks, the list, the calendar feeds and the way to
+// add a meeting. The build writes the list and the strip as they stand that day; web/js/meetings.js keeps them current
+// and shows the controls that need it. Without JavaScript the list stays as built, with that date under it.
+import { t } from '../lib/site.mjs';
+import MeetingRow from './MeetingRow.astro';
+import AddMeeting from './AddMeeting.astro';
+import { upcoming, buildDate, feedCountries, feedGroups, europeUrl, countryUrl, groupUrl, localeOf } from '../lib/meetings.mjs';
+import { stripSvg, STRIP_WEEKS, KINDS, stripStart, addDays } from '../../web/js/meetings-core.js';
+
+const { lang } = Astro.props;
+const locale = localeOf(lang);
+const today = buildDate();
+const rows = upcoming(today);
+const inUtc = (date) => new Date(`${date}T12:00:00Z`);
+const shortDate = new Intl.DateTimeFormat(locale, { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' });
+const fullDate = new Intl.DateTimeFormat(locale, { dateStyle: 'long', timeZone: 'UTC' });
+const countsOf = rows.reduce((n, r) => ({ ...n, [r.meeting.country.toUpperCase()]: (n[r.meeting.country.toUpperCase()] || 0) + 1 }), {});
+const chipCountries = Object.keys(countsOf).sort();
+const firstDay = stripStart(today);
+const weekLabels = Array.from({ length: STRIP_WEEKS }, (_, w) => {
+  const date = addDays(firstDay, w * 7);
+  return new Intl.DateTimeFormat(locale, w === 0 || Number(date.slice(8)) <= 7 ? { day: 'numeric', month: 'short', timeZone: 'UTC' } : { day: 'numeric', timeZone: 'UTC' }).format(inUtc(date));
+});
+const stripLabel = t(lang, 'meetings_strip_title');
+const strip = stripSvg(rows.map((r) => r.meeting), today, (d) => shortDate.format(inUtc(d)), stripLabel);
+---
+<div class="meetings" data-meetings>
+  <ul class="tags meeting-chips" data-meeting-chips hidden>
+    <li><button type="button" class="badge" data-value="europe" aria-pressed="true">{t(lang, 'community_all')} {rows.length}</button></li>
+    {chipCountries.map((cc) => <li><button type="button" class="badge" data-value={cc} aria-pressed="false" title={t(lang, `country_${cc.toLowerCase()}`)}>{cc} {countsOf[cc]}</button></li>)}
+  </ul>
+
+  <section class="meeting-strip" aria-label={stripLabel}>
+    <h2 class="label">{stripLabel}</h2>
+    <div class="meeting-weeks" data-meeting-weeks>{weekLabels.map((w) => <span>{w}</span>)}</div>
+    <div data-meeting-strip data-label={stripLabel} set:html={strip} />
+    <ul class="meeting-legend">
+      {KINDS.map((k) => <li class={`meeting-key meeting-key-${k}`}>{t(lang, `meetings_kind_${k}`)}</li>)}
+      <li class="meeting-key meeting-key-today">{t(lang, 'meetings_today')}</li>
+    </ul>
+  </section>
+
+  <ul class="meeting-list" data-meeting-list>
+    {rows.map(({ meeting: m, next }) => <MeetingRow lang={lang} m={m} next={next} calendar />)}
+  </ul>
+  <p class="empty" data-meeting-empty hidden={rows.length > 0}>{t(lang, 'meetings_empty_country')} <a href="#add-meeting">{t(lang, 'meetings_empty_country_cta')}</a></p>
+  <p class="empty" data-meeting-empty-group hidden>{t(lang, 'meetings_empty_group')}</p>
+  <p class="meta">{t(lang, 'meetings_as_of').replace('{date}', fullDate.format(inUtc(today)))}</p>
+
+  <section class="note meeting-feed" id="feed">
+    <h2>{t(lang, 'meetings_feed_title')}</h2>
+    <p>{t(lang, 'meetings_feed_body')}</p>
+    <label hidden>{t(lang, 'meetings_feed_pick')}
+      <select data-feed-pick>
+        <option value="europe" data-kind="europe" data-url={europeUrl()}>{t(lang, 'meetings_feed_europe')}</option>
+        <optgroup label={t(lang, 'community_search_country')}>
+          {feedCountries().map((cc) => <option value={cc} data-kind="country" data-url={countryUrl(cc)}>{t(lang, `country_${cc.toLowerCase()}`)}</option>)}
+        </optgroup>
+        <optgroup label={t(lang, 'meetings_feed_groups')}>
+          {feedGroups().map((g) => <option value={g.id} data-kind="group" data-url={groupUrl(g.id)}>{g.name}</option>)}
+        </optgroup>
+      </select>
+    </label>
+    <p class="meeting-feed-line"><code data-feed-url>{europeUrl()}</code> <button type="button" class="btn btn-primary" data-feed-copy data-done={t(lang, 'meetings_copied')} hidden>{t(lang, 'meetings_copy')}</button></p>
+  </section>
+
+  <AddMeeting lang={lang} />
+</div>
+<script is:inline type="module" src="/js/meetings.js"></script>
