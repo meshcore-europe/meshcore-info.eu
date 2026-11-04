@@ -720,7 +720,8 @@ a.path-card { display: flex; flex-direction: column; gap: 6px; height: 100%; tex
 .meeting-when { font-size: var(--fs-sm); color: var(--text); font-variant-numeric: tabular-nums; }
 .meeting-when time { font-size: var(--fs-md); font-weight: var(--fw-medium); }
 .meeting-side { display: grid; gap: 8px; justify-items: end; align-content: start; }
-.meeting-side .meeting-key { font-family: var(--label-font); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); white-space: nowrap; }
+.meeting-way { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; }
+.meeting-way .meeting-key { font-family: var(--label-font); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted); white-space: nowrap; }
 .meeting-side .btn { white-space: nowrap; }
 .meeting-feed { margin: 24px 0; padding: 20px; }
 .meeting-feed label { display: flex; flex-direction: column; gap: 4px; max-width: 24em; margin: 12px 0; }

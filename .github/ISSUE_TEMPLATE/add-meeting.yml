@@ -49,22 +49,20 @@ body:
       label: Name of the meeting
     validations:
       required: true
-  - type: dropdown
-    id: kind
-    attributes:
-      label: How do people join?
-      options:
-        - In person
-        - Online
-        - On a channel
-    validations:
-      required: true
   - type: input
-    id: place
+    id: place_in_person
     attributes:
-      label: Public place, link or channel
-    validations:
-      required: true
+      label: "In person: place and address"
+      description: Fill in every way people can join. At least one.
+  - type: input
+    id: place_online
+    attributes:
+      label: "Online: link to the meeting"
+      description: A full link, starting with https://.
+  - type: input
+    id: place_channel
+    attributes:
+      label: "On a channel: channel name"
   - type: input
     id: first
     attributes:

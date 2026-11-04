@@ -61,8 +61,9 @@ export function groupMeetings(id, today = buildDate()) {
   return { mine, next, last };
 }
 
-// A meeting's place on the map: its own, or that of its group. An online or channel meeting has none.
+// A meeting's place on the map: that of its way in person, or that of its group. Without such a way it has none.
 export function meetingSpot(m) {
-  if (m.kind !== 'in_person') return null;
-  return m.location || groups().find((g) => g.id === m.group)?.location || null;
+  const way = m.join.find((w) => w.kind === 'in_person');
+  if (!way) return null;
+  return way.location || groups().find((g) => g.id === m.group)?.location || null;
 }

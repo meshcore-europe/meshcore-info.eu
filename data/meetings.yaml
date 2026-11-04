@@ -2,15 +2,16 @@
 # A meeting has a group that runs it, a group that lists it (listed_by) or a name of its own (who, with a public
 # link). A date and time are local, in the meeting's time zone. Without repeat it is one date; weekly repeats on that
 # weekday, monthly on that weekday's place in the month. A repeating meeting stays listed for 6 months after
-# last_checked. A meeting in person shows on the map at its own location, or else that of its group. name and place stay in the language of the meeting and are not translated.
+# last_checked. join holds each way to take part, once per kind: in person (place, and location when it differs from the group), online (url) or on a channel (place). A meeting with a way in person shows on the map at that location, or else that of its group. name and place stay in the language of the meeting and are not translated.
 
 - id: notfunkstammtisch-bw
   listed_by: de-ka-mesh
   country: DE
   name: Monatlicher Notfunkstammtisch Baden-Württemberg
-  kind: online
-  place: "Link at ka-mesh.de"
-  url: "https://ka-mesh.de/termine/"
+  join:
+    - kind: online
+      place: "Link at ka-mesh.de"
+      url: "https://ka-mesh.de/termine/"
   languages: [de]
   date: 2026-11-04
   time: "19:00"
@@ -22,9 +23,10 @@
   group: sk-meshcore-slovensko
   country: SK
   name: Stretnutie MeshCore Slovensko
-  kind: in_person
-  place: "Bratislava, Rádioklub Omega, Staré Grunty 53"
-  location: { lat: 48.148, lon: 17.107 }
+  join:
+    - kind: in_person
+      place: "Bratislava, Rádioklub Omega, Staré Grunty 53"
+      location: { lat: 48.148, lon: 17.107 }
   languages: [sk]
   date: 2026-11-05
   time: "17:30"
@@ -36,9 +38,10 @@
   group: nl-meshcore-net
   country: NL
   name: Hunebedronde
-  kind: channel
-  place: "Channel #hunebedronde, mainly for Groningen, Friesland and Drenthe"
-  url: "https://forum.meshcore-net.nl/calendar.php"
+  join:
+    - kind: channel
+      place: "Channel #hunebedronde, mainly for Groningen, Friesland and Drenthe"
+      url: "https://forum.meshcore-net.nl/calendar.php"
   languages: [nl]
   date: 2026-11-08
   time: "10:30"
@@ -50,8 +53,9 @@
   group: de-bsmesh
   country: DE
   name: BSmesh-Treffen
-  kind: in_person
-  place: "Braunschweig, Stratum 0"
+  join:
+    - kind: in_person
+      place: "Braunschweig, Stratum 0"
   languages: [de]
   date: 2026-11-10
   time: "19:00"
@@ -63,8 +67,9 @@
   group: de-isarmesh
   country: DE
   name: Isarmesh Stammtisch München
-  kind: in_person
-  place: "München, Alter Wirt Ramersdorf"
+  join:
+    - kind: in_person
+      place: "München, Alter Wirt Ramersdorf"
   languages: [de]
   date: 2026-11-19
   time: "18:30"
@@ -75,8 +80,9 @@
   group: de-ka-mesh
   country: DE
   name: 5. Karlsruher MeshCore Treffen
-  kind: in_person
-  place: "Karlsruhe, PinsaGo Congresso, Augustenburgstraße 75"
+  join:
+    - kind: in_person
+      place: "Karlsruhe, PinsaGo Congresso, Augustenburgstraße 75"
   languages: [de]
   date: 2026-11-01
   time: "18:00"
@@ -86,8 +92,11 @@
 - id: communitytreffen
   country: DE
   name: Communitytreffen
-  kind: online
-  place: Online
+  join:
+    - kind: in_person
+      place: "Oldenburg, Haus der Jugend, Eßkamp 126"
+    - kind: online
+      url: https://meet.ffnw.de/Communitytreffen
   languages: [de]
   date: '2026-11-06'
   time: '19:00'
@@ -95,4 +104,3 @@
   repeat: monthly
   last_checked: '2026-11-04'
   group: de-ffnw
-  url: https://meet.ffnw.de/Communitytreffen

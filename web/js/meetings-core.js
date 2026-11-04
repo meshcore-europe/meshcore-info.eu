@@ -109,7 +109,8 @@ export function formProblem(v, today) {
   if (v.group === 'new' && !isLink(v.links)) return 'need_new_link';
   if (v.group === 'none' && !v.who) return 'need_who';
   if (v.group === 'none' && !isLink(v.page)) return 'need_page';
-  if (!v.name || !v.place || !v.time || !v.languages) return 'need_place';
+  if (!v.name || !(v.place || v.place_online || v.place_channel) || !v.time || !v.languages) return 'need_place';
+  if (v.place_online && !isLink(v.place_online)) return 'need_online';
   if (!v.first || (v.rule === 'once' && v.first < today)) return 'need_date';
   if (!v.open) return 'need_open';
   return null;
@@ -121,7 +122,7 @@ export function issueQuery(v) {
   const fields = {
     template: 'add-meeting.yml', title: `Add meeting: ${v.name}`, group: isNew || isNone ? '' : v.groupName,
     new_group: isNew ? v.new_group : '', region: isNew ? v.region : '', links: isNew ? v.links : '', who: isNone ? v.who : '', page: isNone ? v.page : '',
-    country: isNew || isNone ? v.country : '', name: v.name, kind: v.kind, place: v.place, first: v.first, time: v.time, rule, languages: v.languages,
+    country: isNew || isNone ? v.country : '', name: v.name, place_in_person: v.place, place_online: v.place_online, place_channel: v.place_channel, first: v.first, time: v.time, rule, languages: v.languages,
   };
   return new URLSearchParams(Object.entries(fields).filter(([, value]) => value)).toString();
 }
@@ -168,15 +169,25 @@ function timeZoneLines(timeZone) {
     'END:VTIMEZONE'];
 }
 
+// What a way to join shows: its place, or else the site its link goes to.
+export const wayText = (way) => way.place || new URL(way.url).hostname;
+
+const WAY_NAMES = { in_person: 'In person', online: 'Online', channel: 'On a channel' };
+
 function eventLines(meeting, stamp, onlyDate) {
-  const { id, name, date, time, timezone, repeat, place, url, link, organiser } = meeting;
+  const { id, name, date, time, timezone, repeat, join, link, organiser } = meeting;
   const start = onlyDate || date;
-  const details = [organiser, url || link].filter(Boolean).join('\n');
+  // A calendar has one location: the way in person when there is one. The other ways go in the description.
+  const main = join.find((w) => w.kind === 'in_person') || join[0];
+  const place = wayText(main);
+  const url = main.url || join.find((w) => w.url)?.url;
+  const others = join.filter((w) => w !== main).map((w) => `${WAY_NAMES[w.kind]}: ${[w.place, w.url].filter(Boolean).join(' ')}`);
+  const details = [organiser, ...others, main.url || (others.length ? '' : link)].filter(Boolean).join('\n');
   const rule = onlyDate || !repeat ? null
     : `FREQ=${repeat === 'weekly' ? 'WEEKLY' : 'MONTHLY'};BYDAY=${repeat === 'weekly' ? '' : placeInMonth(date) === 'last' ? '-1' : placeInMonth(date)}${BYDAY[weekdayOf(date)]};UNTIL=${compact(listedUntil(meeting))}T235959Z`;
   return ['BEGIN:VEVENT', `UID:${id}${onlyDate ? `-${onlyDate}` : ''}@meshcore-info.eu`, `DTSTAMP:${compact(stamp)}T000000Z`,
     `DTSTART;TZID=${timezone}:${compact(start)}T${time.replace(':', '')}00`, 'DURATION:PT2H', ...(rule ? [`RRULE:${rule}`] : []),
-    `SUMMARY:${escapeText(name)}`, ...(place ? [`LOCATION:${escapeText(place)}`] : []), ...(details ? [`DESCRIPTION:${escapeText(details)}`] : []),
+    `SUMMARY:${escapeText(name)}`, `LOCATION:${escapeText(place)}`, ...(details ? [`DESCRIPTION:${escapeText(details)}`] : []),
     ...(url || link ? [`URL:${url || link}`] : []), 'END:VEVENT'];
 }
 
@@ -212,14 +223,14 @@ function mark(kind, x, y) {
   return `<rect x="${x - 4.5}" y="${y - 4.5}" width="9" height="9" rx="1"/>`;
 }
 
-// meetings: { id, kind, name, date, repeat, last_checked }. label(date) writes a date for the tooltip.
+// meetings: { id, join, name, date, repeat, last_checked }. A meeting has a mark in the row of each way to join. label(date) writes a date for the tooltip.
 export function stripSvg(meetings, today, label, ariaLabel) {
   const start = stripStart(today);
   const days = STRIP_WEEKS * 7;
   const end = addDays(start, days - 1);
   const rows = KINDS.map((kind, row) => {
     const y = ROW * row + ROW / 2;
-    const marks = meetings.filter((m) => m.kind === kind).flatMap((m) => datesFrom(m, today, days).filter((d) => d <= end).map((d) => {
+    const marks = meetings.filter((m) => m.join.some((w) => w.kind === kind)).flatMap((m) => datesFrom(m, today, days).filter((d) => d <= end).map((d) => {
       const x = (Math.round((toMs(d) - toMs(start)) / DAY_MS) + 0.5) * CELL;
       return `<a href="#meeting-${xml(m.id)}"><title>${xml(`${label(d)}: ${m.name}`)}</title>${mark(kind, x, y)}</a>`;
     }));

@@ -47,7 +47,7 @@ if (root) {
     root.querySelector('[data-feed-link]').textContent = `${data.siteFeeds}${listed ? `groups/${group}` : f.country.value.toLowerCase()}.ics`;
     root.querySelector('[data-how]').hidden = group === 'none';
 
-    const values = Object.fromEntries(['group', 'new_group', 'region', 'links', 'who', 'country', 'page', 'name', 'kind', 'place', 'first', 'time', 'rule', 'languages'].map((k) => [k, f[k].value.trim()]));
+    const values = Object.fromEntries(['group', 'new_group', 'region', 'links', 'who', 'country', 'page', 'name', 'place', 'place_online', 'place_channel', 'first', 'time', 'rule', 'languages'].map((k) => [k, f[k].value.trim()]));
     values.groupName = listed ? f.group.selectedOptions[0].dataset.name : '';
     values.open = f.open.checked;
     const problem = formProblem(values, today);

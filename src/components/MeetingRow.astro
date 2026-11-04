@@ -2,6 +2,7 @@
 // One meeting as a row, as the build date sees it; web/js/meeting-row.js moves it to its next date in the browser.
 import { t } from '../lib/site.mjs';
 import { localeOf, repeatKey, oneUrl } from '../lib/meetings.mjs';
+import { wayText } from '../../web/js/meetings-core.js';
 const { lang, m, next, calendar = false, hidden = false } = Astro.props;
 const locale = localeOf(lang);
 const inUtc = (date) => new Date(`${date}T12:00:00Z`);
@@ -10,14 +11,13 @@ const weekdayName = new Intl.DateTimeFormat(locale, { weekday: 'long', timeZone:
 ---
 <li class="meeting-row" id={calendar ? `meeting-${m.id}` : undefined} data-meeting={JSON.stringify(m)} hidden={hidden}>
   <p class="meeting-when mono"><time datetime={`${next}T${m.time}`}>{shortDate.format(inUtc(next))}</time><br />{m.time}
-    {m.kind === 'online' && <Fragment><br /><span class="muted" data-own-time data-template={t(lang, 'meetings_your_time')} hidden /></Fragment>}</p>
+    {m.join.some((w) => w.kind === 'online') && <Fragment><br /><span class="muted" data-own-time data-template={t(lang, 'meetings_your_time')} hidden /></Fragment>}</p>
   <div class="meeting-what">
     <h3>{m.name}</h3>
-    <p>{m.url ? <a href={m.url}>{m.place}</a> : m.place}</p>
+    {m.join.map((w) => <p class="meeting-way"><span class={`meeting-key meeting-key-${w.kind}`}>{t(lang, `meetings_kind_${w.kind}`)}</span> <span>{w.url ? <a href={w.url}>{wayText(w)}</a> : wayText(w)}</span></p>)}
     <p class="muted">{t(lang, repeatKey(m)).replace('{weekday}', weekdayName)} · <span class="mono">{m.country.toUpperCase()}</span> · {t(lang, 'meetings_spoken')}: <span class="mono">{m.languages.map((l) => l.toUpperCase()).join(' ')}</span> · {m.listed_by ? t(lang, 'meetings_listed_by').replace('{name}', m.organiser) : m.organiser}{m.who && m.link && <Fragment> · <a href={m.link}>{t(lang, 'meetings_their_page')}</a></Fragment>}</p>
   </div>
   <div class="meeting-side">
-    <span class={`meeting-key meeting-key-${m.kind}`}>{t(lang, `meetings_kind_${m.kind}`)}</span>
     {calendar && <a class="btn btn-small" href={oneUrl(m.id)} data-add-calendar download={`${m.id}.ics`}>{t(lang, 'meetings_add_calendar')}</a>}
   </div>
 </li>

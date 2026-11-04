@@ -9,7 +9,7 @@ const countries = Object.keys(loadData('meeting_zones')).filter((cc) => hasStrin
   .map((cc) => [cc, t(lang, `country_${cc.toLowerCase()}`)]).sort((a, b) => a[1].localeCompare(b[1]));
 const repeats = { once: 'meetings_repeat_once', weekly: 'meetings_repeat_weekly', m1: 'meetings_repeat_monthly_1', m2: 'meetings_repeat_monthly_2', m3: 'meetings_repeat_monthly_3', m4: 'meetings_repeat_monthly_4', last: 'meetings_repeat_monthly_last' };
 const data = Object.fromEntries(Object.entries(repeats).map(([k, key]) => [`data-repeat-${k}`, t(lang, key)]));
-const needs = Object.fromEntries(['need_new_group', 'need_new_link', 'need_who', 'need_page', 'need_place', 'need_open', 'need_date'].map((k) => [`data-${k.replace(/_/g, '-')}`, t(lang, `meetings_add_${k}`)]));
+const needs = Object.fromEntries(['need_new_group', 'need_new_link', 'need_who', 'need_page', 'need_place', 'need_online', 'need_open', 'need_date'].map((k) => [`data-${k.replace(/_/g, '-')}`, t(lang, `meetings_add_${k}`)]));
 ---
 <section class="note cta-box meeting-add" id="add-meeting" data-meeting-add data-form={formUrl} data-site-feeds="https://meshcore-info.eu/meetings/" {...data} {...needs}
   data-feed-group={t(lang, 'meetings_add_feed_group')} data-feed-new={t(lang, 'meetings_add_feed_new')} data-feed-none={t(lang, 'meetings_add_feed_none')}>
@@ -34,14 +34,10 @@ const needs = Object.fromEntries(['need_new_group', 'need_new_link', 'need_who',
       </label>
       <label data-only="none" hidden>{t(lang, 'meetings_add_page')}<input name="page" type="url" placeholder="https://" autocomplete="off" /></label>
       <label>{t(lang, 'meetings_add_name')}<input name="name" type="text" autocomplete="off" /></label>
-      <label>{t(lang, 'meetings_add_kind')}
-        <select name="kind">
-          <option value="In person">{t(lang, 'meetings_kind_in_person')}</option>
-          <option value="Online">{t(lang, 'meetings_kind_online')}</option>
-          <option value="On a channel">{t(lang, 'meetings_kind_channel')}</option>
-        </select>
-      </label>
+      <p class="meeting-add-ways"><strong>{t(lang, 'meetings_add_kind')}</strong> {t(lang, 'meetings_add_kind_hint')}</p>
       <label>{t(lang, 'meetings_add_place')}<input name="place" type="text" autocomplete="off" /></label>
+      <label>{t(lang, 'meetings_add_place_online')}<input name="place_online" type="url" placeholder="https://" autocomplete="off" /></label>
+      <label>{t(lang, 'meetings_add_place_channel')}<input name="place_channel" type="text" autocomplete="off" /></label>
       <label>{t(lang, 'meetings_add_first')}<input name="first" type="date" /></label>
       <label>{t(lang, 'meetings_add_time')}<input name="time" type="time" value="19:00" /></label>
       <label>{t(lang, 'meetings_add_rule')}<select name="rule"></select></label>
