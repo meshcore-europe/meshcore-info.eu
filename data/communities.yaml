@@ -874,6 +874,28 @@
   added: 2026-11-02
   last_checked: 2026-11-02
 
+- id: de-meshcore-kiel
+  country: DE
+  region: Kiel
+  scope: city
+  location:
+    lat: 54.323
+    lon: 10.136
+    place: Kiel
+    source: "https://www.openstreetmap.org/relation/27021"
+    checked: 2026-11-05
+  radius_km: 25
+  name: Meshcore Kiel
+  links:
+  - type: website
+    url: "https://iot-kiel.de/"
+  channels:
+  - "#kiel"
+  languages: [de]
+  desc_key: community.de-meshcore-kiel.desc
+  added: 2026-11-05
+  last_checked: 2026-11-05
+
 - id: de-ostfriesland
   country: DE
   region: Ostfriesland (Niedersachsen)

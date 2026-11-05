@@ -34,6 +34,23 @@
   repeat: weekly
   last_checked: 2026-11-03
 
+- id: iot-treffen-kiel
+  group: de-meshcore-kiel
+  country: DE
+  name: Meshcore/IoT Treffen Kiel
+  join:
+    - kind: in_person
+      place: "Kiel, Toppoint e.V., Holzkoppelweg 20"
+      location: { lat: 54.336, lon: 10.115 }
+    - kind: online
+      url: "https://meet.ffmuc.net/iotKiel"
+  languages: [de]
+  date: 2026-11-05
+  time: "18:00"
+  timezone: Europe/Berlin
+  repeat: monthly
+  last_checked: 2026-11-05
+
 - id: hunebedronde
   group: nl-meshcore-net
   country: NL
