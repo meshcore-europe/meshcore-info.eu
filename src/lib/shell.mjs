@@ -16,7 +16,9 @@ const isSitePath = (href) => typeof href === 'string' && href.startsWith('/') &&
 // fails the build until en.json follows; a text without a key fails it too.
 const keyOf = (id) => `menu_${id.replace(/-/g, '_')}`;
 function keyMenu() {
-  const set = (label, key) => { if (label) label.key = key; };
+  // A label that names its own key keeps it: a title whose meaning changed gets a new key, so an old translation
+  // never shows under it.
+  const set = (label, key) => { if (label && !label.key) label.key = key; };
   const item = (i) => { set(i.label, keyOf(i.id)); set(i.sub, `${keyOf(i.id)}_sub`); };
   item(nav.disclaimer);
   (nav.extra || []).forEach(item);

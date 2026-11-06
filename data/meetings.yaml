@@ -121,3 +121,16 @@
   repeat: monthly
   last_checked: '2026-11-04'
   group: de-ffnw
+
+- id: 2-meshcore-bung-2026-11
+  country: DE
+  name: 2.MeshCore Übung
+  join:
+  - {kind: online, url: 'https://ka-mesh.de/termine/'}
+  - {kind: channel, place: '#karlsruhe'}
+  languages: [de]
+  date: '2026-11-29'
+  time: '11:00'
+  timezone: Europe/Berlin
+  last_checked: '2026-11-06'
+  group: de-ka-mesh

@@ -576,3 +576,12 @@
   desc_key: project.domca-docs.desc
   status: active
   last_checked: 2026-10-28
+
+- id: onlyfaqs-meshcore
+  name: OnlyFAQs MeshCore
+  category: docs
+  url: "https://onlyfaqs.nl/meshcore/"
+  maintainer: mboelen
+  desc_key: project.onlyfaqs-meshcore.desc
+  status: active
+  last_checked: 2026-11-06

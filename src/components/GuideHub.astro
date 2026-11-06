@@ -1,5 +1,5 @@
 ---
-// The guides hub (/guides/): every guide in 3 groups, each card a link to its page. Its hero (our roof
+// The guides hub (/guides/): every guide in 3 groups, as the menu groups them, each card a link to its page. Its hero (our roof
 // with the repeater) is the page's title block, in src/pages/[lang]/[...slug].astro.
 // The firmware hub (/firmware/) is the same, with one group and no group title.
 import { t } from '../lib/site.mjs';
@@ -8,9 +8,10 @@ import { localize } from '../lib/shell.mjs';
 const { lang, hub = 'guides' } = Astro.props;
 const HUBS = {
   guides: [
-    { id: 'start', cards: [['get-started', '/get-started/'], ['devices', '/devices/'], ['channels', '/guides/channels/']] },
-    { id: 'setup', cards: [['settings', '/guides/settings/'], ['antenna', '/guides/antenna/'], ['repeater', '/repeater-guide/'], ['keygen', '/guides/keygen/']] },
-    { id: 'deeper', cards: [['resilient', '/guides/resilient/'], ['filter', '/guides/filter/'], ['mqtt', '/guides/mqtt/'], ['mctomqtt', '/guides/mctomqtt/'], ['cli', '/guides/cli/']] },
+    // The same groups as the menu: Guides (your node, your mesh) and the guides under In depth.
+    { id: 'node', cards: [['settings', '/guides/settings/'], ['antenna', '/guides/antenna/'], ['keygen', '/guides/keygen/'], ['channels', '/guides/channels/']] },
+    { id: 'mesh', cards: [['repeater', '/repeater-guide/'], ['resilient', '/guides/resilient/']] },
+    { id: 'depth', cards: [['cli', '/guides/cli/'], ['filter', '/guides/filter/'], ['mqtt', '/guides/mqtt/'], ['mctomqtt', '/guides/mctomqtt/']] },
   ],
   firmware: [
     { id: 'tools', cards: [['flasher', '/firmware/flasher/'], ['console', '/firmware/console/'], ['changelog', '/firmware/changelog/']] },

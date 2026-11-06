@@ -79,20 +79,20 @@
           "icon": "play"
         },
         {
-          "id": "repeater-guide",
-          "page": "repeater-guide",
-          "href": "/repeater-guide/",
+          "id": "fw-flash",
+          "page": "fw-flash",
+          "href": "/firmware/flasher/",
           "label": {
-            "nl": "Repeatergids",
-            "en": "Repeater guide",
-            "de": "Repeater-Leitfaden"
+            "nl": "Flashen",
+            "en": "Flash",
+            "de": "Flashen"
           },
           "sub": {
-            "nl": "Plek, stroom en de wettelijke grenzen",
-            "en": "Placement, power and the legal limits",
-            "de": "Standort, Strom und die gesetzlichen Grenzen"
+            "nl": "Vanuit je browser, via USB",
+            "en": "From your browser, over USB",
+            "de": "Aus dem Browser, über USB"
           },
-          "icon": "antenna"
+          "icon": "chip"
         }
       ],
       "groups": [
@@ -120,7 +120,7 @@
           },
           "items": [
             "get-started",
-            "repeater-guide"
+            "fw-flash"
           ]
         }
       ],
@@ -152,137 +152,6 @@
       }
     },
     {
-      "id": "firmware",
-      "page": "firmware",
-      "href": "/firmware/",
-      "label": {
-        "nl": "Firmware",
-        "en": "Firmware",
-        "de": "Firmware"
-      },
-      "children": [
-        {
-          "id": "fw-build",
-          "page": "fw-build",
-          "href": "/firmware/",
-          "label": {
-            "nl": "Firmware-overzicht",
-            "en": "Firmware overview",
-            "de": "Firmware-Übersicht"
-          },
-          "sub": {
-            "nl": "Welke firmware je board draait",
-            "en": "Which firmware your board runs",
-            "de": "Welche Firmware dein Board nutzt"
-          },
-          "icon": "sliders"
-        },
-        {
-          "id": "fw-flash",
-          "page": "fw-flash",
-          "href": "/firmware/flasher/",
-          "label": {
-            "nl": "Flashen",
-            "en": "Flash",
-            "de": "Flashen"
-          },
-          "sub": {
-            "nl": "Vanuit je browser, via USB",
-            "en": "From your browser, over USB",
-            "de": "Aus dem Browser, über USB"
-          },
-          "icon": "chip"
-        },
-        {
-          "id": "fw-console",
-          "page": "fw-console",
-          "href": "/firmware/console/",
-          "label": {
-            "nl": "Seriële console",
-            "en": "Serial console",
-            "de": "Serielle Konsole"
-          },
-          "sub": {
-            "nl": "Commando's typen via USB",
-            "en": "Type commands over USB",
-            "de": "Befehle über USB tippen"
-          },
-          "icon": "terminal"
-        },
-        {
-          "id": "fw-changelog",
-          "page": "fw-changelog",
-          "href": "/firmware/changelog/",
-          "label": {
-            "nl": "Changelog",
-            "en": "Changelog",
-            "de": "Changelog"
-          },
-          "sub": {
-            "nl": "Wat er veranderd is",
-            "en": "What changed",
-            "de": "Was sich geändert hat"
-          },
-          "icon": "file"
-        }
-      ],
-      "groups": [
-        {
-          "title": {
-            "nl": "Op je radio",
-            "en": "On your radio",
-            "de": "Auf deinem Funkgerät"
-          },
-          "items": [
-            "fw-build",
-            "fw-flash",
-            "fw-console"
-          ],
-          "all": {
-            "nl": "Alle firmware",
-            "en": "All firmware",
-            "de": "Alle Firmware"
-          }
-        },
-        {
-          "title": {
-            "nl": "Bijblijven",
-            "en": "Keep up to date",
-            "de": "Auf dem Laufenden"
-          },
-          "items": [
-            "fw-changelog"
-          ]
-        }
-      ],
-      "card": {
-        "eyebrow": {
-          "nl": "Firmware",
-          "en": "Firmware",
-          "de": "Firmware"
-        },
-        "title": {
-          "nl": "Standaard MeshCore",
-          "en": "The official firmware",
-          "de": "Standard-MeshCore"
-        },
-        "body": {
-          "nl": "Flash de officiële firmware vanuit je browser. Je hoeft niets te installeren.",
-          "en": "Flash the official firmware from your browser. Nothing to install.",
-          "de": "Flashe die offizielle Firmware aus dem Browser. Nichts zu installieren."
-        },
-        "primary": {
-          "page": "card",
-          "href": "/firmware/flasher/",
-          "label": {
-            "nl": "Flash je board",
-            "en": "Flash your board",
-            "de": "Flashe dein Board"
-          }
-        }
-      }
-    },
-    {
       "id": "guides",
       "page": "guides",
       "href": "/guides/",
@@ -292,22 +161,6 @@
         "de": "Anleitungen"
       },
       "children": [
-        {
-          "id": "guides-overview",
-          "page": "guides",
-          "href": "/guides/",
-          "label": {
-            "nl": "Overzicht handleidingen",
-            "en": "Guides overview",
-            "de": "Anleitungen-Übersicht"
-          },
-          "sub": {
-            "nl": "Elke handleiding, naar wat je wilt doen",
-            "en": "Every guide, by what you want to do",
-            "de": "Jede Anleitung, nach dem, was du tun willst"
-          },
-          "icon": "book"
-        },
         {
           "id": "guide-settings",
           "page": "guide-settings",
@@ -373,6 +226,22 @@
           "icon": "hash"
         },
         {
+          "id": "repeater-guide",
+          "page": "repeater-guide",
+          "href": "/repeater-guide/",
+          "label": {
+            "nl": "Repeatergids",
+            "en": "Repeater guide",
+            "de": "Repeater-Leitfaden"
+          },
+          "sub": {
+            "nl": "Plek, stroom en de wettelijke grenzen",
+            "en": "Placement, power and the legal limits",
+            "de": "Standort, Strom und die gesetzlichen Grenzen"
+          },
+          "icon": "antenna"
+        },
+        {
           "id": "guide-resilient",
           "page": "guide-resilient",
           "href": "/guides/resilient/",
@@ -387,82 +256,19 @@
             "de": "Was gegen Floods und Spam hilft"
           },
           "icon": "shield"
-        },
-        {
-          "id": "guide-filter",
-          "page": "guide-filter",
-          "href": "/guides/filter/",
-          "label": {
-            "nl": "Pakketfilter",
-            "en": "Packet filter",
-            "de": "Paketfilter"
-          },
-          "sub": {
-            "nl": "Uitgelegd, met commando's",
-            "en": "Explained, with commands",
-            "de": "Erklärt, mit Befehlen"
-          },
-          "icon": "filter"
-        },
-        {
-          "id": "guide-mqtt",
-          "page": "guide-mqtt",
-          "href": "/guides/mqtt/",
-          "label": {
-            "nl": "MQTT op je observer",
-            "en": "MQTT on your observer",
-            "de": "MQTT auf deinem Observer"
-          },
-          "sub": {
-            "nl": "Stuur door wat je node hoort",
-            "en": "Report what your node hears",
-            "de": "Weitergeben, was dein Node hört"
-          },
-          "icon": "terminal"
-        },
-        {
-          "id": "guide-mctomqtt",
-          "page": "guide-mctomqtt",
-          "href": "/guides/mctomqtt/",
-          "label": {
-            "nl": "Bridge-config maken",
-            "en": "Build a bridge config",
-            "de": "Bridge-Konfiguration erstellen"
-          },
-          "sub": {
-            "nl": "Een repeater via USB naar een broker",
-            "en": "A repeater over USB to a broker",
-            "de": "Ein Repeater über USB an einen Broker"
-          },
-          "icon": "file"
-        },
-        {
-          "id": "guide-cli",
-          "page": "guide-cli",
-          "href": "/guides/cli/",
-          "label": {
-            "nl": "CLI-commando's",
-            "en": "CLI commands",
-            "de": "CLI-Befehle"
-          },
-          "sub": {
-            "nl": "Elk commando uitgelegd",
-            "en": "Every command explained",
-            "de": "Jeder Befehl erklärt"
-          },
-          "icon": "code"
         }
       ],
       "groups": [
         {
           "title": {
-            "nl": "Je node instellen",
-            "en": "Set up your node",
-            "de": "Deinen Node einrichten"
+            "nl": "Je node",
+            "en": "Your node",
+            "de": "Dein Node",
+            "key": "menu_guides_group_your_node"
           },
           "items": [
-            "guides-overview",
             "guide-settings",
+            "guide-antenna",
             "guide-keygen",
             "guide-channels"
           ],
@@ -474,16 +280,14 @@
         },
         {
           "title": {
-            "nl": "Verdieping",
-            "en": "Go deeper",
-            "de": "Vertiefung"
+            "nl": "Je mesh",
+            "en": "Your mesh",
+            "de": "Dein Mesh",
+            "key": "menu_guides_group_your_mesh"
           },
           "items": [
-            "guide-resilient",
-            "guide-filter",
-            "guide-mqtt",
-            "guide-mctomqtt",
-            "guide-cli"
+            "repeater-guide",
+            "guide-resilient"
           ]
         }
       ],
@@ -512,103 +316,6 @@
             "de": "Zu MeshWiki"
           },
           "external": true
-        }
-      }
-    },
-    {
-      "id": "network",
-      "page": "network",
-      "href": "/network/",
-      "label": {
-        "nl": "Netwerk",
-        "en": "Network",
-        "de": "Netzwerk"
-      },
-      "children": [
-        {
-          "id": "map",
-          "page": "map",
-          "href": "/map/",
-          "label": {
-            "nl": "Dekkingskaarten",
-            "en": "Coverage maps",
-            "de": "Abdeckungskarten"
-          },
-          "sub": {
-            "nl": "Hoe ver het mesh reikt",
-            "en": "Where the mesh reaches",
-            "de": "Wohin das Mesh reicht"
-          },
-          "icon": "map"
-        },
-        {
-          "id": "network-overview",
-          "page": "network",
-          "href": "/network/",
-          "label": {
-            "nl": "Het netwerk",
-            "en": "The network",
-            "de": "Das Netzwerk"
-          },
-          "sub": {
-            "nl": "Observers, cluster en status",
-            "en": "Observers and live numbers",
-            "de": "Observer, Cluster und Status"
-          },
-          "icon": "server"
-        }
-      ],
-      "groups": [
-        {
-          "title": {
-            "nl": "Kaarten",
-            "en": "Maps",
-            "de": "Karten"
-          },
-          "items": [
-            "map"
-          ],
-          "all": {
-            "nl": "Het netwerk",
-            "en": "The network",
-            "de": "Das Netzwerk"
-          }
-        },
-        {
-          "title": {
-            "nl": "Data",
-            "en": "Data",
-            "de": "Daten"
-          },
-          "items": [
-            "network-overview"
-          ]
-        }
-      ],
-      "card": {
-        "eyebrow": {
-          "nl": "Dekking",
-          "en": "Coverage",
-          "de": "Abdeckung"
-        },
-        "title": {
-          "nl": "Hoe ver het mesh reikt",
-          "en": "Where the mesh reaches",
-          "de": "Wohin das Mesh reicht"
-        },
-        "body": {
-          "nl": "Kaarten van communities in heel Europa, van de analyzer tot lokale projecten.",
-          "en": "Maps run by communities across Europe, from the MeshCore Analyzer to local projects.",
-          "de": "Karten von Communities in ganz Europa, vom Analyzer bis zu lokalen Projekten."
-        },
-        "primary": {
-          "page": "card",
-          "href": "/map/",
-          "label": {
-            "nl": "Kaarten openen",
-            "en": "Open the maps",
-            "de": "Karten öffnen"
-          }
         }
       }
     },
@@ -653,6 +360,22 @@
             "de": "Die nächsten Treffen, vor Ort und online"
           },
           "icon": "calendar"
+        },
+        {
+          "id": "map",
+          "page": "map",
+          "href": "/map/",
+          "label": {
+            "nl": "Dekkingskaarten",
+            "en": "Coverage maps",
+            "de": "Abdeckungskarten"
+          },
+          "sub": {
+            "nl": "Hoe ver het mesh reikt",
+            "en": "Where the mesh reaches",
+            "de": "Wohin das Mesh reicht"
+          },
+          "icon": "map"
         },
         {
           "id": "projects",
@@ -717,6 +440,38 @@
             "de": "Logo, Bilder, Wallpaper und ein Text über die Seite"
           },
           "icon": "play"
+        },
+        {
+          "id": "wallpapers",
+          "page": "wallpapers",
+          "href": "/wallpapers/",
+          "label": {
+            "nl": "Wallpapers",
+            "en": "Wallpapers",
+            "de": "Wallpaper"
+          },
+          "sub": {
+            "nl": "Scènes voor je scherm, en kleurplaten",
+            "en": "Scenes for your screen, and colouring pages",
+            "de": "Szenen für deinen Bildschirm und Malvorlagen"
+          },
+          "icon": "file"
+        },
+        {
+          "id": "privacy",
+          "page": "privacy",
+          "href": "/privacy/",
+          "label": {
+            "nl": "Privacy",
+            "en": "Privacy",
+            "de": "Datenschutz"
+          },
+          "sub": {
+            "nl": "Geen tracking, één cookie voor je thema",
+            "en": "No tracking, one cookie for your theme",
+            "de": "Kein Tracking, ein Cookie für dein Design"
+          },
+          "icon": "shield"
         }
       ],
       "groups": [
@@ -729,6 +484,7 @@
           "items": [
             "local-groups",
             "meetings",
+            "map",
             "projects"
           ],
           "all": {
@@ -746,7 +502,9 @@
           "items": [
             "news",
             "contribute",
-            "press-kit"
+            "press-kit",
+            "wallpapers",
+            "privacy"
           ]
         }
       ],
@@ -776,6 +534,200 @@
           }
         }
       }
+    },
+    {
+      "id": "in-depth",
+      "page": "in-depth",
+      "href": "/firmware/",
+      "label": {
+        "nl": "Verdieping",
+        "en": "In depth",
+        "de": "Vertiefung"
+      },
+      "children": [
+        {
+          "id": "fw-build",
+          "page": "fw-build",
+          "href": "/firmware/",
+          "label": {
+            "nl": "Firmware-overzicht",
+            "en": "Firmware overview",
+            "de": "Firmware-Übersicht"
+          },
+          "sub": {
+            "nl": "Welke firmware je board draait",
+            "en": "Which firmware your board runs",
+            "de": "Welche Firmware dein Board nutzt"
+          },
+          "icon": "sliders"
+        },
+        {
+          "id": "fw-console",
+          "page": "fw-console",
+          "href": "/firmware/console/",
+          "label": {
+            "nl": "Seriële console",
+            "en": "Serial console",
+            "de": "Serielle Konsole"
+          },
+          "sub": {
+            "nl": "Commando's typen via USB",
+            "en": "Type commands over USB",
+            "de": "Befehle über USB tippen"
+          },
+          "icon": "terminal"
+        },
+        {
+          "id": "guide-cli",
+          "page": "guide-cli",
+          "href": "/guides/cli/",
+          "label": {
+            "nl": "CLI-commando's",
+            "en": "CLI commands",
+            "de": "CLI-Befehle"
+          },
+          "sub": {
+            "nl": "Elk commando uitgelegd",
+            "en": "Every command explained",
+            "de": "Jeder Befehl erklärt"
+          },
+          "icon": "code"
+        },
+        {
+          "id": "guide-filter",
+          "page": "guide-filter",
+          "href": "/guides/filter/",
+          "label": {
+            "nl": "Pakketfilter",
+            "en": "Packet filter",
+            "de": "Paketfilter"
+          },
+          "sub": {
+            "nl": "Uitgelegd, met commando's",
+            "en": "Explained, with commands",
+            "de": "Erklärt, mit Befehlen"
+          },
+          "icon": "filter"
+        },
+        {
+          "id": "fw-changelog",
+          "page": "fw-changelog",
+          "href": "/firmware/changelog/",
+          "label": {
+            "nl": "Changelog",
+            "en": "Changelog",
+            "de": "Changelog"
+          },
+          "sub": {
+            "nl": "Wat er veranderd is",
+            "en": "What changed",
+            "de": "Was sich geändert hat"
+          },
+          "icon": "file"
+        },
+        {
+          "id": "network-overview",
+          "page": "network",
+          "href": "/network/",
+          "label": {
+            "nl": "Het netwerk",
+            "en": "The network",
+            "de": "Das Netzwerk"
+          },
+          "sub": {
+            "nl": "Observers, cluster en status",
+            "en": "Observers and live numbers",
+            "de": "Observer, Cluster und Status"
+          },
+          "icon": "server"
+        },
+        {
+          "id": "guide-mqtt",
+          "page": "guide-mqtt",
+          "href": "/guides/mqtt/",
+          "label": {
+            "nl": "MQTT op je observer",
+            "en": "MQTT on your observer",
+            "de": "MQTT auf deinem Observer"
+          },
+          "sub": {
+            "nl": "Stuur door wat je node hoort",
+            "en": "Report what your node hears",
+            "de": "Weitergeben, was dein Node hört"
+          },
+          "icon": "terminal"
+        },
+        {
+          "id": "guide-mctomqtt",
+          "page": "guide-mctomqtt",
+          "href": "/guides/mctomqtt/",
+          "label": {
+            "nl": "Bridge-config maken",
+            "en": "Build a bridge config",
+            "de": "Bridge-Konfiguration erstellen"
+          },
+          "sub": {
+            "nl": "Een repeater via USB naar een broker",
+            "en": "A repeater over USB to a broker",
+            "de": "Ein Repeater über USB an einen Broker"
+          },
+          "icon": "file"
+        }
+      ],
+      "groups": [
+        {
+          "title": {
+            "nl": "Firmware",
+            "en": "Firmware",
+            "de": "Firmware"
+          },
+          "items": [
+            "fw-build",
+            "fw-console",
+            "guide-cli",
+            "guide-filter",
+            "fw-changelog"
+          ]
+        },
+        {
+          "title": {
+            "nl": "Netwerk",
+            "en": "Network",
+            "de": "Netzwerk"
+          },
+          "items": [
+            "network-overview",
+            "guide-mqtt",
+            "guide-mctomqtt"
+          ]
+        }
+      ],
+      "card": {
+        "eyebrow": {
+          "nl": "Firmware",
+          "en": "Firmware",
+          "de": "Firmware"
+        },
+        "title": {
+          "nl": "Standaard MeshCore",
+          "en": "The official firmware",
+          "de": "Standard-MeshCore"
+        },
+        "body": {
+          "nl": "Flash de officiële firmware vanuit je browser. Je hoeft niets te installeren.",
+          "en": "Flash the official firmware from your browser. Nothing to install.",
+          "de": "Flashe die offizielle Firmware aus dem Browser. Nichts zu installieren."
+        },
+        "primary": {
+          "page": "card",
+          "href": "/firmware/flasher/",
+          "label": {
+            "nl": "Flash je board",
+            "en": "Flash your board",
+            "de": "Flashe dein Board"
+          }
+        }
+      }
     }
   ],
   "footer": [
@@ -787,72 +739,65 @@
       },
       "items": [
         "about",
-        "get-started",
         "devices",
-        "repeater-guide"
-      ]
-    },
-    {
-      "title": {
-        "nl": "Firmware",
-        "en": "Firmware",
-        "de": "Firmware"
-      },
-      "items": [
-        "fw-build",
-        "fw-flash",
-        "fw-console",
-        "fw-changelog"
+        "get-started",
+        "fw-flash"
       ]
     },
     {
       "title": {
         "nl": "Gidsen",
         "en": "Guides",
-        "de": "Anleitungen"
+        "de": "Anleitungen",
+        "key": "menu_footer_3"
       },
       "items": [
         "guide-settings",
         "guide-antenna",
         "guide-keygen",
         "guide-channels",
-        "guide-cli",
-        "guide-resilient",
-        "guide-filter",
-        "guide-mqtt",
-        "guide-mctomqtt"
+        "repeater-guide",
+        "guide-resilient"
       ]
     },
     {
       "title": {
-        "nl": "Netwerk en community",
-        "en": "Network and community",
-        "de": "Netzwerk und Community"
+        "nl": "Community",
+        "en": "Community",
+        "de": "Community",
+        "key": "menu_footer_community"
       },
       "items": [
-        "map",
-        "network-overview",
         "local-groups",
         "meetings",
+        "map",
         "projects",
         "news",
         "contribute",
         "press-kit",
         "wallpapers"
       ]
-    }
-  ],
-  "extra": [
+    },
     {
-      "id": "wallpapers",
-      "href": "/wallpapers/",
-      "label": {
-        "nl": "Wallpapers",
-        "en": "Wallpapers",
-        "de": "Wallpaper"
-      }
+      "title": {
+        "nl": "Verdieping",
+        "en": "In depth",
+        "de": "Vertiefung",
+        "key": "menu_footer_in_depth"
+      },
+      "items": [
+        "fw-build",
+        "fw-console",
+        "guide-cli",
+        "guide-filter",
+        "fw-changelog",
+        "network-overview",
+        "guide-mqtt",
+        "guide-mctomqtt"
+      ]
     }
   ],
+  "extra": [],
   "footerNote": [
     {
       "nl": "Een niet-commerciële communitygids voor MeshCore in Europa, door vrijwilligers, zonder advertenties, affiliatelinks of tracking. Geen onderdeel van het MeshCore-project.",
