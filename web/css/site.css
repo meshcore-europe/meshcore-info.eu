@@ -514,6 +514,7 @@ a.path-card { display: flex; flex-direction: column; gap: 6px; height: 100%; tex
 .prose ul:has(> li > a > img) > li > a:first-child { grid-column: 1 / -1; font-weight: var(--fw-medium); }
 .prose li > a:has(> img) { display: flex; flex-direction: column; gap: 6px; font-size: var(--fs-sm); color: var(--text-muted); text-decoration: none; }
 .prose li > a > img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-2); transition: border-color .15s; }
+.prose li > a > img[src*="/colouring/"] { aspect-ratio: 297 / 210; object-fit: contain; background: #fff; }
 .prose li > a:has(> img):hover, .prose li > a:has(> img):focus-visible { color: var(--accent); }
 .prose li > a:hover > img, .prose li > a:focus-visible > img { border-color: var(--accent); }
 
