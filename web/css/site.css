@@ -257,16 +257,26 @@ main.home { padding: 0; }
 .section-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 24px; margin-bottom: 20px; }
 .section-head h2, .section-head p { margin: 0; }
 /* The trust bar, after the poopy.co reference: the six reasons in two rows of three. */
-.trust { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-block: 1px solid var(--border); }
-.trust li { display: flex; gap: 12px; align-items: flex-start; padding: 20px 16px; }
-.trust li:not(:nth-child(3n + 1)) { border-left: 1px solid var(--border); }
-.trust li:nth-child(n + 4) { border-top: 1px solid var(--border); }
-.trust svg { width: 22px; height: 22px; flex: 0 0 auto; color: var(--accent-light); margin-top: 1px; }
-.trust b { display: block; font-weight: var(--fw-semibold); }
-.trust small { display: block; color: var(--text-muted); font-size: var(--fs-sm); line-height: 1.45; }
-@media (max-width: 1023px) { .trust { grid-template-columns: 1fr 1fr; } .trust li { border-left: 0 !important; border-top: 1px solid var(--border); } .trust li:nth-child(even) { border-left: 1px solid var(--border) !important; } .trust li:nth-child(-n + 2) { border-top: 0; } }
-@media (max-width: 539px) { .trust { grid-template-columns: 1fr; } .trust li, .trust li:nth-child(even) { border-left: 0 !important; padding: 14px 4px; } .trust li + li { border-top: 1px solid var(--border); } }
 /* The five ways in. Below 1024px two per row, an odd last card the full width. */
+.near-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.near-part { padding: 20px; display: flex; flex-direction: column; }
+.near-part h3 { margin: 0 0 12px; }
+.near-part > p:last-child { margin: auto 0 0; padding-top: 12px; }
+.near-part > p.muted { margin: 0 0 12px; }
+.near-map .community-map-frame svg { display: block; width: 100%; height: auto; }
+.near-map figcaption { margin-top: 8px; }
+.near-meetings, .near-news { list-style: none; padding: 0; margin: 0; }
+.near-meetings li { display: grid; grid-template-columns: 5.5em minmax(0, 1fr); gap: 12px; padding: 10px 0; border-top: 1px solid var(--border); }
+.near-meetings time { font-size: var(--fs-sm); }
+.near-meetings b, .near-meetings small { display: block; }
+.near-meetings b { font-weight: var(--fw-semibold); }
+.near-meetings small { color: var(--text-muted); font-size: var(--fs-sm); }
+.near-news li { padding: 10px 0; border-top: 1px solid var(--border); }
+.near-news time { display: block; color: var(--text-muted); font-size: var(--fs-sm); }
+.near-areas a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: 14px; color: var(--text); text-decoration: none; }
+.near-areas a:hover { border-color: var(--accent); }
+@media (max-width: 1099px) { .near-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 539px) { .near-grid { grid-template-columns: 1fr; } }
 .paths { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 @media (max-width: 1023px) { .paths { grid-template-columns: repeat(2, minmax(0, 1fr)); } .paths > li:last-child:nth-child(odd) { grid-column: 1 / -1; } }
 @media (max-width: 539px) { .paths { grid-template-columns: 1fr; } }

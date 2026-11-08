@@ -1,7 +1,7 @@
 {
   "source": "EU-Meshcore-Analyzer/Branding/shell",
-  "commit": "65c2b065333cb97a00f41f529f1434e33772cb44",
-  "written": "2026-11-06",
+  "commit": "964c6fc6df8628ca1d51eb53f3910490d195f039",
+  "written": "2026-11-08",
   "files": {
     "base.css": "f4a2be75dfc1905686f2e6458c9a70ac915d327873ccb3158178b4f5ee989e4a",
     "map.js": "ef4363b3100ed7f4d95e0ac42712d16e2b8bc1ff3842b140dec53af0ff691fde",

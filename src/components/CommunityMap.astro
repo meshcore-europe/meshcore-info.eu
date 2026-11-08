@@ -6,7 +6,9 @@ import map from '../data/europe-map.json';
 import { t } from '../lib/site.mjs';
 import { allMeetings, meetingSpot, meetingsPage } from '../lib/meetings.mjs';
 import { project, kmToUnits, mainBox, countryAnchor } from '../../web/js/map-view.js';
-const { lang, communities, countries } = Astro.props;
+// compact: the home's version. No zoom, script or meeting marks; it shows the part of Europe with groups, and every
+// link opens that place on Local groups (linkBase).
+const { lang, communities, countries, compact = false, linkBase = '' } = Astro.props;
 // Dots on one spot sit in a small ring; web/js/community-map.js keeps them apart at every zoom.
 const ring = (i, n) => (n > 1 ? { ox: Math.cos((2 * Math.PI * i) / n - Math.PI / 2), oy: Math.sin((2 * Math.PI * i) / n - Math.PI / 2) } : { ox: 0, oy: 0 });
 const placed = communities.filter((c) => c.location);
@@ -28,30 +30,32 @@ const spots = allMeetings().flatMap((m) => {
   return spot ? [{ ...project(spot.lat, spot.lon), id: m.id, group: m.group, name: m.name, date: m.date, repeat: m.repeat, last_checked: m.last_checked, href: `${page}#meeting-${m.id}` }] : [];
 });
 ---
-<figure class="community-map" data-community-map data-width={map.width} data-height={map.height} data-detail="/data/community-map-detail.json"
+<figure class="community-map" data-community-map={compact ? undefined : ''} data-width={map.width} data-height={map.height} data-detail="/data/community-map-detail.json"
   data-here={t(lang, 'community_map_here')} data-country-title={t(lang, 'community_map_country')} data-none={t(lang, 'community_map_none')}>
   <div class="community-map-frame">
-    <svg viewBox={`0 0 ${map.width} ${map.height}`} role="group" aria-label={t(lang, 'community_map_label')}>
+    <svg viewBox={compact ? '60 160 900 900' : `0 0 ${map.width} ${map.height}`} role="group" aria-label={t(lang, 'community_map_label')}>
       <path class="land" d={map.land} />
       <g data-detail-countries></g>
       {Object.entries(map.countries).map(([cc, d]) => countries.includes(cc)
-        ? <a class="map-country" href={`#country-${cc.toLowerCase()}`} data-country={cc} data-box={mainBox(d).join(' ')} aria-label={t(lang, `country_${cc.toLowerCase()}`)}><path d={d} /></a>
+        ? <a class="map-country" href={`${linkBase}#country-${cc.toLowerCase()}`} data-country={cc} data-box={mainBox(d).join(' ')} aria-label={t(lang, `country_${cc.toLowerCase()}`)}><path d={d} /></a>
         : <path class="map-other" d={d} />)}
       <path class="map-regions" data-detail-regions d="" />
       <g class="map-areas">{local.map(({ c, x, y, r }) => <circle data-area={c.id} cx={x.toFixed(1)} cy={y.toFixed(1)} r={r.toFixed(1)} />)}</g>
       <g class="map-towns" data-detail-towns></g>
       <circle class="map-reach" data-reach r="0" hidden />
-      <g class="map-dots">{local.map(({ c, x, y, ox, oy }) => <a href={`#community-${c.id}`} data-group={c.id} data-x={x.toFixed(1)} data-y={y.toFixed(1)} data-ox={ox.toFixed(3)} data-oy={oy.toFixed(3)} aria-label={c.name}><title>{c.name}</title><circle cx={(x + ox * 14).toFixed(1)} cy={(y + oy * 14).toFixed(1)} r="6" /></a>)}
-        {national.map(({ c, x, y, ox, oy }) => <a class="map-national" href={`#community-${c.id}`} data-group={c.id} data-x={x.toFixed(1)} data-y={y.toFixed(1)} data-ox={ox.toFixed(3)} data-oy={oy.toFixed(3)} aria-label={c.name}><title>{c.name}</title><circle cx={(x + ox * 14).toFixed(1)} cy={(y + oy * 14).toFixed(1)} r="6" /></a>)}</g>
-      <g class="map-meetings" data-meeting-marks data-meetings={JSON.stringify(spots)}></g>
+      <g class="map-dots">{local.map(({ c, x, y, ox, oy }) => <a href={`${linkBase}#community-${c.id}`} data-group={c.id} data-x={x.toFixed(1)} data-y={y.toFixed(1)} data-ox={ox.toFixed(3)} data-oy={oy.toFixed(3)} aria-label={c.name}><title>{c.name}</title><circle cx={(x + ox * 14).toFixed(1)} cy={(y + oy * 14).toFixed(1)} r="6" /></a>)}
+        {national.map(({ c, x, y, ox, oy }) => <a class="map-national" href={`${linkBase}#community-${c.id}`} data-group={c.id} data-x={x.toFixed(1)} data-y={y.toFixed(1)} data-ox={ox.toFixed(3)} data-oy={oy.toFixed(3)} aria-label={c.name}><title>{c.name}</title><circle cx={(x + ox * 14).toFixed(1)} cy={(y + oy * 14).toFixed(1)} r="6" /></a>)}</g>
+      {!compact && <g class="map-meetings" data-meeting-marks data-meetings={JSON.stringify(spots)}></g>}
       <circle class="map-point" data-point r="6" hidden />
     </svg>
+    {!compact && (
     <div class="community-map-zoom" data-zoom hidden>
       <button type="button" class="btn" data-zoom-in aria-label={t(lang, 'community_map_zoom_in')}>+</button>
       <button type="button" class="btn" data-zoom-out aria-label={t(lang, 'community_map_zoom_out')} disabled>&minus;</button>
       <button type="button" class="btn" data-zoom-reset hidden>{t(lang, 'community_map_reset')}</button>
     </div>
+    )}
   </div>
-  <figcaption class="meta">{t(lang, 'community_map_hint')} {t(lang, 'meetings_map_hint')} {t(lang, 'community_map_credit')} <a href="https://www.naturalearthdata.com/">Natural Earth</a></figcaption>
+  <figcaption class="meta">{compact ? t(lang, 'home_near_map_hint') : `${t(lang, 'community_map_hint')} ${t(lang, 'meetings_map_hint')}`} {t(lang, 'community_map_credit')} <a href="https://www.naturalearthdata.com/">Natural Earth</a></figcaption>
 </figure>
-<script is:inline type="module" src="/js/community-map.js"></script>
+{!compact && <script is:inline type="module" src="/js/community-map.js"></script>}

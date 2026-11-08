@@ -5,5 +5,5 @@ paths:
   - { id: offgrid, path: /devices }
   - { id: build, path: /projects }
   - { id: grow, path: /repeater-guide }
-  - { id: local, path: /community }
+# Only the old Hugo build still reads this list; the Astro home shows the local groups instead.
 why: [costs, infra, open, privacy, routing, community]

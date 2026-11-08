@@ -1,0 +1,62 @@
+---
+// The home's block under the film: what the local groups share, in 4 equal parts. A map that opens Local groups, the
+// next meetings (web/js/home-meetings.js keeps them current in the browser), the areas with settings of their own, and
+// the latest news.
+import { t, loadData, hasString } from '../lib/site.mjs';
+import { upcoming, allMeetings, buildDate, localeOf } from '../lib/meetings.mjs';
+import CommunityMap from './CommunityMap.astro';
+
+const { lang, news, localize } = Astro.props;
+const communities = loadData('communities');
+const countries = [...new Set(communities.map((c) => c.country.toUpperCase()))].sort();
+const SHOWN = 3;
+const rows = upcoming(buildDate()).slice(0, SHOWN);
+const locale = localeOf(lang);
+const shortDate = new Intl.DateTimeFormat(locale, { weekday: 'short', day: 'numeric', month: 'short', timeZone: 'UTC' });
+const kinds = Object.fromEntries(['in_person', 'online', 'channel'].map((k) => [k, t(lang, `meetings_kind_${k}`)]));
+const what = (m) => [...m.join.map((w) => kinds[w.kind]), m.country.toUpperCase()].join(' · ');
+// A country-wide area by its country's name in this language; an area inside a country names that country, because
+// a name such as Limburg exists in more than one.
+const areaName = (a) => {
+  if (a.short) return `${a.name} (${a.country})`;
+  const key = `country_${a.country.toLowerCase()}`;
+  return hasString(key) ? t(lang, key) : a.name;
+};
+const areas = loadData('areas');
+const dateOf = (date) => new Intl.DateTimeFormat(lang === 'en' ? 'en-GB' : lang, { dateStyle: 'long' }).format(date);
+const shownNews = news.slice(0, 3);
+---
+<section class="section home-near" aria-labelledby="near-title">
+  <div class="section-head"><h2 id="near-title">{t(lang, 'home_near_title')}</h2><p class="muted">{t(lang, 'home_near_lead').replace('{n}', String(communities.length))}</p></div>
+  <div class="near-grid">
+    <div class="card near-part near-map">
+      <h3>{t(lang, 'home_near_map_title')}</h3>
+      <CommunityMap lang={lang} communities={communities} countries={countries} compact linkBase={localize('/community/')} />
+      <p><a href={localize('/community/')}>{t(lang, 'home_near_map_all')} →</a></p>
+    </div>
+    <div class="card near-part">
+      <h3>{t(lang, 'home_near_meetings_title')}</h3>
+      <ul class="near-meetings" data-home-meetings data-shown={SHOWN} data-locale={locale} data-kinds={JSON.stringify(kinds)} data-meetings={JSON.stringify(allMeetings())}>
+        {rows.map(({ meeting: m, next }) => (
+          <li><time class="mono" datetime={next}>{shortDate.format(new Date(`${next}T12:00:00Z`))}</time><span><b>{m.name}</b><small>{what(m)}</small></span></li>
+        ))}
+      </ul>
+      <p><a href={localize('/meetings/')}>{t(lang, 'meetings_all')} →</a></p>
+    </div>
+    <div class="card near-part">
+      <h3>{t(lang, 'home_near_settings_title')}</h3>
+      <p class="muted">{t(lang, 'home_near_settings_lead')}</p>
+      <ul class="tags near-areas">{areas.map((a) => <li><a class="badge" href={`${localize('/guides/settings/')}#area-${a.id}`}>{areaName(a)}</a></li>)}</ul>
+      <p><a href={localize('/guides/settings/')}>{t(lang, 'home_near_settings_all')} →</a></p>
+    </div>
+    <div class="card near-part">
+      <h3>{t(lang, 'news_latest')}</h3>
+      {shownNews.length > 0 && shownNews[0].lang !== lang && <p class="muted">{t(lang, 'news_english_only')}</p>}
+      <ul class="near-news">{shownNews.map((p) => (
+        <li><time datetime={p.entry.data.date.toISOString().slice(0, 10)}>{dateOf(p.entry.data.date)}</time> <a href={`/${p.lang}/${p.slug}/`} hreflang={p.lang !== lang ? p.lang : undefined} lang={p.lang !== lang ? p.lang : undefined}>{p.entry.data.title}</a></li>
+      ))}</ul>
+      <p><a href={localize('/blog/')}>{t(lang, 'news_all')} →</a></p>
+    </div>
+  </div>
+</section>
+<script is:inline type="module" src="/js/home-meetings.js"></script>
