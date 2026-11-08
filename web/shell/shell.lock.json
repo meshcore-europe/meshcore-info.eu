@@ -1,12 +1,12 @@
 {
   "source": "EU-Meshcore-Analyzer/Branding/shell",
-  "commit": "4f91e432e59e3de3ae4424fb41fc2dd14aef47ca",
+  "commit": "65c2b065333cb97a00f41f529f1434e33772cb44",
   "written": "2026-11-06",
   "files": {
     "base.css": "f4a2be75dfc1905686f2e6458c9a70ac915d327873ccb3158178b4f5ee989e4a",
     "map.js": "ef4363b3100ed7f4d95e0ac42712d16e2b8bc1ff3842b140dec53af0ff691fde",
     "nav.json": "7abb17f2d53d913ffa8a0cae6dc6fae837c7b9431b411a7e00cdae77da4d7ef1",
-    "nav.meshcore-info.json": "3212c1044d63a27d872c4d4140672129b1fa83f55c71d66473f0a036f31acfb9",
+    "nav.meshcore-info.json": "e054b9488a7d7ada997d404c684801233cda7c7d64d644ae827ba69a8e54a994",
     "navmodel.js": "7940bb223837c107e2511bc6a06662b10d80edc87b08066c4920618a378d3fc1",
     "prefs.js": "44bb7d8550bc7e0d0dbf7bc833e779a8ff9f2f3163a72e07280fa02bccd4e166",
     "shell.css": "66f46f8d1e1705db4f66d792f5c50dd84e408b476d48422158866141b726768b",

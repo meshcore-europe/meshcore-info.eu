@@ -456,22 +456,6 @@
             "de": "Szenen für deinen Bildschirm und Malvorlagen"
           },
           "icon": "file"
-        },
-        {
-          "id": "privacy",
-          "page": "privacy",
-          "href": "/privacy/",
-          "label": {
-            "nl": "Privacy",
-            "en": "Privacy",
-            "de": "Datenschutz"
-          },
-          "sub": {
-            "nl": "Geen tracking, één cookie voor je thema",
-            "en": "No tracking, one cookie for your theme",
-            "de": "Kein Tracking, ein Cookie für dein Design"
-          },
-          "icon": "shield"
         }
       ],
       "groups": [
@@ -503,8 +487,7 @@
             "news",
             "contribute",
             "press-kit",
-            "wallpapers",
-            "privacy"
+            "wallpapers"
           ]
         }
       ],

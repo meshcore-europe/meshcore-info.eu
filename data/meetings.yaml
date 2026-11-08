@@ -134,3 +134,16 @@
   timezone: Europe/Berlin
   last_checked: '2026-11-06'
   group: de-ka-mesh
+
+- id: 2-meshcore-bung-2026-11-2
+  country: DE
+  name: 2.MeshCore Übung
+  join:
+  - {kind: online, url: 'https://ka-mesh.de/termine/'}
+  - {kind: channel, place: '#karlsruhe'}
+  languages: [de]
+  date: '2026-11-29'
+  time: '11:00'
+  timezone: Europe/Berlin
+  last_checked: '2026-11-06'
+  group: de-ka-mesh
