@@ -1,7 +1,8 @@
 # The areas that use their own radio preset or change settings from MeshCore's defaults, shown on
 # /guides/settings/. preset is an id from data/presets.yaml. changes lists only what differs
 # from the firmware's defaults (examples/simple_repeater/MyMesh.cpp in meshcore-dev/MeshCore), or from the
-# defaults of an older release that an updated repeater keeps (loop.detect minimal, default since 1.18); each has a
+# defaults of an older release that an updated repeater keeps (loop.detect minimal, default since 1.18), or from
+# the hop limits the page advises for every repeater (flood.max.advert 3, flood.max.unscoped 1); each has a
 # string key for what it does and, for a repeater, the CLI commands. group is the id of the area's local group in
 # data/communities.yaml; source is where that group decided the settings. Re-check the source and update
 # last_checked before changing an entry.
@@ -18,6 +19,56 @@
   preset: czech-republic-narrow
   source: https://api.meshcore.nz/api/v1/config
   last_checked: "2026-10-13"
+- id: france
+  country: FR
+  name: France
+  preset: eu-uk-narrow
+  group: fr-meshcore-france
+  source: https://www.meshcore.fr/#settings
+  last_checked: "2026-11-10"
+  firmware: "1.18"
+  changes:
+    - device: repeater
+      key: area_change_fr_regions
+      commands:
+        - region put eu
+        - region put fr eu
+        - region put YOUR_PROVINCE fr
+        - region default fr
+        - region home fr
+        - region save
+    - device: repeater
+      key: area_change_zero_hop
+      commands:
+        - set advert.interval 240
+    - device: repeater
+      key: area_change_agc_reset
+      commands:
+        - set agc.reset.interval 4
+    - device: repeater
+      key: area_change_multi_acks
+      commands:
+        - set multi.acks 1
+    - device: repeater
+      key: area_change_dutycycle
+      commands:
+        - set dutycycle 10
+    - device: repeater
+      key: area_change_path_hash
+      commands:
+        - set path.hash.mode 1
+    - device: repeater
+      key: area_change_loop
+      commands:
+        - set loop.detect minimal
+    - device: repeater
+      key: area_change_fr_max_advert
+      commands:
+        - set flood.max.advert 8
+    - device: repeater
+      key: area_change_fr_max_unscoped
+      commands:
+        - set flood.max.unscoped 5
 - id: hungary
   country: HU
   name: Hungary

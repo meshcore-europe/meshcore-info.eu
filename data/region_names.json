@@ -1,0 +1,19 @@
+{
+ "_about": "Names for regions the catalog lists with only their code. tools/update_regions.py uses them when it writes data/regions.json.",
+ "_source": "https://en.wikipedia.org/wiki/ISO_3166-2:FR",
+ "_last_checked": "2026-11-10",
+ "names": {
+  "fr-ara": "Auvergne-Rhône-Alpes",
+  "fr-bfc": "Bourgogne-Franche-Comté",
+  "fr-bre": "Bretagne",
+  "fr-cvl": "Centre-Val de Loire",
+  "fr-ges": "Grand Est",
+  "fr-hdf": "Hauts-de-France",
+  "fr-idf": "Île-de-France",
+  "fr-naq": "Nouvelle-Aquitaine",
+  "fr-nor": "Normandie",
+  "fr-occ": "Occitanie",
+  "fr-pac": "Provence-Alpes-Côte d'Azur",
+  "fr-pdl": "Pays de la Loire"
+ }
+}

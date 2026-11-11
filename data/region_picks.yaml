@@ -8,3 +8,8 @@
   regions: [de-bw, de-by, de-be, de-bb, de-hb, de-hh, de-he, de-mv, de-ni, de-nw, de-rp, de-sl, de-sn, de-st, de-sh, de-th]
   source: https://en.wikipedia.org/wiki/ISO_3166-2:DE
   last_checked: "2026-11-03"
+- id: france
+  country: FR
+  regions: [fr-ara, fr-bfc, fr-bre, fr-cvl, fr-20r, fr-ges, fr-hdf, fr-idf, fr-nor, fr-naq, fr-occ, fr-pdl, fr-pac, fr-gua, fr-mtq, fr-guf, fr-reu, fr-may]
+  source: https://en.wikipedia.org/wiki/ISO_3166-2:FR
+  last_checked: "2026-11-10"

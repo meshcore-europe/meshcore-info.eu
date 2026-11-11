@@ -6,9 +6,9 @@
       "locale": "nl",
       "strings": {
         "human": 30,
-        "ai": 1178,
+        "ai": 1183,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -24,9 +24,9 @@
       "locale": "de",
       "strings": {
         "human": 30,
-        "ai": 1178,
+        "ai": 1183,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -42,9 +42,9 @@
       "locale": "fr",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -60,9 +60,9 @@
       "locale": "es",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -78,9 +78,9 @@
       "locale": "it",
       "strings": {
         "human": 1,
-        "ai": 1207,
+        "ai": 1212,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -96,9 +96,9 @@
       "locale": "pl",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -114,9 +114,9 @@
       "locale": "pt-PT",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -132,9 +132,9 @@
       "locale": "cs",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -150,9 +150,9 @@
       "locale": "sv",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -168,9 +168,9 @@
       "locale": "da",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -186,9 +186,9 @@
       "locale": "nb",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -204,9 +204,9 @@
       "locale": "fi",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -222,9 +222,9 @@
       "locale": "hu",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -240,9 +240,9 @@
       "locale": "ro",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -258,9 +258,9 @@
       "locale": "el",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -276,9 +276,9 @@
       "locale": "fy",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -294,9 +294,9 @@
       "locale": "bg",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -312,9 +312,9 @@
       "locale": "hr",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -330,9 +330,9 @@
       "locale": "et",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -348,9 +348,9 @@
       "locale": "ga",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -366,9 +366,9 @@
       "locale": "lv",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -384,9 +384,9 @@
       "locale": "lt",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -402,9 +402,9 @@
       "locale": "mt",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -420,9 +420,9 @@
       "locale": "sk",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -438,9 +438,9 @@
       "locale": "sl",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -456,9 +456,9 @@
       "locale": "sr-Latn",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -474,9 +474,9 @@
       "locale": "uk",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -492,9 +492,9 @@
       "locale": "ca",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -510,9 +510,9 @@
       "locale": "eu",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -528,9 +528,9 @@
       "locale": "gl",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -546,9 +546,9 @@
       "locale": "cy",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,
@@ -564,9 +564,9 @@
       "locale": "lb",
       "strings": {
         "human": 0,
-        "ai": 1208,
+        "ai": 1213,
         "missing": 0,
-        "total": 1208
+        "total": 1213
       },
       "pages": {
         "human": 0,

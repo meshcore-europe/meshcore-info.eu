@@ -1,6 +1,6 @@
 {
  "source": "https://raw.githubusercontent.com/marcelverdult/meshcore-regions/main/index.json",
- "generated_at": "2026-11-03T10:21:38Z",
+ "generated_at": "2026-11-10T10:39:25Z",
  "europe": "eu",
  "countries": {
   "ad": {
@@ -673,6 +673,22 @@
    "name": "France",
    "regions": [
     {
+     "code": "fr-ara",
+     "name": "Auvergne-Rhône-Alpes"
+    },
+    {
+     "code": "fr-bfc",
+     "name": "Bourgogne-Franche-Comté"
+    },
+    {
+     "code": "fr-bre",
+     "name": "Bretagne"
+    },
+    {
+     "code": "fr-cvl",
+     "name": "Centre-Val de Loire"
+    },
+    {
      "code": "fr-20r",
      "name": "Corse"
     },
@@ -681,12 +697,20 @@
      "name": "Corse"
     },
     {
+     "code": "fr-ges",
+     "name": "Grand Est"
+    },
+    {
      "code": "fr-gua",
      "name": "Guadeloupe"
     },
     {
      "code": "fr-guf",
      "name": "Guyane"
+    },
+    {
+     "code": "fr-hdf",
+     "name": "Hauts-de-France"
     },
     {
      "code": "fr-reu",
@@ -699,6 +723,30 @@
     {
      "code": "fr-may",
      "name": "Mayotte"
+    },
+    {
+     "code": "fr-nor",
+     "name": "Normandie"
+    },
+    {
+     "code": "fr-naq",
+     "name": "Nouvelle-Aquitaine"
+    },
+    {
+     "code": "fr-occ",
+     "name": "Occitanie"
+    },
+    {
+     "code": "fr-pdl",
+     "name": "Pays de la Loire"
+    },
+    {
+     "code": "fr-pac",
+     "name": "Provence-Alpes-Côte d'Azur"
+    },
+    {
+     "code": "fr-idf",
+     "name": "Île-de-France"
     }
    ]
   },

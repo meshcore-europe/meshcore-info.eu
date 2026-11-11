@@ -3,11 +3,21 @@
 // English page marked hreflang="en". A path with no English page stays as written; tools/check_site.py reports it.
 // Only pages the Astro build renders count (BUILT), so a link never points at a page this build lacks. A menu
 // page without content yet (PLANNED) has a stub in every language, so a link to it stays in the page's language.
+// A link to an English file under /media/ whose name ends in -en (the booklet PDF) points at the same file in the
+// page's language when web/media/ holds one, so a translated page links its own booklet without a new link.
+import { existsSync } from 'node:fs';
 import { visit } from 'unist-util-visit';
-import { contentFile } from './site.mjs';
+import { contentFile, ROOT } from './site.mjs';
 import { PLANNED } from './shell.mjs';
 
 const STUBS = new Set(PLANNED.map((p) => p.path));
+
+export function localizeMedia(href, lang, exists = (p) => existsSync(ROOT + 'web' + p)) {
+  const m = /^(\/media\/[^?#]+)-en(\.[a-z0-9]+)$/.exec(href);
+  if (!m || lang === 'en') return null;
+  const own = `${m[1]}-${lang}${m[2]}`;
+  return exists(own) ? own : null;
+}
 
 export function localizeHref(href, lang, built) {
   if (!href.startsWith('/') || href.startsWith('//')) return null;
@@ -32,6 +42,11 @@ export function rehypeSiteLinks(options = {}) {
     if (!lang) return;
     visit(tree, 'element', (node) => {
       if (node.tagName !== 'a' || typeof node.properties.href !== 'string') return;
+      const media = localizeMedia(node.properties.href, lang);
+      if (media) {
+        node.properties.href = media;
+        return;
+      }
       const res = localizeHref(node.properties.href, lang, built);
       if (!res) return;
       node.properties.href = res.href;
