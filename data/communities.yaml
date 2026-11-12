@@ -1238,3 +1238,26 @@
   languages: [nl]
   added: 2026-10-23
   last_checked: 2026-10-23
+
+- id: nl-mesh-twente
+  country: NL
+  region: Twente (Overijssel)
+  scope: region
+  location:
+    lat: 52.307
+    lon: 6.687
+    place: Twente
+    source: "https://www.openstreetmap.org/relation/11961347"
+    checked: 2026-11-12
+  radius_km: 50
+  name: Mesh Twente
+  links:
+  - type: telegram
+    url: "https://t.me/twentastic"
+  channels:
+  - "#twente"
+  - "#overijssel"
+  languages: [nl]
+  desc_key: community.nl-mesh-twente.desc
+  added: 2026-11-12
+  last_checked: 2026-11-12
