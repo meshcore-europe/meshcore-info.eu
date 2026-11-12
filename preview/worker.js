@@ -33,6 +33,8 @@ export default {
     let response = new Response(asset.body, asset);
     if (!indexed) response.headers.set('x-robots-tag', NOINDEX);
     response.headers.set('cache-control', cacheFor(url.pathname, response.headers.get('content-type') || ''));
+    // The search index (/search/<lang>.json) is read by other MeshCore sites from their own pages.
+    if (url.pathname.startsWith('/search/') && url.pathname.endsWith('.json')) response.headers.set('access-control-allow-origin', '*');
     if (typeof HTMLRewriter !== 'undefined' && (response.headers.get('content-type') || '').startsWith('text/html')) {
       response = new HTMLRewriter()
         .on('meta[property="og:image"], meta[name="twitter:image"]', {
