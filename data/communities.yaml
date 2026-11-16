@@ -916,6 +916,50 @@
   added: 2026-11-02
   last_checked: 2026-11-02
 
+- id: de-meshcore-rlp
+  country: DE
+  region: Rheinland-Pfalz
+  scope: region
+  location:
+    lat: 49.953
+    lon: 7.311
+    place: Rheinland-Pfalz
+    source: "https://www.openstreetmap.org/relation/62341"
+    checked: 2026-11-16
+  radius_km: 100
+  name: MeshCore Rheinland-Pfalz
+  links:
+  - type: website
+    url: "https://meshrp.de/"
+  - type: telegram
+    url: "https://t.me/meshrpde"
+  languages: [de]
+  desc_key: community.de-meshcore-rlp.desc
+  added: 2026-11-16
+  last_checked: 2026-11-16
+
+- id: de-mesh-sn
+  country: DE
+  region: Sachsen
+  scope: region
+  location:
+    lat: 50.93
+    lon: 13.459
+    place: Sachsen
+    source: "https://www.openstreetmap.org/relation/62467"
+    checked: 2026-11-16
+  radius_km: 100
+  name: MeshCore Sachsen
+  links:
+  - type: website
+    url: "https://mesh-sn.de/"
+  - type: telegram
+    url: "https://t.me/MeshSN"
+  languages: [de, en]
+  desc_key: community.de-mesh-sn.desc
+  added: 2026-11-16
+  last_checked: 2026-11-16
+
 - id: ie-mayo-mesh
   country: IE
   region: County Mayo

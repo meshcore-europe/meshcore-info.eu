@@ -242,6 +242,22 @@
           "icon": "antenna"
         },
         {
+          "id": "guide-repeater-checklist",
+          "page": "guide-repeater-checklist",
+          "href": "/guides/repeater-checklist/",
+          "label": {
+            "nl": "Repeaterchecklist",
+            "en": "Repeater checklist",
+            "de": "Repeater-Checkliste"
+          },
+          "sub": {
+            "nl": "Wat je naloopt voor hij omhoog gaat",
+            "en": "What to check before it goes up",
+            "de": "Was du prüfst, bevor er nach oben geht"
+          },
+          "icon": "file"
+        },
+        {
           "id": "guide-resilient",
           "page": "guide-resilient",
           "href": "/guides/resilient/",
@@ -287,6 +303,7 @@
           },
           "items": [
             "repeater-guide",
+            "guide-repeater-checklist",
             "guide-resilient"
           ]
         }

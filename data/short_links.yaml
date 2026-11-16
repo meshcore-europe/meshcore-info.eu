@@ -10,6 +10,8 @@
   path: guides/settings
 - id: repeater
   path: repeater-guide
+- id: check
+  path: guides/repeater-checklist
 - id: antenna
   path: guides/antenna
 - id: channels
