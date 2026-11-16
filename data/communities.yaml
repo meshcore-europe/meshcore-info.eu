@@ -590,6 +590,28 @@
   added: 2026-10-23
   last_checked: 2026-10-23
 
+- id: fr-interconnexion-normand
+  country: FR
+  region: Normandie
+  scope: region
+  location:
+    lat: 49.068
+    lon: 0.314
+    place: Normandie
+    source: "https://www.openstreetmap.org/relation/3793170"
+    checked: 2026-11-16
+  radius_km: 100
+  name: Projet d'Interconnexion Normand
+  links:
+  - type: discord
+    url: "https://discord.gg/HnAfYUSU82"
+  channels:
+  - "#fr-nor"
+  languages: [fr]
+  desc_key: community.fr-interconnexion-normand.desc
+  added: 2026-11-16
+  last_checked: 2026-11-16
+
 - id: de-bsmesh
   country: DE
   region: Braunschweig
