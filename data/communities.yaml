@@ -312,6 +312,30 @@
   added: 2026-10-02
   last_checked: 2026-10-02
 
+- id: dk-meshcom-sonderjylland
+  country: DK
+  region: Sønderjylland
+  scope: region
+  location:
+    lat: 55.1
+    lon: 9.2
+    place: Sønderjylland
+    source: "https://lex.dk/S%C3%B8nderjylland"
+    checked: 2026-11-17
+  radius_km: 50
+  name: meshcom.dk
+  links:
+  - type: website
+    url: "https://meshcom.dk/"
+  - type: map
+    url: "https://analyzer.meshcom.dk/"
+  channels:
+  - "#dk"
+  languages: [da]
+  desc_key: community.dk-meshcom-sonderjylland.desc
+  added: 2026-11-17
+  last_checked: 2026-11-17
+
 - id: se-meshat
   country: SE
   scope: country
