@@ -585,3 +585,14 @@
   desc_key: project.onlyfaqs-meshcore.desc
   status: active
   last_checked: 2026-11-06
+
+- id: lusofw
+  name: LusoFW
+  category: firmware
+  repo: "https://github.com/Meshcore-Portugal/lusofw"
+  url: "https://www.meshcore.pt/en/tools/flasher"
+  licence: MIT
+  maintainer: jbrazio
+  desc_key: project.lusofw.desc
+  status: active
+  last_checked: 2026-11-19
