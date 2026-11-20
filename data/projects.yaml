@@ -596,3 +596,12 @@
   desc_key: project.lusofw.desc
   status: active
   last_checked: 2026-11-19
+
+- id: local-meshcore-analyzer
+  name: Local MeshCore Analyzer
+  category: tool
+  url: "https://github.com/GUSA1-bergstrasse/MeshCoreAnalyzer"
+  maintainer: GUSA1-bergstrasse
+  desc_key: project.local-meshcore-analyzer.desc
+  status: active
+  last_checked: 2026-11-20
