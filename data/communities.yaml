@@ -1006,6 +1006,33 @@
   added: 2026-11-16
   last_checked: 2026-11-16
 
+- id: de-portamesh
+  country: DE
+  region: Trier
+  scope: region
+  location:
+    lat: 49.76
+    lon: 6.644
+    place: Trier
+    source: "https://www.openstreetmap.org/relation/172679"
+    checked: 2026-11-21
+  radius_km: 60
+  name: PortaMesh
+  links:
+  - type: map
+    url: "https://portascope.tt-labs.de/"
+  - type: signal
+    url: "https://signal.group/#CjQKIPq9caOXQNWLs_LipUd4sP_NJ5hvUseuY6LJJzCXd492EhA9q4dZ1kWMkl-s-CcD_V_J"
+  channels:
+  - "#trier"
+  - "#mosel"
+  - "#eifel"
+  - "#saarlorlux"
+  languages: [de]
+  desc_key: community.de-portamesh.desc
+  added: 2026-11-21
+  last_checked: 2026-11-21
+
 - id: ie-mayo-mesh
   country: IE
   region: County Mayo
