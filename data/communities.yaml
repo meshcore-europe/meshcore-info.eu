@@ -1033,6 +1033,30 @@
   added: 2026-11-21
   last_checked: 2026-11-21
 
+- id: de-meshcore-franken
+  country: DE
+  region: Franken
+  scope: region
+  location:
+    lat: 49.75
+    lon: 10.9
+    place: Franken
+    source: "https://www.openstreetmap.org/#map=8/49.75/10.90"
+    checked: 2026-11-22
+  radius_km: 120
+  name: MeshCore Franken
+  links:
+  - type: website
+    url: "https://meshcore-franken.de/"
+  - type: telegram
+    url: "https://t.me/meshcorefranken"
+  channels:
+  - "#franken"
+  languages: [de]
+  desc_key: community.de-meshcore-franken.desc
+  added: 2026-11-22
+  last_checked: 2026-11-22
+
 - id: ie-mayo-mesh
   country: IE
   region: County Mayo
