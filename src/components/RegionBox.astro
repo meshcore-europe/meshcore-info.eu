@@ -2,18 +2,19 @@
 // One region of the Regions block on /guides/settings/ as a box, with the regions inside it as boxes inside it
 // (src/lib/region-tree.mjs builds the tree). A region shows its name, its code and a link to it on the MeshCore
 // Analyzer's map; the root links to the map itself. YOUR_PROVINCE is the province picker, YOUR_CITY the town field
-// and YOUR_BAND the radio preset picker (web/js/regions.js fills the commands from them). The box gets class r0 to r3
+// and YOUR_BAND the radio preset picker (web/js/regions.js fills the commands from them). YOUR_DISTRICT is the district
+// picker, grouped by the region each district belongs to (a district split over two regions is in both groups), and
+// YOUR_REGION shows the region of the picked district. The box gets class r0 to r3
 // by depth, the town r4; the general chain gives each box its level itself.
 import { t } from '../lib/site.mjs';
 import RegionBox from './RegionBox.astro';
 
 const { lang, node, depth = 0, ctx } = Astro.props;
-const { cc, map, name, regions, bands, baseline } = ctx;
+const { cc, map, name, regions, bands } = ctx;
 const at = (code) => `${map}?region=${code}`;
 const r = (k) => t(lang, `regions_${k}`);
 const level = node.kind === 'town' ? 4 : node.level ?? Math.min(depth, 3);
 const label = name(node.code);
-const townLabel = baseline ? r('district') : r('town');
 ---
 <div class={`rbox r${level}`}>
   {node.kind === 'region' && (
@@ -36,8 +37,24 @@ const townLabel = baseline ? r('district') : r('town');
       <a href={at(cc)} data-region-link>{r('map')}<span class="vh"> {r('map_label')}</span></a>
     </div>
   )}
+  {node.kind === 'district' && (
+    <div class="rhd">
+      <select data-district-pick aria-label={r('district')}>
+        <option value="">{r('district')}</option>
+        {regions.map((x) => (
+          <optgroup label={`${x.name} (${x.code})`}>
+            {x.inside.map((d) => <option value={d.code} data-macro={x.code}>{d.name} ({d.code})</option>)}
+          </optgroup>
+        ))}
+      </select>
+      <a href={at(cc)} data-region-link>{r('map')}<span class="vh"> {r('map_label')}</span></a>
+    </div>
+  )}
+  {node.kind === 'macro' && (
+    <div class="rhd"><b>{r('macro')}</b> <code data-macro-code>{node.code}</code><a href={at(cc)} data-macro-link>{r('map')}<span class="vh"> {r('map_label')}</span></a></div>
+  )}
   {node.kind === 'town' && (
-    <div class="rhd"><input type="text" data-region-town placeholder={townLabel} aria-label={townLabel} autocomplete="off" spellcheck="false" /><a href={at(cc)} data-region-link>{r('map')}<span class="vh"> {r('map_label')}</span></a></div>
+    <div class="rhd"><input type="text" data-region-town placeholder={r('town')} aria-label={r('town')} autocomplete="off" spellcheck="false" /><a href={at(cc)} data-region-link>{r('map')}<span class="vh"> {r('map_label')}</span></a></div>
   )}
   {node.children.map((child) => <RegionBox lang={lang} node={child} depth={depth + 1} ctx={ctx} />)}
 </div>

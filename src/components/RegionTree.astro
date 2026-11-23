@@ -6,7 +6,8 @@
 // YOUR_PROVINCE and the town where it puts YOUR_CITY. Every other area, and every country without one, shows the
 // general chain: Europe, a group of countries (data/region_groups.yaml), the country, the province picker, the town,
 // with the commands written 2 ways. A country whose community decided its own regions (data/region_baselines.yaml)
-// takes its root and regions from there. Which provinces exist comes from the catalog (data/regions.json,
+// takes its root and regions from there, and shows a district picker instead of the province picker: each repeater
+// gets its district and the region that groups it, both directly under the country. Which provinces exist comes from the catalog (data/regions.json,
 // tools/update_regions.py), narrowed by data/region_picks.yaml where the catalog lists more than the provinces.
 // Names: Europe by its string, a group of countries by its name, a country by its string, a region from the catalog
 // by its name; any other code shows as the code alone. web/js/regions.js runs the pickers and the town field.
@@ -32,7 +33,8 @@ const own = puts.length > 0;
 const bands = baseline ? baseline.preset_regions || [] : [];
 const all = baseline ? baseline.regions : country ? country.regions : [];
 const regions = picks ? all.filter((x) => picks.regions.includes(x.code)) : all;
-const general = { root, group: group ? group.code : null, cc, bands: bands.length > 0, regions: regions.length > 0 };
+const districts = !!baseline;
+const general = { root, group: group ? group.code : null, cc, bands: bands.length > 0, regions: regions.length > 0, districts };
 const trees = own ? treesFrom(puts) : generalTree(general);
 const catalogNames = new Map(Object.values(catalog.countries).flatMap((c) => c.regions.map((x) => [x.code, x.name])));
 if (baseline) baseline.regions.forEach((x) => { catalogNames.set(x.code, x.name); x.inside.forEach((d) => catalogNames.set(d.code, d.name)); });
@@ -43,7 +45,7 @@ const name = (code) => {
   if (/^[a-z]{2}$/.test(code) && hasString(`country_${code}`)) return t(lang, `country_${code}`);
   return catalogNames.get(code) || '';
 };
-const ctx = { cc, map: MAP, name, regions, bands, baseline: !!baseline };
+const ctx = { cc, map: MAP, name, regions, bands };
 const putLines = generalPuts(general);
 const defLine = generalDef(general);
 const isTown = (line) => line.startsWith('region put YOUR_CITY ');
@@ -57,20 +59,20 @@ const isTown = (line) => line.startsWith('region put YOUR_CITY ');
   <p>{r('nesting')} <a href={`/${lang}/guides/resilient/#gate`}>{r('nesting_link')}</a></p>
   {!own && (
     <Fragment>
-      <p class="ph-hint">{r(regions.length ? 'cmd_hint' : 'cmd_hint_town')}</p>
-      <fieldset class="cmd-style" data-cmd-style hidden>
+      <p class="ph-hint">{r(districts ? 'cmd_hint_district' : regions.length ? 'cmd_hint' : 'cmd_hint_town')}</p>
+      {!districts && <fieldset class="cmd-style" data-cmd-style hidden>
         <legend>{r('style')}</legend>
         <label><input type="radio" name={`cmd-style-${area.id}`} value="put" checked /> {r('style_put')}</label>
         <label><input type="radio" name={`cmd-style-${area.id}`} value="def" /> {r('style_def')}</label>
-      </fieldset>
+      </fieldset>}
       <div data-cmd="put">
         <pre>{putLines.map((line, i) => {
           return isTown(line) ? <span data-town-line hidden>{'\n'}<CommandLine lang={lang} line={line} /></span> : <Fragment>{i > 0 && '\n'}<CommandLine lang={lang} line={line} /></Fragment>;
         })}</pre>
       </div>
-      <div data-cmd="def" hidden>
+      {!districts && <div data-cmd="def" hidden>
         <pre><CommandLine lang={lang} line={defLine} /><span data-town-line hidden> <CommandLine lang={lang} line="YOUR_CITY" /></span>{'\nregion save'}</pre>
-      </div>
+      </div>}
     </Fragment>
   )}
 </div>

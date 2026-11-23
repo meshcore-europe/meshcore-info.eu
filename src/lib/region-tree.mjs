@@ -1,9 +1,11 @@
 // The region trees the Regions block on /guides/settings/ draws (src/components/RegionTree.astro), built from
 // `region put <name> [<parent>]` lines: a line without a parent starts a tree, a line with one hangs its region
 // under that parent. A local group can run two trees side by side, so the result is a list of roots.
-// YOUR_PROVINCE is the province picker, YOUR_CITY the town field and YOUR_BAND the radio preset picker.
+// YOUR_PROVINCE is the province picker, YOUR_CITY the town field and YOUR_BAND the radio preset picker. YOUR_DISTRICT
+// is the district picker of a country whose community splits it into districts and the regions that group them
+// (data/region_baselines.yaml); YOUR_REGION is the region that district belongs to, filled in from the pick.
 
-export const PLACEHOLDER = { YOUR_PROVINCE: 'province', YOUR_CITY: 'town', YOUR_BAND: 'band' };
+export const PLACEHOLDER = { YOUR_PROVINCE: 'province', YOUR_CITY: 'town', YOUR_BAND: 'band', YOUR_DISTRICT: 'district', YOUR_REGION: 'macro' };
 
 // The `region put` lines among an area's repeater commands, as { code, parent }.
 export function regionPuts(changes) {
@@ -28,11 +30,19 @@ export function treesFrom(puts) {
 // The general chain for a country without region commands of its own: Europe, a group of countries where there is
 // one, the country, then the radio preset picker, the province picker and the town, as fixed levels (the country is
 // always the third box, with or without a group above it). `bands` and `regions` say whether the pickers show.
-export function generalTree({ root, group, cc, bands, regions }) {
+// `districts` is a country whose community gives each repeater its district and the region that groups it, both
+// directly under the country, next to each other: the district picker with the town inside it, the region beside it.
+export function generalTree({ root, group, cc, bands, regions, districts }) {
   const town = { code: 'YOUR_CITY', kind: 'town', children: [], level: 4 };
   const country = { code: cc, kind: 'region', children: [], level: 2 };
-  if (bands) country.children.push({ code: 'YOUR_BAND', kind: 'band', children: [], level: 3 });
-  country.children.push(regions ? { code: 'YOUR_PROVINCE', kind: 'province', children: [town], level: 3 } : town);
+  if (districts) {
+    country.children.push({ code: 'YOUR_DISTRICT', kind: 'district', children: [town], level: 3 },
+      { code: 'YOUR_REGION', kind: 'macro', children: [], level: 3 });
+    if (bands) country.children.push({ code: 'YOUR_BAND', kind: 'band', children: [], level: 3 });
+  } else {
+    if (bands) country.children.push({ code: 'YOUR_BAND', kind: 'band', children: [], level: 3 });
+    country.children.push(regions ? { code: 'YOUR_PROVINCE', kind: 'province', children: [town], level: 3 } : town);
+  }
   const top = { code: root, kind: 'region', children: [], level: 0 };
   if (group) top.children.push({ code: group, kind: 'region', children: [country], level: 1 });
   else top.children.push(country);
@@ -40,8 +50,13 @@ export function generalTree({ root, group, cc, bands, regions }) {
 }
 
 // The commands of the general chain, one `region put` per line (the town's line shows once a town is typed).
-export function generalPuts({ root, group, cc, bands, regions }) {
+export function generalPuts({ root, group, cc, bands, regions, districts }) {
   const chain = [root, ...(group ? [group] : []), cc];
+  if (districts) {
+    return [`region put ${chain[0]}`, ...chain.slice(1).map((code, i) => `region put ${code} ${chain[i]}`),
+      `region put YOUR_DISTRICT ${cc}`, `region put YOUR_REGION ${cc}`, ...(bands ? [`region put YOUR_BAND ${cc}`] : []),
+      'region put YOUR_CITY YOUR_DISTRICT', 'region save'];
+  }
   return [`region put ${chain[0]}`, ...chain.slice(1).map((code, i) => `region put ${code} ${chain[i]}`),
     ...(bands ? [`region put YOUR_BAND ${cc}`] : []), ...(regions ? [`region put YOUR_PROVINCE ${cc}`] : []),
     `region put YOUR_CITY ${regions ? 'YOUR_PROVINCE' : cc}`, 'region save'];
