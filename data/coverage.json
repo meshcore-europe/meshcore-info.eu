@@ -113,9 +113,9 @@
       "label": "Português",
       "locale": "pt-PT",
       "strings": {
-        "human": 0,
-        "ai": 1224,
-        "missing": 6,
+        "human": 3,
+        "ai": 1222,
+        "missing": 5,
         "total": 1230
       },
       "pages": {
