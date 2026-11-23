@@ -7,7 +7,7 @@
 // general chain: Europe, a group of countries (data/region_groups.yaml), the country, the province picker, the town,
 // with the commands written 2 ways. A country whose community decided its own regions (data/region_baselines.yaml)
 // takes its root and regions from there, and shows a district picker instead of the province picker: each repeater
-// gets its district and the region that groups it, both directly under the country. Which provinces exist comes from the catalog (data/regions.json,
+// gets its district and its macro region, each picked on its own and both directly under the country. Which provinces exist comes from the catalog (data/regions.json,
 // tools/update_regions.py), narrowed by data/region_picks.yaml where the catalog lists more than the provinces.
 // Names: Europe by its string, a group of countries by its name, a country by its string, a region from the catalog
 // by its name; any other code shows as the code alone. web/js/regions.js runs the pickers and the town field.
@@ -45,7 +45,11 @@ const name = (code) => {
   if (/^[a-z]{2}$/.test(code) && hasString(`country_${code}`)) return t(lang, `country_${code}`);
   return catalogNames.get(code) || '';
 };
-const ctx = { cc, map: MAP, name, regions, bands };
+// The districts of a country split into districts, once each: the mainland by name, then the islands.
+const byName = [...new Map(regions.flatMap((x) => x.inside || []).map((d) => [d.code, d])).values()]
+  .sort((a, b) => a.name.localeCompare(b.name, 'pt'));
+const districtList = [...byName.filter((d) => !d.code.includes('-ilha-')), ...byName.filter((d) => d.code.includes('-ilha-'))];
+const ctx = { cc, map: MAP, name, regions, bands, districts: districtList };
 const putLines = generalPuts(general);
 const defLine = generalDef(general);
 const isTown = (line) => line.startsWith('region put YOUR_CITY ');

@@ -2,7 +2,7 @@
 // YOUR_PROVINCE in that area's commands (the tree's own, or those of the area's group) and points the province's
 // and the town's map links at it. Typing a town fills YOUR_CITY and shows the town's line in the tree's commands.
 // Only within the area, so another area keeps its own value. Picking a radio preset fills YOUR_BAND. Picking a
-// district fills YOUR_DISTRICT and YOUR_REGION, the region its option names, and points their map links at them. The two
+// district fills YOUR_DISTRICT and picking a macro region YOUR_REGION, each pointing its own map links at it. The two
 // ways of writing the commands stay out of sight without this script, which then shows the first only. A block
 // without a province picker (a country whose provinces are not in the catalog, or a group's own tree without one)
 // still has its town field and its two ways of writing.
@@ -26,22 +26,24 @@
         });
       });
     }
+    var mapOf = function (code) { return block.getAttribute('data-map') + '?region=' + encodeURIComponent(code); };
     var district = block.querySelector('[data-district-pick]');
     if (district) {
-      var mapOf = function (code) { return block.getAttribute('data-map') + '?region=' + encodeURIComponent(code); };
       var spots = block.querySelectorAll('[data-region-link]');
-      var macroLink = block.querySelector('[data-macro-link]');
-      var macroCode = block.querySelector('[data-macro-code]');
-      var start = macroLink ? macroLink.getAttribute('href') : '';
+      var start = spots.length ? spots[0].getAttribute('href') : '';
       district.addEventListener('change', function () {
         var code = district.value;
-        var option = district.options[district.selectedIndex];
-        var macro = code ? option.getAttribute('data-macro') : '';
         fill('YOUR_DISTRICT', code);
-        fill('YOUR_REGION', macro);
         Array.prototype.forEach.call(spots, function (a) { a.setAttribute('href', code ? mapOf(code) : start); });
-        if (macroLink) macroLink.setAttribute('href', macro ? mapOf(macro) : start);
-        if (macroCode) macroCode.textContent = macro || 'YOUR_REGION';
+      });
+    }
+    var macro = block.querySelector('[data-macro-pick]');
+    if (macro) {
+      var macroLink = block.querySelector('[data-macro-link]');
+      var macroStart = macroLink ? macroLink.getAttribute('href') : '';
+      macro.addEventListener('change', function () {
+        fill('YOUR_REGION', macro.value);
+        if (macroLink) macroLink.setAttribute('href', macro.value ? mapOf(macro.value) : macroStart);
       });
     }
     var band = block.querySelector('[data-band-pick]');

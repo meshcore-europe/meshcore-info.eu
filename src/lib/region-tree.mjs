@@ -3,7 +3,7 @@
 // under that parent. A local group can run two trees side by side, so the result is a list of roots.
 // YOUR_PROVINCE is the province picker, YOUR_CITY the town field and YOUR_BAND the radio preset picker. YOUR_DISTRICT
 // is the district picker of a country whose community splits it into districts and the regions that group them
-// (data/region_baselines.yaml); YOUR_REGION is the region that district belongs to, filled in from the pick.
+// (data/region_baselines.yaml); YOUR_REGION is its macro region picker.
 
 export const PLACEHOLDER = { YOUR_PROVINCE: 'province', YOUR_CITY: 'town', YOUR_BAND: 'band', YOUR_DISTRICT: 'district', YOUR_REGION: 'macro' };
 
@@ -30,8 +30,8 @@ export function treesFrom(puts) {
 // The general chain for a country without region commands of its own: Europe, a group of countries where there is
 // one, the country, then the radio preset picker, the province picker and the town, as fixed levels (the country is
 // always the third box, with or without a group above it). `bands` and `regions` say whether the pickers show.
-// `districts` is a country whose community gives each repeater its district and the region that groups it, both
-// directly under the country, next to each other: the district picker with the town inside it, the region beside it.
+// `districts` is a country whose community gives each repeater its district and its macro region, both directly
+// under the country, next to each other: the district picker with the town inside it, the macro region picker beside it.
 export function generalTree({ root, group, cc, bands, regions, districts }) {
   const town = { code: 'YOUR_CITY', kind: 'town', children: [], level: 4 };
   const country = { code: cc, kind: 'region', children: [], level: 2 };
