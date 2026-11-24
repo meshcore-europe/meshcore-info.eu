@@ -1057,6 +1057,28 @@
   added: 2026-11-22
   last_checked: 2026-11-22
 
+- id: de-mesh-steinhuder-meer
+  country: DE
+  region: Steinhuder Meer
+  scope: region
+  location:
+    lat: 52.473
+    lon: 9.329
+    place: Steinhuder Meer
+    source: "https://www.openstreetmap.org/relation/32810"
+    checked: 2026-11-24
+  radius_km: 25
+  name: Mesh Steinhuder Meer
+  links:
+  - type: website
+    url: "https://www.mesh-stm.de/"
+  channels:
+  - "#mesh-stm"
+  languages: [de]
+  desc_key: community.de-mesh-steinhuder-meer.desc
+  added: 2026-11-24
+  last_checked: 2026-11-24
+
 - id: ie-mayo-mesh
   country: IE
   region: County Mayo
