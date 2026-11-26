@@ -6,6 +6,7 @@
 // stylesheet or script the browser still holds from before (they are cached for an hour, preview/cache.js).
 // And _redirects: the short links (short-links.mjs).
 // And sitemap.xml: every page with a canonical address and no noindex.
+// And llms.txt: the languages the site shows, in place of {languages}.
 import { readFileSync, writeFileSync, renameSync, rmdirSync, existsSync, readdirSync, statSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 
@@ -79,6 +80,14 @@ export function sitemap(urls) {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${items}\n</urlset>\n`;
 }
 
+// The languages after English, as a list in a sentence: "nl, de and fr".
+export function llmsTxt(text, langs) {
+  if (!text.includes('{languages}')) throw new Error('web/llms.txt: expected {languages}');
+  const rest = langs.filter((l) => l !== 'en');
+  const list = rest.length > 1 ? `${rest.slice(0, -1).join(', ')} and ${rest.at(-1)}` : rest.join('');
+  return text.replace('{languages}', list);
+}
+
 export function finishBuild() {
   return {
     name: 'meshcore-info:finish-build',
@@ -95,6 +104,7 @@ export function finishBuild() {
         }
         versionAssets(out);
         writeFileSync(`${out}sitemap.xml`, sitemap(sitemapUrls(out)));
+        writeFileSync(`${out}llms.txt`, llmsTxt(readFileSync(`${out}llms.txt`, 'utf8'), LANG_KEYS));
       },
     },
   };
