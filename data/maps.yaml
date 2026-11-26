@@ -55,6 +55,42 @@
   desc_key: map.cz-analyzer.desc
   last_checked: 2026-10-02
 
+- id: cz-analyzer-backup
+  name: MeshCore ČR backup analyzer
+  url: "https://analyzer.meshcore.website/"
+  scope: country
+  country: CZ
+  shows: [nodes, traffic, analyzer]
+  desc_key: map.cz-analyzer-backup.desc
+  last_checked: 2026-11-26
+
+- id: cz-rfa-corescope
+  name: CoreScope RFA
+  url: "https://corescope.rfa.cz/"
+  scope: region
+  country: CZ
+  shows: [nodes, traffic, analyzer]
+  desc_key: map.cz-rfa-corescope.desc
+  last_checked: 2026-11-26
+
+- id: cz-live-map
+  name: MeshCore CZ live map
+  url: "https://mapa.meshcore.cz/"
+  scope: country
+  country: CZ
+  shows: [nodes, traffic]
+  desc_key: map.cz-live-map.desc
+  last_checked: 2026-11-26
+
+- id: cz-coverage
+  name: MeshCore CZ coverage map
+  url: "https://pokryti.meshcore.cz/"
+  scope: country
+  country: CZ
+  shows: [coverage]
+  desc_key: map.cz-coverage.desc
+  last_checked: 2026-11-26
+
 - id: fi-corescope
   name: CoreScope Finland
   url: "https://corescope.meshcore.fi/"
@@ -209,6 +245,15 @@
   shows: [nodes]
   desc_key: map.gb-m3sh-contacts.desc
   last_checked: 2026-10-23
+
+- id: hu-empiremesh
+  name: EmpireMesh
+  url: "https://map.meshcore.hu/"
+  scope: country
+  country: HU
+  shows: [nodes, traffic, analyzer]
+  desc_key: map.hu-empiremesh.desc
+  last_checked: 2026-11-26
 
 - id: kiekr-map
   name: KiekR region map

@@ -605,3 +605,13 @@
   desc_key: project.local-meshcore-analyzer.desc
   status: active
   last_checked: 2026-11-20
+
+- id: meshcore-ninja
+  name: MeshCore Ninja
+  category: docs
+  repo: "https://github.com/meshcore-cz/meshcore-index"
+  url: "https://meshcore.ninja/"
+  maintainer: meshcore-cz
+  desc_key: project.meshcore-ninja.desc
+  status: active
+  last_checked: 2026-11-26

@@ -6,16 +6,16 @@
       "locale": "nl",
       "strings": {
         "human": 30,
-        "ai": 1201,
+        "ai": 1207,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -24,16 +24,16 @@
       "locale": "de",
       "strings": {
         "human": 30,
-        "ai": 1201,
+        "ai": 1207,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -42,16 +42,16 @@
       "locale": "fr",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -60,16 +60,16 @@
       "locale": "es",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -78,16 +78,16 @@
       "locale": "it",
       "strings": {
         "human": 1,
-        "ai": 1230,
+        "ai": 1236,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -96,16 +96,16 @@
       "locale": "pl",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -114,16 +114,16 @@
       "locale": "pt-PT",
       "strings": {
         "human": 3,
-        "ai": 1228,
+        "ai": 1234,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -132,16 +132,16 @@
       "locale": "cs",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -150,16 +150,16 @@
       "locale": "sv",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -168,16 +168,16 @@
       "locale": "da",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -186,16 +186,16 @@
       "locale": "nb",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -204,16 +204,16 @@
       "locale": "fi",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -222,16 +222,16 @@
       "locale": "hu",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -240,16 +240,16 @@
       "locale": "ro",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -258,16 +258,16 @@
       "locale": "el",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -276,16 +276,16 @@
       "locale": "fy",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -294,16 +294,16 @@
       "locale": "bg",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -312,16 +312,16 @@
       "locale": "hr",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -330,16 +330,16 @@
       "locale": "et",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -348,16 +348,16 @@
       "locale": "ga",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -366,16 +366,16 @@
       "locale": "lv",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -384,16 +384,16 @@
       "locale": "lt",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -402,16 +402,16 @@
       "locale": "mt",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -420,16 +420,16 @@
       "locale": "sk",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -438,16 +438,16 @@
       "locale": "sl",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -456,16 +456,16 @@
       "locale": "sr-Latn",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -474,16 +474,16 @@
       "locale": "uk",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -492,16 +492,16 @@
       "locale": "ca",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -510,16 +510,16 @@
       "locale": "eu",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -528,16 +528,16 @@
       "locale": "gl",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -546,16 +546,16 @@
       "locale": "cy",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     },
     {
@@ -564,16 +564,16 @@
       "locale": "lb",
       "strings": {
         "human": 0,
-        "ai": 1231,
+        "ai": 1237,
         "missing": 0,
-        "total": 1231
+        "total": 1237
       },
       "pages": {
         "human": 0,
-        "ai": 32,
+        "ai": 33,
         "stale": 0,
         "missing": 0,
-        "total": 32
+        "total": 33
       }
     }
   ]
