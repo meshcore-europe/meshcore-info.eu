@@ -615,3 +615,14 @@
   desc_key: project.meshcore-ninja.desc
   status: active
   last_checked: 2026-11-26
+
+- id: gdfu
+  name: GDFU
+  category: firmware
+  repo: "https://github.com/jbrazio/gdfu-bootloader"
+  url: "https://www.meshcore.pt/en/projects/gdfu"
+  licence: MIT
+  maintainer: jbrazio
+  desc_key: project.gdfu.desc
+  status: active
+  last_checked: 2026-11-27

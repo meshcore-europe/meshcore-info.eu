@@ -1079,6 +1079,30 @@
   added: 2026-11-24
   last_checked: 2026-11-24
 
+- id: de-grafschaft-mesh
+  country: DE
+  region: Grafschaft Bentheim
+  scope: region
+  location:
+    lat: 52.447
+    lon: 7.109
+    place: Landkreis Grafschaft Bentheim
+    source: "https://www.openstreetmap.org/relation/62550"
+    checked: 2026-11-27
+  radius_km: 25
+  name: Grafschaft Mesh
+  links:
+  - type: website
+    url: "https://grafschaft-mesh.de/"
+  - type: signal
+    url: "https://signal.group/#CjQKIL54Rhsl1zqvIgxUA_JeSws9oMAY3FExCtTouS8Y1xsaEhAmKNZ8mifoWMPDJ0PDqrSv"
+  channels:
+  - "#grafschaft-mesh"
+  languages: [de, nl]
+  desc_key: community.de-grafschaft-mesh.desc
+  added: 2026-11-27
+  last_checked: 2026-11-27
+
 - id: ie-mayo-mesh
   country: IE
   region: County Mayo
