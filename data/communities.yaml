@@ -1103,6 +1103,28 @@
   added: 2026-11-27
   last_checked: 2026-11-27
 
+- id: de-mesh-mvp
+  country: DE
+  region: Mecklenburg-Vorpommern
+  scope: region
+  location:
+    lat: 53.774
+    lon: 12.576
+    place: Mecklenburg-Vorpommern
+    source: "https://www.openstreetmap.org/relation/28322"
+    checked: 2026-11-28
+  radius_km: 130
+  name: Mesh-MVP
+  links:
+  - type: telegram
+    url: "https://t.me/mesh_mvp"
+  channels:
+  - "#mv"
+  languages: [de]
+  desc_key: community.de-mesh-mvp.desc
+  added: 2026-11-28
+  last_checked: 2026-11-28
+
 - id: ie-mayo-mesh
   country: IE
   region: County Mayo
